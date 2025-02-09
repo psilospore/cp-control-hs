@@ -60,7 +60,7 @@ class ShieldHandler(ABC):
 
 class TaxiNetShieldHandler(ShieldHandler):
     def __init__(self, prism_path, formula, prism_config=None, shield_value=0.9, shield_comparison='absolute', nocleanup=False, prism_file=None) -> None:
-        self.tmp_dir_name = f"shielding_files_{datetime.datetime.now().strftime('%Y%m%dT%H%M%S')}_{next(tempfile._get_candidate_names())}"
+        self.tmp_dir_name = f"./tempest/shielding_files_{datetime.datetime.now().strftime('%Y%m%dT%H%M%S')}_{next(tempfile._get_candidate_names())}"
         os.mkdir(self.tmp_dir_name)
         self.prism_path = self.tmp_dir_name + "/" + prism_path
         self.prism_config = prism_config
