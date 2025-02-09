@@ -25,7 +25,7 @@ RUN cmake .. -DCMAKE_BUILD_TYPE=Release -DSTORM_DEVELOPER=OFF -DSTORM_LOG_DISABL
 RUN make resources storm binaries -j $no_threads
 
 # Configure carl-parser
-RUN cmake .. -DCMAKE_BUILD_TYPE=$build_type
+# RUN cmake .. -DCMAKE_BUILD_TYPE=$build_type
 
 # Manage python packages
 WORKDIR /opt/
