@@ -7,7 +7,7 @@ CONTAINER_SRC_DIR=/opt/cp-control
 LOGRESULTS_DIR=./logresults
 CONTAINER_LOGRESULTS_DIR=/opt/logresults
 
-sudo docker run \
+docker run \
 --name "$CONTAINER_NAME" \
 --mount "type=bind,src=$SRC_DIR,dst=$CONTAINER_SRC_DIR" \
 -w "$CONTAINER_SRC_DIR" \
