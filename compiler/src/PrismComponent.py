@@ -15,10 +15,10 @@ class PrismComponent:
     logic: ...  # : ([PrismVar],[PrismVar],[Int]) -> (Int -> [PrismTrans])
 
 
-
     
 ## Component Builders
 
+# func : [Assign vl for vl in var_list] -> PrismTransition
 def define_component_by_enumeration(var_list,func,pc):
     transitions=[]
     vl_enum = PAST.var_list_to_enumerable(var_list)
@@ -27,13 +27,28 @@ def define_component_by_enumeration(var_list,func,pc):
         for pv,val in pv_assign:
             condition+=f"{pv}={val} & "
         condition=condition[:-2]
-        pt = PAST.PrismTrans(condition,func(pv_assign))
+        pt = PAST.PrismTrans(condition,func(pv_assign)) 
         pt.addPC(pc)
         transitions.append(pt)
     return transitions
 
+# modified to work with nondeterministic assignment
+# func : [Assign vl for vl in var_list] -> [[PrismAssign a]]
+def define_component_by_enumeration_ND(var_list,func,pc):
+    transitions=[]
+    vl_enum = PAST.var_list_to_enumerable(var_list)
+    for pv_assign in vl_enum.enumerate_pv():
+        condition = ""
+        for pv,val in pv_assign:
+            condition+=f"{pv}={val} & "
+        condition=condition[:-2]
+        assignments = mapL(lambda case : mapL(lambda x : (str(x),1),case),func(pv_assign))
+        pt = PAST.NDPrismTrans(condition,assignments)
+        pt.addPC(pc)
+        transitions.append(pt)
+    return transitions
 
-# Builds Perceivers Component from BayesianModel
+# Builds Perceiver Component from BayesianModel
 
 # (((state, state_est) -> Prob),  PrismVar) -> (VarInst -> [Assignment])
 def perceive_func_from_read_func(read_func,est_var):

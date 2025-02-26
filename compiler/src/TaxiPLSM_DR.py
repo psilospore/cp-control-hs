@@ -26,7 +26,7 @@ def control_func(m,args):
         
     safe_actions = set(actions[0])
     for sas in actions:
-        safe_actions.union(sas)
+        safe_actions.(sas)
 
     cte_est=cte_ests[0]
     he_est=he_ests[0]
@@ -133,7 +133,7 @@ import argparse
 
 def main():
     parser = argparse.ArgumentParser(description="CLI for producing Dead Reckoning Model.")
-
+ 
     parser.add_argument("--cte", required=True, type=str, help="Filename of cte sample")
     parser.add_argument("--he", required=True, type=str, help="Filename of he sample")
     parser.add_argument("--label", "-l", required=True, type=str, help="Instance label, used to differentiate models with distinct data")

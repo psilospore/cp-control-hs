@@ -16,8 +16,9 @@ from dataclasses import dataclass
 # ...
 # -n: fail_state n-1
 class PrismLoopingStateMachine:
-    def __init__(self,module_name,version,components: [PC.PrismComponent],statevars: [PAST.PrismVar],fail_states: [str]):
+    def __init__(self,module_name,module_type,version,components: [PC.PrismComponent],statevars: [PAST.PrismVar],fail_states: [str]):
         self.module_name=module_name
+        self.module_type=module_type
         self.version=version
         self.components=components
         self.fail_states=fail_states
@@ -40,12 +41,14 @@ class PrismLoopingStateMachine:
         indent="  "
         variable_declr = composeLines(indent,self.pvars)
         pc_vals = list(range(0,self.loop_max)) # ignores fail states
+        toPrismLines = lambda x : x.toPrismLines()
         component_logics = [
             f"{indent}// {c.name}\n"+
-            composeLines(indent,c.logic(
-                mapL(dict_to_func(self.statevar_dict),c.invars),
-                mapL(dict_to_func(self.statevar_dict),c.outvars),
-                mapL(dict_to_func(self.fail_state_pc_dict),c.fail_states))(pc))
+            composeLines(indent,[].join(map(toPrismLines,
+                c.logic(
+                    mapL(dict_to_func(self.statevar_dict),c.invars),
+                    mapL(dict_to_func(self.statevar_dict),c.outvars),
+                    mapL(dict_to_func(self.fail_state_pc_dict),c.fail_states))(pc))))
             for pc,c in zip(pc_vals,self.components)]
         loop_rep = composeLines(indent,[self.loop_step])
         
@@ -66,7 +69,7 @@ class PrismLoopingStateMachine:
 // Generated: {datetime.datetime.now()}
 {pc_summary}
 
-dtmc
+{self.module_type}
 
 const N;
 
