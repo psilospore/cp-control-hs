@@ -69,7 +69,7 @@ def shield_to_control_func(shield):
         if not safe_actions:
             return [] # get better contingency
         else:
-            return [[PAST.PrismAssign("a",a,lhs=False)] for a,p in safe_actions]
+            return [PAST.PrismAssign("a",a,lhs=False) for a,p in safe_actions]
 
     return controller
 

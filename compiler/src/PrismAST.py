@@ -13,7 +13,7 @@ class PrismVar:
         self.desc=desc
         
         # when defining components by enumeration, only certain (legal) values should be considered
-        # this is a kludge and lacks generality (what if two components need to enumerate differently?)
+        # this is a kludge and lacks generality (what if two components need to enumerate variables differently?)
         self.enum_low= low if enum_low is None else enum_low
         self.enum_high= high if enum_high is None else enum_high
     def toPrismLines(self):
@@ -80,9 +80,9 @@ class PrismTrans:
         return self
 
 # condition : String
-# results : [[(String,Prob)]]
-# [] <condition> -> <results[0][0][1]> : <results[0][0][0]> + <results[0][1][1]> : <results[0][1][0]> + ...
-# [] <condition> -> <results[1][0][1]> : <results[1][0][0]> + <results[0][1][1]> : <results[1][1][0]> + ...
+# results : [String] - does not include probability
+# [] <condition> -> <results[0]> 
+# [] <condition> -> <results[1]>
 # ...
 class NDPrismTrans(PrismTrans):
     def __init__(self,condition,results,withpc=False):
@@ -90,10 +90,7 @@ class NDPrismTrans(PrismTrans):
     def toPrismLines(self):
         res=[]
         for r in self.results:
-            line = f"[] {self.condition} -> "
-            for trans,prob in r:
-                line+=f"{prob} : {trans} + "
-            line=line[:-2]+";"
+            line = f"[] {self.condition} -> {r} ;"
             res.append(line)
         return res
     def addPC(self,pc):
@@ -101,7 +98,8 @@ class NDPrismTrans(PrismTrans):
             return
         self.withpc=True
         self.condition += f" & pc={pc}"
-        self.results =  [[(r+f" & (pc'={pc+1})",prob) for r,prob in ri] for ri in self.results]
+        # print(self.results)
+        self.results =  [r+f" & (pc'={pc+1})"for r in self.results]
         return self
         
 

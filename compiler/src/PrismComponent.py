@@ -38,11 +38,11 @@ def define_component_by_enumeration_ND(var_list,func,pc):
     transitions=[]
     vl_enum = PAST.var_list_to_enumerable(var_list)
     for pv_assign in vl_enum.enumerate_pv():
-        condition = ""
-        for pv,val in pv_assign:
-            condition+=f"{pv}={val} & "
-        condition=condition[:-2]
-        assignments = mapL(lambda case : mapL(lambda x : (str(x),1),case),func(pv_assign))
+        condition = inner_reduce(lambda x,y : x+" & "+y,
+                    mapL(lambda pv_val : f"{pv_val[0]}={pv_val[1]}",
+                    pv_assign))
+        
+        assignments = mapL(str,func(pv_assign))
         pt = PAST.NDPrismTrans(condition,assignments)
         pt.addPC(pc)
         transitions.append(pt)
