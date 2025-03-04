@@ -34,7 +34,7 @@ def enumerate_safe_action_func():
 def controller(var_assign):
     k=len(var_assign)//2
     cte_ests=[var_assign[i][1] for i in range(k)]
-    he_ests=[var_assign[i+1][1] for i in range(k)]
+    he_ests=[var_assign[i+k][1] for i in range(k)]
     
     actions=[]
     for state in zip(cte_ests,he_ests):

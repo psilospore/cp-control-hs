@@ -13,3 +13,5 @@ def dict_to_func(d):
     return lambda x : d[x]
 
 inner_reduce = lambda op,l : reduce(op,l[1:],l[0])
+
+str_comb = lambda comb : lambda x,y : x+comb+y

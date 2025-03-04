@@ -16,17 +16,18 @@ from dataclasses import dataclass
 # ...
 # -n: fail_state n-1
 class PrismLoopingStateMachine:
-    def __init__(self,module_name,module_type,version,components: [PC.PrismComponent],statevars: [PAST.PrismVar],fail_states: [str]):
+    def __init__(self,module_name,version,module_type,components: [PC.PrismComponent],statevars: [PAST.PrismVar],fail_states: [str]):
         self.module_name=module_name
-        self.module_type=module_type
         self.version=version
+        self.module_type=module_type # e.g. dtmc, mdp
         self.components=components
         self.fail_states=fail_states
-        self.filename = f"./bin/{self.module_name}-{self.version}.pm"
+        self.filename = f"./bin/{self.module_name}_{self.version}.pm"
         self.written=False
 
 
         self.statevar_dict={pv.name:pv for pv in statevars}
+
         self.loop_max = len(self.components)
         self.fail_state_pc_dict = {fail_states[i]:-i-1 for i in range(len(fail_states))}
         
@@ -34,8 +35,8 @@ class PrismLoopingStateMachine:
         loop_var = PAST.PrismVar("k",0,"N",1,"loop counter")
 
         self.pvars = statevars+[pc_var,loop_var]
-
-        self.loop_step = PAST.PrismTrans(f"pc={self.loop_max} & k < N",[("(pc'=0) & (k'=k+1)",1)])
+        
+        self.loop_step = PAST.PrismTrans(f"pc={self.loop_max} & k<N",[("(pc'=0) & (k'=k+1)",1)])
 
     def __str__(self):
         indent="  "
@@ -44,13 +45,13 @@ class PrismLoopingStateMachine:
         toPrismLines = lambda x : x.toPrismLines()
         component_logics = [
             f"{indent}// {c.name}\n"+
-            composeLines(indent,[].join(map(toPrismLines,
+            composeLines(indent,inner_reduce(lambda x,y : x+y,mapL(toPrismLines,
                 c.logic(
                     mapL(dict_to_func(self.statevar_dict),c.invars),
                     mapL(dict_to_func(self.statevar_dict),c.outvars),
                     mapL(dict_to_func(self.fail_state_pc_dict),c.fail_states))(pc))))
             for pc,c in zip(pc_vals,self.components)]
-        loop_rep = composeLines(indent,[self.loop_step])
+        loop_rep = composeLines(indent,self.loop_step.toPrismLines())
         
         pc_summary="// PC values:\n"
         for pc,c in zip(pc_vals,self.components):
@@ -64,7 +65,7 @@ class PrismLoopingStateMachine:
             cl_rep+=cl+"\n"
                     
         return f"""
-// {self.module_name}
+// {self.module_name}_{self.version}
 // Prism Looping State Machine
 // Generated: {datetime.datetime.now()}
 {pc_summary}
@@ -73,7 +74,7 @@ class PrismLoopingStateMachine:
 
 const N;
 
-module {self.module_name}
+module {self.module_name}_{self.version}
 
 {variable_declr}
 
@@ -89,7 +90,7 @@ endmodule
         if self.written:
             return
         self.written=True
-        # print("writing to "+self.filename)
+        print("writing to "+self.filename)
         with open(self.filename, "wt") as f:
             f.write(str(self))
 

@@ -289,9 +289,9 @@ if __name__=="__main__":
     he     = PAST.PrismVar("he",-2,2,0,enum_low=-1,enum_high=1)
     action = PAST.PrismVar("action",-2,2,0,enum_low=-1,enum_high=1)
 
-    invars=[cte,he] # ,cte,he,cte,he]
+    invars=[cte,cte,cte,he,he,he]
     outvars=[action]
     import ShieldBuilder as SB
-    print(list(map(str,minimize_component(invars,outvars,SB.controller2))))
+    print(inner_reduce(str_comb("\n"),list(map(lambda x:inner_reduce(lambda x,y : x+y,x.toPrismLines()),minimize_component(invars,outvars,SB.controller)))))
 
     

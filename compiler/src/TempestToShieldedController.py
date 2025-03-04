@@ -6,6 +6,7 @@ import csv
 import ComponentMinimizer as CM
 import PrismAST as PAST
 import PrismComponent as PC
+import DataLoader as DL
 from Util import *
 
 # Action : Int [0,2]
@@ -17,19 +18,6 @@ from Util import *
 # TempestModel :  [(cte_est : CteEst, he_est : HeEst, action0 : Prob, action1 : Prob, action2 : Prob)]
 # TempestModelDict : {(CteEst,HeEst) -> (0:Prob,1:Prob,2:Prob)}
 
-# CSV File -> TempestModel
-def read_csv_to_tuples(filename):
-    
-    tuples_list = []
-    
-    with open(filename, mode='r', newline='', encoding='utf-8') as file:
-        reader = csv.reader(file)
-        header = next(reader)  # Skip the header row
-        
-        for row in reader:
-            tuples_list.append(row)
-    
-    return tuples_list
 
 # TempestModel -> TempestModelDict
 def tempest_model_to_dict(tempest_model):
@@ -39,31 +27,24 @@ def tempest_model_to_dict(tempest_model):
 def tempest_model_to_shield(tempest_model_dict,filter_func):
     
     def shield(cte_est,he_est):
-        return list(filter(filter_func,tempest_model_dict[(cte_est,he_est)]))
+        return set(filter(filter_func,tempest_model_dict[(cte_est,he_est)]))
 
     return shield
 
 
-# Shield -> PrismComponent
+# Shield -
 def shield_to_control_func(shield):
     
     def controller(var_assign):
         k=len(var_assign)//2
         cte_ests=[var_assign[i][1] for i in range(k)]
-        he_ests=[var_assign[i+1][1] for i in range(k)]
-
+        he_ests=[var_assign[i+k][1] for i in range(k)]
+        # print(var_assign)
+        # print(cte_ests,he_ests)
         
-        safe_actions = inner_reduce(lambda x,y : x.instersection(y),
+        safe_actions = inner_reduce(lambda x,y : x.intersection(y),
             [shield(*state) for state in zip(cte_ests,he_ests)])
 
-
-        # [[(i:tempest_model_dict[state][i])
-        #     for i in len(tempest_model_dict[state])]
-        #     for state in zip(cte_ests,he_ests)]
-        
-        # safe_actions = reduce_inner(lambda x,y : x.intersection(y),
-        #     [{a for a,prob in action_list if prob > safe_filter}
-        #     for action_list in actions])
 
         # print(safe_actions)
         if not safe_actions:
@@ -75,13 +56,13 @@ def shield_to_control_func(shield):
 
 def tempest_shielded_controller(tempest_file,filter_func,minimize=False):
 
-    tempest_model_dict = tempest_model_to_dict(read_csv_to_tuples(tempest_file))
+    tempest_model_dict = tempest_model_to_dict(DL.read_csv_to_tuples(tempest_file))
     # print(tempest_model_dict)
     control_func = shield_to_control_func(tempest_model_to_shield(tempest_model_dict,filter_func))
 
     if not minimize:
         def control(state_est,*_):
-            # print(state_est[0],state_est[1])
+            # print(mapL(str,state_est))
             return lambda pc : PC.define_component_by_enumeration_ND(state_est,control_func,pc)
         return control
     else:

@@ -1,10 +1,15 @@
 from dataclasses import dataclass
 from Util import *
 
-# simple representation of Prism in python
+# representation of Prism in python
 
+# abstract class
+class PrismSnippet:
+  def toPrismLines(self) -> [str]:
+      pass
+  
 # <name> : [<low>..<high>] init <init>
-class PrismVar:
+class PrismVar(PrismSnippet):
     def __init__(self,name,low,high,init,desc=None,enum_low=None,enum_high=None):
         self.name=name
         self.low=low
@@ -59,7 +64,7 @@ def var_list_to_enumerable(var_list : [PrismVar]):
 # condition : String
 # results : [(String,Prob)]
 # [] <condition> -> <results[0][1]> : <results[0][0]> + <results[1][1]> : <results[1][0]> + ...
-class PrismTrans:
+class PrismTrans(PrismSnippet):
     def __init__(self,condition,results,withpc=False):
         self.condition=condition # str
         self.results=results # [(str,prob)]
@@ -103,6 +108,12 @@ class NDPrismTrans(PrismTrans):
         return self
         
 
+class PrismVerbatim(PrismSnippet):
+    def __init__(self,lines):
+        self.lines=lines
+    def toPrismLines(self):
+        return self.lines
+    
 class PrismProp:
     def __init__(self,rep,filename):
         self.rep=rep

@@ -2,6 +2,7 @@ import BayesianModel as BM
 import PrismAST as PAST
 from Util import *
 import PrismExec as PE
+import DataLoader as DL
 
 from ComponentMinimizer import *
 
@@ -32,8 +33,9 @@ def define_component_by_enumeration(var_list,func,pc):
         transitions.append(pt)
     return transitions
 
-# modified to work with nondeterministic assignment
+# modified to work with nondeterministic transitions
 # func : [Assign vl for vl in var_list] -> [[PrismAssign a]]
+# define_component_by_enumeration_ND : (var_list, func) -> [NDPrismTrans]
 def define_component_by_enumeration_ND(var_list,func,pc):
     transitions=[]
     vl_enum = PAST.var_list_to_enumerable(var_list)
@@ -75,4 +77,40 @@ def perceiver_from_est_model(model):
     return perceiver
 
 
+
+# used for conformal prediction
+# assumes in_var and out_var enumeration matches csv order
+def define_perceiver_from_conf_mat(name,in_var_names,out_var_names,conf_mat_file):
+    conf_mat = DL.read_csv_to_tuples(conf_mat_file)
+    # print("conf_mat dims: ",len(conf_mat),len(conf_mat[0]))
     
+    def perceiver(in_var,out_var,_):
+        def perciever_func(pc):
+            iv_enum = PAST.var_list_to_enumerable(in_var).enumerate_pv()
+            ov_enum = PAST.var_list_to_enumerable(out_var).enumerate_pv()
+            assert len(conf_mat)==len(iv_enum), "input variable enumeration length does not match conformal prediction csv rows"
+            assert len(conf_mat[0])==len(ov_enum), "output vairable enumeration length does not match conformal prediction csv columns"
+            print("WARNING: assuming conformal prediction csv order")
+            print("Columns",str(iv_enum))
+            print("Rows",str(ov_enum))
+            transitions=[]
+            land = lambda x,y : x+" & "+y
+            for i in range(len(iv_enum)):
+                iv_assign=iv_enum[i]
+                lhs = inner_reduce(land, [f"{iva[0]}={iva[1]}" for iva in iv_assign])
+                rhs=[]
+                for j in range(len(ov_enum)):
+                    ov_assign=ov_enum[j]
+                    rhs_cond = inner_reduce(land, [f"({ova[0]}'={ova[1]})" for ova in ov_assign])
+                    prob = conf_mat[i][j]
+                    rhs.append((rhs_cond,prob))
+                pt = PAST.PrismTrans(lhs,rhs)
+                pt.addPC(pc)
+                transitions.append(pt)
+            return transitions
+        return perciever_func
+    return PrismComponent(name,in_var_names,out_var_names,[],perceiver)
+
+                
+
+                

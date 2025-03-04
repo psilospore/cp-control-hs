@@ -27,3 +27,17 @@ def read_csv_as_pairs(file_path):
     except Exception as e:
         print(f"CSVReader: An error occurred: {e}")
         exit(1)
+
+# CSV File -> TempestModel
+def read_csv_to_tuples(filename):
+    
+    tuples_list = []
+    
+    with open(filename, mode='r', newline='', encoding='utf-8') as file:
+        reader = csv.reader(file)
+        header = next(reader)  # Skip the header row
+        
+        for row in reader:
+            tuples_list.append(row)
+    
+    return tuples_list
