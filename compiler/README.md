@@ -75,7 +75,7 @@
 
 **Conformal Prediction Percepter:**
 
-* takes conf pred generated model of state->state\_est*m (_-\-conformal\_pred\_cte_,_-\-conformal\_pred\_he_)
+* takes conf pred generated model of state->state\_est**num\_est (_-\-conformal\_pred\_cte_,_-\-conformal\_pred\_he_)
 * controlled by number of estimates (_-\-num\_est_)
 * csv format expects specific order of state/state\_est enumeration (see warnings when run)
 * see **lib/{cte,he}\_confpred\_toy.csv** for examples
