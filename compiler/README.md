@@ -63,23 +63,27 @@
 
 ### Shielded Conformal Preduction Model (src/TaxiShieldedConfPred.py)
 
-* builds model to design specs of project (roughly)
-* generates mpd prism model
+* builds model to (roughly) fit design specs of project
+* generates mpd prism file
 
-#### Shielded Controller:
-* takes tempest generated safety estimates as CSV (--tempest_pred)
-(cte\_est:[0-4],he\_est:[0-2],action0:float,action1:float,action2:float)
-* generates nondeterministic controller based on shielding logic (filters actions by probibility with --action_filter)
+**Shielded Controller:**
 
-#### Conformal Prediction Percepter
-* takes conf pred generated model of state->state\_est*m (--conformal\_pred\_cte,--conformal\_pred\_he)
-* controlled by number of estimates (--num\_est)
+* takes tempest generated safety estimates as CSV (_-\-tempest_pred_)
+* csv format: cte\_est: [0..4], he\_est: [0..2], action0: float, action1: float, action2: float
+* see **lib/tempest_test** for an example
+* generates nondeterministic controller based on shielding logic (filters actions by probibility with _-\-action\_filter_)
+
+**Conformal Prediction Percepter:**
+
+* takes conf pred generated model of state->state\_est*m (_-\-conformal\_pred\_cte_,_-\-conformal\_pred\_he_)
+* controlled by number of estimates (_-\-num\_est_)
 * csv format expects specific order of state/state\_est enumeration (see warnings when run)
+* see **lib/{cte,he}\_confpred\_toy.csv** for examples
 
-#### TODO
+**TODO**
+
 * add default choice for empty shields
 * allow empty conformal prediction estimates (when estimate set is less than num\_est) e.g. allow (cte\_est,he\_est) = (-1,-1)
 
 
 
-**This project was built quickly and with the use of AI. It includes many bugs and regrettable design decisions. Don't expect functions to work outside the narrow window of their use case, if at all. Contributions are welcomed.**
