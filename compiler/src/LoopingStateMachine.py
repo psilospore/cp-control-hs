@@ -16,9 +16,10 @@ from dataclasses import dataclass
 # ...
 # -n: fail_state n-1
 class PrismLoopingStateMachine:
-    def __init__(self,module_name,version,module_type,components: [PC.PrismComponent],statevars: [PAST.PrismVar],fail_states: [str]):
+    def __init__(self,module_name,version,module_type,components: [PC.PrismComponent],statevars: [PAST.PrismVar],fail_states: [str],description=[]):
         self.module_name=module_name
         self.version=version
+        self.description=description
         self.module_type=module_type # e.g. dtmc, mdp
         self.components=components
         self.fail_states=fail_states
@@ -59,22 +60,25 @@ class PrismLoopingStateMachine:
         pc_summary+=f"//   {self.loop_max} : Loop Logic\n"
         for i in range(len(self.fail_states)):
             pc_summary+=f"//   {-i-1} : {self.fail_states[i]}\n"
-            
+
+        desc_rep = reduce(lambda x,y:x+y,mapL(lambda x: f"// {x}\n",self.description),"")
         cl_rep = ""
         for cl in component_logics:
             cl_rep+=cl+"\n"
                     
         return f"""
-// {self.module_name}_{self.version}
 // Prism Looping State Machine
-// Generated: {datetime.datetime.now()}
+
+// {self.module_name} {self.version}
+{desc_rep}
 {pc_summary}
+// Generated: {datetime.datetime.now()}
 
 {self.module_type}
 
 const N;
 
-module {self.module_name}_{self.version}
+module {self.module_name}
 
 {variable_declr}
 

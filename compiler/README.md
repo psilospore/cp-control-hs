@@ -75,15 +75,18 @@
 
 **Conformal Prediction Percepter:**
 
-* takes conf pred generated model of state->state\_est**num\_est (_-\-conformal\_pred\_cte_,_-\-conformal\_pred\_he_)
+* takes conf pred generated model of state->2^state\_est (_-\-conformal\_pred\_cte_,_-\-conformal\_pred\_he_)
 * controlled by number of estimates (_-\-num\_est_)
 * csv format expects specific order of state/state\_est enumeration (see warnings when run)
 * see **lib/{cte,he}\_confpred\_toy.csv** for examples
 
+**Example use:**
+
+```python3 src/TaxiShieldedConfPred.py -cpcte lib/cte_confpred_toy.csv -cphe lib/he_confpred_toy.csv -ne 2 -tp lib/tempest_test.csv -af 0.3 -l PS_toy1```
+
 **TODO**
 
 * add default choice for empty shields
-* allow empty conformal prediction estimates (when estimate set is less than num\_est) e.g. allow (cte\_est,he\_est) = (-1,-1)
 
 
 

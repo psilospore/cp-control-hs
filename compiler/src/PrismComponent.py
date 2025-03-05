@@ -80,8 +80,7 @@ def perceiver_from_est_model(model):
 
 # used for conformal prediction
 # assumes in_var and out_var enumeration matches csv order
-def define_perceiver_from_conf_mat(name,in_var_names,out_var_names,conf_mat_file):
-    conf_mat = DL.read_csv_to_tuples(conf_mat_file)
+def define_perceiver_from_conf_mat(name,in_var_names,out_var_names,conf_mat):
     # print("conf_mat dims: ",len(conf_mat),len(conf_mat[0]))
     
     def perceiver(in_var,out_var,_):

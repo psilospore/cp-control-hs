@@ -36,18 +36,27 @@ def tempest_model_to_shield(tempest_model_dict,filter_func):
 def shield_to_control_func(shield):
     
     def controller(var_assign):
-        k=len(var_assign)//2
-        cte_ests=[var_assign[i][1] for i in range(k)]
-        he_ests=[var_assign[i+k][1] for i in range(k)]
+        # k=len(var_assign)//2
+        # decode one hot encoding into obs lists
+        cte_ests=[i for i in range(5) if var_assign[i][1]==1 ]
+        he_ests=[i for i in range(3) if var_assign[i+5][1]==1 ]
+        all_pairs = [(cte_est,he_est) for cte_est in cte_ests for he_est in he_ests]
+        # print(all_pairs)
+
+        # no estimated states
+        if not all_pairs:
+            return [] # [PAST.PrismAssign("a",i,lhs=False) for i in range(0,3)] 
+
         # print(var_assign)
         # print(cte_ests,he_ests)
         
         safe_actions = inner_reduce(lambda x,y : x.intersection(y),
-            [shield(*state) for state in zip(cte_ests,he_ests)])
+            [shield(*state) for state in all_pairs])
 
 
         # print(safe_actions)
         if not safe_actions:
+            # no safe actions
             return [] # get better contingency
         else:
             return [PAST.PrismAssign("a",a,lhs=False) for a,p in safe_actions]
@@ -72,6 +81,7 @@ def tempest_shielded_controller(tempest_file,filter_func,minimize=False):
         return min_control
 
 
+    
 if __name__=="__main__":
     parser = argparse.ArgumentParser(description="CLI for generating Shield components from tempest")
 
@@ -89,12 +99,11 @@ if __name__=="__main__":
     # these don't matter
     state_est=["cte_est","he_est"]
     action=["action"]
+    cte_high=4
+    he_high=2
+    cte_est_vars=[PAST.PrismVar(f"cte_est{i}",0,1,0) for i in range(cte_high+1)]
+    he_est_vars=[PAST.PrismVar(f"he_est{i}",0,1,0) for i in range(he_high+1)]
 
-    cte_ests=[]
-    he_ests=[]
-    for i in range(1):
-        cte_ests.append(PAST.PrismVar(f"cte_est{i}",0,4,0,enum_low=0,enum_high=4))
-        he_ests.append(PAST.PrismVar(f"he_est{i}",0,2,0,enum_low=0,enum_high=2))
     a = PAST.PrismVar("a",0,2,0)
 
     tsc = tempest_shielded_controller(args.tempest_file,lambda a_p : a_p[1]>args.action_filter,minimize=args.minimize)
@@ -102,7 +111,7 @@ if __name__=="__main__":
     component = PC.PrismComponent("Controller",state_est,action,[],tsc)
     
     toPrismLines = lambda x : x.toPrismLines()
-    pl = composeLines("",mapL(lambda line : composeLines("",line),mapL(toPrismLines,component.logic(cte_ests+he_ests,[a],[])(args.pc))))
+    pl = composeLines("",mapL(lambda line : composeLines("",line),mapL(toPrismLines,component.logic(cte_est_vars+he_est_vars,[a],[])(args.pc))))
     
     print(pl)
     

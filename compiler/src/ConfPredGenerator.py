@@ -6,8 +6,8 @@ def toy_data(low,high,n_est):
     diff=high-low+1
     data=[]
     for i in range(diff+1):
-        row_len=diff**n_est
-        row=[1/row_len]*row_len
+        row_len=2**diff # diff**n_est
+        row=[1]*row_len
         # for i in range(diff**n_est):
         #     row.append(random.random())
         data.append(row)

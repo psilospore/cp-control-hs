@@ -65,24 +65,27 @@ def var_list_to_enumerable(var_list : [PrismVar]):
 # results : [(String,Prob)]
 # [] <condition> -> <results[0][1]> : <results[0][0]> + <results[1][1]> : <results[1][0]> + ...
 class PrismTrans(PrismSnippet):
-    def __init__(self,condition,results,withpc=False):
-        self.condition=condition # str
-        self.results=results # [(str,prob)]
-        assert self.results # cannot be empty
-        self.withpc=False
-    def toPrismLines(self):
-        res = f"[] {self.condition} -> "
-        for trans,prob in self.results:
-            res+=f"{prob} : {trans} + "
-        res=res[:-2]+";"
-        return [res]
-    def addPC(self,pc):
-        if self.withpc:
-            return
-        self.withpc=True
-        self.condition += f" & pc={pc}"
-        self.results =  [(r+f" & (pc'={pc+1})",prob) for r,prob in self.results]
-        return self
+  def __init__(self,condition,results,withpc=False):
+    self.condition=condition # str
+    self.results=results # [(str,prob)]
+    # assert self.results # cannot be empty
+    self.withpc=False
+  def toPrismLines(self):
+    if not self.results:
+      return []  
+    res = f"[] {self.condition} -> "
+    for trans,prob in self.results:
+      res+=f"{prob} : {trans} + "
+    res=res[:-2]+";"
+    return [res]
+  
+  def addPC(self,pc):
+    if self.withpc:
+      return
+    self.withpc=True
+    self.condition += f" & pc={pc}"
+    self.results =  [(r+f" & (pc'={pc+1})",prob) for r,prob in self.results]
+    return self
 
 # condition : String
 # results : [String] - does not include probability
