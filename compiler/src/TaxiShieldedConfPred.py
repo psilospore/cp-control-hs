@@ -63,18 +63,18 @@ def taxi_shielded_confpred_model(conf_pred_cte,conf_pred_he,tempest_pred,action_
     he_high=2
     cte=PAST.PrismVar("cte",-1,4,0,enum_low=0)
     he=PAST.PrismVar("he",-1,2,0,enum_low=0)
-    no_safe_actions_count=PAST.PrismVar("no_safe_actions_count",0,"N",0)
+    alpha=PAST.PrismVar("alpha",0,"N",0,desc="Counts number of times controller found no safe actions")
     cte_est_vars=[PAST.PrismVar(f"cte_est{i}",0,1,0) for i in range(cte_high+1)]
     he_est_vars=[PAST.PrismVar(f"he_est{i}",0,1,0) for i in range(he_high+1)]
     a=PAST.PrismVar("a",0,2,0)
-    variables=[cte,he,a,no_safe_actions_count]+cte_est_vars+he_est_vars
+    variables=[cte,he,a,alpha]+cte_est_vars+he_est_vars
     
     state=["cte","he"]
     cte_ests=[f"cte_est{i}" for i in range(cte_high+1)]
     he_ests=[f"he_est{i}" for i in range(he_high+1)]
     state_est=cte_ests+he_ests
     action=["a"]
-    no_safe_as=["no_safe_actions_count"]
+    no_safe_as=["alpha"]
     fail_states=["dyn_fail"]
     
 

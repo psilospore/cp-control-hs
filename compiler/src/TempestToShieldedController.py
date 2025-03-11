@@ -57,7 +57,7 @@ def shield_to_control_func(shield):
         # print(safe_actions)
         if not safe_actions:
             # no safe actions
-            return [PAST.PrismAssign("no_safe_actions_count","no_safe_actions_count+1",lhs=False)] # get better contingency
+            return ["(a'=0) & (alpha'=alpha+1)"] # get better contingency
         else:
             return [PAST.PrismAssign("a",a,lhs=False) for a,p in safe_actions]
         
