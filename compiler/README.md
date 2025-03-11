@@ -75,7 +75,7 @@
 
 **Conformal Prediction Percepter:**
 
-* takes conf pred generated model of state->2^state\_est (_-\-conformal\_pred\_cte_,_-\-conformal\_pred\_he_)
+* takes conf pred generated model of state->2^state\_{est} (_-\-conformal\_pred\_cte_,_-\-conformal\_pred\_he_)
 * see **lib/{cte,he}\_confpred\_toy.csv** for examples
 
 **Example use:**
@@ -98,10 +98,10 @@ Provides two methods for doing this:
 **confusion**
 
 * This accounts for state confusion using marginalization in state to state estimate conversion
-* Inverting the confusion matrices from the CAV'23 paper produces $P(S | S\_est)$
-* Tempest output models $P(Safe \land a | S \land S\_est)$
-* Combining these two produces a model $P(Safe \land a | S\_est)$ according to law of total probability ([marginalization](https://math.stackexchange.com/questions/2377816/applying-law-of-total-probability-to-conditional-probability) )
-  * $P(Safe \land a | S\_est) = \sum_S P(Safe \land a | S \land S\_est) * P(S | S\_est)$
+* Inverting the confusion matrices from the CAV'23 paper produces $P(S | S\_{est})$
+* Tempest output models $P(Safe \land a | S \land S\_{est})$
+* Combining these two produces a model $P(Safe \land a | S\_{est})$ according to law of total probability ([marginalization](https://math.stackexchange.com/questions/2377816/applying-law-of-total-probability-to-conditional-probability) )
+  * $P(Safe \land a | S\_{est}) = \sum_S P(Safe \land a | S \land S\_{est}) * P(S | S\_{est})$
 * This will increase the estimated safety of some actions
   * _-\-worst_case_ takes minimum between **direct** and **confusion** to avoid this
 * **Arguments:**
