@@ -47,10 +47,14 @@
 * generates mdp prism file
 
 **Arguments**
-* _-\-tempest_pred_: CSV file defining action safety properties at given state
+
+* _-\-tempest_pred_: 
+  * CSV file defining action safety properties at given state
   * Format: cte\_est: [0..4], he\_est: [0..2], action0: float, action1: float, action2: float
-* _-\-action\_filter_: float used to filter safe actions
-* _-\-conformal\_pred\_cte_: CSV file defining cte confusion matrix (cte,2^cte\_est -> Freq)
+* _-\-action\_filter_: 
+  * minimum value for an action to be considered safe
+* _-\-conformal\_pred\_cte_: 
+  * CSV file defining cte confusion matrix (cte,2^cte\_est -> Freq)
   * Format:
     * Rows correspond to possible cte values [0..4]
     * Columns correspond to binary representation of cte\_est set e.g.
@@ -67,6 +71,7 @@
 * takes tempest generated safety estimates as CSV (_-\-tempest_pred_)
 * see **lib/tempest_test** for an example
 * generates nondeterministic controller based on shielding logic (filters actions by probibility with _-\-action\_filter_)
+* current default for empty shield: choose default action (a=0) and increment no-safe-action counter (alpha)
 
 **Conformal Prediction Percepter:**
 
@@ -77,8 +82,37 @@
 
 ```python3 src/TaxiShieldedConfPred.py -cpcte lib/cte_confpred_toy.csv -cphe lib/he_confpred_toy.csv -tp lib/tempest_test.csv -af 0.3 -l PS_toy1```
 
-**TODO**
+### Tempest Data Extractor (src/TempestExtractor.py)
 
-* add default functionality for empty shields
+Converts raw tempest data into csv format expected for the shield Shielded Conformal Preduction Model
 
+Provides two methods for doing this:
 
+**direct**
+
+* Converts states in raw tempest file directly to state estimates in shield csv
+* **Arguments:**
+  * _-\-tempest_file_ (tf): raw tempest file
+  * _-\-dest_file_ (df): destination file
+
+**confusion**
+
+* This accounts for state confusion using marginalization in state to state estimate conversion
+* Inverting the confusion matrices from the CAV'23 paper produces $P(S | S\_est)$
+* Tempest output models $P(Safe \land a | S \land S\_est)$
+* Combining these two produces a model $P(Safe \land a | S\_est)$ according to law of total probability ([marginalization](https://math.stackexchange.com/questions/2377816/applying-law-of-total-probability-to-conditional-probability) )
+  * $P(Safe \land a | S\_est) = \sum_S P(Safe \land a | S \land S\_est) * P(S | S\_est)$
+* This will increase the estimated safety of some actions
+  * _-\-worst_case_ takes minimum between **direct** and **confusion** to avoid this
+* **Arguments:**
+  * _-\-tempest_file_ (tf): raw tempest file
+  * _-\-dest_file_ (dt): destination file
+  * _-\-cte_file_ (cte): cte sample file
+  * _-\-he_file_ (he): he sample file
+  * _-\-worst_case_: minimum between **direct** and **confusion**
+  
+**Example use:**
+
+```python3 src/TempestExtractor.py direct -tf lib/tempest_raw.txt -df lib/temp_extr_dir.csv```
+
+```python3 src/TempestExtractor.py confusion -tf lib/tempest_raw.txt -df lib/temp_extr_conf.csv -cte lib/cte_sample.csv -he lib/he_sample.csv --worst_case```

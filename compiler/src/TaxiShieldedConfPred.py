@@ -57,23 +57,26 @@ def dynamics_logic(state_action,state,fail_states):
         return [PAST.PrismVerbatim(lines.split("\n"))]
     return dynamics_lines
 
-def taxi_shielded_confpred_model(conf_pred_cte,conf_pred_he,tempest_pred,action_filter,n_est,minimize,label):
+def taxi_shielded_confpred_model(conf_pred_cte,conf_pred_he,tempest_pred,action_filter,minimize,label):
 
     cte_high=4
     he_high=2
     cte=PAST.PrismVar("cte",-1,4,0,enum_low=0)
     he=PAST.PrismVar("he",-1,2,0,enum_low=0)
+    no_safe_actions_count=PAST.PrismVar("no_safe_actions_count",0,"N",0)
     cte_est_vars=[PAST.PrismVar(f"cte_est{i}",0,1,0) for i in range(cte_high+1)]
     he_est_vars=[PAST.PrismVar(f"he_est{i}",0,1,0) for i in range(he_high+1)]
     a=PAST.PrismVar("a",0,2,0)
-    variables=[cte,he,a]+cte_est_vars+he_est_vars
+    variables=[cte,he,a,no_safe_actions_count]+cte_est_vars+he_est_vars
     
     state=["cte","he"]
     cte_ests=[f"cte_est{i}" for i in range(cte_high+1)]
     he_ests=[f"he_est{i}" for i in range(he_high+1)]
     state_est=cte_ests+he_ests
     action=["a"]
+    no_safe_as=["no_safe_actions_count"]
     fail_states=["dyn_fail"]
+    
 
     
     
@@ -88,10 +91,10 @@ def taxi_shielded_confpred_model(conf_pred_cte,conf_pred_he,tempest_pred,action_
 
     # controller
     tsc = TSC.tempest_shielded_controller(tempest_pred,lambda a_p : a_p[1]>action_filter, minimize)
-    controller = PC.PrismComponent("Controller",state_est,action,[],tsc)
+    controller = PC.PrismComponent("Controller",state_est,action+no_safe_as,fail_states[1:],tsc)
 
     # dynamics
-    dynamics = PC.PrismComponent("Dynamics",state+action,state,fail_states,dynamics_logic)
+    dynamics = PC.PrismComponent("Dynamics",state+action,state,fail_states[:1],dynamics_logic)
 
 
     components=[cte_perceiver,he_perceiver,controller,dynamics]
@@ -108,17 +111,16 @@ def main():
 
     parser.add_argument("--conformal_pred_cte","-cpcte",required=True,type=str, help="Conformal prediction model file (CSV)")
     parser.add_argument("--conformal_pred_he","-cphe",required=True,type=str, help="Conformal prediction model file (CSV)")
-    parser.add_argument("--num_est","-ne",required=True,type=int,help="Number of states estimated by conformal predictor")
     parser.add_argument("--tempest_pred","-tp",required=True,type=str,help="Tempest action probability predictions (CSV)")
     parser.add_argument("--action_filter","-af",required=True,type=float,help="Probability filter for shield generation ([0..1])")
     # parser.add_argument('--minimize', action=argparse.BooleanOptionalAction)
-    parser.add_argument("--label", "-l", required=True, type=str, help="Instance label, used to differentiate models with distinct data")
+    parser.add_argument("--label", "-l", required=True, type=str, help="Instance label, used to differentiate models with distinct configuration")
     # parser.add_argument("--model", "-m", required=True, type=str, help="Prism model name")
 
     args = parser.parse_args()
 
     # minimize does not decrease time, ommitting
-    plsm = taxi_shielded_confpred_model(args.conformal_pred_cte,args.conformal_pred_he,args.tempest_pred,args.action_filter,args.num_est,False,args.label)
+    plsm = taxi_shielded_confpred_model(args.conformal_pred_cte,args.conformal_pred_he,args.tempest_pred,args.action_filter,False,args.label)
     plsm.save_to_file()
     
 if __name__=="__main__":

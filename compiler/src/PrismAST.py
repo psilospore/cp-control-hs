@@ -84,7 +84,7 @@ class PrismTrans(PrismSnippet):
       return
     self.withpc=True
     self.condition += f" & pc={pc}"
-    self.results =  [(r+f" & (pc'={pc+1})",prob) for r,prob in self.results]
+    self.results =  [(r+f" & (pc'={pc+1})",prob) if not "pc" in r else (r,prob) for r,prob in self.results]
     return self
 
 # condition : String
@@ -107,7 +107,7 @@ class NDPrismTrans(PrismTrans):
         self.withpc=True
         self.condition += f" & pc={pc}"
         # print(self.results)
-        self.results =  [r+f" & (pc'={pc+1})"for r in self.results]
+        self.results =  [r+f" & (pc'={pc+1})" if not "pc" in r else r for r in self.results]
         return self
         
 

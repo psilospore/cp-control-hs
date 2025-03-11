@@ -34,7 +34,7 @@ def tempest_model_to_shield(tempest_model_dict,filter_func):
 
 # Shield -
 def shield_to_control_func(shield):
-    
+
     def controller(var_assign):
         # k=len(var_assign)//2
         # decode one hot encoding into obs lists
@@ -42,27 +42,27 @@ def shield_to_control_func(shield):
         he_ests=[i for i in range(3) if var_assign[i+5][1]==1 ]
         all_pairs = [(cte_est,he_est) for cte_est in cte_ests for he_est in he_ests]
         # print(all_pairs)
-
+        
         # no estimated states
         if not all_pairs:
             return [] # [PAST.PrismAssign("a",i,lhs=False) for i in range(0,3)] 
-
+        
         # print(var_assign)
         # print(cte_ests,he_ests)
         
         safe_actions = inner_reduce(lambda x,y : x.intersection(y),
-            [shield(*state) for state in all_pairs])
-
-
+                                    [shield(*state) for state in all_pairs])
+        
+        
         # print(safe_actions)
         if not safe_actions:
             # no safe actions
-            return [] # get better contingency
+            return [PAST.PrismAssign("no_safe_actions_count","no_safe_actions_count+1",lhs=False)] # get better contingency
         else:
             return [PAST.PrismAssign("a",a,lhs=False) for a,p in safe_actions]
-
+        
     return controller
-
+    
 def tempest_shielded_controller(tempest_file,filter_func,minimize=False):
 
     tempest_model_dict = tempest_model_to_dict(DL.read_csv_to_tuples(tempest_file))
@@ -70,7 +70,7 @@ def tempest_shielded_controller(tempest_file,filter_func,minimize=False):
     control_func = shield_to_control_func(tempest_model_to_shield(tempest_model_dict,filter_func))
 
     if not minimize:
-        def control(state_est,*_):
+        def control(state_est,action,fail_states):
             # print(mapL(str,state_est))
             return lambda pc : PC.define_component_by_enumeration_ND(state_est,control_func,pc)
         return control
