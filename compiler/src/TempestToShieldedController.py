@@ -57,7 +57,7 @@ def shield_to_control_func(shield):
         # print(safe_actions)
         if not safe_actions:
             # no safe actions
-            return ["(a'=0) & (alpha'=alpha+1)"] # get better contingency
+            return ["(default'=1)"] # triggers default control
         else:
             return [PAST.PrismAssign("a",a,lhs=False) for a,p in safe_actions]
         
@@ -65,7 +65,7 @@ def shield_to_control_func(shield):
     
 def tempest_shielded_controller(tempest_file,filter_func,minimize=False):
 
-    tempest_model_dict = tempest_model_to_dict(DL.read_csv_to_tuples(tempest_file))
+    tempest_model_dict = tempest_model_to_dict(DL.read_csv_to_tuples(tempest_file,skip_header=True))
     # print(tempest_model_dict)
     control_func = shield_to_control_func(tempest_model_to_shield(tempest_model_dict,filter_func))
 

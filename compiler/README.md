@@ -99,9 +99,9 @@ Provides two methods for doing this:
 
 * This accounts for state confusion using marginalization in state to state estimate conversion
 * Inverting the confusion matrices from the CAV'23 paper produces $P(S | S\_{est})$
-* Tempest output models $P(Safe \land a | S \land S\_{est})$
-* Combining these two produces a model $P(Safe \land a | S\_{est})$ according to law of total probability ([marginalization](https://math.stackexchange.com/questions/2377816/applying-law-of-total-probability-to-conditional-probability) )
-  * $P(Safe \land a | S\_{est}) = \sum_S P(Safe \land a | S \land S\_{est}) * P(S | S\_{est})$
+* Tempest output models $P(Safe \land A | S \land S\_{est})$
+* Combining these two produces a model $P(Safe \land A | S\_{est})$ according to law of total probability ([marginalization](https://math.stackexchange.com/questions/2377816/applying-law-of-total-probability-to-conditional-probability) )
+  * $P(Safe \land A | S\_{est}) = \sum_S P(Safe \land A | S \land S\_{est}) * P(S | S\_{est})$
 * This will increase the estimated safety of some actions
   * _-\-worst_case_ takes minimum between **direct** and **confusion** to avoid this
 * **Arguments:**
@@ -116,3 +116,24 @@ Provides two methods for doing this:
 ```python3 src/TempestExtractor.py direct -tf lib/tempest_raw.txt -df lib/temp_extr_dir.csv```
 
 ```python3 src/TempestExtractor.py confusion -tf lib/tempest_raw.txt -df lib/temp_extr_conf.csv -cte lib/cte_sample.csv -he lib/he_sample.csv --worst_case```
+
+
+### Conformal Prediction Sample Generation
+*src/ConfPredGenerator.py*
+
+This file provides two methods for producing toy conformal prediction data to test with the ShieldedConfPred model. 
+
+1. **Normal:** generates a sample following a gaussian distribution. The std of the distribution may be modified by the epsilon perameter (to change accuracy of conformal prediction)
+
+
+2. **Binomial:** generates sample following binomial distribution. Cannot currently be modified to change accuracy, but likely provides a better model of conf pred distribution
+
+
+Files:
+
+* *cte\_confpred\_gen\_binom.csv*
+* *he\_confpred\_gen\_binom.csv*
+* *cte\_confpred\_gen\_normal.csv*
+* *he\_confpred\_gen\_normal.csv*
+
+This file does not have a CLI, requires manual editing to change settings. Run ```python src/ConfPredGenerator.py``` to use.

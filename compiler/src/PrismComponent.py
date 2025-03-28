@@ -87,8 +87,8 @@ def define_perceiver_from_conf_mat(name,in_var_names,out_var_names,conf_mat):
         def perciever_func(pc):
             iv_enum = PAST.var_list_to_enumerable(in_var).enumerate_pv()
             ov_enum = PAST.var_list_to_enumerable(out_var).enumerate_pv()
-            assert len(conf_mat)==len(iv_enum), "input variable enumeration length does not match conformal prediction csv rows"
-            assert len(conf_mat[0])==len(ov_enum), "output vairable enumeration length does not match conformal prediction csv columns"
+            assert len(conf_mat)==len(iv_enum), f"input variable enumeration length does not match conformal prediction csv rows {len(conf_mat)}!={len(iv_enum)}"
+            assert len(conf_mat[0])==len(ov_enum), f"output vairable enumeration length does not match conformal prediction csv columns {len(conf_mat[0])}!={len(ov_enum)}"
             print("WARNING: assuming conformal prediction csv order")
             print("Columns",str(iv_enum))
             print("Rows",str(ov_enum))
@@ -102,7 +102,8 @@ def define_perceiver_from_conf_mat(name,in_var_names,out_var_names,conf_mat):
                     ov_assign=ov_enum[j]
                     rhs_cond = inner_reduce(land, [f"({ova[0]}'={ova[1]})" for ova in ov_assign])
                     prob = conf_mat[i][j]
-                    rhs.append((rhs_cond,prob))
+                    if prob>=0:
+                        rhs.append((rhs_cond,prob))
                 pt = PAST.PrismTrans(lhs,rhs)
                 pt.addPC(pc)
                 transitions.append(pt)

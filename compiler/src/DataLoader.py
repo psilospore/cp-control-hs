@@ -29,13 +29,14 @@ def read_csv_as_pairs(file_path):
         exit(1)
 
 # CSV File -> TempestModel
-def read_csv_to_tuples(filename):
+def read_csv_to_tuples(filename,skip_header=False):
     
     tuples_list = []
     
     with open(filename, mode='r', newline='', encoding='utf-8') as file:
         reader = csv.reader(file)
-        header = next(reader)  # Skip the header row
+        if skip_header:
+            header = next(reader)  # Skip the header row
         
         for row in reader:
             tuples_list.append(row)
