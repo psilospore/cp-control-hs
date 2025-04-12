@@ -62,6 +62,7 @@ def evaluate_model(model, test_loader, device):
 
 def conformalize_model(model, test_loader, cal_loader, alpha, device):
     """Calibrate model on calibration data and then evaluate on test data"""
+    print("Conformalizing with alpha=", alpha)
     cte_nonconf_scores = []
     he_nonconf_scores = []
     
@@ -288,11 +289,11 @@ def main():
     parser.add_argument('--data_indices_dir', type=str, required=True, help='Directory containing data indices')
     parser.add_argument('--output_dir', type=str, default='./results', help='Directory to save results')
     parser.add_argument('--batch_size', type=int, default=32, help='Batch size')
-    parser.add_argument('--num_samples', type=int, default=20, help='Number of samples to use (set to 0 for all)')
+    parser.add_argument('--num_samples', type=int, default=None, help='Number of samples to use (set to 0 for all)')
     parser.add_argument('--max_files', type=int, default=None, help='Maximum number of files to use for testing')
     parser.add_argument('--use_cpu', action='store_true', help='Force CPU usage')
     parser.add_argument('--conformalize', action='store_true', help='Conformalize model')
-    parser.add_argument('--alpha', type=int, default=0.9, help='Conformalization coverage parameter')
+    parser.add_argument('--alpha', type=float, default=0.1, help='Conformalization coverage parameter')
     args = parser.parse_args()
     
     # Set device
@@ -312,7 +313,7 @@ def main():
         args.data_dir, 
         transform=None,  # Use default transformation
         max_files=args.max_files,
-        sample_limit=args.num_samples if args.num_samples > 0 else None
+        sample_limit=args.num_samples
     )
 
     test_indices = torch.load(os.path.join(args.data_indices_dir, 'test_indices.pt'))
@@ -323,7 +324,7 @@ def main():
         test_dataset,
         batch_size=args.batch_size,
         shuffle=False,
-        num_workers=1
+        num_workers=4
     )
 
     if args.conformalize:
@@ -336,7 +337,7 @@ def main():
             cal_dataset,
             batch_size=args.batch_size,
             shuffle=False,
-            num_workers=1
+            num_workers=4
         )
 
         # Conformalize model

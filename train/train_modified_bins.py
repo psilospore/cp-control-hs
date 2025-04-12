@@ -210,7 +210,7 @@ def train(args):
         train_dataset, 
         batch_size=args.batch_size, 
         shuffle=True,
-        num_workers=1,  # Reduced to save memory
+        num_workers=4,  # Reduced to save memory
         pin_memory=False  # Set to False to reduce memory usage
     )
     
@@ -218,7 +218,7 @@ def train(args):
         val_dataset, 
         batch_size=args.batch_size, 
         shuffle=False,
-        num_workers=1,  # Reduced to save memory
+        num_workers=4,  # Reduced to save memory
         pin_memory=False  # Set to False to reduce memory usage
     )
     
