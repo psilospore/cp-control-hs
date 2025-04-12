@@ -4,7 +4,7 @@ const N=5;
 
 const double prob=1/15;
 
-const double prob_success=0.9;
+const double prob_success=1.0;
 const double prob_fail=(1-prob_success)/4;
 
 module taxinet
@@ -48,7 +48,7 @@ module taxinet
 	// a=1: turn left
 	// a=2: turn right
 
-	// Randomise initial position
+	// Non-deterministic choice of initial position
 	[] pc=-1 -> (cte'=0)&(he'=0)&(pc'=0);
 	[] pc=-1 -> (cte'=0)&(he'=1)&(pc'=0);
 	[] pc=-1 -> (cte'=0)&(he'=2)&(pc'=0);

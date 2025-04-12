@@ -193,11 +193,18 @@ def train(args):
         sample_limit=args.sample_limit
     )
     
-    # Split dataset into train and validation
-    train_size = int(0.8 * len(dataset))
-    val_size = len(dataset) - train_size
-    train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
+    # Split dataset into train, validation, calibration, and test
+    train_size = int(0.6 * len(dataset))
+    val_size = int(0.1 * len(dataset))
+    cal_size = int(0.15 * len(dataset))
+    test_size = len(dataset) - (train_size + val_size + cal_size)
+    train_dataset, val_dataset, cal_dataset, test_dataset = random_split(dataset, [train_size, val_size, cal_size, test_size])
     
+    torch.save(train_dataset.indices, os.path.join(args.output_dir, 'train_indices.pt'))
+    torch.save(val_dataset.indices, os.path.join(args.output_dir, 'val_indices.pt'))
+    torch.save(cal_dataset.indices, os.path.join(args.output_dir, 'cal_indices.pt'))
+    torch.save(test_dataset.indices, os.path.join(args.output_dir, 'test_indices.pt'))
+
     # Create data loaders with smaller num_workers
     train_loader = DataLoader(
         train_dataset, 
@@ -351,7 +358,7 @@ def train(args):
 def main():
     parser = argparse.ArgumentParser(description='Train robot navigation model')
     parser.add_argument('--data_dir', type=str, required=True, help='Directory containing data files')
-    parser.add_argument('--output_dir', type=str, default='../models', help='Directory to save models')
+    parser.add_argument('--output_dir', type=str, default='../models', help='Directory to save models and data indices')
     parser.add_argument('--log_dir', type=str, default='../logs', help='Directory to save logs')
     parser.add_argument('--batch_size', type=int, default=32, help='Batch size')
     parser.add_argument('--epochs', type=int, default=50, help='Number of epochs')
