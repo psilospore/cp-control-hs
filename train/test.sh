@@ -23,7 +23,7 @@ echo "Python version: $(python --version 2>&1)"
 echo "PyTorch version: $(python -c 'import torch; print(torch.__version__)')"
 
 # Run the testing script
-python test_model_modified_bins.py \
+python test.py \
     --model_path=./models/best_model.pth \
     --data_dir=../data/taxinet/ \
     --data_indices_dir=./models \

@@ -11,7 +11,7 @@ from tqdm import tqdm
 from torch.utils.data import Subset
 import torch.nn.functional as F
 
-from train_modified_bins import RobotNavigationModel, RobotNavigationDataset
+from train import RobotNavigationModel, RobotNavigationDataset
 
 def load_model(model_path, device):
     """Load the trained model"""

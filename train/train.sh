@@ -23,7 +23,7 @@ echo "Python version: $(python --version 2>&1)"
 echo "PyTorch version: $(python -c 'import torch; print(torch.__version__)')"
 
 # Run the training script with modified bins
-python train_modified_bins.py \
+python train.py \
    --data_dir=../data/taxinet/ \
    --output_dir=./models \
    --log_dir=./logs \
