@@ -24,7 +24,7 @@ echo "PyTorch version: $(python -c 'import torch; print(torch.__version__)')"
 
 # Run the testing script
 python test_model_modified_bins.py \
-    --model_path=./best_modified_model.pth \
+    --model_path=./models/best_model.pth \
     --data_dir=../data/taxinet/ \
     --data_indices_dir=./models \
     --output_dir=./results \

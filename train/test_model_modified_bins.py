@@ -209,7 +209,7 @@ def create_confusion_matrices(cte_preds, he_preds, cte_targets, he_targets, outp
     
     return cte_cm, he_cm
 
-def create_conformalization_csv(cte_predsets, he_predsets, cte_targets, he_targets, output_dir):
+def create_conformalization_csv(cte_predsets, he_predsets, cte_targets, he_targets, output_dir, alpha):
     """Create and save CSV files"""
     N1, C1 = cte_predsets.shape
 
@@ -221,7 +221,7 @@ def create_conformalization_csv(cte_predsets, he_predsets, cte_targets, he_targe
     df_cte_predsets.insert(0, "cte", cte_targets)
 
     # 3) Save to CSV (no index column)
-    df_cte_predsets.to_csv(os.path.join(output_dir,"cte_pred_sets.csv"), index=False)
+    df_cte_predsets.to_csv(os.path.join(output_dir,f"cte_pred_sets_{alpha}.csv"), index=False)
 
     print("Saved CTE prediction sets as CSV with shape:", df_cte_predsets.shape)
     print(df_cte_predsets.head())
@@ -236,7 +236,7 @@ def create_conformalization_csv(cte_predsets, he_predsets, cte_targets, he_targe
     df_he_predsets.insert(0, "he", he_targets)
 
     # 3) Save to CSV (no index column)
-    df_he_predsets.to_csv(os.path.join(output_dir,"he_pred_sets.csv"), index=False)
+    df_he_predsets.to_csv(os.path.join(output_dir,f"he_pred_sets_{alpha}.csv"), index=False)
 
     print("Saved HE prediction sets as CSV with shape:", df_he_predsets.shape)
     print(df_he_predsets.head())
@@ -344,7 +344,7 @@ def main():
         cte_predsets, he_predsets, cte_targets, he_targets = conformalize_model(model, test_loader, cal_loader,
                                                                            args.alpha, device)
         print("Creating CSV files with conformalization results...")
-        create_conformalization_csv(cte_predsets, he_predsets, cte_targets, he_targets, args.output_dir)
+        create_conformalization_csv(cte_predsets, he_predsets, cte_targets, he_targets, args.output_dir, args.alpha)
         
     
     print(f"Testing model on {len(test_dataset)} samples")
