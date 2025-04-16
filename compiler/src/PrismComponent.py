@@ -89,9 +89,9 @@ def define_perceiver_from_conf_mat(name,in_var_names,out_var_names,conf_mat):
             ov_enum = PAST.var_list_to_enumerable(out_var).enumerate_pv()
             assert len(conf_mat)==len(iv_enum), f"input variable enumeration length does not match conformal prediction csv rows {len(conf_mat)}!={len(iv_enum)}"
             assert len(conf_mat[0])==len(ov_enum), f"output vairable enumeration length does not match conformal prediction csv columns {len(conf_mat[0])}!={len(ov_enum)}"
-            print("WARNING: assuming conformal prediction csv order")
-            print("Columns",str(iv_enum))
-            print("Rows",str(ov_enum))
+            # print("WARNING: assuming conformal prediction csv order")
+            # print("Columns",str(iv_enum))
+            # print("Rows",str(ov_enum))
             transitions=[]
             land = lambda x,y : x+" & "+y
             for i in range(len(iv_enum)):

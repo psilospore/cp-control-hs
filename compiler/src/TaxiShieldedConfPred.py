@@ -12,12 +12,25 @@ def conf_mat_count_to_prob(conf_mat_count):
     conf_mat_sums = mapL(lambda row : sum(row),conf_mat_count)
     return mapL(lambda row_sum : mapL(lambda x : x/row_sum[1] if x!=0 else -1, row_sum[0]), zip(conf_mat_count,conf_mat_sums))
 
+def conf_pred_conf_mat_agg(data,var_low,var_high):
+    diff = var_high+1-var_low
+    agg_vals = [[0]*(2**diff) for i in range(diff)]
+
+    for d in data:
+        dint  = mapL(int,d)        
+        total = sum(dint[i+1]*2**(diff-1-i) for i in range(diff))
+        agg_vals[dint[0]+var_low][total]+=1
+
+    return agg_vals
+
 # Extracts default action functionality to separate component. Required for verify to work.
 def default_control(_,action,fail_states):
     def default_control_func(pc):
         lines = f'''
-[] default=1 & beta<N & pc={pc} -> (default'=0) & (a'=0) & (beta'=beta+1) & (pc'={pc+1});
-[] default=1 & beta=N & pc={pc} -> (default'=0) & (a'=0) & (pc'={pc+1}); // shoud never occur
+[] default=1 & beta1<N & pc={pc} -> (default'=0) & (a'=0) & (beta1'=beta1+1) & (pc'={pc+1});
+[] default=1 & beta1=N & pc={pc} -> (default'=0) & (a'=0) & (pc'={pc+1}); // shoud never occur
+[] default=2 & beta2<N & pc={pc} -> (default'=0) & (a'=0) & (beta2'=beta2+1) & (pc'={pc+1});
+[] default=2 & beta2=N & pc={pc} -> (default'=0) & (a'=0) & (pc'={pc+1}); // shoud never occur
 [] default=0 & pc={pc} -> (pc'={pc+1});'''
         return [PAST.PrismVerbatim(lines.split("\n"))]
     return default_control_func
@@ -74,30 +87,35 @@ def taxi_shielded_confpred_model(conf_pred_cte,conf_pred_he,tempest_pred,action_
     he_high=2
     cte=PAST.PrismVar("cte",-1,4,0,enum_low=0)
     he=PAST.PrismVar("he",-1,2,0,enum_low=0)
-    default=PAST.PrismVar("default",0,1,0,desc="Flag to trigger default control")
-    beta=PAST.PrismVar("beta",0,"N",0,desc="Counts number of times controller found no safe actions")
+    default=PAST.PrismVar("default",0,2,0,desc="Enum to trigger default control")
+    beta1=PAST.PrismVar("beta1",0,"N",0,desc="Counts number of times controller found no safe actions")
+    beta2=PAST.PrismVar("beta2",0,"N",0,desc="Counts number of times empty state was estimated")
     cte_est_vars=[PAST.PrismVar(f"cte_est{i}",0,1,0) for i in range(cte_high+1)]
     he_est_vars=[PAST.PrismVar(f"he_est{i}",0,1,0) for i in range(he_high+1)]
     a=PAST.PrismVar("a",0,2,0)
-    variables=[cte,he,a,default,beta]+cte_est_vars+he_est_vars
+    variables=[cte,he,a,default,beta1,beta2]+cte_est_vars+he_est_vars
     
     state=["cte","he"]
     cte_ests=[f"cte_est{i}" for i in range(cte_high+1)]
     he_ests=[f"he_est{i}" for i in range(he_high+1)]
     state_est=cte_ests+he_ests
     action=["a"]
-    no_safe_as=["beta"]
+    no_safe_as=["beta1","beta2"]
     fail_states=["dyn_fail"]
     
 
     
     
     # perciever
-    cte_conf_mat_count = mapL(lambda row : mapL(lambda x : int(x),row),DL.read_csv_to_tuples(conf_pred_cte))
+    cte_data = DL.read_csv_to_tuples(conf_pred_cte,skip_header=True)
+    cte_conf_mat_count = conf_pred_conf_mat_agg(cte_data,0,4)
+    # cte_conf_mat_count = mapL(lambda row : mapL(lambda x : int(x),row),DL.read_csv_to_tuples(conf_pred_cte))
     cte_conf_mat_prob = conf_mat_count_to_prob(cte_conf_mat_count)
     cte_perceiver = PC.define_perceiver_from_conf_mat("Perceiver (CTE)",["cte"],cte_ests,cte_conf_mat_prob)
     
-    he_conf_mat_count = mapL(lambda row : mapL(lambda x : int(x),row),DL.read_csv_to_tuples(conf_pred_he))
+    he_data = DL.read_csv_to_tuples(conf_pred_he,skip_header=True)
+    he_conf_mat_count = conf_pred_conf_mat_agg(he_data,0,2)
+    # he_conf_mat_count = mapL(lambda row : mapL(lambda x : int(x),row),DL.read_csv_to_tuples(conf_pred_he))
     he_conf_mat_prob = conf_mat_count_to_prob(he_conf_mat_count)
     he_perceiver = PC.define_perceiver_from_conf_mat("Perceiver (HE)",["he"],he_ests,he_conf_mat_prob)
 
@@ -135,7 +153,7 @@ def main():
 
     args = parser.parse_args()
 
-    # minimize does not decrease time, ommitting
+    # minimize does not decrease time, setting False
     plsm = taxi_shielded_confpred_model(args.conformal_pred_cte,args.conformal_pred_he,args.tempest_pred,args.action_filter,False,args.label)
     plsm.save_to_file()
     

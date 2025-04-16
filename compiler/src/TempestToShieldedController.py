@@ -44,8 +44,9 @@ def shield_to_control_func(shield):
         # print(all_pairs)
         
         # no estimated states
-        if not all_pairs:
-            return [] # [PAST.PrismAssign("a",i,lhs=False) for i in range(0,3)] 
+        # this occurs if *either* he or cte are estimated empty
+        if len(all_pairs)==0:
+            return ["(default'=2)"] # [PAST.PrismAssign("a",i,lhs=False) for i in range(0,3)] 
         
         # print(var_assign)
         # print(cte_ests,he_ests)

@@ -94,7 +94,7 @@ endmodule
         if self.written:
             return
         self.written=True
-        print("writing to "+self.filename)
+        # print("writing to "+self.filename)
         with open(self.filename, "wt") as f:
             f.write(str(self))
 
