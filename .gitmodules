@@ -1,0 +1,3 @@
+[submodule "case_studies/ddos_cp_case_study"]
+	path = case_studies/ddos_cp_case_study
+	url = https://github.com/ccimrie/ddos_cp_case_study
