@@ -1,9 +1,5 @@
 mdp
 
-const N=5;
-
-const double prob=1/15;
-
 const double prob_success=1.0;
 const double prob_fail=(1-prob_success)/4;
 
@@ -37,9 +33,6 @@ module taxinet
   	// program counter
 	pc:[-1..5] init -1; 
 	// 5 is now "sink state"
-
-	// steps
-	k:[1..N] init 1;
 
 	// actions issued by controller
 	a:[-1..2] init -1;
@@ -170,60 +163,60 @@ module taxinet
 	[] cte_est=4 & he_est=2 & pc=3 -> (a'=2)&(pc'=4);	
 	
 	// airplane and environment: 
-	[] he=1 & a=1 & pc=4 & k<N -> 1 : (he'=-1) & (pc'=5); // error
-	[] he=2 & a=2 & pc=4 & k<N -> 1 : (he'=-1) & (pc'=5); // error
+	[] he=1 & a=1 & pc=4 -> 1 : (he'=-1) & (pc'=5); // error
+	[] he=2 & a=2 & pc=4 -> 1 : (he'=-1) & (pc'=5); // error
 
-	[] cte=0 & he=0 & a=0 & pc=4 & k<N -> 1 : (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=0 & he=0 & a=1 & pc=4 & k<N -> 1 : (cte'=1) & (he'=1) & (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=0 & he=0 & a=2 & pc=4 & k<N -> 1 : (cte'=2) & (he'=2) & (pc'=0) & (k'=k+1) & (a'=-1);
+	[] cte=0 & he=0 & a=0 & pc=4 -> 1 : (pc'=0) & (a'=-1);
+	[] cte=0 & he=0 & a=1 & pc=4 -> 1 : (cte'=1) & (he'=1) & (pc'=0) & (a'=-1);
+	[] cte=0 & he=0 & a=2 & pc=4 -> 1 : (cte'=2) & (he'=2) & (pc'=0) & (a'=-1);
 
-	[] cte=0 & he=1 & a=0 & pc=4 & k<N -> 1 : (cte'=1) & (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=0 & he=1 & a=2 & pc=4 & k<N -> 1 : (he'=0) & (pc'=0) & (k'=k+1) & (a'=-1);
+	[] cte=0 & he=1 & a=0 & pc=4 -> 1 : (cte'=1) & (pc'=0) & (a'=-1);
+	[] cte=0 & he=1 & a=2 & pc=4 -> 1 : (he'=0) & (pc'=0) & (a'=-1);
 
-	[] cte=0 & he=2 & a=0 & pc=4 & k<N -> 1 : (cte'=2) & (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=0 & he=2 & a=1 & pc=4 & k<N -> 1 : (he'=0) & (pc'=0) & (k'=k+1) & (a'=-1);
+	[] cte=0 & he=2 & a=0 & pc=4 -> 1 : (cte'=2) & (pc'=0) & (a'=-1);
+	[] cte=0 & he=2 & a=1 & pc=4 -> 1 : (he'=0) & (pc'=0) & (a'=-1);
 
 	// left-side dynamics:
-	[] cte=1 & he=0 & a=0 & pc=4 & k<N -> 1 : (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=1 & he=0 & a=1 & pc=4 & k<N -> 1 : (cte'=3) & (he'=1) & (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=1 & he=0 & a=2 & pc=4 & k<N -> 1 : (cte'=0) & (he'=2) & (pc'=0) & (k'=k+1) & (a'=-1);
+	[] cte=1 & he=0 & a=0 & pc=4 -> 1 : (pc'=0) & (a'=-1);
+	[] cte=1 & he=0 & a=1 & pc=4 -> 1 : (cte'=3) & (he'=1) & (pc'=0) & (a'=-1);
+	[] cte=1 & he=0 & a=2 & pc=4 -> 1 : (cte'=0) & (he'=2) & (pc'=0) & (a'=-1);
 
-	[] cte=1 & he=1 & a=0 & pc=4 & k<N -> 1 : (cte'=3) & (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=1 & he=1 & a=2 & pc=4 & k<N -> 1 : (he'=0) & (pc'=0) & (k'=k+1) & (a'=-1);
+	[] cte=1 & he=1 & a=0 & pc=4 -> 1 : (cte'=3) & (pc'=0) & (a'=-1);
+	[] cte=1 & he=1 & a=2 & pc=4 -> 1 : (he'=0) & (pc'=0) & (a'=-1);
 
-	[] cte=1 & he=2 & a=0 & pc=4 & k<N -> 1 : (cte'=0) & (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=1 & he=2 & a=1 & pc=4 & k<N -> 1 : (he'=0) & (pc'=0) & (k'=k+1) & (a'=-1);
+	[] cte=1 & he=2 & a=0 & pc=4 -> 1 : (cte'=0) & (pc'=0) & (a'=-1);
+	[] cte=1 & he=2 & a=1 & pc=4 -> 1 : (he'=0) & (pc'=0) & (a'=-1);
 
-	[] cte=3 & he=0 & a=0 & pc=4 & k<N -> 1 : (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=3 & he=0 & a=1 & pc=4 & k<N -> 1 : (cte'=-1) & (pc'=5); //error
-	[] cte=3 & he=0 & a=2 & pc=4 & k<N -> 1 : (cte'=1) & (he'=2) & (pc'=0) & (k'=k+1) & (a'=-1);
+	[] cte=3 & he=0 & a=0 & pc=4 -> 1 : (pc'=0) & (a'=-1);
+	[] cte=3 & he=0 & a=1 & pc=4 -> 1 : (cte'=-1) & (pc'=5); //error
+	[] cte=3 & he=0 & a=2 & pc=4 -> 1 : (cte'=1) & (he'=2) & (pc'=0) & (a'=-1);
 
-	[] cte=3 & he=1 & a=0 & pc=4 & k<N -> 1 : (cte'=-1) & (pc'=5); //error
-	[] cte=3 & he=1 & a=2 & pc=4 & k<N -> 1 : (he'=0) & (pc'=0) & (k'=k+1) & (a'=-1);
+	[] cte=3 & he=1 & a=0 & pc=4 -> 1 : (cte'=-1) & (pc'=5); //error
+	[] cte=3 & he=1 & a=2 & pc=4 -> 1 : (he'=0) & (pc'=0) & (a'=-1);
 
-	[] cte=3 & he=2 & a=0 & pc=4 & k<N -> 1 : (cte'=1) & (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=3 & he=2 & a=1 & pc=4 & k<N -> 1 : (he'=0) & (pc'=0) & (k'=k+1) & (a'=-1);
+	[] cte=3 & he=2 & a=0 & pc=4 -> 1 : (cte'=1) & (pc'=0) & (a'=-1);
+	[] cte=3 & he=2 & a=1 & pc=4 -> 1 : (he'=0) & (pc'=0) & (a'=-1);
 
 	// right-side dynamics:
-	[] cte=2 & he=0 & a=0 & pc=4 & k<N -> 1 : (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=2 & he=0 & a=1 & pc=4 & k<N -> 1 : (cte'=0) & (he'=1) & (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=2 & he=0 & a=2 & pc=4 & k<N -> 1 : (cte'=4) & (he'=2) & (pc'=0) & (k'=k+1) & (a'=-1);
+	[] cte=2 & he=0 & a=0 & pc=4 -> 1 : (pc'=0) & (a'=-1);
+	[] cte=2 & he=0 & a=1 & pc=4 -> 1 : (cte'=0) & (he'=1) & (pc'=0) & (a'=-1);
+	[] cte=2 & he=0 & a=2 & pc=4 -> 1 : (cte'=4) & (he'=2) & (pc'=0) & (a'=-1);
 
-	[] cte=2 & he=1 & a=0 & pc=4 & k<N -> 1 : (cte'=0) & (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=2 & he=1 & a=2 & pc=4 & k<N -> 1 : (he'=0) & (pc'=0) & (k'=k+1) & (a'=-1);
+	[] cte=2 & he=1 & a=0 & pc=4 -> 1 : (cte'=0) & (pc'=0) & (a'=-1);
+	[] cte=2 & he=1 & a=2 & pc=4 -> 1 : (he'=0) & (pc'=0) & (a'=-1);
 
-	[] cte=2 & he=2 & a=0 & pc=4 & k<N -> 1 : (cte'=4) & (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=2 & he=2 & a=1 & pc=4 & k<N -> 1 : (he'=0) & (pc'=0) & (k'=k+1) & (a'=-1);
+	[] cte=2 & he=2 & a=0 & pc=4 -> 1 : (cte'=4) & (pc'=0) & (a'=-1);
+	[] cte=2 & he=2 & a=1 & pc=4 -> 1 : (he'=0) & (pc'=0) & (a'=-1);
 
-	[] cte=4 & he=0 & a=0 & pc=4 & k<N -> 1 : (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=4 & he=0 & a=1 & pc=4 & k<N -> 1 : (cte'=2) & (he'=1) & (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=4 & he=0 & a=2 & pc=4 & k<N -> 1 : (cte'=-1) & (pc'=5); //error
+	[] cte=4 & he=0 & a=0 & pc=4 -> 1 : (pc'=0) & (a'=-1);
+	[] cte=4 & he=0 & a=1 & pc=4 -> 1 : (cte'=2) & (he'=1) & (pc'=0) & (a'=-1);
+	[] cte=4 & he=0 & a=2 & pc=4 -> 1 : (cte'=-1) & (pc'=5); //error
 
-	[] cte=4 & he=1 & a=0 & pc=4 & k<N -> 1 : (cte'=2) & (pc'=0) & (k'=k+1) & (a'=-1);
-	[] cte=4 & he=1 & a=2 & pc=4 & k<N -> 1 : (he'=0) & (pc'=0) & (k'=k+1) & (a'=-1);
+	[] cte=4 & he=1 & a=0 & pc=4 -> 1 : (cte'=2) & (pc'=0) & (a'=-1);
+	[] cte=4 & he=1 & a=2 & pc=4 -> 1 : (he'=0) & (pc'=0) & (a'=-1);
 
-	[] cte=4 & he=2 & a=0 & pc=4 & k<N -> 1 : (cte'=-1) & (pc'=5); //error
-	[] cte=4 & he=2 & a=1 & pc=4 & k<N -> 1 : (he'=0) & (pc'=0) & (k'=k+1) & (a'=-1);
+	[] cte=4 & he=2 & a=0 & pc=4 -> 1 : (cte'=-1) & (pc'=5); //error
+	[] cte=4 & he=2 & a=1 & pc=4 -> 1 : (he'=0) & (pc'=0) & (a'=-1);
 
 endmodule
 
