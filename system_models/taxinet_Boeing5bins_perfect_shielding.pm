@@ -20,11 +20,6 @@ module taxinet
 	// he=2: positive
 	// he=-1: ERROR
 
-	// encoding result of run-time guard
-	v: [0..1] init 1;
-	// v=1: certified
-	// v=0: not certified
-
 	// estimate of the state from NN
 	cte_est: [0..4] init 0;
 	he_est: [0..2] init 0; 
@@ -57,9 +52,6 @@ module taxinet
 	[] pc=-1 -> (cte'=4)&(he'=0)&(pc'=0);
 	[] pc=-1 -> (cte'=4)&(he'=1)&(pc'=0);
 	[] pc=-1 -> (cte'=4)&(he'=2)&(pc'=0);
-
-	// run-time guard: assume we can certify all inputs	
-	[]  pc=0 -> 1: (v'=1) & (pc'=1);	
 
 	// NN perfect perception 
 	[] cte=0 & v=1 & pc=1 -> prob_success: (cte_est'=0) & (pc'=2) + 
