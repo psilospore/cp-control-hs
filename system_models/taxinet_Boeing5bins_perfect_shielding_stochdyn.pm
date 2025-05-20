@@ -6,7 +6,7 @@ const double prob_fail=(1-prob_success)/4;
 const double dyn_suc=0.9;
 const double dyn_fail=(1-dyn_suc)/2;
 
-init  cte=0 & he=0 & cte_est=0 & he_est=0 & pc=1 & a=-1 & crash=0 endinit
+init  cte=0 & he=0 & cte_est=0 & he_est=0 & pc=4 & a=-1 & crash=0 endinit
 
 module taxinet
 
