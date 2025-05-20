@@ -6,7 +6,7 @@ import csv
 
 # Configuration: adjust these paths and lists as needed
 PRISM_PATH = "./prism-4.7-src/prism/bin/prism"  # Path to the PRISM executable
-MODEL_TEMPLATE = "../system_models/taxinet_Boeing5bins_perfect_shielding.pm"  # Original model file with init...endinit block
+MODEL_TEMPLATE = "../system_models/taxinet_Boeing5bins_perfect_shielding_stochdyn.pm"  # Original model file with init...endinit block
 PROPERTY_FILE = "../system_models/shielding_prop.pctl"  # PRISM property file
 OUTPUT_DIR = "prism_outputs"  # Directory for outputs
 
@@ -44,6 +44,8 @@ def build_model(content, cte_val, he_val, a_val):
             new_assigns.append(f'    he_est={he_val}')
         elif assignment.startswith('a='):
             new_assigns.append(f'    a={a_val}')
+        elif assignment.startswith('pc='):
+            new_assigns.append(f'    pc=4')
         else:
             new_assigns.append('    ' + assignment)
     # Rebuild init block with '&' separators
@@ -92,6 +94,7 @@ with open(csv_file, 'w', newline='') as cf:
 print(f"Completed PRISM runs for {len(driver_results)} combinations.")
 print(f"Results saved in {csv_file}.")
 
+# Construct shield from aggregated results and write to file
 shield_file = os.path.join(OUTPUT_DIR, 'shield.txt')
 with open(shield_file, 'w') as sf:
     for cte in cte_values:
