@@ -26,19 +26,29 @@ def conf_pred_conf_mat_agg(data,var_low,var_high):
     return agg_vals
 
 # Extracts default action functionality to separate component. Required for verify to work.
-def default_control(_,action,fail_states):
-    def default_control_func(pc):
-        lines = f'''
+def def_control_wrap(def_action):
+    def default_control(_,action,fail_states):
+        def default_control_func(pc):
+            if def_action:
+                lines = f'''
+[] (default=1 | default=2) & (beta<N) & pc={pc} -> (default'=0) & (a'=0) & (beta'=beta+1) & (pc'={pc+1});
+[] (default=1 | default=2) & (beta=N) & pc={pc} -> (default'=0) & (a'=0) & (pc'={pc+1});
+[] default=0 & pc={pc} -> (pc'={pc+1});
+'''
+            else:
+                lines = f'''
 [] (default=1 | default=2) & pc={pc} -> (default'=0) & (pc'={fail_states[0]});
 [] default=0 & pc={pc} -> (pc'={pc+1});
 '''
+            return [PAST.PrismVerbatim(lines.split("\n"))]
+        return default_control_func
+    return default_control
+
 # [] default=1 & beta1<N & pc={pc} -> (default'=0) & (a'=0) & (beta1'=beta1+1) & (pc'={pc+1});
 # [] default=1 & beta1=N & pc={pc} -> (default'=0) & (a'=0) & (pc'={pc+1}); // shoud never occur
 # [] default=2 & beta2<N & pc={pc} -> (default'=0) & (a'=0) & (beta2'=beta2+1) & (pc'={pc+1});
 # [] default=2 & beta2=N & pc={pc} -> (default'=0) & (a'=0) & (pc'={pc+1}); // shoud never occur
 # [] default=0 & pc={pc} -> (pc'={pc+1});'''
-        return [PAST.PrismVerbatim(lines.split("\n"))]
-    return default_control_func
 
 def dynamics_stoch(dyn_succ):
     dyn_fail=(1-dyn_succ)/2
@@ -99,7 +109,7 @@ def dynamics_logic(state_action,state,fail_states):
         return [PAST.PrismVerbatim(lines.split("\n"))]
     return dynamics_lines
 
-def taxi_shielded_confpred_model(conf_pred_cte,conf_pred_he,tempest_pred,action_filter,minimize,label):
+def taxi_shielded_confpred_model(conf_pred_cte,conf_pred_he,tempest_pred,action_filter,def_action,label):
 
     cte_high=4
     he_high=2
@@ -138,12 +148,12 @@ def taxi_shielded_confpred_model(conf_pred_cte,conf_pred_he,tempest_pred,action_
     he_perceiver = PC.define_perceiver_from_conf_mat("Perceiver (HE)",["he"],he_ests,he_conf_mat_prob)
 
     # controller
-    tsc = TSC.tempest_shielded_controller(tempest_pred,lambda a_p : a_p[1]>action_filter, minimize)
+    tsc = TSC.tempest_shielded_controller(tempest_pred,lambda a_p : a_p[1]>action_filter, False)
     controller = PC.PrismComponent("Controller",state_est,action,fail_states[1:],tsc)
 
     # default controller
     # triggered when controller cannot find a safe action (default=1)
-    def_controller = PC.PrismComponent("Default Controller",[],action,["ctrl_fail"],default_control)
+    def_controller = PC.PrismComponent("Default Controller",[],action,["ctrl_fail"],def_control_wrap(def_action))
     
     # dynamics
     stoch_dyn = PC.PrismComponent("Stochastic Dynamics",action,action,[],dynamics_stoch(DYN_SUCC))
@@ -242,14 +252,14 @@ def main():
     parser.add_argument("--conformal_pred_he","-cphe",required=True,type=str, help="Conformal prediction model file (CSV)")
     parser.add_argument("--tempest_pred","-tp",required=True,type=str,help="Tempest action probability predictions (CSV)")
     parser.add_argument("--action_filter","-af",required=True,type=float,help="Probability filter for shield generation ([0..1])")
-    # parser.add_argument('--minimize', action=argparse.BooleanOptionalAction)
+    parser.add_argument('--default_action', action=argparse.BooleanOptionalAction)
     parser.add_argument("--label", "-l", required=True, type=str, help="Instance label, used to differentiate models with distinct configuration")
     # parser.add_argument("--model", "-m", required=True, type=str, help="Prism model name")
 
     args = parser.parse_args()
 
     # minimize does not decrease time, setting False
-    plsm = taxi_shielded_confpred_model(args.conformal_pred_cte,args.conformal_pred_he,args.tempest_pred,args.action_filter,False,args.label)
+    plsm = taxi_shielded_confpred_model(args.conformal_pred_cte,args.conformal_pred_he,args.tempest_pred,args.action_filter,args.default_action,args.label)
     plsm.save_to_file()
     print("writing model to",plsm.filename)
 
