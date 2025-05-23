@@ -18,7 +18,7 @@
 //   -1 : dyn_fail
 //   -2 : ctrl_fail
 
-// Generated: 2025-05-23 10:43:28.605769
+// Generated: 2025-05-23 10:49:40.314394
 
 mdp
 
@@ -30,6 +30,7 @@ module ShieldedConfPred
   he : [-1..2] init 0;
   a : [0..2] init 0;
   default : [0..2] init 0; // Enum to trigger default control
+  beta : [0..N] init 0; // Counts number of times controller found no safe actions
   cte_est0 : [0..1] init 0;
   cte_est1 : [0..1] init 0;
   cte_est2 : [0..1] init 0;
