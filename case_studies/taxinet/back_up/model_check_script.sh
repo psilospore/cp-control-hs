@@ -1,4 +1,4 @@
-MODEL_PATH=cp_shielded_models
+MODEL_PATH=shielded_models
 PROPS_FILE=properties/crash_stuck.pctl
 PROPS_DC_FILE=properties/crash_stuck_default_controller.pctl
 N_START=5

@@ -47,12 +47,7 @@ for (file, l, colour, lw) in zip(files, labels, colours, lws):
 	plotResults(N, props_no, output_dir_path+file, colour, lw, l)
 
 ax_crash.legend()
-# x_ticks=np.arange(N)+1
-# ax_crash.set_xticks(x_ticks, fontsize=20)
 tick_fs=15
-# ax_crash.tick_params(axis='x', labelsize=tick_fs)
-# ax_crash.tick_params(axis='y', labelsize=tick_fs)
-# ax_stuck.tick_params(axis='y', labelsize=tick_fs)
 ax_crash.set_xlabel('Length of operation', fontsize=20)
 ax_crash.set_ylabel(r"\textsf{Pmax=? [F(pc=-1)]}", fontsize=20)
 ax_stuck.set_ylabel(r'\textsf{Pmax=? [F(pc!=-2) U (pc=-1)]}', fontsize=20, labelpad=25, rotation=270)
