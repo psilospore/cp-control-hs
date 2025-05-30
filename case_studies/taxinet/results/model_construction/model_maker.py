@@ -87,6 +87,14 @@ for file in files:
         empty_sets=np.sum([len(act)>0 for [s_list, act] in allowable_acts])
         
         transition_lines=''
+        print(allowable_acts)
+        temp_allowable_acts=allowable_acts.copy()
+        allowable_acts=[]
+        while len(temp_allowable_acts)>0:
+            if temp_allowable_acts[0] not in allowable_acts:
+                allowable_acts.append(temp_allowable_acts[0])
+            temp_allowable_acts.remove(temp_allowable_acts[0])
+
         for [s_list, act_list] in allowable_acts:
             cte_ests=np.zeros(5, dtype=int)
             he_ests=np.zeros(3, dtype=int)
