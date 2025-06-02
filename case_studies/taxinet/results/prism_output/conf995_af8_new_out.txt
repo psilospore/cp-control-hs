@@ -1,0 +1,3581 @@
+PRISM
+=====
+
+Version: 4.7
+Date: Mon Jun 02 13:21:44 BST 2025
+Hostname: AAIP
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism cp_shielded_models/ShieldedConfPred_StochDyn_acc90_conf995_af8_new.pm properties/crash_stuck.pctl -const 'N=0:1:30' -exportresults prism_output/conf995_af8_new_results.txt
+
+Parsing model file "cp_shielded_models/ShieldedConfPred_StochDyn_acc90_conf995_af8_new.pm"...
+
+Type:        MDP
+Modules:     ShieldedConfPred 
+Variables:   cte he a default cte_est0 cte_est1 cte_est2 cte_est3 cte_est4 he_est0 he_est1 he_est2 pc k 
+
+Parsing properties file "properties/crash_stuck.pctl"...
+
+1 property:
+(1) multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+
+Error: Invalid range (0-0) for variable "k" ("[0..N]", line 42, column 7).
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=1
+
+Building model...
+Model constants: N=1
+
+Computing reachable states...
+
+Reachability (BFS): 7 iterations in 0.00 seconds (average 0.000429, setup 0.00)
+
+Time for model construction: 0.074 seconds.
+
+Warning: Deadlocks detected and fixed in 76 states
+
+Type:        MDP
+States:      256 (1 initial)
+Transitions: 358
+Choices:     265
+
+Transition matrix: 870 nodes (15 terminal), 358 minterms, vars: 22r/22c/2nd
+
+Building deterministic Rabin automaton (for F false)...
+DRA has 1 states, 0 Rabin pairs.Time for Rabin translation: 0.014 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 7 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+States:      256 (1 initial)
+Transitions: 358
+Choices:     265
+
+Transition matrix: 876 nodes (15 terminal), 358 minterms, vars: 23r/23c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 7 iterations in 0.00 seconds (average 0.000286, setup 0.00)
+States:      256 (1 initial)
+Transitions: 358
+Choices:     265
+
+Transition matrix: 963 nodes (15 terminal), 358 minterms, vars: 24r/24c/2nd
+Total time for product construction: 0.019 seconds.
+
+States:      256 (1 initial)
+Transitions: 358
+Choices:     265
+
+Transition matrix: 963 nodes (15 terminal), 358 minterms, vars: 24r/24c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.0 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.0 seconds.
+
+Prob0A: 5 iterations in 0.00 seconds (average 0.000200, setup 0.00)
+
+yes = 16, no = 199, maybe = 41
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 2 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.000000
+Computed point: (0.0, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 6 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.010836
+Computed point: (0.0, 0.010835789976894272)
+Optimising weighted sum of objectives: weights (1.0, 0.0)
+Iterative method: 2 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.000000
+Computed point: (0.0, 0.0)
+The value iteration(s) took 0.004 seconds altogether.
+Number of weight vectors used: 1
+Multi-objective value iterations took 0.004 s.
+
+Value in the initial state: [(0.0, 0.010835789976894272)]
+
+Time for model checking: 0.044 seconds.
+
+Result: [(0.0, 0.010835789976894272)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=2
+
+Building model...
+Model constants: N=2
+
+Computing reachable states...
+
+Reachability (BFS): 14 iterations in 0.01 seconds (average 0.000500, setup 0.00)
+
+Time for model construction: 0.079 seconds.
+
+Warning: Deadlocks detected and fixed in 213 states
+
+Type:        MDP
+States:      1037 (1 initial)
+Transitions: 1970
+Choices:     1067
+
+Transition matrix: 3283 nodes (33 terminal), 1970 minterms, vars: 23r/23c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 14 iterations in 0.00 seconds (average 0.000286, setup 0.00)
+States:      1037 (1 initial)
+Transitions: 1970
+Choices:     1067
+
+Transition matrix: 3318 nodes (33 terminal), 1970 minterms, vars: 24r/24c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 14 iterations in 0.00 seconds (average 0.000143, setup 0.00)
+States:      1037 (1 initial)
+Transitions: 1970
+Choices:     1067
+
+Transition matrix: 3462 nodes (33 terminal), 1970 minterms, vars: 25r/25c/2nd
+Total time for product construction: 0.011 seconds.
+
+States:      1037 (1 initial)
+Transitions: 1970
+Choices:     1067
+
+Transition matrix: 3462 nodes (33 terminal), 1970 minterms, vars: 25r/25c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.0 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.0 seconds.
+
+Prob0A: 11 iterations in 0.01 seconds (average 0.000455, setup 0.00)
+
+yes = 89, no = 330, maybe = 618
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 15 iterations in 0.00 seconds (average 0.000067, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.052738
+Computed point: (0.05273824380231495, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 13 iterations in 0.00 seconds (average 0.000077, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.397232
+Computed point: (0.0, 0.39723241876099835)
+Optimising weighted sum of objectives: weights (0.8827962616454036, 0.11720373835459638)
+Iterative method: 15 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+Optimal value for weights [0.882796,0.117204] from initial state: 0.061498
+Computed point: (0.016923943817593795, 0.39723241876099835)
+Optimising weighted sum of objectives: weights (0.0, 1.0)
+Iterative method: 13 iterations in 0.00 seconds (average 0.000077, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.397232
+Computed point: (0.0, 0.39723241876099835)
+Optimising weighted sum of objectives: weights (0.9172969140871128, 0.08270308591288723)
+Iterative method: 15 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+Optimal value for weights [0.917297,0.082703] from initial state: 0.056692
+Computed point: (0.05273824380231495, 0.10054130202847622)
+The value iteration(s) took 0.004 seconds altogether.
+Number of weight vectors used: 3
+Multi-objective value iterations took 0.004 s.
+
+Value in the initial state: [(0.016923943817593795, 0.39723241876099835), (0.05273824380231495, 0.10054130202847622)]
+
+Time for model checking: 0.081 seconds.
+
+Result: [(0.016923943817593795, 0.39723241876099835), (0.05273824380231495, 0.10054130202847622)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=3
+
+Building model...
+Model constants: N=3
+
+Computing reachable states...
+
+Reachability (BFS): 21 iterations in 0.01 seconds (average 0.000619, setup 0.00)
+
+Time for model construction: 0.096 seconds.
+
+Warning: Deadlocks detected and fixed in 518 states
+
+Type:        MDP
+States:      2739 (1 initial)
+Transitions: 5508
+Choices:     2810
+
+Transition matrix: 6639 nodes (46 terminal), 5508 minterms, vars: 23r/23c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 21 iterations in 0.01 seconds (average 0.000333, setup 0.00)
+States:      2739 (1 initial)
+Transitions: 5508
+Choices:     2810
+
+Transition matrix: 6702 nodes (46 terminal), 5508 minterms, vars: 24r/24c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 21 iterations in 0.01 seconds (average 0.000381, setup 0.00)
+States:      2739 (1 initial)
+Transitions: 5508
+Choices:     2810
+
+Transition matrix: 6991 nodes (46 terminal), 5508 minterms, vars: 25r/25c/2nd
+Total time for product construction: 0.023 seconds.
+
+States:      2739 (1 initial)
+Transitions: 5508
+Choices:     2810
+
+Transition matrix: 6991 nodes (46 terminal), 5508 minterms, vars: 25r/25c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.001 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.001 seconds.
+
+Prob0A: 11 iterations in 0.01 seconds (average 0.001000, setup 0.00)
+
+yes = 278, no = 689, maybe = 1772
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 22 iterations in 0.00 seconds (average 0.000045, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.079157
+Computed point: (0.0791568202564072, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 20 iterations in 0.00 seconds (average 0.000050, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.596541
+Computed point: (0.0, 0.5965405891568927)
+Optimising weighted sum of objectives: weights (0.8828516742055618, 0.11714832579443828)
+Iterative method: 22 iterations in 0.00 seconds (average 0.000091, setup 0.00)
+Optimal value for weights [0.882852,0.117148] from initial state: 0.089908
+Computed point: (0.025321736879128594, 0.5766449065372361)
+Optimising weighted sum of objectives: weights (0.4400003989655159, 0.5599996010344841)
+Iterative method: 22 iterations in 0.00 seconds (average 0.000045, setup 0.00)
+Optimal value for weights [0.440000,0.560000] from initial state: 0.342001
+Computed point: (0.018041967794548322, 0.5965405891568927)
+Optimising weighted sum of objectives: weights (0.9146125424463067, 0.08538745755369331)
+Iterative method: 22 iterations in 0.00 seconds (average 0.000091, setup 0.00)
+Optimal value for weights [0.914613,0.085387] from initial state: 0.084001
+Computed point: (0.07826965623551294, 0.14539549741296592)
+Optimising weighted sum of objectives: weights (0.8906480555716246, 0.10935194442837536)
+Iterative method: 22 iterations in 0.00 seconds (average 0.000045, setup 0.00)
+Optimal value for weights [0.890648,0.109352] from initial state: 0.085851
+Computed point: (0.06248091024521651, 0.27619187432569614)
+Optimising weighted sum of objectives: weights (0.9939352756355517, 0.006064724364448263)
+Iterative method: 22 iterations in 0.00 seconds (average 0.000091, setup 0.00)
+Optimal value for weights [0.993935,0.006065] from initial state: 0.079453
+Computed point: (0.0791568202564072, 0.12799878834150397)
+The value iteration(s) took 0.015 seconds altogether.
+Number of weight vectors used: 5
+Multi-objective value iterations took 0.015 s.
+
+Value in the initial state: [(0.018041967794548322, 0.5965405891568927), (0.025321736879128594, 0.5766449065372361), (0.06248091024521651, 0.27619187432569614), (0.07826965623551294, 0.14539549741296592), (0.0791568202564072, 0.12799878834150397)]
+
+Time for model checking: 0.19 seconds.
+
+Result: [(0.018041967794548322, 0.5965405891568927), (0.025321736879128594, 0.5766449065372361), (0.06248091024521651, 0.27619187432569614), (0.07826965623551294, 0.14539549741296592), (0.0791568202564072, 0.12799878834150397)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=4
+
+Building model...
+Model constants: N=4
+
+Computing reachable states...
+
+Reachability (BFS): 28 iterations in 0.03 seconds (average 0.001107, setup 0.00)
+
+Time for model construction: 0.141 seconds.
+
+Warning: Deadlocks detected and fixed in 1017 states
+
+Type:        MDP
+States:      5815 (1 initial)
+Transitions: 12140
+Choices:     5964
+
+Transition matrix: 11373 nodes (46 terminal), 12140 minterms, vars: 24r/24c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 28 iterations in 0.02 seconds (average 0.000786, setup 0.00)
+States:      5815 (1 initial)
+Transitions: 12140
+Choices:     5964
+
+Transition matrix: 11450 nodes (46 terminal), 12140 minterms, vars: 25r/25c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 28 iterations in 0.01 seconds (average 0.000464, setup 0.00)
+States:      5815 (1 initial)
+Transitions: 12140
+Choices:     5964
+
+Transition matrix: 11966 nodes (46 terminal), 12140 minterms, vars: 26r/26c/2nd
+Total time for product construction: 0.044 seconds.
+
+States:      5815 (1 initial)
+Transitions: 12140
+Choices:     5964
+
+Transition matrix: 11966 nodes (46 terminal), 12140 minterms, vars: 26r/26c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.002 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.002 seconds.
+
+Prob0A: 11 iterations in 0.01 seconds (average 0.001091, setup 0.00)
+
+yes = 661, no = 958, maybe = 4196
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 29 iterations in 0.00 seconds (average 0.000138, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.125911
+Computed point: (0.12591064897385346, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 27 iterations in 0.01 seconds (average 0.000185, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.721759
+Computed point: (0.0, 0.7217591921478369)
+Optimising weighted sum of objectives: weights (0.8514626298285657, 0.14853737017143434)
+Iterative method: 29 iterations in 0.01 seconds (average 0.000276, setup 0.00)
+Optimal value for weights [0.851463,0.148537] from initial state: 0.146161
+Computed point: (0.08883138610173646, 0.47479306201301663)
+Optimising weighted sum of objectives: weights (0.7354614557686064, 0.26453854423139356)
+Iterative method: 29 iterations in 0.00 seconds (average 0.000138, setup 0.00)
+Optimal value for weights [0.735461,0.264539] from initial state: 0.210292
+Computed point: (0.03287513335425041, 0.7035424770035547)
+Optimising weighted sum of objectives: weights (0.927561501043375, 0.07243849895662506)
+Iterative method: 29 iterations in 0.00 seconds (average 0.000138, setup 0.00)
+Optimal value for weights [0.927562,0.072438] from initial state: 0.130740
+Computed point: (0.12549933984308442, 0.19784943389561307)
+Optimising weighted sum of objectives: weights (0.3565483669044667, 0.6434516330955333)
+Iterative method: 29 iterations in 0.00 seconds (average 0.000138, setup 0.00)
+Optimal value for weights [0.356548,0.643452] from initial state: 0.472336
+Computed point: (0.02221630540277481, 0.721755730632768)
+Optimising weighted sum of objectives: weights (0.8034592946741932, 0.1965407053258068)
+Iterative method: 29 iterations in 0.00 seconds (average 0.000138, setup 0.00)
+Optimal value for weights [0.803459,0.196541] from initial state: 0.164946
+Computed point: (0.03514342826964607, 0.6955804009278803)
+Optimising weighted sum of objectives: weights (0.8830784452410213, 0.11692155475897872)
+Iterative method: 29 iterations in 0.01 seconds (average 0.000172, setup 0.00)
+Optimal value for weights [0.883078,0.116922] from initial state: 0.136335
+Computed point: (0.10075244356131553, 0.4050782680458507)
+Optimising weighted sum of objectives: weights (0.9979254131479054, 0.0020745868520945726)
+Iterative method: 29 iterations in 0.00 seconds (average 0.000138, setup 0.00)
+Optimal value for weights [0.997925,0.002075] from initial state: 0.126043
+Computed point: (0.12591064897385346, 0.1897839295267455)
+The value iteration(s) took 0.046 seconds altogether.
+Number of weight vectors used: 7
+Multi-objective value iterations took 0.046 s.
+
+Value in the initial state: [(0.02221630540277481, 0.721755730632768), (0.03287513335425041, 0.7035424770035547), (0.03514342826964607, 0.6955804009278803), (0.08883138610173646, 0.47479306201301663), (0.10075244356131553, 0.4050782680458507), (0.12549933984308442, 0.19784943389561307), (0.12591064897385346, 0.1897839295267455)]
+
+Time for model checking: 0.415 seconds.
+
+Result: [(0.02221630540277481, 0.721755730632768), (0.03287513335425041, 0.7035424770035547), (0.03514342826964607, 0.6955804009278803), (0.08883138610173646, 0.47479306201301663), (0.10075244356131553, 0.4050782680458507), (0.12549933984308442, 0.19784943389561307), (0.12591064897385346, 0.1897839295267455)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=5
+
+Building model...
+Model constants: N=5
+
+Computing reachable states...
+
+Reachability (BFS): 35 iterations in 0.05 seconds (average 0.001543, setup 0.00)
+
+Time for model construction: 0.147 seconds.
+
+Warning: Deadlocks detected and fixed in 1594 states
+
+Type:        MDP
+States:      9911 (1 initial)
+Transitions: 21359
+Choices:     10178
+
+Transition matrix: 15205 nodes (46 terminal), 21359 minterms, vars: 24r/24c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 35 iterations in 0.03 seconds (average 0.000857, setup 0.00)
+States:      9911 (1 initial)
+Transitions: 21359
+Choices:     10178
+
+Transition matrix: 15284 nodes (46 terminal), 21359 minterms, vars: 25r/25c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 35 iterations in 0.03 seconds (average 0.000771, setup 0.00)
+States:      9911 (1 initial)
+Transitions: 21359
+Choices:     10178
+
+Transition matrix: 15946 nodes (46 terminal), 21359 minterms, vars: 26r/26c/2nd
+Total time for product construction: 0.078 seconds.
+
+States:      9911 (1 initial)
+Transitions: 21359
+Choices:     10178
+
+Transition matrix: 15946 nodes (46 terminal), 21359 minterms, vars: 26r/26c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.004 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.003 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.002000, setup 0.00)
+
+yes = 1190, no = 1102, maybe = 7619
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 36 iterations in 0.01 seconds (average 0.000222, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.163562
+Computed point: (0.1635617206263942, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 34 iterations in 0.01 seconds (average 0.000235, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.803849
+Computed point: (0.0, 0.8038493424014459)
+Optimising weighted sum of objectives: weights (0.8309284161848713, 0.16907158381512868)
+Iterative method: 36 iterations in 0.01 seconds (average 0.000222, setup 0.00)
+Optimal value for weights [0.830928,0.169072] from initial state: 0.191244
+Computed point: (0.12590805302237823, 0.5123471243771556)
+Optimising weighted sum of objectives: weights (0.6983589965175987, 0.3016410034824013)
+Iterative method: 36 iterations in 0.01 seconds (average 0.000250, setup 0.00)
+Optimal value for weights [0.698359,0.301641] from initial state: 0.263525
+Computed point: (0.039007339677448426, 0.7833297017866967)
+Optimising weighted sum of objectives: weights (0.9315388847561787, 0.06846111524382131)
+Iterative method: 36 iterations in 0.01 seconds (average 0.000222, setup 0.00)
+Optimal value for weights [0.931539,0.068461] from initial state: 0.168465
+Computed point: (0.1633026644509548, 0.2387129975406769)
+Optimising weighted sum of objectives: weights (0.34471159991696687, 0.6552884000830331)
+Iterative method: 36 iterations in 0.01 seconds (average 0.000250, setup 0.00)
+Optimal value for weights [0.344712,0.655288] from initial state: 0.535286
+Computed point: (0.02481129585658708, 0.8038193961199278)
+Optimising weighted sum of objectives: weights (0.7571814175461217, 0.2428185824538783)
+Iterative method: 36 iterations in 0.01 seconds (average 0.000250, setup 0.00)
+Optimal value for weights [0.757181,0.242819] from initial state: 0.225551
+Computed point: (0.10123972049666119, 0.6131913796119444)
+Optimising weighted sum of objectives: weights (0.8797712017314964, 0.12022879826850366)
+Iterative method: 36 iterations in 0.01 seconds (average 0.000250, setup 0.00)
+Optimal value for weights [0.879771,0.120229] from initial state: 0.173826
+Computed point: (0.15182944849633823, 0.33478893123183073)
+Optimising weighted sum of objectives: weights (0.9989159561906467, 0.0010840438093533851)
+Iterative method: 36 iterations in 0.01 seconds (average 0.000222, setup 0.00)
+Optimal value for weights [0.998916,0.001084] from initial state: 0.163637
+Computed point: (0.1635617206263942, 0.23312287923567784)
+The value iteration(s) took 0.091 seconds altogether.
+Number of weight vectors used: 7
+Multi-objective value iterations took 0.091 s.
+
+Value in the initial state: [(0.02481129585658708, 0.8038193961199278), (0.0, 0.8038493424014459), (0.039007339677448426, 0.7833297017866967), (0.10123972049666119, 0.6131913796119444), (0.12590805302237823, 0.5123471243771556), (0.15182944849633823, 0.33478893123183073), (0.1633026644509548, 0.2387129975406769), (0.1635617206263942, 0.23312287923567784)]
+
+Time for model checking: 0.796 seconds.
+
+Result: [(0.02481129585658708, 0.8038193961199278), (0.0, 0.8038493424014459), (0.039007339677448426, 0.7833297017866967), (0.10123972049666119, 0.6131913796119444), (0.12590805302237823, 0.5123471243771556), (0.15182944849633823, 0.33478893123183073), (0.1633026644509548, 0.2387129975406769), (0.1635617206263942, 0.23312287923567784)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=6
+
+Building model...
+Model constants: N=6
+
+Computing reachable states...
+
+Reachability (BFS): 42 iterations in 0.07 seconds (average 0.001667, setup 0.00)
+
+Time for model construction: 0.148 seconds.
+
+Warning: Deadlocks detected and fixed in 2182 states
+
+Type:        MDP
+States:      14416 (1 initial)
+Transitions: 31710
+Choices:     14830
+
+Transition matrix: 17083 nodes (46 terminal), 31710 minterms, vars: 24r/24c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 42 iterations in 0.07 seconds (average 0.001619, setup 0.00)
+States:      14416 (1 initial)
+Transitions: 31710
+Choices:     14830
+
+Transition matrix: 17162 nodes (46 terminal), 31710 minterms, vars: 25r/25c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 42 iterations in 0.07 seconds (average 0.001619, setup 0.00)
+States:      14416 (1 initial)
+Transitions: 31710
+Choices:     14830
+
+Transition matrix: 17903 nodes (46 terminal), 31710 minterms, vars: 26r/26c/2nd
+Total time for product construction: 0.171 seconds.
+
+States:      14416 (1 initial)
+Transitions: 31710
+Choices:     14830
+
+Transition matrix: 17903 nodes (46 terminal), 31710 minterms, vars: 26r/26c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.006 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.005 seconds.
+
+Prob0A: 11 iterations in 0.04 seconds (average 0.003455, setup 0.00)
+
+yes = 1778, no = 1139, maybe = 11499
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 43 iterations in 0.03 seconds (average 0.000698, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.194959
+Computed point: (0.19495870642319701, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 41 iterations in 0.03 seconds (average 0.000634, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.856512
+Computed point: (0.0, 0.856512024017827)
+Optimising weighted sum of objectives: weights (0.8145847518347711, 0.18541524816522895)
+Iterative method: 43 iterations in 0.03 seconds (average 0.000698, setup 0.00)
+Optimal value for weights [0.814585,0.185415] from initial state: 0.224024
+Computed point: (0.15145557296356835, 0.5428368920829739)
+Optimising weighted sum of objectives: weights (0.6743806173865811, 0.32561938261341894)
+Iterative method: 43 iterations in 0.03 seconds (average 0.000628, setup 0.00)
+Optimal value for weights [0.674381,0.325619] from initial state: 0.300900
+Computed point: (0.04260625985387457, 0.8358435975243448)
+Optimising weighted sum of objectives: weights (0.9258056220545909, 0.07419437794540908)
+Iterative method: 43 iterations in 0.03 seconds (average 0.000698, setup 0.00)
+Optimal value for weights [0.925806,0.074194] from initial state: 0.200876
+Computed point: (0.19450660869298794, 0.2803575061660075)
+Optimising weighted sum of objectives: weights (0.3266460521039881, 0.6733539478960119)
+Iterative method: 43 iterations in 0.03 seconds (average 0.000721, setup 0.00)
+Optimal value for weights [0.326646,0.673354] from initial state: 0.585367
+Computed point: (0.026599232074232503, 0.8564276102946913)
+Optimising weighted sum of objectives: weights (0.7291335501153827, 0.2708664498846173)
+Iterative method: 43 iterations in 0.03 seconds (average 0.000605, setup 0.00)
+Optimal value for weights [0.729134,0.270866] from initial state: 0.265709
+Computed point: (0.09981604679309303, 0.7122682423627332)
+Optimising weighted sum of objectives: weights (0.8590941108337621, 0.1409058891662379)
+Iterative method: 43 iterations in 0.03 seconds (average 0.000721, setup 0.00)
+Optimal value for weights [0.859094,0.140906] from initial state: 0.209928
+Computed point: (0.17864689598687905, 0.4006497679393229)
+Optimising weighted sum of objectives: weights (0.9983900204126346, 0.0016099795873654006)
+Iterative method: 43 iterations in 0.03 seconds (average 0.000721, setup 0.00)
+Optimal value for weights [0.998390,0.001610] from initial state: 0.195067
+Computed point: (0.19495870642319701, 0.26213141220993513)
+The value iteration(s) took 0.144 seconds altogether.
+Number of weight vectors used: 7
+Multi-objective value iterations took 0.144 s.
+
+Value in the initial state: [(0.026599232074232503, 0.8564276102946913), (0.0, 0.856512024017827), (0.04260625985387457, 0.8358435975243448), (0.09981604679309303, 0.7122682423627332), (0.15145557296356835, 0.5428368920829739), (0.17864689598687905, 0.4006497679393229), (0.19450660869298794, 0.2803575061660075), (0.19495870642319701, 0.26213141220993513)]
+
+Time for model checking: 1.207 seconds.
+
+Result: [(0.026599232074232503, 0.8564276102946913), (0.0, 0.856512024017827), (0.04260625985387457, 0.8358435975243448), (0.09981604679309303, 0.7122682423627332), (0.15145557296356835, 0.5428368920829739), (0.17864689598687905, 0.4006497679393229), (0.19450660869298794, 0.2803575061660075), (0.19495870642319701, 0.26213141220993513)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=7
+
+Building model...
+Model constants: N=7
+
+Computing reachable states...
+
+Reachability (BFS): 49 iterations in 0.23 seconds (average 0.004653, setup 0.00)
+
+Time for model construction: 0.203 seconds.
+
+Warning: Deadlocks detected and fixed in 2770 states
+
+Type:        MDP
+States:      18921 (1 initial)
+Transitions: 42061
+Choices:     19482
+
+Transition matrix: 16980 nodes (46 terminal), 42061 minterms, vars: 24r/24c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 49 iterations in 0.15 seconds (average 0.003102, setup 0.00)
+States:      18921 (1 initial)
+Transitions: 42061
+Choices:     19482
+
+Transition matrix: 17059 nodes (46 terminal), 42061 minterms, vars: 25r/25c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 49 iterations in 0.16 seconds (average 0.003245, setup 0.00)
+States:      18921 (1 initial)
+Transitions: 42061
+Choices:     19482
+
+Transition matrix: 17800 nodes (46 terminal), 42061 minterms, vars: 26r/26c/2nd
+Total time for product construction: 0.196 seconds.
+
+States:      18921 (1 initial)
+Transitions: 42061
+Choices:     19482
+
+Transition matrix: 17800 nodes (46 terminal), 42061 minterms, vars: 26r/26c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.007 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.008 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.002182, setup 0.00)
+
+yes = 2366, no = 1139, maybe = 15416
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 50 iterations in 0.02 seconds (average 0.000420, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.221945
+Computed point: (0.22194491297912486, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 48 iterations in 0.02 seconds (average 0.000417, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.890517
+Computed point: (0.0, 0.8905172475994221)
+Optimising weighted sum of objectives: weights (0.8004921687730033, 0.1995078312269967)
+Iterative method: 50 iterations in 0.02 seconds (average 0.000440, setup 0.00)
+Optimal value for weights [0.800492,0.199508] from initial state: 0.249634
+Computed point: (0.163463295441883, 0.5953785998229317)
+Optimising weighted sum of objectives: weights (0.6435617034355949, 0.35643829656440507)
+Iterative method: 50 iterations in 0.02 seconds (average 0.000440, setup 0.00)
+Optimal value for weights [0.643562,0.356438] from initial state: 0.339828
+Computed point: (0.09710114177231052, 0.7780806875748452)
+Optimising weighted sum of objectives: weights (0.9105594498877002, 0.08944055011229982)
+Iterative method: 50 iterations in 0.02 seconds (average 0.000440, setup 0.00)
+Optimal value for weights [0.910559,0.089441] from initial state: 0.229218
+Computed point: (0.22116222384126216, 0.31123059132853703)
+Optimising weighted sum of objectives: weights (0.5365934581718654, 0.4634065418281346)
+Iterative method: 50 iterations in 0.02 seconds (average 0.000440, setup 0.00)
+Optimal value for weights [0.536593,0.463407] from initial state: 0.428232
+Computed point: (0.03275281281662898, 0.8861696290032741)
+Optimising weighted sum of objectives: weights (0.7335540690593585, 0.26644593094064145)
+Iterative method: 50 iterations in 0.02 seconds (average 0.000420, setup 0.00)
+Optimal value for weights [0.733554,0.266446] from initial state: 0.282843
+Computed point: (0.13624384490210073, 0.6864466741331858)
+Optimising weighted sum of objectives: weights (0.8312141424355994, 0.1687858575644006)
+Iterative method: 50 iterations in 0.02 seconds (average 0.000420, setup 0.00)
+Optimal value for weights [0.831214,0.168786] from initial state: 0.240888
+Computed point: (0.19751040349697485, 0.4545057265206859)
+Optimising weighted sum of objectives: weights (0.9974914877447116, 0.0025085122552883873)
+Iterative method: 50 iterations in 0.02 seconds (average 0.000460, setup 0.00)
+Optimal value for weights [0.997491,0.002509] from initial state: 0.222104
+Computed point: (0.22194491297912486, 0.2853790785509203)
+Optimising weighted sum of objectives: weights (0.11718512239862244, 0.8828148776013776)
+Iterative method: 50 iterations in 0.02 seconds (average 0.000440, setup 0.00)
+Optimal value for weights [0.117185,0.882815] from initial state: 0.789330
+Computed point: (0.027434178113706263, 0.8904643260880005)
+Optimising weighted sum of objectives: weights (0.6268305058857448, 0.37316949411425515)
+Iterative method: 50 iterations in 0.02 seconds (average 0.000440, setup 0.00)
+Optimal value for weights [0.626831,0.373169] from initial state: 0.352992
+Computed point: (0.044218692803924445, 0.8716542124598289)
+The value iteration(s) took 0.255 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 0.255 s.
+
+Value in the initial state: [(0.13624384490210073, 0.6864466741331858), (0.09710114177231052, 0.7780806875748452), (0.163463295441883, 0.5953785998229317), (0.19751040349697485, 0.4545057265206859), (0.22116222384126216, 0.31123059132853703), (0.22194491297912486, 0.2853790785509203), (0.027434178113706263, 0.8904643260880005), (0.0, 0.8905172475994221), (0.03275281281662898, 0.8861696290032741), (0.044218692803924445, 0.8716542124598289)]
+
+Time for model checking: 1.394 seconds.
+
+Result: [(0.13624384490210073, 0.6864466741331858), (0.09710114177231052, 0.7780806875748452), (0.163463295441883, 0.5953785998229317), (0.19751040349697485, 0.4545057265206859), (0.22116222384126216, 0.31123059132853703), (0.22194491297912486, 0.2853790785509203), (0.027434178113706263, 0.8904643260880005), (0.0, 0.8905172475994221), (0.03275281281662898, 0.8861696290032741), (0.044218692803924445, 0.8716542124598289)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=8
+
+Building model...
+Model constants: N=8
+
+Computing reachable states...
+
+Reachability (BFS): 56 iterations in 0.11 seconds (average 0.001982, setup 0.00)
+
+Time for model construction: 0.234 seconds.
+
+Warning: Deadlocks detected and fixed in 3358 states
+
+Type:        MDP
+States:      23426 (1 initial)
+Transitions: 52412
+Choices:     24134
+
+Transition matrix: 17669 nodes (46 terminal), 52412 minterms, vars: 25r/25c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 56 iterations in 0.10 seconds (average 0.001750, setup 0.00)
+States:      23426 (1 initial)
+Transitions: 52412
+Choices:     24134
+
+Transition matrix: 17748 nodes (46 terminal), 52412 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 56 iterations in 0.10 seconds (average 0.001750, setup 0.00)
+States:      23426 (1 initial)
+Transitions: 52412
+Choices:     24134
+
+Transition matrix: 18489 nodes (46 terminal), 52412 minterms, vars: 27r/27c/2nd
+Total time for product construction: 0.227 seconds.
+
+States:      23426 (1 initial)
+Transitions: 52412
+Choices:     24134
+
+Transition matrix: 18489 nodes (46 terminal), 52412 minterms, vars: 27r/27c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.007 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.007 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.001727, setup 0.00)
+
+yes = 2954, no = 1139, maybe = 19333
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 57 iterations in 0.03 seconds (average 0.000526, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.246212
+Computed point: (0.24621197713925858, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 55 iterations in 0.03 seconds (average 0.000509, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.913206
+Computed point: (0.0, 0.9132063506682256)
+Optimising weighted sum of objectives: weights (0.7876418103508358, 0.2123581896491642)
+Iterative method: 57 iterations in 0.03 seconds (average 0.000544, setup 0.00)
+Optimal value for weights [0.787642,0.212358] from initial state: 0.274686
+Computed point: (0.21151883343069117, 0.5089725401395705)
+Optimising weighted sum of objectives: weights (0.6564873322011164, 0.34351266779888356)
+Iterative method: 57 iterations in 0.03 seconds (average 0.000526, setup 0.00)
+Optimal value for weights [0.656487,0.343513] from initial state: 0.345237
+Computed point: (0.12336847337344245, 0.7692502552556684)
+Optimising weighted sum of objectives: weights (0.9361866221479996, 0.06381337785200038)
+Iterative method: 57 iterations in 0.03 seconds (average 0.000526, setup 0.00)
+Optimal value for weights [0.936187,0.063813] from initial state: 0.250988
+Computed point: (0.2457710349094259, 0.327523307394045)
+Optimising weighted sum of objectives: weights (0.5385067899531445, 0.4614932100468555)
+Iterative method: 57 iterations in 0.03 seconds (average 0.000526, setup 0.00)
+Optimal value for weights [0.538507,0.461493] from initial state: 0.437651
+Computed point: (0.03417224625367149, 0.9084608758046038)
+Optimising weighted sum of objectives: weights (0.7470055763635206, 0.25299442363647934)
+Iterative method: 57 iterations in 0.03 seconds (average 0.000526, setup 0.00)
+Optimal value for weights [0.747006,0.252994] from initial state: 0.290887
+Computed point: (0.16622732166095358, 0.6589637866170827)
+Optimising weighted sum of objectives: weights (0.8412054996207237, 0.15879450037927628)
+Iterative method: 57 iterations in 0.03 seconds (average 0.000526, setup 0.00)
+Optimal value for weights [0.841205,0.158795] from initial state: 0.262193
+Computed point: (0.2353490430151585, 0.4043952946256393)
+Optimising weighted sum of objectives: weights (0.998655517391489, 0.0013444826085110505)
+Iterative method: 57 iterations in 0.03 seconds (average 0.000526, setup 0.00)
+Optimal value for weights [0.998656,0.001344] from initial state: 0.246292
+Computed point: (0.24621197713925858, 0.30536810995086194)
+Optimising weighted sum of objectives: weights (0.12193609305435882, 0.8780639069456412)
+Iterative method: 57 iterations in 0.03 seconds (average 0.000526, setup 0.00)
+Optimal value for weights [0.121936,0.878064] from initial state: 0.805264
+Computed point: (0.028269160433506028, 0.913164829824332)
+Optimising weighted sum of objectives: weights (0.6094853195945071, 0.39051468040549286)
+Iterative method: 57 iterations in 0.03 seconds (average 0.000526, setup 0.00)
+Optimal value for weights [0.609485,0.390515] from initial state: 0.377496
+Computed point: (0.1000476896358174, 0.8105154600302266)
+The value iteration(s) took 0.345 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 0.345 s.
+
+Value in the initial state: [(0.16622732166095358, 0.6589637866170827), (0.12336847337344245, 0.7692502552556684), (0.21151883343069117, 0.5089725401395705), (0.2353490430151585, 0.4043952946256393), (0.2457710349094259, 0.327523307394045), (0.24621197713925858, 0.30536810995086194), (0.028269160433506028, 0.913164829824332), (0.0, 0.9132063506682256), (0.03417224625367149, 0.9084608758046038), (0.1000476896358174, 0.8105154600302266)]
+
+Time for model checking: 2.079 seconds.
+
+Result: [(0.16622732166095358, 0.6589637866170827), (0.12336847337344245, 0.7692502552556684), (0.21151883343069117, 0.5089725401395705), (0.2353490430151585, 0.4043952946256393), (0.2457710349094259, 0.327523307394045), (0.24621197713925858, 0.30536810995086194), (0.028269160433506028, 0.913164829824332), (0.0, 0.9132063506682256), (0.03417224625367149, 0.9084608758046038), (0.1000476896358174, 0.8105154600302266)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=9
+
+Building model...
+Model constants: N=9
+
+Computing reachable states...
+
+Reachability (BFS): 63 iterations in 0.16 seconds (average 0.002524, setup 0.00)
+
+Time for model construction: 0.246 seconds.
+
+Warning: Deadlocks detected and fixed in 3946 states
+
+Type:        MDP
+States:      27931 (1 initial)
+Transitions: 62763
+Choices:     28786
+
+Transition matrix: 17588 nodes (46 terminal), 62763 minterms, vars: 25r/25c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 63 iterations in 0.14 seconds (average 0.002286, setup 0.00)
+States:      27931 (1 initial)
+Transitions: 62763
+Choices:     28786
+
+Transition matrix: 17667 nodes (46 terminal), 62763 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 63 iterations in 0.17 seconds (average 0.002651, setup 0.00)
+States:      27931 (1 initial)
+Transitions: 62763
+Choices:     28786
+
+Transition matrix: 18408 nodes (46 terminal), 62763 minterms, vars: 27r/27c/2nd
+Total time for product construction: 0.348 seconds.
+
+States:      27931 (1 initial)
+Transitions: 62763
+Choices:     28786
+
+Transition matrix: 18408 nodes (46 terminal), 62763 minterms, vars: 27r/27c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.011 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.012 seconds.
+
+Prob0A: 11 iterations in 0.03 seconds (average 0.002636, setup 0.00)
+
+yes = 3542, no = 1139, maybe = 23250
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 64 iterations in 0.04 seconds (average 0.000609, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.268218
+Computed point: (0.26821751043698316, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 62 iterations in 0.04 seconds (average 0.000597, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.928823
+Computed point: (0.0, 0.9288234533283604)
+Optimising weighted sum of objectives: weights (0.7759328890522731, 0.2240671109477269)
+Iterative method: 64 iterations in 0.04 seconds (average 0.000625, setup 0.00)
+Optimal value for weights [0.775933,0.224067] from initial state: 0.298129
+Computed point: (0.2415409229232133, 0.494088825878256)
+Optimising weighted sum of objectives: weights (0.6428365290008224, 0.3571634709991776)
+Iterative method: 64 iterations in 0.04 seconds (average 0.000609, setup 0.00)
+Optimal value for weights [0.642837,0.357163] from initial state: 0.365342
+Computed point: (0.13637354207115274, 0.7774488103164987)
+Optimising weighted sum of objectives: weights (0.9487742718165347, 0.05122572818346531)
+Iterative method: 64 iterations in 0.04 seconds (average 0.000625, setup 0.00)
+Optimal value for weights [0.948774,0.051226] from initial state: 0.271715
+Computed point: (0.26785131002023477, 0.34328427633138536)
+Optimising weighted sum of objectives: weights (0.5260663693437043, 0.4739336306562957)
+Iterative method: 64 iterations in 0.04 seconds (average 0.000625, setup 0.00)
+Optimal value for weights [0.526066,0.473934] from initial state: 0.456315
+Computed point: (0.035230106848336315, 0.923718579653797)
+Optimising weighted sum of objectives: weights (0.7293179573761023, 0.2706820426238977)
+Iterative method: 64 iterations in 0.04 seconds (average 0.000609, setup 0.00)
+Optimal value for weights [0.729318,0.270682] from initial state: 0.313703
+Computed point: (0.20614642275461967, 0.6034992947858546)
+Optimising weighted sum of objectives: weights (0.8514502074439875, 0.1485497925560125)
+Iterative method: 64 iterations in 0.04 seconds (average 0.000609, setup 0.00)
+Optimal value for weights [0.851450,0.148550] from initial state: 0.281930
+Computed point: (0.25492339525830676, 0.4367283685430655)
+Optimising weighted sum of objectives: weights (0.9989343811764394, 0.0010656188235606324)
+Iterative method: 64 iterations in 0.04 seconds (average 0.000625, setup 0.00)
+Optimal value for weights [0.998934,0.001066] from initial state: 0.268276
+Computed point: (0.26821751043698316, 0.32308026600181283)
+Optimising weighted sum of objectives: weights (0.12656194718292058, 0.8734380528170794)
+Iterative method: 64 iterations in 0.04 seconds (average 0.000609, setup 0.00)
+Optimal value for weights [0.126562,0.873438] from initial state: 0.814907
+Computed point: (0.029240985721062162, 0.9287504304474348)
+Optimising weighted sum of objectives: weights (0.5911962928468464, 0.40880370715315356)
+Iterative method: 64 iterations in 0.04 seconds (average 0.000641, setup 0.00)
+Optimal value for weights [0.591196,0.408804] from initial state: 0.400793
+Computed point: (0.10196569734699341, 0.8329446617197879)
+The value iteration(s) took 0.457 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 0.457 s.
+
+Value in the initial state: [(0.20614642275461967, 0.6034992947858546), (0.13637354207115274, 0.7774488103164987), (0.2415409229232133, 0.494088825878256), (0.25492339525830676, 0.4367283685430655), (0.26785131002023477, 0.34328427633138536), (0.26821751043698316, 0.32308026600181283), (0.029240985721062162, 0.9287504304474348), (0.0, 0.9288234533283604), (0.035230106848336315, 0.923718579653797), (0.10196569734699341, 0.8329446617197879)]
+
+Time for model checking: 2.287 seconds.
+
+Result: [(0.20614642275461967, 0.6034992947858546), (0.13637354207115274, 0.7774488103164987), (0.2415409229232133, 0.494088825878256), (0.25492339525830676, 0.4367283685430655), (0.26785131002023477, 0.34328427633138536), (0.26821751043698316, 0.32308026600181283), (0.029240985721062162, 0.9287504304474348), (0.0, 0.9288234533283604), (0.035230106848336315, 0.923718579653797), (0.10196569734699341, 0.8329446617197879)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=10
+
+Building model...
+Model constants: N=10
+
+Computing reachable states...
+
+Reachability (BFS): 70 iterations in 0.17 seconds (average 0.002400, setup 0.00)
+
+Time for model construction: 0.271 seconds.
+
+Warning: Deadlocks detected and fixed in 4534 states
+
+Type:        MDP
+States:      32436 (1 initial)
+Transitions: 73114
+Choices:     33438
+
+Transition matrix: 17677 nodes (46 terminal), 73114 minterms, vars: 25r/25c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 70 iterations in 0.16 seconds (average 0.002300, setup 0.00)
+States:      32436 (1 initial)
+Transitions: 73114
+Choices:     33438
+
+Transition matrix: 17756 nodes (46 terminal), 73114 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 70 iterations in 0.17 seconds (average 0.002429, setup 0.00)
+States:      32436 (1 initial)
+Transitions: 73114
+Choices:     33438
+
+Transition matrix: 18497 nodes (46 terminal), 73114 minterms, vars: 27r/27c/2nd
+Total time for product construction: 0.369 seconds.
+
+States:      32436 (1 initial)
+Transitions: 73114
+Choices:     33438
+
+Transition matrix: 18497 nodes (46 terminal), 73114 minterms, vars: 27r/27c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.013 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.011 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.001818, setup 0.00)
+
+yes = 4130, no = 1139, maybe = 27167
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 71 iterations in 0.05 seconds (average 0.000704, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.288233
+Computed point: (0.28823326215665696, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 69 iterations in 0.05 seconds (average 0.000710, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.939815
+Computed point: (0.0, 0.9398148110748051)
+Optimising weighted sum of objectives: weights (0.7652915480757968, 0.23470845192420317)
+Iterative method: 71 iterations in 0.05 seconds (average 0.000704, setup 0.00)
+Optimal value for weights [0.765292,0.234708] from initial state: 0.319541
+Computed point: (0.25205194742007975, 0.5395968726067618)
+Optimising weighted sum of objectives: weights (0.6135772126335577, 0.38642278736644226)
+Iterative method: 71 iterations in 0.05 seconds (average 0.000704, setup 0.00)
+Optimal value for weights [0.613577,0.386423] from initial state: 0.393377
+Computed point: (0.1386340537140212, 0.7978674482129712)
+Optimising weighted sum of objectives: weights (0.9371610187188245, 0.06283898128117545)
+Iterative method: 71 iterations in 0.05 seconds (average 0.000718, setup 0.00)
+Optimal value for weights [0.937161,0.062839] from initial state: 0.292291
+Computed point: (0.2878722711192969, 0.3581908330654868)
+Optimising weighted sum of objectives: weights (0.505904363140381, 0.494095636859619)
+Iterative method: 71 iterations in 0.05 seconds (average 0.000718, setup 0.00)
+Optimal value for weights [0.505904,0.494096] from initial state: 0.479894
+Computed point: (0.035952103312759214, 0.934446484406078)
+Optimising weighted sum of objectives: weights (0.6948576480838518, 0.3051423519161483)
+Iterative method: 71 iterations in 0.05 seconds (average 0.000718, setup 0.00)
+Optimal value for weights [0.694858,0.305142] from initial state: 0.343521
+Computed point: (0.21248391681123496, 0.6419144342570553)
+Optimising weighted sum of objectives: weights (0.8351013976164562, 0.16489860238354379)
+Iterative method: 71 iterations in 0.05 seconds (average 0.000718, setup 0.00)
+Optimal value for weights [0.835101,0.164899] from initial state: 0.304039
+Computed point: (0.2725257955904893, 0.4636304767823179)
+Optimising weighted sum of objectives: weights (0.9989931970412832, 0.0010068029587167577)
+Iterative method: 71 iterations in 0.05 seconds (average 0.000718, setup 0.00)
+Optimal value for weights [0.998993,0.001007] from initial state: 0.288284
+Computed point: (0.28823326215665696, 0.3389509397133819)
+Optimising weighted sum of objectives: weights (0.12991942898784925, 0.8700805710121507)
+Iterative method: 71 iterations in 0.05 seconds (average 0.000718, setup 0.00)
+Optimal value for weights [0.129919,0.870081] from initial state: 0.821524
+Computed point: (0.02967746123699511, 0.9397618763014375)
+Optimising weighted sum of objectives: weights (0.5708370517783417, 0.4291629482216583)
+Iterative method: 71 iterations in 0.05 seconds (average 0.000704, setup 0.00)
+Optimal value for weights [0.570837,0.429163] from initial state: 0.423279
+Computed point: (0.10404067848974012, 0.8479030283795322)
+The value iteration(s) took 0.573 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 0.573 s.
+
+Value in the initial state: [(0.21248391681123496, 0.6419144342570553), (0.1386340537140212, 0.7978674482129712), (0.25205194742007975, 0.5395968726067618), (0.2725257955904893, 0.4636304767823179), (0.2878722711192969, 0.3581908330654868), (0.28823326215665696, 0.3389509397133819), (0.02967746123699511, 0.9397618763014375), (0.0, 0.9398148110748051), (0.035952103312759214, 0.934446484406078), (0.10404067848974012, 0.8479030283795322)]
+
+Time for model checking: 2.722 seconds.
+
+Result: [(0.21248391681123496, 0.6419144342570553), (0.1386340537140212, 0.7978674482129712), (0.25205194742007975, 0.5395968726067618), (0.2725257955904893, 0.4636304767823179), (0.2878722711192969, 0.3581908330654868), (0.28823326215665696, 0.3389509397133819), (0.02967746123699511, 0.9397618763014375), (0.0, 0.9398148110748051), (0.035952103312759214, 0.934446484406078), (0.10404067848974012, 0.8479030283795322)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=11
+
+Building model...
+Model constants: N=11
+
+Computing reachable states...
+
+Reachability (BFS): 77 iterations in 0.26 seconds (average 0.003351, setup 0.00)
+
+Time for model construction: 0.354 seconds.
+
+Warning: Deadlocks detected and fixed in 5122 states
+
+Type:        MDP
+States:      36941 (1 initial)
+Transitions: 83465
+Choices:     38090
+
+Transition matrix: 17539 nodes (46 terminal), 83465 minterms, vars: 25r/25c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 77 iterations in 0.16 seconds (average 0.002078, setup 0.00)
+States:      36941 (1 initial)
+Transitions: 83465
+Choices:     38090
+
+Transition matrix: 17618 nodes (46 terminal), 83465 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 77 iterations in 0.17 seconds (average 0.002234, setup 0.00)
+States:      36941 (1 initial)
+Transitions: 83465
+Choices:     38090
+
+Transition matrix: 18359 nodes (46 terminal), 83465 minterms, vars: 27r/27c/2nd
+Total time for product construction: 0.366 seconds.
+
+States:      36941 (1 initial)
+Transitions: 83465
+Choices:     38090
+
+Transition matrix: 18359 nodes (46 terminal), 83465 minterms, vars: 27r/27c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.012 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.012 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.001727, setup 0.00)
+
+yes = 4718, no = 1139, maybe = 31084
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 78 iterations in 0.07 seconds (average 0.000846, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.306461
+Computed point: (0.3064605430339341, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 76 iterations in 0.06 seconds (average 0.000842, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.947667
+Computed point: (0.0, 0.947666914179732)
+Optimising weighted sum of objectives: weights (0.7556384390827332, 0.24436156091726677)
+Iterative method: 78 iterations in 0.07 seconds (average 0.000859, setup 0.00)
+Optimal value for weights [0.755638,0.244362] from initial state: 0.338513
+Computed point: (0.2707765410822635, 0.5479739210868344)
+Optimising weighted sum of objectives: weights (0.596138933567826, 0.40386106643217395)
+Iterative method: 78 iterations in 0.06 seconds (average 0.000808, setup 0.00)
+Optimal value for weights [0.596139,0.403861] from initial state: 0.411815
+Computed point: (0.14286228113180138, 0.808814620026546)
+Optimising weighted sum of objectives: weights (0.9388614451322775, 0.061138554867722496)
+Iterative method: 78 iterations in 0.06 seconds (average 0.000808, setup 0.00)
+Optimal value for weights [0.938861,0.061139] from initial state: 0.310099
+Computed point: (0.3061385698122342, 0.3709212993334501)
+Optimising weighted sum of objectives: weights (0.4928828904671354, 0.5071171095328646)
+Iterative method: 78 iterations in 0.06 seconds (average 0.000808, setup 0.00)
+Optimal value for weights [0.492883,0.507117] from initial state: 0.495712
+Computed point: (0.03638440776201766, 0.9421470604889921)
+Optimising weighted sum of objectives: weights (0.670964300196621, 0.32903569980337893)
+Iterative method: 78 iterations in 0.06 seconds (average 0.000808, setup 0.00)
+Optimal value for weights [0.670964,0.329036] from initial state: 0.366902
+Computed point: (0.2294640289389181, 0.6471620174848655)
+Optimising weighted sum of objectives: weights (0.8335235886531203, 0.16647641134687968)
+Iterative method: 78 iterations in 0.06 seconds (average 0.000808, setup 0.00)
+Optimal value for weights [0.833524,0.166476] from initial state: 0.321395
+Computed point: (0.29183902052700955, 0.4693765651548707)
+Optimising weighted sum of objectives: weights (0.999132716346659, 8.672836533410337E-4)
+Iterative method: 78 iterations in 0.06 seconds (average 0.000808, setup 0.00)
+Optimal value for weights [0.999133,0.000867] from initial state: 0.306501
+Computed point: (0.3064605430339341, 0.3532985775194667)
+Optimising weighted sum of objectives: weights (0.13172535440012356, 0.8682746455998764)
+Iterative method: 78 iterations in 0.06 seconds (average 0.000821, setup 0.00)
+Optimal value for weights [0.131725,0.868275] from initial state: 0.826756
+Computed point: (0.03001977136383696, 0.9476279922367822)
+Optimising weighted sum of objectives: weights (0.5559912679807626, 0.44400873201923735)
+Iterative method: 78 iterations in 0.06 seconds (average 0.000808, setup 0.00)
+Optimal value for weights [0.555991,0.444009] from initial state: 0.440000
+Computed point: (0.10519254360151156, 0.8592482278560738)
+The value iteration(s) took 0.722 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 0.722 s.
+
+Value in the initial state: [(0.2294640289389181, 0.6471620174848655), (0.14286228113180138, 0.808814620026546), (0.2707765410822635, 0.5479739210868344), (0.29183902052700955, 0.4693765651548707), (0.3061385698122342, 0.3709212993334501), (0.3064605430339341, 0.3532985775194667), (0.03001977136383696, 0.9476279922367822), (0.0, 0.947666914179732), (0.03638440776201766, 0.9421470604889921), (0.10519254360151156, 0.8592482278560738)]
+
+Time for model checking: 3.231 seconds.
+
+Result: [(0.2294640289389181, 0.6471620174848655), (0.14286228113180138, 0.808814620026546), (0.2707765410822635, 0.5479739210868344), (0.29183902052700955, 0.4693765651548707), (0.3061385698122342, 0.3709212993334501), (0.3064605430339341, 0.3532985775194667), (0.03001977136383696, 0.9476279922367822), (0.0, 0.947666914179732), (0.03638440776201766, 0.9421470604889921), (0.10519254360151156, 0.8592482278560738)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=12
+
+Building model...
+Model constants: N=12
+
+Computing reachable states...
+
+Reachability (BFS): 84 iterations in 0.24 seconds (average 0.002845, setup 0.00)
+
+Time for model construction: 0.358 seconds.
+
+Warning: Deadlocks detected and fixed in 5710 states
+
+Type:        MDP
+States:      41446 (1 initial)
+Transitions: 93816
+Choices:     42742
+
+Transition matrix: 17719 nodes (46 terminal), 93816 minterms, vars: 25r/25c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 84 iterations in 0.17 seconds (average 0.002060, setup 0.00)
+States:      41446 (1 initial)
+Transitions: 93816
+Choices:     42742
+
+Transition matrix: 17798 nodes (46 terminal), 93816 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 84 iterations in 0.20 seconds (average 0.002405, setup 0.00)
+States:      41446 (1 initial)
+Transitions: 93816
+Choices:     42742
+
+Transition matrix: 18539 nodes (46 terminal), 93816 minterms, vars: 27r/27c/2nd
+Total time for product construction: 0.405 seconds.
+
+States:      41446 (1 initial)
+Transitions: 93816
+Choices:     42742
+
+Transition matrix: 18539 nodes (46 terminal), 93816 minterms, vars: 27r/27c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.017 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.017 seconds.
+
+Prob0A: 11 iterations in 0.03 seconds (average 0.002273, setup 0.00)
+
+yes = 5306, no = 1139, maybe = 35001
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 85 iterations in 0.08 seconds (average 0.000894, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.323079
+Computed point: (0.32307904595846226, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 83 iterations in 0.07 seconds (average 0.000880, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.953336
+Computed point: (0.0, 0.9533358530215067)
+Optimising weighted sum of objectives: weights (0.7468855571831332, 0.25311444281686685)
+Iterative method: 85 iterations in 0.08 seconds (average 0.000894, setup 0.00)
+Optimal value for weights [0.746886,0.253114] from initial state: 0.355070
+Computed point: (0.2885150412833797, 0.5514572392633615)
+Optimising weighted sum of objectives: weights (0.5821006766552244, 0.41789932334477564)
+Iterative method: 85 iterations in 0.08 seconds (average 0.000906, setup 0.00)
+Optimal value for weights [0.582101,0.417899] from initial state: 0.426515
+Computed point: (0.1440879986915602, 0.8199128540224474)
+Optimising weighted sum of objectives: weights (0.9410191950674177, 0.058980804932582266)
+Iterative method: 85 iterations in 0.08 seconds (average 0.000894, setup 0.00)
+Optimal value for weights [0.941019,0.058981] from initial state: 0.326308
+Computed point: (0.32278658102790875, 0.38249430954273433)
+Optimising weighted sum of objectives: weights (0.4807845458716006, 0.5192154541283994)
+Iterative method: 85 iterations in 0.08 seconds (average 0.000906, setup 0.00)
+Optimal value for weights [0.480785,0.519215] from initial state: 0.509789
+Computed point: (0.03234938188789786, 0.9518899996337726)
+Optimising weighted sum of objectives: weights (0.6501983311227524, 0.3498016688772476)
+Iterative method: 85 iterations in 0.08 seconds (average 0.000906, setup 0.00)
+Optimal value for weights [0.650198,0.349802] from initial state: 0.387083
+Computed point: (0.23476385340990058, 0.6702073491174332)
+Optimising weighted sum of objectives: weights (0.8313694530523289, 0.16863054694767113)
+Iterative method: 85 iterations in 0.08 seconds (average 0.000894, setup 0.00)
+Optimal value for weights [0.831369,0.168631] from initial state: 0.337189
+Computed point: (0.309718616676854, 0.4726216733991634)
+Optimising weighted sum of objectives: weights (0.9992359586326984, 7.640413673015357E-4)
+Iterative method: 85 iterations in 0.08 seconds (average 0.000894, setup 0.00)
+Optimal value for weights [0.999236,0.000764] from initial state: 0.323112
+Computed point: (0.32307904595846226, 0.36633281627486286)
+Optimising weighted sum of objectives: weights (0.04278275845520141, 0.9572172415447986)
+Iterative method: 85 iterations in 0.08 seconds (average 0.000906, setup 0.00)
+Optimal value for weights [0.042783,0.957217] from initial state: 0.913833
+Computed point: (0.030073393388118444, 0.953332407258174)
+Optimising weighted sum of objectives: weights (0.5415207629722399, 0.45847923702776006)
+Iterative method: 85 iterations in 0.08 seconds (average 0.000918, setup 0.00)
+Optimal value for weights [0.541521,0.458479] from initial state: 0.455189
+Computed point: (0.10548759560477876, 0.8682289833716273)
+The value iteration(s) took 0.858 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 0.858 s.
+
+Value in the initial state: [(0.23476385340990058, 0.6702073491174332), (0.1440879986915602, 0.8199128540224474), (0.2885150412833797, 0.5514572392633615), (0.309718616676854, 0.4726216733991634), (0.32278658102790875, 0.38249430954273433), (0.32307904595846226, 0.36633281627486286), (0.030073393388118444, 0.953332407258174), (0.03234938188789786, 0.9518899996337726), (0.10548759560477876, 0.8682289833716273)]
+
+Time for model checking: 3.328 seconds.
+
+Result: [(0.23476385340990058, 0.6702073491174332), (0.1440879986915602, 0.8199128540224474), (0.2885150412833797, 0.5514572392633615), (0.309718616676854, 0.4726216733991634), (0.32278658102790875, 0.38249430954273433), (0.32307904595846226, 0.36633281627486286), (0.030073393388118444, 0.953332407258174), (0.03234938188789786, 0.9518899996337726), (0.10548759560477876, 0.8682289833716273)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=13
+
+Building model...
+Model constants: N=13
+
+Computing reachable states...
+
+Reachability (BFS): 91 iterations in 0.27 seconds (average 0.002978, setup 0.00)
+
+Time for model construction: 0.398 seconds.
+
+Warning: Deadlocks detected and fixed in 6298 states
+
+Type:        MDP
+States:      45951 (1 initial)
+Transitions: 104167
+Choices:     47394
+
+Transition matrix: 17634 nodes (46 terminal), 104167 minterms, vars: 25r/25c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 91 iterations in 0.19 seconds (average 0.002121, setup 0.00)
+States:      45951 (1 initial)
+Transitions: 104167
+Choices:     47394
+
+Transition matrix: 17713 nodes (46 terminal), 104167 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 91 iterations in 0.23 seconds (average 0.002473, setup 0.00)
+States:      45951 (1 initial)
+Transitions: 104167
+Choices:     47394
+
+Transition matrix: 18454 nodes (46 terminal), 104167 minterms, vars: 27r/27c/2nd
+Total time for product construction: 0.453 seconds.
+
+States:      45951 (1 initial)
+Transitions: 104167
+Choices:     47394
+
+Transition matrix: 18454 nodes (46 terminal), 104167 minterms, vars: 27r/27c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.02 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.018 seconds.
+
+Prob0A: 11 iterations in 0.04 seconds (average 0.003182, setup 0.00)
+
+yes = 5894, no = 1139, maybe = 38918
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 92 iterations in 0.09 seconds (average 0.000978, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.338241
+Computed point: (0.33824111471690843, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 90 iterations in 0.09 seconds (average 0.000978, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.957464
+Computed point: (0.0, 0.9574641075549772)
+Optimising weighted sum of objectives: weights (0.7389521097060661, 0.2610478902939339)
+Iterative method: 92 iterations in 0.09 seconds (average 0.001000, setup 0.00)
+Optimal value for weights [0.738952,0.261048] from initial state: 0.369611
+Computed point: (0.306030219923766, 0.5495889848363951)
+Optimising weighted sum of objectives: weights (0.5713294163185989, 0.42867058368140104)
+Iterative method: 92 iterations in 0.09 seconds (average 0.000989, setup 0.00)
+Optimal value for weights [0.571329,0.428671] from initial state: 0.437909
+Computed point: (0.15019113071688822, 0.8213772650703404)
+Optimising weighted sum of objectives: weights (0.9446357829883829, 0.05536421701161712)
+Iterative method: 92 iterations in 0.09 seconds (average 0.001000, setup 0.00)
+Optimal value for weights [0.944636,0.055364] from initial state: 0.341021
+Computed point: (0.3379751807550262, 0.392991625808791)
+Optimising weighted sum of objectives: weights (0.4753660959756715, 0.5246339040243285)
+Iterative method: 92 iterations in 0.09 seconds (average 0.001000, setup 0.00)
+Optimal value for weights [0.475366,0.524634] from initial state: 0.516990
+Computed point: (0.032445012316611434, 0.9560319198980998)
+Optimising weighted sum of objectives: weights (0.6355726963625898, 0.3644273036374101)
+Iterative method: 92 iterations in 0.09 seconds (average 0.000989, setup 0.00)
+Optimal value for weights [0.635573,0.364427] from initial state: 0.402966
+Computed point: (0.2588404682500115, 0.6543257662727668)
+Optimising weighted sum of objectives: weights (0.8305687505321193, 0.1694312494678807)
+Iterative method: 92 iterations in 0.09 seconds (average 0.001000, setup 0.00)
+Optimal value for weights [0.830569,0.169431] from initial state: 0.351344
+Computed point: (0.32605384535111526, 0.47531933306772545)
+Optimising weighted sum of objectives: weights (0.9993237664342999, 6.762335657000846E-4)
+Iterative method: 92 iterations in 0.09 seconds (average 0.001000, setup 0.00)
+Optimal value for weights [0.999324,0.000676] from initial state: 0.338268
+Computed point: (0.33824111471690843, 0.37820327805216125)
+Optimising weighted sum of objectives: weights (0.04227585685942903, 0.957724143140571)
+Iterative method: 92 iterations in 0.09 seconds (average 0.000989, setup 0.00)
+Optimal value for weights [0.042276,0.957724] from initial state: 0.918262
+Computed point: (0.030326986294382796, 0.9574572775426754)
+Optimising weighted sum of objectives: weights (0.5334954132890202, 0.4665045867109799)
+Iterative method: 92 iterations in 0.09 seconds (average 0.001000, setup 0.00)
+Optimal value for weights [0.533495,0.466505] from initial state: 0.464506
+Computed point: (0.10612801801868557, 0.8743482247179357)
+The value iteration(s) took 1.021 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 1.022 s.
+
+Value in the initial state: [(0.2588404682500115, 0.6543257662727668), (0.15019113071688822, 0.8213772650703404), (0.306030219923766, 0.5495889848363951), (0.32605384535111526, 0.47531933306772545), (0.3379751807550262, 0.392991625808791), (0.33824111471690843, 0.37820327805216125), (0.030326986294382796, 0.9574572775426754), (0.032445012316611434, 0.9560319198980998), (0.10612801801868557, 0.8743482247179357)]
+
+Time for model checking: 3.712 seconds.
+
+Result: [(0.2588404682500115, 0.6543257662727668), (0.15019113071688822, 0.8213772650703404), (0.306030219923766, 0.5495889848363951), (0.32605384535111526, 0.47531933306772545), (0.3379751807550262, 0.392991625808791), (0.33824111471690843, 0.37820327805216125), (0.030326986294382796, 0.9574572775426754), (0.032445012316611434, 0.9560319198980998), (0.10612801801868557, 0.8743482247179357)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=14
+
+Building model...
+Model constants: N=14
+
+Computing reachable states...
+
+Reachability (BFS): 98 iterations in 0.35 seconds (average 0.003561, setup 0.00)
+
+Time for model construction: 0.449 seconds.
+
+Warning: Deadlocks detected and fixed in 6886 states
+
+Type:        MDP
+States:      50456 (1 initial)
+Transitions: 114518
+Choices:     52046
+
+Transition matrix: 17723 nodes (46 terminal), 114518 minterms, vars: 25r/25c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 98 iterations in 0.24 seconds (average 0.002408, setup 0.00)
+States:      50456 (1 initial)
+Transitions: 114518
+Choices:     52046
+
+Transition matrix: 17802 nodes (46 terminal), 114518 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 98 iterations in 0.26 seconds (average 0.002653, setup 0.00)
+States:      50456 (1 initial)
+Transitions: 114518
+Choices:     52046
+
+Transition matrix: 18543 nodes (46 terminal), 114518 minterms, vars: 27r/27c/2nd
+Total time for product construction: 0.529 seconds.
+
+States:      50456 (1 initial)
+Transitions: 114518
+Choices:     52046
+
+Transition matrix: 18543 nodes (46 terminal), 114518 minterms, vars: 27r/27c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.018 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.02 seconds.
+
+Prob0A: 11 iterations in 0.03 seconds (average 0.002455, setup 0.00)
+
+yes = 6482, no = 1139, maybe = 42835
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 99 iterations in 0.11 seconds (average 0.001071, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.352079
+Computed point: (0.35207943877592596, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 97 iterations in 0.10 seconds (average 0.001072, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.960515
+Computed point: (0.0, 0.96051452159302)
+Optimising weighted sum of objectives: weights (0.7317682014345374, 0.26823179856546264)
+Iterative method: 99 iterations in 0.11 seconds (average 0.001081, setup 0.00)
+Optimal value for weights [0.731768,0.268232] from initial state: 0.382504
+Computed point: (0.3211311458562228, 0.5499359034013069)
+Optimising weighted sum of objectives: weights (0.5611222350243439, 0.43887776497565617)
+Iterative method: 99 iterations in 0.11 seconds (average 0.001081, setup 0.00)
+Optimal value for weights [0.561122,0.438878] from initial state: 0.448009
+Computed point: (0.1521408274505583, 0.8262868452830887)
+Optimising weighted sum of objectives: weights (0.9467220951857324, 0.05327790481426765)
+Iterative method: 99 iterations in 0.11 seconds (average 0.001081, setup 0.00)
+Optimal value for weights [0.946722,0.053278] from initial state: 0.354539
+Computed point: (0.3518373555528293, 0.4025442061859752)
+Optimising weighted sum of objectives: weights (0.4687236010500494, 0.5312763989499506)
+Iterative method: 99 iterations in 0.11 seconds (average 0.001081, setup 0.00)
+Optimal value for weights [0.468724,0.531276] from initial state: 0.524758
+Computed point: (0.032347857963253596, 0.9591910762246507)
+Optimising weighted sum of objectives: weights (0.6205374765935916, 0.37946252340640846)
+Iterative method: 99 iterations in 0.11 seconds (average 0.001091, setup 0.00)
+Optimal value for weights [0.620537,0.379463] from initial state: 0.417583
+Computed point: (0.2688093234848305, 0.660872344833442)
+Optimising weighted sum of objectives: weights (0.8275880372261232, 0.17241196277387685)
+Iterative method: 99 iterations in 0.11 seconds (average 0.001081, setup 0.00)
+Optimal value for weights [0.827588,0.172412] from initial state: 0.364541
+Computed point: (0.3409471993381064, 0.4777931593854249)
+Optimising weighted sum of objectives: weights (0.9993989784919148, 6.010215080851358E-4)
+Iterative method: 99 iterations in 0.11 seconds (average 0.001091, setup 0.00)
+Optimal value for weights [0.999399,0.000601] from initial state: 0.352102
+Computed point: (0.35207943877592596, 0.38902643321665153)
+Optimising weighted sum of objectives: weights (0.03930484529615241, 0.9606951547038476)
+Iterative method: 99 iterations in 0.11 seconds (average 0.001091, setup 0.00)
+Optimal value for weights [0.039305,0.960695] from initial state: 0.923950
+Computed point: (0.030364415094610527, 0.9605091037556392)
+Optimising weighted sum of objectives: weights (0.5259426329852595, 0.47405736701474055)
+Iterative method: 99 iterations in 0.11 seconds (average 0.001081, setup 0.00)
+Optimal value for weights [0.525943,0.474057] from initial state: 0.472707
+Computed point: (0.10660591233803471, 0.8788773388957074)
+The value iteration(s) took 1.198 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 1.198 s.
+
+Value in the initial state: [(0.2688093234848305, 0.660872344833442), (0.1521408274505583, 0.8262868452830887), (0.3211311458562228, 0.5499359034013069), (0.3409471993381064, 0.4777931593854249), (0.3518373555528293, 0.4025442061859752), (0.35207943877592596, 0.38902643321665153), (0.030364415094610527, 0.9605091037556392), (0.032347857963253596, 0.9591910762246507), (0.10660591233803471, 0.8788773388957074)]
+
+Time for model checking: 4.426 seconds.
+
+Result: [(0.2688093234848305, 0.660872344833442), (0.1521408274505583, 0.8262868452830887), (0.3211311458562228, 0.5499359034013069), (0.3409471993381064, 0.4777931593854249), (0.3518373555528293, 0.4025442061859752), (0.35207943877592596, 0.38902643321665153), (0.030364415094610527, 0.9605091037556392), (0.032347857963253596, 0.9591910762246507), (0.10660591233803471, 0.8788773388957074)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=15
+
+Building model...
+Model constants: N=15
+
+Computing reachable states...
+
+Reachability (BFS): 105 iterations in 0.33 seconds (average 0.003114, setup 0.00)
+
+Time for model construction: 0.466 seconds.
+
+Warning: Deadlocks detected and fixed in 7474 states
+
+Type:        MDP
+States:      54961 (1 initial)
+Transitions: 124869
+Choices:     56698
+
+Transition matrix: 17540 nodes (46 terminal), 124869 minterms, vars: 25r/25c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 105 iterations in 0.27 seconds (average 0.002524, setup 0.00)
+States:      54961 (1 initial)
+Transitions: 124869
+Choices:     56698
+
+Transition matrix: 17619 nodes (46 terminal), 124869 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 105 iterations in 0.25 seconds (average 0.002343, setup 0.00)
+States:      54961 (1 initial)
+Transitions: 124869
+Choices:     56698
+
+Transition matrix: 18360 nodes (46 terminal), 124869 minterms, vars: 27r/27c/2nd
+Total time for product construction: 0.541 seconds.
+
+States:      54961 (1 initial)
+Transitions: 124869
+Choices:     56698
+
+Transition matrix: 18360 nodes (46 terminal), 124869 minterms, vars: 27r/27c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.02 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.024 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.001909, setup 0.00)
+
+yes = 7070, no = 1139, maybe = 46752
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 106 iterations in 0.12 seconds (average 0.001160, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.364712
+Computed point: (0.36471193148889497, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 104 iterations in 0.12 seconds (average 0.001163, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.962788
+Computed point: (0.0, 0.9627875970521051)
+Optimising weighted sum of objectives: weights (0.7252639841689927, 0.2747360158310073)
+Iterative method: 106 iterations in 0.12 seconds (average 0.001179, setup 0.00)
+Optimal value for weights [0.725264,0.274736] from initial state: 0.394085
+Computed point: (0.32647599570026065, 0.5725646702463345)
+Optimising weighted sum of objectives: weights (0.5444726014674408, 0.45552739853255914)
+Iterative method: 106 iterations in 0.12 seconds (average 0.001179, setup 0.00)
+Optimal value for weights [0.544473,0.455527] from initial state: 0.461752
+Computed point: (0.15260349934427436, 0.8312651551641587)
+Optimising weighted sum of objectives: weights (0.9374002982137754, 0.06259970178622462)
+Iterative method: 106 iterations in 0.12 seconds (average 0.001179, setup 0.00)
+Optimal value for weights [0.937400,0.062600] from initial state: 0.367419
+Computed point: (0.3644902964476567, 0.41126729910888904)
+Optimising weighted sum of objectives: weights (0.46290191355829424, 0.5370980864417058)
+Iterative method: 106 iterations in 0.12 seconds (average 0.001179, setup 0.00)
+Optimal value for weights [0.462902,0.537098] from initial state: 0.531369
+Computed point: (0.0316693475683215, 0.9620381539464147)
+Optimising weighted sum of objectives: weights (0.5980504934820968, 0.4019495065179032)
+Iterative method: 106 iterations in 0.12 seconds (average 0.001179, setup 0.00)
+Optimal value for weights [0.598050,0.401950] from initial state: 0.433591
+Computed point: (0.2709598528916986, 0.6755648924392208)
+Optimising weighted sum of objectives: weights (0.8092720793122443, 0.19072792068775568)
+Iterative method: 106 iterations in 0.12 seconds (average 0.001179, setup 0.00)
+Optimal value for weights [0.809272,0.190728] from initial state: 0.378636
+Computed point: (0.34944801660307145, 0.5024836130126589)
+Optimising weighted sum of objectives: weights (0.9994613827424156, 5.386172575844462E-4)
+Iterative method: 106 iterations in 0.12 seconds (average 0.001179, setup 0.00)
+Optimal value for weights [0.999461,0.000539] from initial state: 0.364730
+Computed point: (0.36471193148889497, 0.3989007691815246)
+Optimising weighted sum of objectives: weights (0.02311755281763961, 0.9768824471823604)
+Iterative method: 106 iterations in 0.12 seconds (average 0.001179, setup 0.00)
+Optimal value for weights [0.023118,0.976882] from initial state: 0.941229
+Computed point: (0.030262164383074976, 0.9627871165070787)
+Optimising weighted sum of objectives: weights (0.5195442342112324, 0.4804557657887676)
+Iterative method: 106 iterations in 0.12 seconds (average 0.001179, setup 0.00)
+Optimal value for weights [0.519544,0.480456] from initial state: 0.479448
+Computed point: (0.10627792457251094, 0.8829774715358316)
+The value iteration(s) took 1.393 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 1.393 s.
+
+Value in the initial state: [(0.2709598528916986, 0.6755648924392208), (0.15260349934427436, 0.8312651551641587), (0.32647599570026065, 0.5725646702463345), (0.34944801660307145, 0.5024836130126589), (0.3644902964476567, 0.41126729910888904), (0.36471193148889497, 0.3989007691815246), (0.030262164383074976, 0.9627871165070787), (0.0316693475683215, 0.9620381539464147), (0.10627792457251094, 0.8829774715358316)]
+
+Time for model checking: 4.473 seconds.
+
+Result: [(0.2709598528916986, 0.6755648924392208), (0.15260349934427436, 0.8312651551641587), (0.32647599570026065, 0.5725646702463345), (0.34944801660307145, 0.5024836130126589), (0.3644902964476567, 0.41126729910888904), (0.36471193148889497, 0.3989007691815246), (0.030262164383074976, 0.9627871165070787), (0.0316693475683215, 0.9620381539464147), (0.10627792457251094, 0.8829774715358316)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=16
+
+Building model...
+Model constants: N=16
+
+Computing reachable states...
+
+Reachability (BFS): 112 iterations in 0.39 seconds (average 0.003455, setup 0.00)
+
+Time for model construction: 0.479 seconds.
+
+Warning: Deadlocks detected and fixed in 8062 states
+
+Type:        MDP
+States:      59466 (1 initial)
+Transitions: 135220
+Choices:     61350
+
+Transition matrix: 18317 nodes (46 terminal), 135220 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 112 iterations in 0.30 seconds (average 0.002670, setup 0.00)
+States:      59466 (1 initial)
+Transitions: 135220
+Choices:     61350
+
+Transition matrix: 18396 nodes (46 terminal), 135220 minterms, vars: 27r/27c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 112 iterations in 0.28 seconds (average 0.002527, setup 0.00)
+States:      59466 (1 initial)
+Transitions: 135220
+Choices:     61350
+
+Transition matrix: 19137 nodes (46 terminal), 135220 minterms, vars: 28r/28c/2nd
+Total time for product construction: 0.614 seconds.
+
+States:      59466 (1 initial)
+Transitions: 135220
+Choices:     61350
+
+Transition matrix: 19137 nodes (46 terminal), 135220 minterms, vars: 28r/28c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.022 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.023 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.001909, setup 0.00)
+
+yes = 7658, no = 1139, maybe = 50669
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 113 iterations in 0.14 seconds (average 0.001248, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.376245
+Computed point: (0.3762449169932193, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 111 iterations in 0.14 seconds (average 0.001252, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.964489
+Computed point: (0.0, 0.9644887744678017)
+Optimising weighted sum of objectives: weights (0.7193738626921364, 0.2806261373078636)
+Iterative method: 113 iterations in 0.14 seconds (average 0.001274, setup 0.00)
+Optimal value for weights [0.719374,0.280626] from initial state: 0.404528
+Computed point: (0.3412960002097752, 0.566619516281308)
+Optimising weighted sum of objectives: weights (0.538268342115715, 0.46173165788428505)
+Iterative method: 113 iterations in 0.14 seconds (average 0.001274, setup 0.00)
+Optimal value for weights [0.538268,0.461732] from initial state: 0.467866
+Computed point: (0.1531219516794219, 0.8347819497759847)
+Optimising weighted sum of objectives: weights (0.9419036723629375, 0.058096327637062496)
+Iterative method: 113 iterations in 0.14 seconds (average 0.001274, setup 0.00)
+Optimal value for weights [0.941904,0.058096] from initial state: 0.378551
+Computed point: (0.3760438046390615, 0.4191935392864584)
+Optimising weighted sum of objectives: weights (0.4586054727386182, 0.5413945272613818)
+Iterative method: 113 iterations in 0.14 seconds (average 0.001274, setup 0.00)
+Optimal value for weights [0.458605,0.541395] from initial state: 0.536267
+Computed point: (0.03149384789348893, 0.9638511651598439)
+Optimising weighted sum of objectives: weights (0.5876418915811514, 0.4123581084188486)
+Iterative method: 113 iterations in 0.14 seconds (average 0.001283, setup 0.00)
+Optimal value for weights [0.587642,0.412358] from initial state: 0.443537
+Computed point: (0.2835714297050363, 0.671499885277557)
+Optimising weighted sum of objectives: weights (0.8092601242744877, 0.19073987572551226)
+Iterative method: 113 iterations in 0.14 seconds (average 0.001274, setup 0.00)
+Optimal value for weights [0.809260,0.190740] from initial state: 0.389051
+Computed point: (0.3622588334902974, 0.5027253401109468)
+Optimising weighted sum of objectives: weights (0.9995204699121195, 4.795300878804549E-4)
+Iterative method: 113 iterations in 0.14 seconds (average 0.001274, setup 0.00)
+Optimal value for weights [0.999520,0.000480] from initial state: 0.376260
+Computed point: (0.3762449169932193, 0.40791261477124063)
+Optimising weighted sum of objectives: weights (0.01984377191362008, 0.9801562280863799)
+Iterative method: 113 iterations in 0.14 seconds (average 0.001274, setup 0.00)
+Optimal value for weights [0.019844,0.980156] from initial state: 0.945950
+Computed point: (0.030286006382816918, 0.9644884139413126)
+Optimising weighted sum of objectives: weights (0.5148408280203556, 0.48515917197964437)
+Iterative method: 113 iterations in 0.14 seconds (average 0.001274, setup 0.00)
+Optimal value for weights [0.514841,0.485159] from initial state: 0.484442
+Computed point: (0.10654250053432625, 0.885460410035771)
+The value iteration(s) took 1.602 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 1.603 s.
+
+Value in the initial state: [(0.2835714297050363, 0.671499885277557), (0.1531219516794219, 0.8347819497759847), (0.3412960002097752, 0.566619516281308), (0.3622588334902974, 0.5027253401109468), (0.3760438046390615, 0.4191935392864584), (0.3762449169932193, 0.40791261477124063), (0.030286006382816918, 0.9644884139413126), (0.03149384789348893, 0.9638511651598439), (0.10654250053432625, 0.885460410035771)]
+
+Time for model checking: 5.117 seconds.
+
+Result: [(0.2835714297050363, 0.671499885277557), (0.1531219516794219, 0.8347819497759847), (0.3412960002097752, 0.566619516281308), (0.3622588334902974, 0.5027253401109468), (0.3760438046390615, 0.4191935392864584), (0.3762449169932193, 0.40791261477124063), (0.030286006382816918, 0.9644884139413126), (0.03149384789348893, 0.9638511651598439), (0.10654250053432625, 0.885460410035771)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=17
+
+Building model...
+Model constants: N=17
+
+Computing reachable states...
+
+Reachability (BFS): 119 iterations in 0.44 seconds (average 0.003664, setup 0.00)
+
+Time for model construction: 0.526 seconds.
+
+Warning: Deadlocks detected and fixed in 8650 states
+
+Type:        MDP
+States:      63971 (1 initial)
+Transitions: 145571
+Choices:     66002
+
+Transition matrix: 18240 nodes (46 terminal), 145571 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 119 iterations in 0.33 seconds (average 0.002748, setup 0.00)
+States:      63971 (1 initial)
+Transitions: 145571
+Choices:     66002
+
+Transition matrix: 18319 nodes (46 terminal), 145571 minterms, vars: 27r/27c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 119 iterations in 0.31 seconds (average 0.002571, setup 0.00)
+States:      63971 (1 initial)
+Transitions: 145571
+Choices:     66002
+
+Transition matrix: 19060 nodes (46 terminal), 145571 minterms, vars: 28r/28c/2nd
+Total time for product construction: 0.664 seconds.
+
+States:      63971 (1 initial)
+Transitions: 145571
+Choices:     66002
+
+Transition matrix: 19060 nodes (46 terminal), 145571 minterms, vars: 28r/28c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.022 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.024 seconds.
+
+Prob0A: 11 iterations in 0.03 seconds (average 0.002636, setup 0.00)
+
+yes = 8246, no = 1139, maybe = 54586
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 120 iterations in 0.16 seconds (average 0.001342, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.386775
+Computed point: (0.38677479637919093, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 118 iterations in 0.16 seconds (average 0.001356, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.965765
+Computed point: (0.0, 0.9657651690718099)
+Optimising weighted sum of objectives: weights (0.7140381753893521, 0.28596182461064795)
+Iterative method: 120 iterations in 0.16 seconds (average 0.001367, setup 0.00)
+Optimal value for weights [0.714038,0.285962] from initial state: 0.413833
+Computed point: (0.3548284052783093, 0.5611656999291856)
+Optimising weighted sum of objectives: weights (0.5327687892034945, 0.4672312107965055)
+Iterative method: 120 iterations in 0.16 seconds (average 0.001367, setup 0.00)
+Optimal value for weights [0.532769,0.467231] from initial state: 0.473074
+Computed point: (0.15715508094915698, 0.8333068220427)
+Optimising weighted sum of objectives: weights (0.9461376836115416, 0.053862316388458446)
+Iterative method: 120 iterations in 0.17 seconds (average 0.001367, setup 0.00)
+Optimal value for weights [0.946138,0.053862] from initial state: 0.388738
+Computed point: (0.38659134196258743, 0.42644176383693344)
+Optimising weighted sum of objectives: weights (0.45736258830875, 0.54263741169125)
+Iterative method: 120 iterations in 0.16 seconds (average 0.001358, setup 0.00)
+Optimal value for weights [0.457363,0.542637] from initial state: 0.538092
+Computed point: (0.031380609172287674, 0.9651743654368025)
+Optimising weighted sum of objectives: weights (0.5792523498885742, 0.4207476501114258)
+Iterative method: 120 iterations in 0.16 seconds (average 0.001367, setup 0.00)
+Optimal value for weights [0.579252,0.420748] from initial state: 0.451611
+Computed point: (0.28824532612520204, 0.676519149178619)
+Optimising weighted sum of objectives: weights (0.8092165697237135, 0.19078343027628647)
+Iterative method: 120 iterations in 0.16 seconds (average 0.001367, setup 0.00)
+Optimal value for weights [0.809217,0.190783] from initial state: 0.398562
+Computed point: (0.3739782586125672, 0.5028345737814413)
+Optimising weighted sum of objectives: weights (0.9995699869375877, 4.3001306241225774E-4)
+Iterative method: 120 iterations in 0.16 seconds (average 0.001367, setup 0.00)
+Optimal value for weights [0.999570,0.000430] from initial state: 0.386787
+Computed point: (0.38677479637919093, 0.41613899493357465)
+Optimising weighted sum of objectives: weights (0.01847912191333012, 0.9815208780866699)
+Iterative method: 120 iterations in 0.19 seconds (average 0.001567, setup 0.00)
+Optimal value for weights [0.018479,0.981521] from initial state: 0.948478
+Computed point: (0.03030174811370865, 0.9657648983378648)
+Optimising weighted sum of objectives: weights (0.5118246855296287, 0.48817531447037127)
+Iterative method: 120 iterations in 0.16 seconds (average 0.001367, setup 0.00)
+Optimal value for weights [0.511825,0.488175] from initial state: 0.487792
+Computed point: (0.10673236327877583, 0.8873128686763355)
+The value iteration(s) took 1.82 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 1.82 s.
+
+Value in the initial state: [(0.28824532612520204, 0.676519149178619), (0.15715508094915698, 0.8333068220427), (0.3548284052783093, 0.5611656999291856), (0.3739782586125672, 0.5028345737814413), (0.38659134196258743, 0.42644176383693344), (0.38677479637919093, 0.41613899493357465), (0.03030174811370865, 0.9657648983378648), (0.031380609172287674, 0.9651743654368025), (0.10673236327877583, 0.8873128686763355)]
+
+Time for model checking: 5.822 seconds.
+
+Result: [(0.28824532612520204, 0.676519149178619), (0.15715508094915698, 0.8333068220427), (0.3548284052783093, 0.5611656999291856), (0.3739782586125672, 0.5028345737814413), (0.38659134196258743, 0.42644176383693344), (0.38677479637919093, 0.41613899493357465), (0.03030174811370865, 0.9657648983378648), (0.031380609172287674, 0.9651743654368025), (0.10673236327877583, 0.8873128686763355)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=18
+
+Building model...
+Model constants: N=18
+
+Computing reachable states...
+
+Reachability (BFS): 126 iterations in 0.38 seconds (average 0.002976, setup 0.00)
+
+Time for model construction: 0.47 seconds.
+
+Warning: Deadlocks detected and fixed in 9238 states
+
+Type:        MDP
+States:      68476 (1 initial)
+Transitions: 155922
+Choices:     70654
+
+Transition matrix: 18329 nodes (46 terminal), 155922 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 126 iterations in 0.38 seconds (average 0.003032, setup 0.00)
+States:      68476 (1 initial)
+Transitions: 155922
+Choices:     70654
+
+Transition matrix: 18408 nodes (46 terminal), 155922 minterms, vars: 27r/27c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 126 iterations in 0.34 seconds (average 0.002667, setup 0.00)
+States:      68476 (1 initial)
+Transitions: 155922
+Choices:     70654
+
+Transition matrix: 19149 nodes (46 terminal), 155922 minterms, vars: 28r/28c/2nd
+Total time for product construction: 0.752 seconds.
+
+States:      68476 (1 initial)
+Transitions: 155922
+Choices:     70654
+
+Transition matrix: 19149 nodes (46 terminal), 155922 minterms, vars: 28r/28c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.021 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.027 seconds.
+
+Prob0A: 11 iterations in 0.03 seconds (average 0.002545, setup 0.00)
+
+yes = 8834, no = 1139, maybe = 58503
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 127 iterations in 0.18 seconds (average 0.001441, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.396389
+Computed point: (0.3963892178218119, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 125 iterations in 0.18 seconds (average 0.001448, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.966725
+Computed point: (0.0, 0.9667245461681044)
+Optimising weighted sum of objectives: weights (0.7092031286797686, 0.29079687132023135)
+Iterative method: 127 iterations in 0.19 seconds (average 0.001465, setup 0.00)
+Optimal value for weights [0.709203,0.290797] from initial state: 0.422141
+Computed point: (0.36720544992871074, 0.556119386776129)
+Optimising weighted sum of objectives: weights (0.5278986355696333, 0.4721013644303666)
+Iterative method: 127 iterations in 0.18 seconds (average 0.001457, setup 0.00)
+Optimal value for weights [0.527899,0.472101] from initial state: 0.477597
+Computed point: (0.185136445314616, 0.804624129449016)
+Optimising weighted sum of objectives: weights (0.9501390558716643, 0.0498609441283358)
+Iterative method: 127 iterations in 0.18 seconds (average 0.001457, setup 0.00)
+Optimal value for weights [0.950139,0.049861] from initial state: 0.398059
+Computed point: (0.39622327983953964, 0.43303120941060214)
+Optimising weighted sum of objectives: weights (0.46682951737812395, 0.533170482621876)
+Iterative method: 127 iterations in 0.19 seconds (average 0.001457, setup 0.00)
+Optimal value for weights [0.466830,0.533170] from initial state: 0.529734
+Computed point: (0.03146123796333147, 0.9660079446761501)
+Optimising weighted sum of objectives: weights (0.5771479200455202, 0.4228520799544798)
+Iterative method: 127 iterations in 0.18 seconds (average 0.001457, setup 0.00)
+Optimal value for weights [0.577148,0.422852] from initial state: 0.456584
+Computed point: (0.30378495487460677, 0.6651390295955072)
+Optimising weighted sum of objectives: weights (0.809226272976139, 0.19077372702386092)
+Iterative method: 127 iterations in 0.18 seconds (average 0.001457, setup 0.00)
+Optimal value for weights [0.809226,0.190774] from initial state: 0.407238
+Computed point: (0.38469057101569254, 0.5028777268088872)
+Optimising weighted sum of objectives: weights (0.9996169458103061, 3.830541896938583E-4)
+Iterative method: 127 iterations in 0.18 seconds (average 0.001457, setup 0.00)
+Optimal value for weights [0.999617,0.000383] from initial state: 0.396400
+Computed point: (0.3963892178218119, 0.42364927718994294)
+Optimising weighted sum of objectives: weights (0.022270031303688986, 0.977729968696311)
+Iterative method: 127 iterations in 0.19 seconds (average 0.001457, setup 0.00)
+Optimal value for weights [0.022270,0.977730] from initial state: 0.945870
+Computed point: (0.030312181704910873, 0.9667243426926668)
+Optimising weighted sum of objectives: weights (0.5122335932689104, 0.4877664067310896)
+Iterative method: 127 iterations in 0.18 seconds (average 0.001449, setup 0.00)
+Optimal value for weights [0.512234,0.487766] from initial state: 0.488332
+Computed point: (0.13258794881380204, 0.8619210752185037)
+The value iteration(s) took 2.053 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 2.053 s.
+
+Value in the initial state: [(0.30378495487460677, 0.6651390295955072), (0.185136445314616, 0.804624129449016), (0.36720544992871074, 0.556119386776129), (0.38469057101569254, 0.5028777268088872), (0.39622327983953964, 0.43303120941060214), (0.3963892178218119, 0.42364927718994294), (0.030312181704910873, 0.9667243426926668), (0.03146123796333147, 0.9660079446761501), (0.13258794881380204, 0.8619210752185037)]
+
+Time for model checking: 6.191 seconds.
+
+Result: [(0.30378495487460677, 0.6651390295955072), (0.185136445314616, 0.804624129449016), (0.36720544992871074, 0.556119386776129), (0.38469057101569254, 0.5028777268088872), (0.39622327983953964, 0.43303120941060214), (0.3963892178218119, 0.42364927718994294), (0.030312181704910873, 0.9667243426926668), (0.03146123796333147, 0.9660079446761501), (0.13258794881380204, 0.8619210752185037)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=19
+
+Building model...
+Model constants: N=19
+
+Computing reachable states...
+
+Reachability (BFS): 133 iterations in 0.38 seconds (average 0.002887, setup 0.00)
+
+Time for model construction: 0.481 seconds.
+
+Warning: Deadlocks detected and fixed in 9826 states
+
+Type:        MDP
+States:      72981 (1 initial)
+Transitions: 166273
+Choices:     75306
+
+Transition matrix: 18146 nodes (46 terminal), 166273 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 133 iterations in 0.43 seconds (average 0.003211, setup 0.00)
+States:      72981 (1 initial)
+Transitions: 166273
+Choices:     75306
+
+Transition matrix: 18225 nodes (46 terminal), 166273 minterms, vars: 27r/27c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 133 iterations in 0.35 seconds (average 0.002624, setup 0.00)
+States:      72981 (1 initial)
+Transitions: 166273
+Choices:     75306
+
+Transition matrix: 18966 nodes (46 terminal), 166273 minterms, vars: 28r/28c/2nd
+Total time for product construction: 0.807 seconds.
+
+States:      72981 (1 initial)
+Transitions: 166273
+Choices:     75306
+
+Transition matrix: 18966 nodes (46 terminal), 166273 minterms, vars: 28r/28c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.025 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.029 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.001909, setup 0.00)
+
+yes = 9422, no = 1139, maybe = 62420
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 134 iterations in 0.20 seconds (average 0.001507, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.405168
+Computed point: (0.40516799786160496, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 132 iterations in 0.20 seconds (average 0.001530, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.967447
+Computed point: (0.0, 0.9674465861379808)
+Optimising weighted sum of objectives: weights (0.7048202732328486, 0.29517972676715143)
+Iterative method: 134 iterations in 0.21 seconds (average 0.001545, setup 0.00)
+Optimal value for weights [0.704820,0.295180] from initial state: 0.429572
+Computed point: (0.3785146406143993, 0.5514849852515585)
+Optimising weighted sum of objectives: weights (0.5235670736995753, 0.47643292630042466)
+Iterative method: 134 iterations in 0.21 seconds (average 0.001545, setup 0.00)
+Optimal value for weights [0.523567,0.476433] from initial state: 0.481544
+Computed point: (0.23016250538118604, 0.7577946692731066)
+Optimising weighted sum of objectives: weights (0.9538979595575559, 0.04610204044244411)
+Iterative method: 134 iterations in 0.21 seconds (average 0.001545, setup 0.00)
+Optimal value for weights [0.953898,0.046102] from initial state: 0.406587
+Computed point: (0.40501929896993494, 0.43901964610104294)
+Optimising weighted sum of objectives: weights (0.4766826785584162, 0.5233173214415838)
+Iterative method: 134 iterations in 0.21 seconds (average 0.001552, setup 0.00)
+Optimal value for weights [0.476683,0.523317] from initial state: 0.520874
+Computed point: (0.03152355032287497, 0.9666161501191175)
+Optimising weighted sum of objectives: weights (0.5817081874081047, 0.41829181259189535)
+Iterative method: 134 iterations in 0.21 seconds (average 0.001552, setup 0.00)
+Optimal value for weights [0.581708,0.418292] from initial state: 0.458841
+Computed point: (0.3298514256657068, 0.6382236243127739)
+Optimising weighted sum of objectives: weights (0.8092778381579699, 0.19072216184203009)
+Iterative method: 134 iterations in 0.21 seconds (average 0.001552, setup 0.00)
+Optimal value for weights [0.809278,0.190722] from initial state: 0.415154
+Computed point: (0.3944778682738617, 0.5028881916768654)
+Optimising weighted sum of objectives: weights (0.999661407992253, 3.385920077470192E-4)
+Iterative method: 134 iterations in 0.21 seconds (average 0.001552, setup 0.00)
+Optimal value for weights [0.999661,0.000339] from initial state: 0.405177
+Computed point: (0.40516799786160496, 0.4305062931515732)
+Optimising weighted sum of objectives: weights (0.02566719321977462, 0.9743328067802254)
+Iterative method: 134 iterations in 0.21 seconds (average 0.001552, setup 0.00)
+Optimal value for weights [0.025667,0.974333] from initial state: 0.943393
+Computed point: (0.030319289783746737, 0.9674464331139381)
+Optimising weighted sum of objectives: weights (0.5124951098198045, 0.4875048901801955)
+Iterative method: 134 iterations in 0.21 seconds (average 0.001560, setup 0.00)
+Optimal value for weights [0.512495,0.487505] from initial state: 0.488889
+Computed point: (0.14665686136066794, 0.8486638718052011)
+The value iteration(s) took 2.3 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 2.3 s.
+
+Value in the initial state: [(0.3298514256657068, 0.6382236243127739), (0.23016250538118604, 0.7577946692731066), (0.3785146406143993, 0.5514849852515585), (0.3944778682738617, 0.5028881916768654), (0.40501929896993494, 0.43901964610104294), (0.40516799786160496, 0.4305062931515732), (0.030319289783746737, 0.9674464331139381), (0.03152355032287497, 0.9666161501191175), (0.14665686136066794, 0.8486638718052011)]
+
+Time for model checking: 6.871 seconds.
+
+Result: [(0.3298514256657068, 0.6382236243127739), (0.23016250538118604, 0.7577946692731066), (0.3785146406143993, 0.5514849852515585), (0.3944778682738617, 0.5028881916768654), (0.40501929896993494, 0.43901964610104294), (0.40516799786160496, 0.4305062931515732), (0.030319289783746737, 0.9674464331139381), (0.03152355032287497, 0.9666161501191175), (0.14665686136066794, 0.8486638718052011)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=20
+
+Building model...
+Model constants: N=20
+
+Computing reachable states...
+
+Reachability (BFS): 140 iterations in 0.42 seconds (average 0.002993, setup 0.00)
+
+Time for model construction: 0.52 seconds.
+
+Warning: Deadlocks detected and fixed in 10414 states
+
+Type:        MDP
+States:      77486 (1 initial)
+Transitions: 176624
+Choices:     79958
+
+Transition matrix: 18325 nodes (46 terminal), 176624 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 140 iterations in 0.42 seconds (average 0.003014, setup 0.00)
+States:      77486 (1 initial)
+Transitions: 176624
+Choices:     79958
+
+Transition matrix: 18404 nodes (46 terminal), 176624 minterms, vars: 27r/27c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 140 iterations in 0.40 seconds (average 0.002864, setup 0.00)
+States:      77486 (1 initial)
+Transitions: 176624
+Choices:     79958
+
+Transition matrix: 19145 nodes (46 terminal), 176624 minterms, vars: 28r/28c/2nd
+Total time for product construction: 0.855 seconds.
+
+States:      77486 (1 initial)
+Transitions: 176624
+Choices:     79958
+
+Transition matrix: 19145 nodes (46 terminal), 176624 minterms, vars: 28r/28c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.029 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.034 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.001909, setup 0.00)
+
+yes = 10010, no = 1139, maybe = 66337
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 141 iterations in 0.23 seconds (average 0.001617, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.413184
+Computed point: (0.41318389686260615, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 139 iterations in 0.23 seconds (average 0.001619, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.967991
+Computed point: (0.0, 0.9679905050604192)
+Optimising weighted sum of objectives: weights (0.700845963922206, 0.29915403607779395)
+Iterative method: 141 iterations in 0.23 seconds (average 0.001645, setup 0.00)
+Optimal value for weights [0.700846,0.299154] from initial state: 0.436235
+Computed point: (0.38768060128274273, 0.5499859961423349)
+Optimising weighted sum of objectives: weights (0.518818709227345, 0.48118129077265503)
+Iterative method: 141 iterations in 0.23 seconds (average 0.001638, setup 0.00)
+Optimal value for weights [0.518819,0.481181] from initial state: 0.485482
+Computed point: (0.23090888904245682, 0.7599665065083616)
+Optimising weighted sum of objectives: weights (0.9556841526911078, 0.044315847308892126)
+Iterative method: 141 iterations in 0.23 seconds (average 0.001645, setup 0.00)
+Optimal value for weights [0.955684,0.044316] from initial state: 0.414444
+Computed point: (0.413048090320427, 0.44454251706245035)
+Optimising weighted sum of objectives: weights (0.4739312191713232, 0.5260687808286768)
+Iterative method: 141 iterations in 0.23 seconds (average 0.001638, setup 0.00)
+Optimal value for weights [0.473931,0.526069] from initial state: 0.523706
+Computed point: (0.03129290518496934, 0.9673170080539005)
+Optimising weighted sum of objectives: weights (0.5725405257909744, 0.4274594742090256)
+Iterative method: 141 iterations in 0.23 seconds (average 0.001638, setup 0.00)
+Optimal value for weights [0.572541,0.427459] from initial state: 0.465145
+Computed point: (0.33511776411601923, 0.6393029129734739)
+Optimising weighted sum of objectives: weights (0.806075213701616, 0.19392478629838408)
+Iterative method: 141 iterations in 0.23 seconds (average 0.001638, setup 0.00)
+Optimal value for weights [0.806075,0.193925] from initial state: 0.422706
+Computed point: (0.40341791993930537, 0.5028820947183088)
+Optimising weighted sum of objectives: weights (0.9996945959922708, 3.054040077291888E-4)
+Iterative method: 141 iterations in 0.23 seconds (average 0.001638, setup 0.00)
+Optimal value for weights [0.999695,0.000305] from initial state: 0.413191
+Computed point: (0.41318389686260615, 0.43676714321721183)
+Optimising weighted sum of objectives: weights (0.021068902358301056, 0.9789310976416989)
+Iterative method: 141 iterations in 0.23 seconds (average 0.001638, setup 0.00)
+Optimal value for weights [0.021069,0.978931] from initial state: 0.948235
+Computed point: (0.03032433932933566, 0.9679903899283316)
+Optimising weighted sum of objectives: weights (0.5095026469813501, 0.49049735301864994)
+Iterative method: 141 iterations in 0.23 seconds (average 0.001645, setup 0.00)
+Optimal value for weights [0.509503,0.490497] from initial state: 0.491569
+Computed point: (0.14677900902045227, 0.8497193933376463)
+The value iteration(s) took 2.567 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 2.567 s.
+
+Value in the initial state: [(0.33511776411601923, 0.6393029129734739), (0.23090888904245682, 0.7599665065083616), (0.38768060128274273, 0.5499859961423349), (0.40341791993930537, 0.5028820947183088), (0.413048090320427, 0.44454251706245035), (0.41318389686260615, 0.43676714321721183), (0.03032433932933566, 0.9679903899283316), (0.03129290518496934, 0.9673170080539005), (0.14677900902045227, 0.8497193933376463)]
+
+Time for model checking: 7.035 seconds.
+
+Result: [(0.33511776411601923, 0.6393029129734739), (0.23090888904245682, 0.7599665065083616), (0.38768060128274273, 0.5499859961423349), (0.40341791993930537, 0.5028820947183088), (0.413048090320427, 0.44454251706245035), (0.41318389686260615, 0.43676714321721183), (0.03032433932933566, 0.9679903899283316), (0.03129290518496934, 0.9673170080539005), (0.14677900902045227, 0.8497193933376463)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=21
+
+Building model...
+Model constants: N=21
+
+Computing reachable states...
+
+Reachability (BFS): 147 iterations in 0.51 seconds (average 0.003490, setup 0.00)
+
+Time for model construction: 0.619 seconds.
+
+Warning: Deadlocks detected and fixed in 11002 states
+
+Type:        MDP
+States:      81991 (1 initial)
+Transitions: 186975
+Choices:     84610
+
+Transition matrix: 18240 nodes (46 terminal), 186975 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 147 iterations in 0.49 seconds (average 0.003313, setup 0.00)
+States:      81991 (1 initial)
+Transitions: 186975
+Choices:     84610
+
+Transition matrix: 18319 nodes (46 terminal), 186975 minterms, vars: 27r/27c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 147 iterations in 0.60 seconds (average 0.004061, setup 0.00)
+States:      81991 (1 initial)
+Transitions: 186975
+Choices:     84610
+
+Transition matrix: 19060 nodes (46 terminal), 186975 minterms, vars: 28r/28c/2nd
+Total time for product construction: 1.127 seconds.
+
+States:      81991 (1 initial)
+Transitions: 186975
+Choices:     84610
+
+Transition matrix: 19060 nodes (46 terminal), 186975 minterms, vars: 28r/28c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.034 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.038 seconds.
+
+Prob0A: 11 iterations in 0.05 seconds (average 0.004273, setup 0.00)
+
+yes = 10598, no = 1139, maybe = 70254
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 148 iterations in 0.26 seconds (average 0.001736, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.420503
+Computed point: (0.4205032849451152, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 146 iterations in 0.25 seconds (average 0.001740, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.968400
+Computed point: (0.0, 0.9684004955249226)
+Optimising weighted sum of objectives: weights (0.6972408810041493, 0.3027591189958508)
+Iterative method: 148 iterations in 0.26 seconds (average 0.001757, setup 0.00)
+Optimal value for weights [0.697241,0.302759] from initial state: 0.442222
+Computed point: (0.3969461233704024, 0.5464893070491654)
+Optimising weighted sum of objectives: weights (0.515243843307126, 0.4847561566928739)
+Iterative method: 148 iterations in 0.26 seconds (average 0.001757, setup 0.00)
+Optimal value for weights [0.515244,0.484756] from initial state: 0.488466
+Computed point: (0.2311626300129312, 0.7619511745824625)
+Optimising weighted sum of objectives: weights (0.9586750153341341, 0.04132498466586589)
+Iterative method: 148 iterations in 0.26 seconds (average 0.001757, setup 0.00)
+Optimal value for weights [0.958675,0.041325] from initial state: 0.421586
+Computed point: (0.42037950039754557, 0.4495792213483719)
+Optimising weighted sum of objectives: weights (0.4717634435982413, 0.5282365564017587)
+Iterative method: 148 iterations in 0.26 seconds (average 0.001757, setup 0.00)
+Optimal value for weights [0.471763,0.528237] from initial state: 0.525930
+Computed point: (0.03099212998431947, 0.9679542735053068)
+Optimising weighted sum of objectives: weights (0.5651527589211235, 0.4348472410788765)
+Iterative method: 148 iterations in 0.26 seconds (average 0.001750, setup 0.00)
+Optimal value for weights [0.565153,0.434847] from initial state: 0.470216
+Computed point: (0.3476895567176429, 0.6294582218522566)
+Optimising weighted sum of objectives: weights (0.805279185956951, 0.194720814043049)
+Iterative method: 148 iterations in 0.26 seconds (average 0.001757, setup 0.00)
+Optimal value for weights [0.805279,0.194721] from initial state: 0.429359
+Computed point: (0.41110477675546386, 0.50484854396763)
+Optimising weighted sum of objectives: weights (0.9997247415606596, 2.7525843934042863E-4)
+Iterative method: 148 iterations in 0.26 seconds (average 0.001764, setup 0.00)
+Optimal value for weights [0.999725,0.000275] from initial state: 0.420509
+Computed point: (0.4205032849451152, 0.44248381773209355)
+Optimising weighted sum of objectives: weights (0.014193556314907707, 0.9858064436850923)
+Iterative method: 148 iterations in 0.26 seconds (average 0.001764, setup 0.00)
+Optimal value for weights [0.014194,0.985806] from initial state: 0.955086
+Computed point: (0.030328059917976012, 0.9684004088769933)
+Optimising weighted sum of objectives: weights (0.5071799335423197, 0.4928200664576803)
+Iterative method: 148 iterations in 0.26 seconds (average 0.001764, setup 0.00)
+Optimal value for weights [0.507180,0.492820] from initial state: 0.493638
+Computed point: (0.14687047653699822, 0.8505089576758571)
+The value iteration(s) took 2.885 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 2.885 s.
+
+Value in the initial state: [(0.3476895567176429, 0.6294582218522566), (0.2311626300129312, 0.7619511745824625), (0.3969461233704024, 0.5464893070491654), (0.41110477675546386, 0.50484854396763), (0.42037950039754557, 0.4495792213483719), (0.4205032849451152, 0.44248381773209355), (0.030328059917976012, 0.9684004088769933), (0.03099212998431947, 0.9679542735053068), (0.14687047653699822, 0.8505089576758571)]
+
+Time for model checking: 7.695 seconds.
+
+Result: [(0.3476895567176429, 0.6294582218522566), (0.2311626300129312, 0.7619511745824625), (0.3969461233704024, 0.5464893070491654), (0.41110477675546386, 0.50484854396763), (0.42037950039754557, 0.4495792213483719), (0.4205032849451152, 0.44248381773209355), (0.030328059917976012, 0.9684004088769933), (0.03099212998431947, 0.9679542735053068), (0.14687047653699822, 0.8505089576758571)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=22
+
+Building model...
+Model constants: N=22
+
+Computing reachable states...
+
+Reachability (BFS): 154 iterations in 0.55 seconds (average 0.003539, setup 0.00)
+
+Time for model construction: 0.644 seconds.
+
+Warning: Deadlocks detected and fixed in 11590 states
+
+Type:        MDP
+States:      86496 (1 initial)
+Transitions: 197326
+Choices:     89262
+
+Transition matrix: 18329 nodes (46 terminal), 197326 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 154 iterations in 0.44 seconds (average 0.002877, setup 0.00)
+States:      86496 (1 initial)
+Transitions: 197326
+Choices:     89262
+
+Transition matrix: 18408 nodes (46 terminal), 197326 minterms, vars: 27r/27c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 154 iterations in 0.46 seconds (average 0.002968, setup 0.00)
+States:      86496 (1 initial)
+Transitions: 197326
+Choices:     89262
+
+Transition matrix: 19149 nodes (46 terminal), 197326 minterms, vars: 28r/28c/2nd
+Total time for product construction: 0.938 seconds.
+
+States:      86496 (1 initial)
+Transitions: 197326
+Choices:     89262
+
+Transition matrix: 19149 nodes (46 terminal), 197326 minterms, vars: 28r/28c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.032 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.036 seconds.
+
+Prob0A: 11 iterations in 0.05 seconds (average 0.004182, setup 0.00)
+
+yes = 11186, no = 1139, maybe = 74171
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 155 iterations in 0.51 seconds (average 0.003297, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.427187
+Computed point: (0.42718672660397244, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 153 iterations in 0.28 seconds (average 0.001797, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.968710
+Computed point: (0.0, 0.9687096569552553)
+Optimising weighted sum of objectives: weights (0.6939696014436684, 0.30603039855633163)
+Iterative method: 155 iterations in 0.28 seconds (average 0.001819, setup 0.00)
+Optimal value for weights [0.693970,0.306030] from initial state: 0.447602
+Computed point: (0.40565777053670804, 0.5427156052102264)
+Optimising weighted sum of objectives: weights (0.5122264393965529, 0.4877735606034471)
+Iterative method: 155 iterations in 0.28 seconds (average 0.001826, setup 0.00)
+Optimal value for weights [0.512226,0.487774] from initial state: 0.490907
+Computed point: (0.2458759838733311, 0.7482224827182705)
+Optimising weighted sum of objectives: weights (0.9618446369806006, 0.03815536301939938)
+Iterative method: 155 iterations in 0.28 seconds (average 0.001832, setup 0.00)
+Optimal value for weights [0.961845,0.038155] from initial state: 0.428108
+Computed point: (0.42707368380960226, 0.45418336967639494)
+Optimising weighted sum of objectives: weights (0.4727800007410312, 0.5272199992589688)
+Iterative method: 155 iterations in 0.28 seconds (average 0.001826, setup 0.00)
+Optimal value for weights [0.472780,0.527220] from initial state: 0.525123
+Computed point: (0.030947877928871596, 0.968270138672306)
+Optimising weighted sum of objectives: weights (0.5625876126602296, 0.43741238733977045)
+Iterative method: 155 iterations in 0.28 seconds (average 0.001832, setup 0.00)
+Optimal value for weights [0.562588,0.437412] from initial state: 0.473458
+Computed point: (0.34990908803646575, 0.6323627135127659)
+Optimising weighted sum of objectives: weights (0.8052180641027384, 0.1947819358972615)
+Iterative method: 155 iterations in 0.28 seconds (average 0.001826, setup 0.00)
+Optimal value for weights [0.805218,0.194782] from initial state: 0.435365
+Computed point: (0.4186043512415824, 0.5046528615876698)
+Optimising weighted sum of objectives: weights (0.9997511695200159, 2.4883047998417314E-4)
+Iterative method: 155 iterations in 0.29 seconds (average 0.001858, setup 0.00)
+Optimal value for weights [0.999751,0.000249] from initial state: 0.427192
+Computed point: (0.42718672660397244, 0.4477037061279755)
+Optimising weighted sum of objectives: weights (0.014003018281069646, 0.9859969817189304)
+Iterative method: 155 iterations in 0.29 seconds (average 0.001903, setup 0.00)
+Optimal value for weights [0.014003,0.985997] from initial state: 0.955569
+Computed point: (0.030330865556416627, 0.9687095917311798)
+Optimising weighted sum of objectives: weights (0.5058848681444126, 0.4941151318555875)
+Iterative method: 155 iterations in 0.29 seconds (average 0.001884, setup 0.00)
+Optimal value for weights [0.505885,0.494115] from initial state: 0.494877
+Computed point: (0.15206222415760828, 0.845856737286073)
+The value iteration(s) took 3.166 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 3.166 s.
+
+Value in the initial state: [(0.34990908803646575, 0.6323627135127659), (0.2458759838733311, 0.7482224827182705), (0.40565777053670804, 0.5427156052102264), (0.4186043512415824, 0.5046528615876698), (0.42707368380960226, 0.45418336967639494), (0.42718672660397244, 0.4477037061279755), (0.030330865556416627, 0.9687095917311798), (0.030947877928871596, 0.968270138672306), (0.15206222415760828, 0.845856737286073)]
+
+Time for model checking: 8.321 seconds.
+
+Result: [(0.34990908803646575, 0.6323627135127659), (0.2458759838733311, 0.7482224827182705), (0.40565777053670804, 0.5427156052102264), (0.4186043512415824, 0.5046528615876698), (0.42707368380960226, 0.45418336967639494), (0.42718672660397244, 0.4477037061279755), (0.030330865556416627, 0.9687095917311798), (0.030947877928871596, 0.968270138672306), (0.15206222415760828, 0.845856737286073)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=23
+
+Building model...
+Model constants: N=23
+
+Computing reachable states...
+
+Reachability (BFS): 161 iterations in 0.47 seconds (average 0.002950, setup 0.00)
+
+Time for model construction: 0.573 seconds.
+
+Warning: Deadlocks detected and fixed in 12178 states
+
+Type:        MDP
+States:      91001 (1 initial)
+Transitions: 207677
+Choices:     93914
+
+Transition matrix: 18100 nodes (46 terminal), 207677 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 161 iterations in 0.50 seconds (average 0.003093, setup 0.00)
+States:      91001 (1 initial)
+Transitions: 207677
+Choices:     93914
+
+Transition matrix: 18179 nodes (46 terminal), 207677 minterms, vars: 27r/27c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 161 iterations in 0.59 seconds (average 0.003665, setup 0.00)
+States:      91001 (1 initial)
+Transitions: 207677
+Choices:     93914
+
+Transition matrix: 18920 nodes (46 terminal), 207677 minterms, vars: 28r/28c/2nd
+Total time for product construction: 1.125 seconds.
+
+States:      91001 (1 initial)
+Transitions: 207677
+Choices:     93914
+
+Transition matrix: 18920 nodes (46 terminal), 207677 minterms, vars: 28r/28c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.037 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.036 seconds.
+
+Prob0A: 11 iterations in 0.03 seconds (average 0.002545, setup 0.00)
+
+yes = 11774, no = 1139, maybe = 78088
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 162 iterations in 0.31 seconds (average 0.001901, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.433290
+Computed point: (0.43328950166774616, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 160 iterations in 0.30 seconds (average 0.001906, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.968943
+Computed point: (0.0, 0.9689428464701338)
+Optimising weighted sum of objectives: weights (0.6910002095992573, 0.30899979040074266)
+Iterative method: 162 iterations in 0.31 seconds (average 0.001926, setup 0.00)
+Optimal value for weights [0.691000,0.309000] from initial state: 0.452442
+Computed point: (0.4129536093190478, 0.5407466016435301)
+Optimising weighted sum of objectives: weights (0.5090605945138265, 0.49093940548617354)
+Iterative method: 162 iterations in 0.31 seconds (average 0.001926, setup 0.00)
+Optimal value for weights [0.509061,0.490939] from initial state: 0.493212
+Computed point: (0.24604070306956655, 0.7495058552746177)
+Optimising weighted sum of objectives: weights (0.9637559671412952, 0.03624403285870481)
+Iterative method: 162 iterations in 0.31 seconds (average 0.001926, setup 0.00)
+Optimal value for weights [0.963756,0.036244] from initial state: 0.434100
+Computed point: (0.4331862717575723, 0.458387207147568)
+Optimising weighted sum of objectives: weights (0.47142321511661955, 0.5285767848833804)
+Iterative method: 162 iterations in 0.31 seconds (average 0.001926, setup 0.00)
+Optimal value for weights [0.471423,0.528577] from initial state: 0.526505
+Computed point: (0.030721777605858844, 0.9686804707693953)
+Optimising weighted sum of objectives: weights (0.555695300118739, 0.444304699881261)
+Iterative method: 162 iterations in 0.31 seconds (average 0.001932, setup 0.00)
+Optimal value for weights [0.555695,0.444305] from initial state: 0.477519
+Computed point: (0.36178247352213144, 0.6222717939088364)
+Optimising weighted sum of objectives: weights (0.802785293100764, 0.19721470689923604)
+Iterative method: 162 iterations in 0.31 seconds (average 0.001932, setup 0.00)
+Optimal value for weights [0.802785,0.197215] from initial state: 0.441037
+Computed point: (0.4254383179318606, 0.5045315129872021)
+Optimising weighted sum of objectives: weights (0.9997748482807268, 2.2515171927318194E-4)
+Iterative method: 162 iterations in 0.31 seconds (average 0.001926, setup 0.00)
+Optimal value for weights [0.999775,0.000225] from initial state: 0.433294
+Computed point: (0.43328950166774616, 0.4524700326179821)
+Optimising weighted sum of objectives: weights (0.008468061016294937, 0.9915319389837051)
+Iterative method: 162 iterations in 0.31 seconds (average 0.001926, setup 0.00)
+Optimal value for weights [0.008468,0.991532] from initial state: 0.960995
+Computed point: (0.030329465980455314, 0.9689428464701338)
+Optimising weighted sum of objectives: weights (0.5044369934965711, 0.4955630065034288)
+Iterative method: 162 iterations in 0.31 seconds (average 0.001932, setup 0.00)
+Optimal value for weights [0.504437,0.495563] from initial state: 0.496141
+Computed point: (0.15211685410530826, 0.846324761184784)
+The value iteration(s) took 3.452 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 3.452 s.
+
+Value in the initial state: [(0.36178247352213144, 0.6222717939088364), (0.24604070306956655, 0.7495058552746177), (0.4129536093190478, 0.5407466016435301), (0.4254383179318606, 0.5045315129872021), (0.4331862717575723, 0.458387207147568), (0.43328950166774616, 0.4524700326179821), (0.030329465980455314, 0.9689428464701338), (0.030721777605858844, 0.9686804707693953), (0.15211685410530826, 0.846324761184784)]
+
+Time for model checking: 8.662 seconds.
+
+Result: [(0.36178247352213144, 0.6222717939088364), (0.24604070306956655, 0.7495058552746177), (0.4129536093190478, 0.5407466016435301), (0.4254383179318606, 0.5045315129872021), (0.4331862717575723, 0.458387207147568), (0.43328950166774616, 0.4524700326179821), (0.030329465980455314, 0.9689428464701338), (0.030721777605858844, 0.9686804707693953), (0.15211685410530826, 0.846324761184784)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=24
+
+Building model...
+Model constants: N=24
+
+Computing reachable states...
+
+Reachability (BFS): 168 iterations in 0.50 seconds (average 0.002970, setup 0.00)
+
+Time for model construction: 0.67 seconds.
+
+Warning: Deadlocks detected and fixed in 12766 states
+
+Type:        MDP
+States:      95506 (1 initial)
+Transitions: 218028
+Choices:     98566
+
+Transition matrix: 18367 nodes (46 terminal), 218028 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 168 iterations in 0.51 seconds (average 0.003042, setup 0.00)
+States:      95506 (1 initial)
+Transitions: 218028
+Choices:     98566
+
+Transition matrix: 18446 nodes (46 terminal), 218028 minterms, vars: 27r/27c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 168 iterations in 0.55 seconds (average 0.003274, setup 0.00)
+States:      95506 (1 initial)
+Transitions: 218028
+Choices:     98566
+
+Transition matrix: 19187 nodes (46 terminal), 218028 minterms, vars: 28r/28c/2nd
+Total time for product construction: 1.094 seconds.
+
+States:      95506 (1 initial)
+Transitions: 218028
+Choices:     98566
+
+Transition matrix: 19187 nodes (46 terminal), 218028 minterms, vars: 28r/28c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.032 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.039 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.002000, setup 0.00)
+
+yes = 12362, no = 1139, maybe = 82005
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 169 iterations in 0.33 seconds (average 0.001976, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.438862
+Computed point: (0.43886207400112653, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 167 iterations in 0.36 seconds (average 0.002132, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.969119
+Computed point: (0.0, 0.9691187638816849)
+Optimising weighted sum of objectives: weights (0.6883039440642915, 0.31169605593570854)
+Iterative method: 169 iterations in 0.34 seconds (average 0.002024, setup 0.00)
+Optimal value for weights [0.688304,0.311696] from initial state: 0.456837
+Computed point: (0.415798990548509, 0.5474603447270193)
+Optimising weighted sum of objectives: weights (0.5034983442371317, 0.4965016557628683)
+Iterative method: 169 iterations in 0.38 seconds (average 0.002225, setup 0.00)
+Optimal value for weights [0.503498,0.496502] from initial state: 0.496987
+Computed point: (0.15329598316642526, 0.8455215502595348)
+Optimising weighted sum of objectives: weights (0.9595755716356738, 0.040424428364326206)
+Iterative method: 169 iterations in 0.35 seconds (average 0.002047, setup 0.00)
+Optimal value for weights [0.959576,0.040424] from initial state: 0.439716
+Computed point: (0.4387678071217936, 0.462225642595675)
+Optimising weighted sum of objectives: weights (0.4463714351079706, 0.5536285648920294)
+Iterative method: 169 iterations in 0.35 seconds (average 0.002047, setup 0.00)
+Optimal value for weights [0.446371,0.553629] from initial state: 0.550097
+Computed point: (0.03052689055457862, 0.969007391391981)
+Optimising weighted sum of objectives: weights (0.5317164361648689, 0.46828356383513114)
+Iterative method: 169 iterations in 0.34 seconds (average 0.002036, setup 0.00)
+Optimal value for weights [0.531716,0.468284] from initial state: 0.485773
+Computed point: (0.34964642027702686, 0.6403394649950549)
+Optimising weighted sum of objectives: weights (0.787725788881374, 0.21227421111862596)
+Iterative method: 169 iterations in 0.34 seconds (average 0.002024, setup 0.00)
+Optimal value for weights [0.787726,0.212274] from initial state: 0.447119
+Computed point: (0.43167953573293905, 0.5044136159010224)
+Optimising weighted sum of objectives: weights (0.9997961003249027, 2.0389967509726114E-4)
+Iterative method: 169 iterations in 0.34 seconds (average 0.002024, setup 0.00)
+Optimal value for weights [0.999796,0.000204] from initial state: 0.438866
+Computed point: (0.43886207400112653, 0.45682223841448466)
+Optimising weighted sum of objectives: weights (0.003635078448898099, 0.9963649215511019)
+Iterative method: 169 iterations in 0.34 seconds (average 0.002024, setup 0.00)
+Optimal value for weights [0.003635,0.996365] from initial state: 0.965706
+Computed point: (0.030331986982262832, 0.9691187638816849)
+Optimising weighted sum of objectives: weights (0.5014552977877467, 0.4985447022122533)
+Iterative method: 169 iterations in 0.34 seconds (average 0.002024, setup 0.00)
+Optimal value for weights [0.501455,0.498545] from initial state: 0.498477
+Computed point: (0.10581636637960763, 0.8934295374815546)
+The value iteration(s) took 3.845 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 3.845 s.
+
+Value in the initial state: [(0.34964642027702686, 0.6403394649950549), (0.15329598316642526, 0.8455215502595348), (0.415798990548509, 0.5474603447270193), (0.43167953573293905, 0.5044136159010224), (0.4387678071217936, 0.462225642595675), (0.43886207400112653, 0.45682223841448466), (0.030331986982262832, 0.9691187638816849), (0.03052689055457862, 0.969007391391981), (0.10581636637960763, 0.8934295374815546)]
+
+Time for model checking: 9.516 seconds.
+
+Result: [(0.34964642027702686, 0.6403394649950549), (0.15329598316642526, 0.8455215502595348), (0.415798990548509, 0.5474603447270193), (0.43167953573293905, 0.5044136159010224), (0.4387678071217936, 0.462225642595675), (0.43886207400112653, 0.45682223841448466), (0.030331986982262832, 0.9691187638816849), (0.03052689055457862, 0.969007391391981), (0.10581636637960763, 0.8934295374815546)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=25
+
+Building model...
+Model constants: N=25
+
+Computing reachable states...
+
+Reachability (BFS): 175 iterations in 0.53 seconds (average 0.003051, setup 0.00)
+
+Time for model construction: 0.631 seconds.
+
+Warning: Deadlocks detected and fixed in 13354 states
+
+Type:        MDP
+States:      100011 (1 initial)
+Transitions: 228379
+Choices:     103218
+
+Transition matrix: 18286 nodes (46 terminal), 228379 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 175 iterations in 0.48 seconds (average 0.002720, setup 0.00)
+States:      100011 (1 initial)
+Transitions: 228379
+Choices:     103218
+
+Transition matrix: 18365 nodes (46 terminal), 228379 minterms, vars: 27r/27c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 175 iterations in 0.51 seconds (average 0.002931, setup 0.00)
+States:      100011 (1 initial)
+Transitions: 228379
+Choices:     103218
+
+Transition matrix: 19106 nodes (46 terminal), 228379 minterms, vars: 28r/28c/2nd
+Total time for product construction: 1.018 seconds.
+
+States:      100011 (1 initial)
+Transitions: 228379
+Choices:     103218
+
+Transition matrix: 19106 nodes (46 terminal), 228379 minterms, vars: 28r/28c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.037 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.042 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.002091, setup 0.00)
+
+yes = 12950, no = 1139, maybe = 85922
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 176 iterations in 0.37 seconds (average 0.002085, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.443951
+Computed point: (0.4439505155034803, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 174 iterations in 0.36 seconds (average 0.002092, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.969251
+Computed point: (0.0, 0.9692514918682372)
+Optimising weighted sum of objectives: weights (0.685854879070585, 0.31414512092941504)
+Iterative method: 176 iterations in 0.37 seconds (average 0.002108, setup 0.00)
+Optimal value for weights [0.685855,0.314145] from initial state: 0.460799
+Computed point: (0.42289021848864305, 0.5435620358017837)
+Optimising weighted sum of objectives: weights (0.5016493663834678, 0.4983506336165322)
+Iterative method: 176 iterations in 0.37 seconds (average 0.002108, setup 0.00)
+Optimal value for weights [0.501649,0.498351] from initial state: 0.498432
+Computed point: (0.13307693703164347, 0.8662063429386965)
+Optimising weighted sum of objectives: weights (0.9627002054456864, 0.03729979455431361)
+Iterative method: 176 iterations in 0.37 seconds (average 0.002108, setup 0.00)
+Optimal value for weights [0.962700,0.037300] from initial state: 0.444680
+Computed point: (0.4438644346262471, 0.4657304983240637)
+Optimising weighted sum of objectives: weights (0.43640622820213526, 0.5635937717978647)
+Iterative method: 176 iterations in 0.37 seconds (average 0.002102, setup 0.00)
+Optimal value for weights [0.436406,0.563594] from initial state: 0.559519
+Computed point: (0.030450829993252614, 0.9691915171110415)
+Optimising weighted sum of objectives: weights (0.526802693191611, 0.47319730680838895)
+Iterative method: 176 iterations in 0.37 seconds (average 0.002119, setup 0.00)
+Optimal value for weights [0.526803,0.473197] from initial state: 0.488370
+Computed point: (0.3510084538550853, 0.6412916565318323)
+Optimising weighted sum of objectives: weights (0.78772272494108, 0.21227727505892002)
+Iterative method: 176 iterations in 0.37 seconds (average 0.002125, setup 0.00)
+Optimal value for weights [0.787723,0.212277] from initial state: 0.451585
+Computed point: (0.4373920895366494, 0.5042529525203279)
+Optimising weighted sum of objectives: weights (0.9998152043506463, 1.8479564935369142E-4)
+Iterative method: 176 iterations in 0.37 seconds (average 0.002114, setup 0.00)
+Optimal value for weights [0.999815,0.000185] from initial state: 0.443954
+Computed point: (0.4439505155034803, 0.46079632206742815)
+Optimising weighted sum of objectives: weights (0.0019656891283698075, 0.9980343108716302)
+Iterative method: 176 iterations in 0.37 seconds (average 0.002119, setup 0.00)
+Optimal value for weights [0.001966,0.998034] from initial state: 0.967406
+Computed point: (0.03033391505892242, 0.9692514918682372)
+Optimising weighted sum of objectives: weights (0.5008731698276471, 0.49912683017235293)
+Iterative method: 176 iterations in 0.37 seconds (average 0.002114, setup 0.00)
+Optimal value for weights [0.500873,0.499127] from initial state: 0.499053
+Computed point: (0.045606369485182124, 0.9540865618652858)
+The value iteration(s) took 4.106 seconds altogether.
+Number of weight vectors used: 9
+Multi-objective value iterations took 4.106 s.
+
+Value in the initial state: [(0.3510084538550853, 0.6412916565318323), (0.13307693703164347, 0.8662063429386965), (0.42289021848864305, 0.5435620358017837), (0.4373920895366494, 0.5042529525203279), (0.4438644346262471, 0.4657304983240637), (0.4439505155034803, 0.46079632206742815), (0.03033391505892242, 0.9692514918682372), (0.030450829993252614, 0.9691915171110415), (0.045606369485182124, 0.9540865618652858)]
+
+Time for model checking: 9.541 seconds.
+
+Result: [(0.3510084538550853, 0.6412916565318323), (0.13307693703164347, 0.8662063429386965), (0.42289021848864305, 0.5435620358017837), (0.4373920895366494, 0.5042529525203279), (0.4438644346262471, 0.4657304983240637), (0.4439505155034803, 0.46079632206742815), (0.03033391505892242, 0.9692514918682372), (0.030450829993252614, 0.9691915171110415), (0.045606369485182124, 0.9540865618652858)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=26
+
+Building model...
+Model constants: N=26
+
+Computing reachable states...
+
+Reachability (BFS): 182 iterations in 0.67 seconds (average 0.003659, setup 0.00)
+
+Time for model construction: 0.776 seconds.
+
+Warning: Deadlocks detected and fixed in 13942 states
+
+Type:        MDP
+States:      104516 (1 initial)
+Transitions: 238730
+Choices:     107870
+
+Transition matrix: 18375 nodes (46 terminal), 238730 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 182 iterations in 0.51 seconds (average 0.002813, setup 0.00)
+States:      104516 (1 initial)
+Transitions: 238730
+Choices:     107870
+
+Transition matrix: 18454 nodes (46 terminal), 238730 minterms, vars: 27r/27c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 182 iterations in 0.48 seconds (average 0.002637, setup 0.00)
+States:      104516 (1 initial)
+Transitions: 238730
+Choices:     107870
+
+Transition matrix: 19195 nodes (46 terminal), 238730 minterms, vars: 28r/28c/2nd
+Total time for product construction: 1.024 seconds.
+
+States:      104516 (1 initial)
+Transitions: 238730
+Choices:     107870
+
+Transition matrix: 19195 nodes (46 terminal), 238730 minterms, vars: 28r/28c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.037 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.047 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.002000, setup 0.00)
+
+yes = 13538, no = 1139, maybe = 89839
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 183 iterations in 0.40 seconds (average 0.002191, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.448597
+Computed point: (0.44859689095699395, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 181 iterations in 0.40 seconds (average 0.002199, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.969352
+Computed point: (0.0, 0.9693516429433097)
+Optimising weighted sum of objectives: weights (0.6836296380073447, 0.31637036199265534)
+Iterative method: 183 iterations in 0.41 seconds (average 0.002219, setup 0.00)
+Optimal value for weights [0.683630,0.316370] from initial state: 0.464368
+Computed point: (0.4293661249487671, 0.5400007519457064)
+Optimising weighted sum of objectives: weights (0.4999911298187407, 0.5000088701812593)
+Iterative method: 183 iterations in 0.41 seconds (average 0.002213, setup 0.00)
+Optimal value for weights [0.499991,0.500009] from initial state: 0.499902
+Computed point: (0.03824467307603981, 0.9615437571849392)
+Optimising weighted sum of objectives: weights (0.9656121563416405, 0.03438784365835941)
+Iterative method: 183 iterations in 0.41 seconds (average 0.002224, setup 0.00)
+Optimal value for weights [0.965612,0.034388] from initial state: 0.449220
+Computed point: (0.4485182859509487, 0.46893080030478895)
+Optimising weighted sum of objectives: weights (0.16954292999103493, 0.8304570700089651)
+Iterative method: 183 iterations in 0.41 seconds (average 0.002219, setup 0.00)
+Optimal value for weights [0.169543,0.830457] from initial state: 0.810150
+Computed point: (0.030347763679160915, 0.9693509184999597)
+Optimising weighted sum of objectives: weights (0.5187171673993332, 0.48128283260066684)
+Iterative method: 183 iterations in 0.41 seconds (average 0.002213, setup 0.00)
+Optimal value for weights [0.518717,0.481283] from initial state: 0.491631
+Computed point: (0.3501406607454917, 0.6441261875188932)
+Optimising weighted sum of objectives: weights (0.7877220956026177, 0.21227790439738228)
+Iterative method: 183 iterations in 0.41 seconds (average 0.002219, setup 0.00)
+Optimal value for weights [0.787722,0.212278] from initial state: 0.455663
+Computed point: (0.442608329349535, 0.5041062735909452)
+Optimising weighted sum of objectives: weights (0.9998324020687962, 1.6759793120381899E-4)
+Iterative method: 183 iterations in 0.41 seconds (average 0.002219, setup 0.00)
+Optimal value for weights [0.999832,0.000168] from initial state: 0.448600
+Computed point: (0.44859689095699395, 0.4644251453090489)
+The value iteration(s) took 3.669 seconds altogether.
+Number of weight vectors used: 7
+Multi-objective value iterations took 3.669 s.
+
+Value in the initial state: [(0.030347763679160915, 0.9693509184999597), (0.03824467307603981, 0.9615437571849392), (0.3501406607454917, 0.6441261875188932), (0.4293661249487671, 0.5400007519457064), (0.442608329349535, 0.5041062735909452), (0.4485182859509487, 0.46893080030478895), (0.44859689095699395, 0.4644251453090489)]
+
+Time for model checking: 9.651 seconds.
+
+Result: [(0.030347763679160915, 0.9693509184999597), (0.03824467307603981, 0.9615437571849392), (0.3501406607454917, 0.6441261875188932), (0.4293661249487671, 0.5400007519457064), (0.442608329349535, 0.5041062735909452), (0.4485182859509487, 0.46893080030478895), (0.44859689095699395, 0.4644251453090489)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=27
+
+Building model...
+Model constants: N=27
+
+Computing reachable states...
+
+Reachability (BFS): 189 iterations in 0.59 seconds (average 0.003127, setup 0.00)
+
+Time for model construction: 0.689 seconds.
+
+Warning: Deadlocks detected and fixed in 14530 states
+
+Type:        MDP
+States:      109021 (1 initial)
+Transitions: 249081
+Choices:     112522
+
+Transition matrix: 18192 nodes (46 terminal), 249081 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 189 iterations in 0.54 seconds (average 0.002862, setup 0.00)
+States:      109021 (1 initial)
+Transitions: 249081
+Choices:     112522
+
+Transition matrix: 18271 nodes (46 terminal), 249081 minterms, vars: 27r/27c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 189 iterations in 0.69 seconds (average 0.003667, setup 0.00)
+States:      109021 (1 initial)
+Transitions: 249081
+Choices:     112522
+
+Transition matrix: 19012 nodes (46 terminal), 249081 minterms, vars: 28r/28c/2nd
+Total time for product construction: 1.266 seconds.
+
+States:      109021 (1 initial)
+Transitions: 249081
+Choices:     112522
+
+Transition matrix: 19012 nodes (46 terminal), 249081 minterms, vars: 28r/28c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.04 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.044 seconds.
+
+Prob0A: 11 iterations in 0.03 seconds (average 0.002364, setup 0.00)
+
+yes = 14126, no = 1139, maybe = 93756
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 190 iterations in 0.43 seconds (average 0.002263, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.452840
+Computed point: (0.4528396080828022, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 188 iterations in 0.43 seconds (average 0.002287, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.969427
+Computed point: (0.0, 0.9694272179889758)
+Optimising weighted sum of objectives: weights (0.6816071360297983, 0.3183928639702017)
+Iterative method: 190 iterations in 0.44 seconds (average 0.002300, setup 0.00)
+Optimal value for weights [0.681607,0.318393] from initial state: 0.467587
+Computed point: (0.4352794975062957, 0.5367487025958557)
+Optimising weighted sum of objectives: weights (0.49850166593630085, 0.5014983340636991)
+Iterative method: 190 iterations in 0.44 seconds (average 0.002321, setup 0.00)
+Optimal value for weights [0.498502,0.501498] from initial state: 0.501322
+Computed point: (0.03168168157790079, 0.9681554311242893)
+Optimising weighted sum of objectives: weights (0.9683207083141826, 0.0316792916858174)
+Iterative method: 190 iterations in 0.45 seconds (average 0.002353, setup 0.00)
+Optimal value for weights [0.968321,0.031679] from initial state: 0.453372
+Computed point: (0.45276783014147975, 0.47185303407184315)
+Optimising weighted sum of objectives: weights (0.03859341443533604, 0.961406585564664)
+Iterative method: 190 iterations in 0.44 seconds (average 0.002311, setup 0.00)
+Optimal value for weights [0.038593,0.961407] from initial state: 0.933185
+Computed point: (0.030342276964642985, 0.9694270435764809)
+Optimising weighted sum of objectives: weights (0.5166519528454353, 0.4833480471545647)
+Iterative method: 190 iterations in 0.44 seconds (average 0.002311, setup 0.00)
+Optimal value for weights [0.516652,0.483348] from initial state: 0.492922
+Computed point: (0.35139990403884264, 0.6441957059976012)
+Optimising weighted sum of objectives: weights (0.787721737362694, 0.212278262637306)
+Iterative method: 190 iterations in 0.44 seconds (average 0.002316, setup 0.00)
+Optimal value for weights [0.787722,0.212278] from initial state: 0.459387
+Computed point: (0.44737138438572643, 0.5039723615215361)
+Optimising weighted sum of objectives: weights (0.9998479038620236, 1.520961379764391E-4)
+Iterative method: 190 iterations in 0.44 seconds (average 0.002321, setup 0.00)
+Optimal value for weights [0.999848,0.000152] from initial state: 0.452842
+Computed point: (0.4528396080828022, 0.46773870950641316)
+The value iteration(s) took 3.992 seconds altogether.
+Number of weight vectors used: 7
+Multi-objective value iterations took 3.992 s.
+
+Value in the initial state: [(0.030342276964642985, 0.9694270435764809), (0.03168168157790079, 0.9681554311242893), (0.35139990403884264, 0.6441957059976012), (0.4352794975062957, 0.5367487025958557), (0.44737138438572643, 0.5039723615215361), (0.45276783014147975, 0.47185303407184315), (0.4528396080828022, 0.46773870950641316)]
+
+Time for model checking: 10.288 seconds.
+
+Result: [(0.030342276964642985, 0.9694270435764809), (0.03168168157790079, 0.9681554311242893), (0.35139990403884264, 0.6441957059976012), (0.4352794975062957, 0.5367487025958557), (0.44737138438572643, 0.5039723615215361), (0.45276783014147975, 0.47185303407184315), (0.4528396080828022, 0.46773870950641316)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=28
+
+Building model...
+Model constants: N=28
+
+Computing reachable states...
+
+Reachability (BFS): 196 iterations in 0.86 seconds (average 0.004378, setup 0.00)
+
+Time for model construction: 0.959 seconds.
+
+Warning: Deadlocks detected and fixed in 15118 states
+
+Type:        MDP
+States:      113526 (1 initial)
+Transitions: 259432
+Choices:     117174
+
+Transition matrix: 18371 nodes (46 terminal), 259432 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 196 iterations in 0.59 seconds (average 0.002990, setup 0.00)
+States:      113526 (1 initial)
+Transitions: 259432
+Choices:     117174
+
+Transition matrix: 18450 nodes (46 terminal), 259432 minterms, vars: 27r/27c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 196 iterations in 0.58 seconds (average 0.002974, setup 0.00)
+States:      113526 (1 initial)
+Transitions: 259432
+Choices:     117174
+
+Transition matrix: 19191 nodes (46 terminal), 259432 minterms, vars: 28r/28c/2nd
+Total time for product construction: 1.196 seconds.
+
+States:      113526 (1 initial)
+Transitions: 259432
+Choices:     117174
+
+Transition matrix: 19191 nodes (46 terminal), 259432 minterms, vars: 28r/28c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.038 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.046 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.002091, setup 0.00)
+
+yes = 14714, no = 1139, maybe = 97673
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 197 iterations in 0.47 seconds (average 0.002381, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.456714
+Computed point: (0.45671373638813556, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 195 iterations in 0.47 seconds (average 0.002385, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.969484
+Computed point: (0.0, 0.9694842507406973)
+Optimising weighted sum of objectives: weights (0.6797683487777358, 0.32023165122226416)
+Iterative method: 197 iterations in 0.48 seconds (average 0.002447, setup 0.00)
+Optimal value for weights [0.679768,0.320232] from initial state: 0.470493
+Computed point: (0.44064850359857055, 0.5338447382409122)
+Optimising weighted sum of objectives: weights (0.4971419265088848, 0.5028580734911152)
+Iterative method: 197 iterations in 0.49 seconds (average 0.002482, setup 0.00)
+Optimal value for weights [0.497142,0.502858] from initial state: 0.502617
+Computed point: (0.0310729676855916, 0.9688017202410633)
+Optimising weighted sum of objectives: weights (0.9707857037771831, 0.029214296222816884)
+Iterative method: 197 iterations in 0.47 seconds (average 0.002411, setup 0.00)
+Optimal value for weights [0.970786,0.029214] from initial state: 0.457170
+Computed point: (0.45664819284461067, 0.47452137307440556)
+Optimising weighted sum of objectives: weights (0.02149330158994711, 0.9785066984100529)
+Iterative method: 197 iterations in 0.48 seconds (average 0.002411, setup 0.00)
+Optimal value for weights [0.021493,0.978507] from initial state: 0.949299
+Computed point: (0.030338250304457314, 0.9694842388443363)
+Optimising weighted sum of objectives: weights (0.515026920544096, 0.4849730794559039)
+Iterative method: 197 iterations in 0.48 seconds (average 0.002431, setup 0.00)
+Optimal value for weights [0.515027,0.484973] from initial state: 0.493966
+Computed point: (0.36311132932287776, 0.6329292921283818)
+Optimising weighted sum of objectives: weights (0.7875857614800201, 0.21241423851997981)
+Iterative method: 197 iterations in 0.51 seconds (average 0.002569, setup 0.00)
+Optimal value for weights [0.787586,0.212414] from initial state: 0.462794
+Computed point: (0.45172063233586, 0.5038501040335974)
+Optimising weighted sum of objectives: weights (0.9998618934883583, 1.381065116417006E-4)
+Iterative method: 197 iterations in 0.47 seconds (average 0.002406, setup 0.00)
+Optimal value for weights [0.999862,0.000138] from initial state: 0.456716
+Computed point: (0.45671373638813556, 0.4707644064648765)
+The value iteration(s) took 4.345 seconds altogether.
+Number of weight vectors used: 7
+Multi-objective value iterations took 4.345 s.
+
+Value in the initial state: [(0.030338250304457314, 0.9694842388443363), (0.0310729676855916, 0.9688017202410633), (0.36311132932287776, 0.6329292921283818), (0.44064850359857055, 0.5338447382409122), (0.45172063233586, 0.5038501040335974), (0.45664819284461067, 0.47452137307440556), (0.45671373638813556, 0.4707644064648765)]
+
+Time for model checking: 11.142 seconds.
+
+Result: [(0.030338250304457314, 0.9694842388443363), (0.0310729676855916, 0.9688017202410633), (0.36311132932287776, 0.6329292921283818), (0.44064850359857055, 0.5338447382409122), (0.45172063233586, 0.5038501040335974), (0.45664819284461067, 0.47452137307440556), (0.45671373638813556, 0.4707644064648765)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=29
+
+Building model...
+Model constants: N=29
+
+Computing reachable states...
+
+Reachability (BFS): 203 iterations in 0.65 seconds (average 0.003197, setup 0.00)
+
+Time for model construction: 0.747 seconds.
+
+Warning: Deadlocks detected and fixed in 15706 states
+
+Type:        MDP
+States:      118031 (1 initial)
+Transitions: 269783
+Choices:     121826
+
+Transition matrix: 18286 nodes (46 terminal), 269783 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 203 iterations in 0.59 seconds (average 0.002897, setup 0.00)
+States:      118031 (1 initial)
+Transitions: 269783
+Choices:     121826
+
+Transition matrix: 18365 nodes (46 terminal), 269783 minterms, vars: 27r/27c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 203 iterations in 0.61 seconds (average 0.003015, setup 0.00)
+States:      118031 (1 initial)
+Transitions: 269783
+Choices:     121826
+
+Transition matrix: 19106 nodes (46 terminal), 269783 minterms, vars: 28r/28c/2nd
+Total time for product construction: 1.232 seconds.
+
+States:      118031 (1 initial)
+Transitions: 269783
+Choices:     121826
+
+Transition matrix: 19106 nodes (46 terminal), 269783 minterms, vars: 28r/28c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.046 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.052 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.002182, setup 0.00)
+
+yes = 15302, no = 1139, maybe = 101590
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 204 iterations in 0.51 seconds (average 0.002480, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.460251
+Computed point: (0.46025129784349217, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 202 iterations in 0.51 seconds (average 0.002500, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.969527
+Computed point: (0.0, 0.9695272923928899)
+Optimising weighted sum of objectives: weights (0.6780961045392351, 0.32190389546076487)
+Iterative method: 204 iterations in 0.51 seconds (average 0.002515, setup 0.00)
+Optimal value for weights [0.678096,0.321904] from initial state: 0.473119
+Computed point: (0.44558180028525246, 0.5311273026215071)
+Optimising weighted sum of objectives: weights (0.4959378063017512, 0.5040621936982488)
+Iterative method: 204 iterations in 0.54 seconds (average 0.002627, setup 0.00)
+Optimal value for weights [0.495938,0.504062] from initial state: 0.503764
+Computed point: (0.030765567920815855, 0.9691380312081521)
+Optimising weighted sum of objectives: weights (0.9731227857081453, 0.026877214291854794)
+Iterative method: 204 iterations in 0.52 seconds (average 0.002525, setup 0.00)
+Optimal value for weights [0.973123,0.026877] from initial state: 0.460642
+Computed point: (0.4601914473790125, 0.47695788407132556)
+Optimising weighted sum of objectives: weights (0.01249440924291323, 0.9875055907570868)
+Iterative method: 204 iterations in 0.52 seconds (average 0.002525, setup 0.00)
+Optimal value for weights [0.012494,0.987506] from initial state: 0.957793
+Computed point: (0.030338058037359276, 0.9695272923928899)
+Optimising weighted sum of objectives: weights (0.5135985946060744, 0.48640140539392557)
+Iterative method: 204 iterations in 0.51 seconds (average 0.002520, setup 0.00)
+Optimal value for weights [0.513599,0.486401] from initial state: 0.494836
+Computed point: (0.37435638401527416, 0.6220523694853703)
+Optimising weighted sum of objectives: weights (0.7875858452426222, 0.21241415475737782)
+Iterative method: 204 iterations in 0.54 seconds (average 0.002627, setup 0.00)
+Optimal value for weights [0.787586,0.212414] from initial state: 0.465898
+Computed point: (0.45569202711438717, 0.5037384857389381)
+Optimising weighted sum of objectives: weights (0.9998745319929502, 1.2546800704986568E-4)
+Iterative method: 204 iterations in 0.52 seconds (average 0.002534, setup 0.00)
+Optimal value for weights [0.999875,0.000125] from initial state: 0.460253
+Computed point: (0.46025129784349217, 0.4735272464904321)
+The value iteration(s) took 4.687 seconds altogether.
+Number of weight vectors used: 7
+Multi-objective value iterations took 4.687 s.
+
+Value in the initial state: [(0.030338058037359276, 0.9695272923928899), (0.030765567920815855, 0.9691380312081521), (0.37435638401527416, 0.6220523694853703), (0.44558180028525246, 0.5311273026215071), (0.45569202711438717, 0.5037384857389381), (0.4601914473790125, 0.47695788407132556), (0.46025129784349217, 0.4735272464904321)]
+
+Time for model checking: 11.097 seconds.
+
+Result: [(0.030338058037359276, 0.9695272923928899), (0.030765567920815855, 0.9691380312081521), (0.37435638401527416, 0.6220523694853703), (0.44558180028525246, 0.5311273026215071), (0.45569202711438717, 0.5037384857389381), (0.4601914473790125, 0.47695788407132556), (0.46025129784349217, 0.4735272464904321)]
+
+---------------------------------------------------------------------
+
+Model checking: multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Model constants: N=30
+
+Building model...
+Model constants: N=30
+
+Computing reachable states...
+
+Reachability (BFS): 210 iterations in 0.83 seconds (average 0.003948, setup 0.00)
+
+Time for model construction: 0.939 seconds.
+
+Warning: Deadlocks detected and fixed in 16294 states
+
+Type:        MDP
+States:      122536 (1 initial)
+Transitions: 280134
+Choices:     126478
+
+Transition matrix: 18375 nodes (46 terminal), 280134 minterms, vars: 26r/26c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 210 iterations in 0.64 seconds (average 0.003033, setup 0.00)
+States:      122536 (1 initial)
+Transitions: 280134
+Choices:     126478
+
+Transition matrix: 18454 nodes (46 terminal), 280134 minterms, vars: 27r/27c/2nd
+
+Building deterministic Rabin automaton (for F "L0")...
+Taking DRA from library...
+DRA has 2 states, 1 Rabin pairs.Time for Rabin translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 210 iterations in 0.64 seconds (average 0.003048, setup 0.00)
+States:      122536 (1 initial)
+Transitions: 280134
+Choices:     126478
+
+Transition matrix: 19195 nodes (46 terminal), 280134 minterms, vars: 28r/28c/2nd
+Total time for product construction: 1.312 seconds.
+
+States:      122536 (1 initial)
+Transitions: 280134
+Choices:     126478
+
+Transition matrix: 19195 nodes (46 terminal), 280134 minterms, vars: 28r/28c/2nd
+
+Finding accepting end components for F pc=-1...
+Time for end component identification: 0.045 seconds.
+
+Finding accepting end components for F pc=-2...
+Time for end component identification: 0.055 seconds.
+
+Prob0A: 11 iterations in 0.02 seconds (average 0.002091, setup 0.00)
+
+yes = 15890, no = 1139, maybe = 105507
+
+Computing remaining probabilities...
+Switching engine since only sparse engine currently supports this computation...
+Engine: Sparse
+Optimising weighted sum for probability objective 1/2: weights (1.0, 0.0)
+Iterative method: 211 iterations in 0.54 seconds (average 0.002573, setup 0.00)
+Optimal value for weights [1.000000,0.000000] from initial state: 0.463482
+Computed point: (0.4634815320294706, 0.0)
+Optimising weighted sum for probability objective 2/2: weights (0.0, 1.0)
+Iterative method: 209 iterations in 0.54 seconds (average 0.002593, setup 0.00)
+Optimal value for weights [0.000000,1.000000] from initial state: 0.969560
+Computed point: (0.0, 0.9695597763790837)
+Optimising weighted sum of objectives: weights (0.6765748975204462, 0.3234251024795538)
+Iterative method: 211 iterations in 0.55 seconds (average 0.002616, setup 0.00)
+Optimal value for weights [0.676575,0.323425] from initial state: 0.475495
+Computed point: (0.45008651006048445, 0.5286459553832206)
+Optimising weighted sum of objectives: weights (0.4948525894183753, 0.5051474105816247)
+Iterative method: 211 iterations in 0.56 seconds (average 0.002649, setup 0.00)
+Optimal value for weights [0.494853,0.505147] from initial state: 0.504795
+Computed point: (0.030584828042800286, 0.9693408654602711)
+Optimising weighted sum of objectives: weights (0.9752878056666141, 0.02471219433338593)
+Iterative method: 211 iterations in 0.55 seconds (average 0.002621, setup 0.00)
+Optimal value for weights [0.975288,0.024712] from initial state: 0.463816
+Computed point: (0.4634268802644002, 0.4791827128405224)
+Optimising weighted sum of objectives: weights (0.007106634655145494, 0.9928933653448545)
+Iterative method: 211 iterations in 0.55 seconds (average 0.002616, setup 0.00)
+Optimal value for weights [0.007107,0.992893] from initial state: 0.962885
+Computed point: (0.03033856841356236, 0.9695597763790837)
+Optimising weighted sum of objectives: weights (0.512318828192377, 0.48768117180762305)
+Iterative method: 211 iterations in 0.55 seconds (average 0.002621, setup 0.00)
+Optimal value for weights [0.512319,0.487681] from initial state: 0.495586
+Computed point: (0.3756771808344986, 0.6215523992281636)
+Optimising weighted sum of objectives: weights (0.7875859425836134, 0.21241405741638658)
+Iterative method: 211 iterations in 0.55 seconds (average 0.002621, setup 0.00)
+Optimal value for weights [0.787586,0.212414] from initial state: 0.468732
+Computed point: (0.4593183974358565, 0.5036365798642336)
+Optimising weighted sum of objectives: weights (0.9998859609681825, 1.1403903181754286E-4)
+Iterative method: 211 iterations in 0.55 seconds (average 0.002616, setup 0.00)
+Optimal value for weights [0.999886,0.000114] from initial state: 0.463483
+Computed point: (0.4634815320294706, 0.4760500660793616)
+The value iteration(s) took 4.992 seconds altogether.
+Number of weight vectors used: 7
+Multi-objective value iterations took 4.992 s.
+
+Value in the initial state: [(0.03033856841356236, 0.9695597763790837), (0.030584828042800286, 0.9693408654602711), (0.3756771808344986, 0.6215523992281636), (0.45008651006048445, 0.5286459553832206), (0.4593183974358565, 0.5036365798642336), (0.4634268802644002, 0.4791827128405224), (0.4634815320294706, 0.4760500660793616)]
+
+Time for model checking: 11.977 seconds.
+
+Result: [(0.03033856841356236, 0.9695597763790837), (0.030584828042800286, 0.9693408654602711), (0.3756771808344986, 0.6215523992281636), (0.45008651006048445, 0.5286459553832206), (0.4593183974358565, 0.5036365798642336), (0.4634268802644002, 0.4791827128405224), (0.4634815320294706, 0.4760500660793616)]
+
+Exporting results to file "prism_output/conf995_af8_new_results.txt"...
+
+---------------------------------------------------------------------
+
+Note: There were 30 warnings during computation.
+
