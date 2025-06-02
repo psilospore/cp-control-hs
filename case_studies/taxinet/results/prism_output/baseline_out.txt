@@ -1,0 +1,3279 @@
+PRISM
+=====
+
+Version: 4.7
+Date: Mon Jun 02 12:33:04 BST 2025
+Hostname: itsusbeth6
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism baseline_models/taxinet_Boeing5bins_imperfect_stochdyn.pm properties/baseline_props.pctl -const 'N=0:1:30' -exportresults prism_output/baseline_results.txt
+
+Parsing model file "baseline_models/taxinet_Boeing5bins_imperfect_stochdyn.pm"...
+
+Type:        MDP
+Modules:     taxinet crashed 
+Variables:   cte he cte_est he_est pc k a crash 
+
+Parsing properties file "properties/baseline_props.pctl"...
+
+2 properties:
+(1) Pmax=? [ F crash=1 ]
+(2) Pmin=? [ F crash=1 ]
+
+Error: Invalid range (1-0) for variable "k" ("[1..N]", line 36, column 11).
+
+Error: Invalid range (1-1) for variable "k" ("[1..N]", line 36, column 11).
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=2
+
+Building model...
+Model constants: N=2
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 27 iterations in 0.02 seconds (average 0.000741, setup 0.00)
+
+Time for model construction: 0.059 seconds.
+
+Warning: Deadlocks detected and fixed in 51 states
+
+Type:        MDP
+States:      684 (1 initial)
+Transitions: 1359
+Choices:     804
+
+Transition matrix: 2188 nodes (20 terminal), 1359 minterms, vars: 17r/17c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.001000, setup 0.00)
+
+Prob1E: 82 iterations in 0.05 seconds (average 0.000585, setup 0.00)
+
+yes = 135, no = 14, maybe = 535
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=17, nodes=2345] [109.9 KB]
+Adding sparse bits... [levels=17-17, num=3, compact=3/3] [6.9 KB]
+Creating vector for yes... [dist=2, compact] [1.4 KB]
+Allocating iteration vectors... [3 x 5.3 KB]
+TOTAL: [134.2 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000019, setup 0.01)
+
+Value in the initial state: 0.9998854173486101
+
+Time for model checking: 0.032 seconds.
+
+Result: 0.9998854173486101 (+/- 3.5646445693056945E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=2
+
+Prob0E: 13 iterations in 0.01 seconds (average 0.000923, setup 0.00)
+
+Prob1A: 31 iterations in 0.01 seconds (average 0.000452, setup 0.00)
+
+yes = 135, no = 14, maybe = 535
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=17, nodes=2345] [109.9 KB]
+Adding sparse bits... [levels=17-17, num=3, compact=3/3] [6.9 KB]
+Creating vector for yes... [dist=2, compact] [1.4 KB]
+Allocating iteration vectors... [3 x 5.3 KB]
+TOTAL: [134.2 KB]
+
+Starting iterations...
+
+Iterative method: 206 iterations in 0.01 seconds (average 0.000024, setup 0.00)
+
+Value in the initial state: 0.16060998334235627
+
+Time for model checking: 0.012 seconds.
+
+Result: 0.16060998334235627 (+/- 1.5926730519167831E-6 estimated; rel err 9.916401326820644E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=3
+
+Building model...
+Model constants: N=3
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 52 iterations in 0.03 seconds (average 0.000558, setup 0.00)
+
+Time for model construction: 0.035 seconds.
+
+Warning: Deadlocks detected and fixed in 96 states
+
+Type:        MDP
+States:      1368 (1 initial)
+Transitions: 2724
+Choices:     1608
+
+Transition matrix: 2402 nodes (20 terminal), 2724 minterms, vars: 18r/18c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.001154, setup 0.00)
+
+Prob1E: 110 iterations in 0.05 seconds (average 0.000473, setup 0.00)
+
+yes = 270, no = 14, maybe = 1084
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=18, nodes=2591] [121.5 KB]
+Adding sparse bits... [levels=18-18, num=3, compact=3/3] [13.7 KB]
+Creating vector for yes... [dist=2, compact] [2.7 KB]
+Allocating iteration vectors... [3 x 10.7 KB]
+TOTAL: [169.9 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 0.9999905841614819
+
+Time for model checking: 0.048 seconds.
+
+Result: 0.9999905841614819 (+/- 3.5650194945740003E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=3
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000077, setup 0.00)
+
+Prob1A: 36 iterations in 0.01 seconds (average 0.000222, setup 0.00)
+
+yes = 270, no = 14, maybe = 1084
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=18, nodes=2591] [121.5 KB]
+Adding sparse bits... [levels=18-18, num=3, compact=3/3] [13.7 KB]
+Creating vector for yes... [dist=2, compact] [2.7 KB]
+Allocating iteration vectors... [3 x 10.7 KB]
+TOTAL: [169.9 KB]
+
+Starting iterations...
+
+Iterative method: 247 iterations in 0.01 seconds (average 0.000024, setup 0.00)
+
+Value in the initial state: 0.21375699007218935
+
+Time for model checking: 0.017 seconds.
+
+Result: 0.21375699007218935 (+/- 9.789831419109083E-7 estimated; rel err 4.579888318881591E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=4
+
+Building model...
+Model constants: N=4
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 52 iterations in 0.02 seconds (average 0.000327, setup 0.00)
+
+Time for model construction: 0.032 seconds.
+
+Warning: Deadlocks detected and fixed in 141 states
+
+Type:        MDP
+States:      2052 (1 initial)
+Transitions: 4089
+Choices:     2412
+
+Transition matrix: 2450 nodes (20 terminal), 4089 minterms, vars: 18r/18c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000385, setup 0.00)
+
+Prob1E: 138 iterations in 0.05 seconds (average 0.000348, setup 0.00)
+
+yes = 405, no = 14, maybe = 1633
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=18, nodes=2657] [124.5 KB]
+Adding sparse bits... [levels=18-18, num=3, compact=3/3] [20.5 KB]
+Creating vector for yes... [dist=2, compact] [4.0 KB]
+Allocating iteration vectors... [3 x 16.0 KB]
+TOTAL: [197.2 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000038, setup 0.00)
+
+Value in the initial state: 0.9999994755290782
+
+Time for model checking: 0.059 seconds.
+
+Result: 0.9999994755290782 (+/- 3.5650511927712798E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=4
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000154, setup 0.00)
+
+Prob1A: 41 iterations in 0.01 seconds (average 0.000317, setup 0.00)
+
+yes = 405, no = 14, maybe = 1633
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=18, nodes=2657] [124.5 KB]
+Adding sparse bits... [levels=18-18, num=3, compact=3/3] [20.5 KB]
+Creating vector for yes... [dist=2, compact] [4.0 KB]
+Allocating iteration vectors... [3 x 16.0 KB]
+TOTAL: [197.2 KB]
+
+Starting iterations...
+
+Iterative method: 287 iterations in 0.01 seconds (average 0.000038, setup 0.00)
+
+Value in the initial state: 0.2669420968904458
+
+Time for model checking: 0.027 seconds.
+
+Result: 0.2669420968904458 (+/- 1.255363342475397E-6 estimated; rel err 4.702755230811735E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=5
+
+Building model...
+Model constants: N=5
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 57 iterations in 0.03 seconds (average 0.000439, setup 0.00)
+
+Time for model construction: 0.053 seconds.
+
+Warning: Deadlocks detected and fixed in 186 states
+
+Type:        MDP
+States:      2736 (1 initial)
+Transitions: 5454
+Choices:     3216
+
+Transition matrix: 2581 nodes (20 terminal), 5454 minterms, vars: 19r/19c/3nd
+
+Prob0A: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1E: 166 iterations in 0.06 seconds (average 0.000349, setup 0.00)
+
+yes = 540, no = 14, maybe = 2182
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=19, nodes=2729] [127.9 KB]
+Adding sparse bits... [levels=19-19, num=3, compact=3/3] [27.3 KB]
+Creating vector for yes... [dist=2, compact] [5.4 KB]
+Allocating iteration vectors... [3 x 21.4 KB]
+TOTAL: [224.7 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000038, setup 0.00)
+
+Value in the initial state: 0.9999998524205764
+
+Time for model checking: 0.067 seconds.
+
+Result: 0.9999998524205764 (+/- 3.56505253640947E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=5
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000154, setup 0.00)
+
+Prob1A: 46 iterations in 0.01 seconds (average 0.000283, setup 0.00)
+
+yes = 540, no = 14, maybe = 2182
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=19, nodes=2729] [127.9 KB]
+Adding sparse bits... [levels=19-19, num=3, compact=3/3] [27.3 KB]
+Creating vector for yes... [dist=2, compact] [5.4 KB]
+Allocating iteration vectors... [3 x 21.4 KB]
+TOTAL: [224.7 KB]
+
+Starting iterations...
+
+Iterative method: 327 iterations in 0.02 seconds (average 0.000052, setup 0.00)
+
+Value in the initial state: 0.3164080468144113
+
+Time for model checking: 0.033 seconds.
+
+Result: 0.3164080468144113 (+/- 1.3643695551469822E-6 estimated; rel err 4.31205706960813E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=6
+
+Building model...
+Model constants: N=6
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 62 iterations in 0.02 seconds (average 0.000274, setup 0.00)
+
+Time for model construction: 0.035 seconds.
+
+Warning: Deadlocks detected and fixed in 231 states
+
+Type:        MDP
+States:      3420 (1 initial)
+Transitions: 6819
+Choices:     4020
+
+Transition matrix: 2678 nodes (20 terminal), 6819 minterms, vars: 19r/19c/3nd
+
+Prob0A: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1E: 194 iterations in 0.08 seconds (average 0.000423, setup 0.00)
+
+yes = 675, no = 14, maybe = 2731
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=19, nodes=2851] [133.6 KB]
+Adding sparse bits... [levels=19-19, num=3, compact=3/3] [34.1 KB]
+Creating vector for yes... [dist=2, compact] [6.7 KB]
+Allocating iteration vectors... [3 x 26.7 KB]
+TOTAL: [254.6 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000058, setup 0.00)
+
+Value in the initial state: 0.9999998809738977
+
+Time for model checking: 0.092 seconds.
+
+Result: 0.9999998809738977 (+/- 3.565052638203575E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=6
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000154, setup 0.00)
+
+Prob1A: 51 iterations in 0.02 seconds (average 0.000373, setup 0.00)
+
+yes = 675, no = 14, maybe = 2731
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=19, nodes=2851] [133.6 KB]
+Adding sparse bits... [levels=19-19, num=3, compact=3/3] [34.1 KB]
+Creating vector for yes... [dist=2, compact] [6.7 KB]
+Allocating iteration vectors... [3 x 26.7 KB]
+TOTAL: [254.6 KB]
+
+Starting iterations...
+
+Iterative method: 366 iterations in 0.02 seconds (average 0.000060, setup 0.00)
+
+Value in the initial state: 0.36254044809725783
+
+Time for model checking: 0.046 seconds.
+
+Result: 0.36254044809725783 (+/- 3.469949721778811E-6 estimated; rel err 9.571207130101897E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=7
+
+Building model...
+Model constants: N=7
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 67 iterations in 0.03 seconds (average 0.000433, setup 0.00)
+
+Time for model construction: 0.043 seconds.
+
+Warning: Deadlocks detected and fixed in 276 states
+
+Type:        MDP
+States:      4104 (1 initial)
+Transitions: 8184
+Choices:     4824
+
+Transition matrix: 2647 nodes (20 terminal), 8184 minterms, vars: 19r/19c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000385, setup 0.00)
+
+Prob1E: 222 iterations in 0.10 seconds (average 0.000446, setup 0.00)
+
+yes = 810, no = 14, maybe = 3280
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=19, nodes=2824] [132.4 KB]
+Adding sparse bits... [levels=19-19, num=3, compact=3/3] [40.9 KB]
+Creating vector for yes... [dist=2, compact] [8.0 KB]
+Allocating iteration vectors... [3 x 32.1 KB]
+TOTAL: [277.5 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000058, setup 0.00)
+
+Value in the initial state: 0.9999998821108705
+
+Time for model checking: 0.113 seconds.
+
+Result: 0.9999998821108705 (+/- 3.5650526422569435E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=7
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1A: 56 iterations in 0.02 seconds (average 0.000321, setup 0.00)
+
+yes = 810, no = 14, maybe = 3280
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=19, nodes=2824] [132.4 KB]
+Adding sparse bits... [levels=19-19, num=3, compact=3/3] [40.9 KB]
+Creating vector for yes... [dist=2, compact] [8.0 KB]
+Allocating iteration vectors... [3 x 32.1 KB]
+TOTAL: [277.5 KB]
+
+Starting iterations...
+
+Iterative method: 402 iterations in 0.03 seconds (average 0.000070, setup 0.00)
+
+Value in the initial state: 0.40555936485666927
+
+Time for model checking: 0.052 seconds.
+
+Result: 0.40555936485666927 (+/- 3.5501883405353074E-6 estimated; rel err 8.75380683612126E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=8
+
+Building model...
+Model constants: N=8
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 72 iterations in 0.04 seconds (average 0.000611, setup 0.00)
+
+Time for model construction: 0.048 seconds.
+
+Warning: Deadlocks detected and fixed in 321 states
+
+Type:        MDP
+States:      4788 (1 initial)
+Transitions: 9549
+Choices:     5628
+
+Transition matrix: 2659 nodes (20 terminal), 9549 minterms, vars: 19r/19c/3nd
+
+Prob0A: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1E: 250 iterations in 0.12 seconds (average 0.000464, setup 0.00)
+
+yes = 945, no = 14, maybe = 3829
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=19, nodes=2857] [133.9 KB]
+Adding sparse bits... [levels=19-19, num=3, compact=3/3] [47.7 KB]
+Creating vector for yes... [dist=2, compact] [9.4 KB]
+Allocating iteration vectors... [3 x 37.4 KB]
+TOTAL: [303.3 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000096, setup 0.00)
+
+Value in the initial state: 0.9999998821508687
+
+Time for model checking: 0.128 seconds.
+
+Result: 0.9999998821508687 (+/- 3.565052642399539E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=8
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000154, setup 0.00)
+
+Prob1A: 61 iterations in 0.03 seconds (average 0.000426, setup 0.00)
+
+yes = 945, no = 14, maybe = 3829
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=19, nodes=2857] [133.9 KB]
+Adding sparse bits... [levels=19-19, num=3, compact=3/3] [47.7 KB]
+Creating vector for yes... [dist=2, compact] [9.4 KB]
+Allocating iteration vectors... [3 x 37.4 KB]
+TOTAL: [303.3 KB]
+
+Starting iterations...
+
+Iterative method: 442 iterations in 0.04 seconds (average 0.000079, setup 0.00)
+
+Value in the initial state: 0.44567523044628204
+
+Time for model checking: 0.065 seconds.
+
+Result: 0.44567523044628204 (+/- 3.2843670660523094E-6 estimated; rel err 7.369418001452471E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=9
+
+Building model...
+Model constants: N=9
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 77 iterations in 0.04 seconds (average 0.000506, setup 0.00)
+
+Time for model construction: 0.068 seconds.
+
+Warning: Deadlocks detected and fixed in 366 states
+
+Type:        MDP
+States:      5472 (1 initial)
+Transitions: 10914
+Choices:     6432
+
+Transition matrix: 2760 nodes (20 terminal), 10914 minterms, vars: 20r/20c/3nd
+
+Prob0A: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1E: 278 iterations in 0.12 seconds (average 0.000439, setup 0.00)
+
+yes = 1080, no = 14, maybe = 4378
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=2868] [134.4 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [54.6 KB]
+Creating vector for yes... [dist=2, compact] [10.7 KB]
+Allocating iteration vectors... [3 x 42.8 KB]
+TOTAL: [327.9 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000096, setup 0.00)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.134 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=9
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000154, setup 0.00)
+
+Prob1A: 66 iterations in 0.03 seconds (average 0.000379, setup 0.00)
+
+yes = 1080, no = 14, maybe = 4378
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=2868] [134.4 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [54.6 KB]
+Creating vector for yes... [dist=2, compact] [10.7 KB]
+Allocating iteration vectors... [3 x 42.8 KB]
+TOTAL: [327.9 KB]
+
+Starting iterations...
+
+Iterative method: 482 iterations in 0.04 seconds (average 0.000087, setup 0.00)
+
+Value in the initial state: 0.4830838744139494
+
+Time for model checking: 0.072 seconds.
+
+Result: 0.4830838744139494 (+/- 2.9949873093394024E-6 estimated; rel err 6.19972528160406E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=10
+
+Building model...
+Model constants: N=10
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 82 iterations in 0.07 seconds (average 0.000805, setup 0.00)
+
+Time for model construction: 0.051 seconds.
+
+Warning: Deadlocks detected and fixed in 411 states
+
+Type:        MDP
+States:      6156 (1 initial)
+Transitions: 12279
+Choices:     7236
+
+Transition matrix: 2923 nodes (20 terminal), 12279 minterms, vars: 20r/20c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.001154, setup 0.00)
+
+Prob1E: 306 iterations in 0.25 seconds (average 0.000824, setup 0.00)
+
+yes = 1215, no = 14, maybe = 4927
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=3050] [143.0 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [61.4 KB]
+Creating vector for yes... [dist=2, compact] [12.0 KB]
+Allocating iteration vectors... [3 x 48.1 KB]
+TOTAL: [360.7 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000115, setup 0.00)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.217 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=10
+
+Prob0E: 13 iterations in 0.01 seconds (average 0.000462, setup 0.00)
+
+Prob1A: 71 iterations in 0.03 seconds (average 0.000423, setup 0.00)
+
+yes = 1215, no = 14, maybe = 4927
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=3050] [143.0 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [61.4 KB]
+Creating vector for yes... [dist=2, compact] [12.0 KB]
+Allocating iteration vectors... [3 x 48.1 KB]
+TOTAL: [360.7 KB]
+
+Starting iterations...
+
+Iterative method: 522 iterations in 0.06 seconds (average 0.000102, setup 0.00)
+
+Value in the initial state: 0.5179679911676475
+
+Time for model checking: 0.091 seconds.
+
+Result: 0.5179679911676475 (+/- 2.776336527130983E-6 estimated; rel err 5.360054239784836E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=11
+
+Building model...
+Model constants: N=11
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 87 iterations in 0.04 seconds (average 0.000425, setup 0.00)
+
+Time for model construction: 0.053 seconds.
+
+Warning: Deadlocks detected and fixed in 456 states
+
+Type:        MDP
+States:      6840 (1 initial)
+Transitions: 13644
+Choices:     8040
+
+Transition matrix: 2892 nodes (20 terminal), 13644 minterms, vars: 20r/20c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000462, setup 0.00)
+
+Prob1E: 334 iterations in 0.18 seconds (average 0.000533, setup 0.00)
+
+yes = 1350, no = 14, maybe = 5476
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=3023] [141.7 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [68.2 KB]
+Creating vector for yes... [dist=2, compact] [13.4 KB]
+Allocating iteration vectors... [3 x 53.4 KB]
+TOTAL: [383.6 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000096, setup 0.00)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.194 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=11
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000231, setup 0.00)
+
+Prob1A: 76 iterations in 0.04 seconds (average 0.000566, setup 0.00)
+
+yes = 1350, no = 14, maybe = 5476
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=3023] [141.7 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [68.2 KB]
+Creating vector for yes... [dist=2, compact] [13.4 KB]
+Allocating iteration vectors... [3 x 53.4 KB]
+TOTAL: [383.6 KB]
+
+Starting iterations...
+
+Iterative method: 562 iterations in 0.06 seconds (average 0.000109, setup 0.00)
+
+Value in the initial state: 0.5504979512601754
+
+Time for model checking: 0.109 seconds.
+
+Result: 0.5504979512601754 (+/- 2.556086125223704E-6 estimated; rel err 4.643225500426342E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=12
+
+Building model...
+Model constants: N=12
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 92 iterations in 0.03 seconds (average 0.000359, setup 0.00)
+
+Time for model construction: 0.058 seconds.
+
+Warning: Deadlocks detected and fixed in 501 states
+
+Type:        MDP
+States:      7524 (1 initial)
+Transitions: 15009
+Choices:     8844
+
+Transition matrix: 2887 nodes (20 terminal), 15009 minterms, vars: 20r/20c/3nd
+
+Prob0A: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1E: 362 iterations in 0.19 seconds (average 0.000514, setup 0.00)
+
+yes = 1485, no = 14, maybe = 6025
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=3051] [143.0 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [75.0 KB]
+Creating vector for yes... [dist=2, compact] [14.7 KB]
+Allocating iteration vectors... [3 x 58.8 KB]
+TOTAL: [409.1 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000115, setup 0.00)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.201 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=12
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000231, setup 0.00)
+
+Prob1A: 81 iterations in 0.06 seconds (average 0.000704, setup 0.00)
+
+yes = 1485, no = 14, maybe = 6025
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=3051] [143.0 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [75.0 KB]
+Creating vector for yes... [dist=2, compact] [14.7 KB]
+Allocating iteration vectors... [3 x 58.8 KB]
+TOTAL: [409.1 KB]
+
+Starting iterations...
+
+Iterative method: 601 iterations in 0.08 seconds (average 0.000133, setup 0.00)
+
+Value in the initial state: 0.5808326250399637
+
+Time for model checking: 0.145 seconds.
+
+Result: 0.5808326250399637 (+/- 5.499968186209852E-6 estimated; rel err 9.469110289442559E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=13
+
+Building model...
+Model constants: N=13
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 97 iterations in 0.04 seconds (average 0.000402, setup 0.00)
+
+Time for model construction: 0.058 seconds.
+
+Warning: Deadlocks detected and fixed in 546 states
+
+Type:        MDP
+States:      8208 (1 initial)
+Transitions: 16374
+Choices:     9648
+
+Transition matrix: 2826 nodes (20 terminal), 16374 minterms, vars: 20r/20c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000538, setup 0.00)
+
+Prob1E: 390 iterations in 0.20 seconds (average 0.000521, setup 0.00)
+
+yes = 1620, no = 14, maybe = 6574
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=2963] [138.9 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [81.8 KB]
+Creating vector for yes... [dist=2, compact] [16.0 KB]
+Allocating iteration vectors... [3 x 64.1 KB]
+TOTAL: [429.1 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000135, setup 0.00)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.222 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=13
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1A: 86 iterations in 0.04 seconds (average 0.000465, setup 0.00)
+
+yes = 1620, no = 14, maybe = 6574
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=2963] [138.9 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [81.8 KB]
+Creating vector for yes... [dist=2, compact] [16.0 KB]
+Allocating iteration vectors... [3 x 64.1 KB]
+TOTAL: [429.1 KB]
+
+Starting iterations...
+
+Iterative method: 637 iterations in 0.09 seconds (average 0.000129, setup 0.00)
+
+Value in the initial state: 0.6091200621334178
+
+Time for model checking: 0.129 seconds.
+
+Result: 0.6091200621334178 (+/- 5.420208830427754E-6 estimated; rel err 8.898424411508786E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=14
+
+Building model...
+Model constants: N=14
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 102 iterations in 0.06 seconds (average 0.000549, setup 0.00)
+
+Time for model construction: 0.075 seconds.
+
+Warning: Deadlocks detected and fixed in 591 states
+
+Type:        MDP
+States:      8892 (1 initial)
+Transitions: 17739
+Choices:     10452
+
+Transition matrix: 2923 nodes (20 terminal), 17739 minterms, vars: 20r/20c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000385, setup 0.00)
+
+Prob1E: 418 iterations in 0.24 seconds (average 0.000569, setup 0.00)
+
+yes = 1755, no = 14, maybe = 7123
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=3085] [144.6 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [88.6 KB]
+Creating vector for yes... [dist=2, compact] [17.4 KB]
+Allocating iteration vectors... [3 x 69.5 KB]
+TOTAL: [459.0 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000135, setup 0.01)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.256 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=14
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1A: 91 iterations in 0.04 seconds (average 0.000495, setup 0.00)
+
+yes = 1755, no = 14, maybe = 7123
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=3085] [144.6 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [88.6 KB]
+Creating vector for yes... [dist=2, compact] [17.4 KB]
+Allocating iteration vectors... [3 x 69.5 KB]
+TOTAL: [459.0 KB]
+
+Starting iterations...
+
+Iterative method: 677 iterations in 0.10 seconds (average 0.000139, setup 0.00)
+
+Value in the initial state: 0.6354986228466661
+
+Time for model checking: 0.146 seconds.
+
+Result: 0.6354986228466661 (+/- 4.927942218435001E-6 estimated; rel err 7.754449878051145E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=15
+
+Building model...
+Model constants: N=15
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 107 iterations in 0.06 seconds (average 0.000533, setup 0.00)
+
+Time for model construction: 0.076 seconds.
+
+Warning: Deadlocks detected and fixed in 636 states
+
+Type:        MDP
+States:      9576 (1 initial)
+Transitions: 19104
+Choices:     11256
+
+Transition matrix: 2892 nodes (20 terminal), 19104 minterms, vars: 20r/20c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000615, setup 0.00)
+
+Prob1E: 446 iterations in 0.23 seconds (average 0.000518, setup 0.00)
+
+yes = 1890, no = 14, maybe = 7672
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=3058] [143.3 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [95.4 KB]
+Creating vector for yes... [dist=2, compact] [18.7 KB]
+Allocating iteration vectors... [3 x 74.8 KB]
+TOTAL: [481.9 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000154, setup 0.01)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.252 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=15
+
+Prob0E: 13 iterations in 0.01 seconds (average 0.000385, setup 0.00)
+
+Prob1A: 96 iterations in 0.05 seconds (average 0.000510, setup 0.00)
+
+yes = 1890, no = 14, maybe = 7672
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=3058] [143.3 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [95.4 KB]
+Creating vector for yes... [dist=2, compact] [18.7 KB]
+Allocating iteration vectors... [3 x 74.8 KB]
+TOTAL: [481.9 KB]
+
+Starting iterations...
+
+Iterative method: 717 iterations in 0.10 seconds (average 0.000141, setup 0.00)
+
+Value in the initial state: 0.6600970245242895
+
+Time for model checking: 0.161 seconds.
+
+Result: 0.6600970245242895 (+/- 4.464502671466989E-6 estimated; rel err 6.763403720361277E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=16
+
+Building model...
+Model constants: N=16
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 112 iterations in 0.08 seconds (average 0.000696, setup 0.00)
+
+Time for model construction: 0.094 seconds.
+
+Warning: Deadlocks detected and fixed in 681 states
+
+Type:        MDP
+States:      10260 (1 initial)
+Transitions: 20469
+Choices:     12060
+
+Transition matrix: 2868 nodes (20 terminal), 20469 minterms, vars: 20r/20c/3nd
+
+Prob0A: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1E: 474 iterations in 0.23 seconds (average 0.000483, setup 0.00)
+
+yes = 2025, no = 14, maybe = 8221
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=3057] [143.3 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [102.2 KB]
+Creating vector for yes... [dist=2, compact] [20.1 KB]
+Allocating iteration vectors... [3 x 80.2 KB]
+TOTAL: [506.0 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000154, setup 0.00)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.245 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=16
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000231, setup 0.00)
+
+Prob1A: 101 iterations in 0.05 seconds (average 0.000525, setup 0.00)
+
+yes = 2025, no = 14, maybe = 8221
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=20, nodes=3057] [143.3 KB]
+Adding sparse bits... [levels=20-20, num=3, compact=3/3] [102.2 KB]
+Creating vector for yes... [dist=2, compact] [20.1 KB]
+Allocating iteration vectors... [3 x 80.2 KB]
+TOTAL: [506.0 KB]
+
+Starting iterations...
+
+Iterative method: 757 iterations in 0.12 seconds (average 0.000159, setup 0.00)
+
+Value in the initial state: 0.6830354013109101
+
+Time for model checking: 0.18 seconds.
+
+Result: 0.6830354013109101 (+/- 4.031230238064265E-6 estimated; rel err 5.9019345561406614E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=17
+
+Building model...
+Model constants: N=17
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 117 iterations in 0.07 seconds (average 0.000573, setup 0.00)
+
+Time for model construction: 0.086 seconds.
+
+Warning: Deadlocks detected and fixed in 726 states
+
+Type:        MDP
+States:      10944 (1 initial)
+Transitions: 21834
+Choices:     12864
+
+Transition matrix: 2939 nodes (20 terminal), 21834 minterms, vars: 21r/21c/3nd
+
+Prob0A: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1E: 502 iterations in 0.28 seconds (average 0.000564, setup 0.00)
+
+yes = 2160, no = 14, maybe = 8770
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3007] [141.0 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [109.0 KB]
+Creating vector for yes... [dist=2, compact] [21.4 KB]
+Allocating iteration vectors... [3 x 85.5 KB]
+TOTAL: [527.9 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000173, setup 0.00)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.301 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=17
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000154, setup 0.00)
+
+Prob1A: 106 iterations in 0.08 seconds (average 0.000764, setup 0.00)
+
+yes = 2160, no = 14, maybe = 8770
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3007] [141.0 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [109.0 KB]
+Creating vector for yes... [dist=2, compact] [21.4 KB]
+Allocating iteration vectors... [3 x 85.5 KB]
+TOTAL: [527.9 KB]
+
+Starting iterations...
+
+Iterative method: 796 iterations in 0.14 seconds (average 0.000171, setup 0.00)
+
+Value in the initial state: 0.7044257800967457
+
+Time for model checking: 0.224 seconds.
+
+Result: 0.7044257800967457 (+/- 6.8921217198329605E-6 estimated; rel err 9.784028232025236E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=18
+
+Building model...
+Model constants: N=18
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 122 iterations in 0.06 seconds (average 0.000525, setup 0.00)
+
+Time for model construction: 0.079 seconds.
+
+Warning: Deadlocks detected and fixed in 771 states
+
+Type:        MDP
+States:      11628 (1 initial)
+Transitions: 23199
+Choices:     13668
+
+Transition matrix: 3168 nodes (20 terminal), 23199 minterms, vars: 21r/21c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000538, setup 0.00)
+
+Prob1E: 530 iterations in 0.31 seconds (average 0.000585, setup 0.00)
+
+yes = 2295, no = 14, maybe = 9319
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3249] [152.3 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [115.8 KB]
+Creating vector for yes... [dist=2, compact] [22.7 KB]
+Allocating iteration vectors... [3 x 90.8 KB]
+TOTAL: [563.4 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000173, setup 0.01)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.331 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=18
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1A: 111 iterations in 0.06 seconds (average 0.000568, setup 0.00)
+
+yes = 2295, no = 14, maybe = 9319
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3249] [152.3 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [115.8 KB]
+Creating vector for yes... [dist=2, compact] [22.7 KB]
+Allocating iteration vectors... [3 x 90.8 KB]
+TOTAL: [563.4 KB]
+
+Starting iterations...
+
+Iterative method: 832 iterations in 0.15 seconds (average 0.000175, setup 0.00)
+
+Value in the initial state: 0.7243725070322032
+
+Time for model checking: 0.217 seconds.
+
+Result: 0.7243725070322032 (+/- 6.765379079793392E-6 estimated; rel err 9.339640881059315E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=19
+
+Building model...
+Model constants: N=19
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 127 iterations in 0.09 seconds (average 0.000740, setup 0.00)
+
+Time for model construction: 0.115 seconds.
+
+Warning: Deadlocks detected and fixed in 816 states
+
+Type:        MDP
+States:      12312 (1 initial)
+Transitions: 24564
+Choices:     14472
+
+Transition matrix: 3137 nodes (20 terminal), 24564 minterms, vars: 21r/21c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000692, setup 0.00)
+
+Prob1E: 558 iterations in 0.33 seconds (average 0.000582, setup 0.00)
+
+yes = 2430, no = 14, maybe = 9868
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3222] [151.0 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [122.6 KB]
+Creating vector for yes... [dist=2, compact] [24.1 KB]
+Allocating iteration vectors... [3 x 96.2 KB]
+TOTAL: [586.3 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000192, setup 0.01)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.356 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=19
+
+Prob0E: 13 iterations in 0.01 seconds (average 0.000385, setup 0.00)
+
+Prob1A: 116 iterations in 0.07 seconds (average 0.000629, setup 0.00)
+
+yes = 2430, no = 14, maybe = 9868
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3222] [151.0 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [122.6 KB]
+Creating vector for yes... [dist=2, compact] [24.1 KB]
+Allocating iteration vectors... [3 x 96.2 KB]
+TOTAL: [586.3 KB]
+
+Starting iterations...
+
+Iterative method: 872 iterations in 0.16 seconds (average 0.000180, setup 0.00)
+
+Value in the initial state: 0.7429732523032185
+
+Time for model checking: 0.244 seconds.
+
+Result: 0.7429732523032185 (+/- 6.135709602605704E-6 estimated; rel err 8.258318295557737E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=20
+
+Building model...
+Model constants: N=20
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 132 iterations in 0.08 seconds (average 0.000614, setup 0.00)
+
+Time for model construction: 0.095 seconds.
+
+Warning: Deadlocks detected and fixed in 861 states
+
+Type:        MDP
+States:      12996 (1 initial)
+Transitions: 25929
+Choices:     15276
+
+Transition matrix: 3132 nodes (20 terminal), 25929 minterms, vars: 21r/21c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000385, setup 0.00)
+
+Prob1E: 586 iterations in 0.36 seconds (average 0.000614, setup 0.00)
+
+yes = 2565, no = 14, maybe = 10417
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3250] [152.3 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [129.4 KB]
+Creating vector for yes... [dist=2, compact] [25.4 KB]
+Allocating iteration vectors... [3 x 101.5 KB]
+TOTAL: [611.8 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.01 seconds (average 0.000192, setup 0.01)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.381 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=20
+
+Prob0E: 13 iterations in 0.01 seconds (average 0.000385, setup 0.00)
+
+Prob1A: 121 iterations in 0.06 seconds (average 0.000504, setup 0.00)
+
+yes = 2565, no = 14, maybe = 10417
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3250] [152.3 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [129.4 KB]
+Creating vector for yes... [dist=2, compact] [25.4 KB]
+Allocating iteration vectors... [3 x 101.5 KB]
+TOTAL: [611.8 KB]
+
+Starting iterations...
+
+Iterative method: 912 iterations in 0.18 seconds (average 0.000194, setup 0.00)
+
+Value in the initial state: 0.7603187246673334
+
+Time for model checking: 0.246 seconds.
+
+Result: 0.7603187246673334 (+/- 5.553294472300702E-6 estimated; rel err 7.303903339655967E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=21
+
+Building model...
+Model constants: N=21
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 137 iterations in 0.08 seconds (average 0.000591, setup 0.00)
+
+Time for model construction: 0.096 seconds.
+
+Warning: Deadlocks detected and fixed in 906 states
+
+Type:        MDP
+States:      13680 (1 initial)
+Transitions: 27294
+Choices:     16080
+
+Transition matrix: 3071 nodes (20 terminal), 27294 minterms, vars: 21r/21c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000538, setup 0.00)
+
+Prob1E: 614 iterations in 0.34 seconds (average 0.000562, setup 0.00)
+
+yes = 2700, no = 14, maybe = 10966
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3162] [148.2 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [136.3 KB]
+Creating vector for yes... [dist=2, compact] [26.7 KB]
+Allocating iteration vectors... [3 x 106.9 KB]
+TOTAL: [631.8 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.02 seconds (average 0.000212, setup 0.01)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.369 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=21
+
+Prob0E: 13 iterations in 0.01 seconds (average 0.000385, setup 0.00)
+
+Prob1A: 126 iterations in 0.08 seconds (average 0.000627, setup 0.00)
+
+yes = 2700, no = 14, maybe = 10966
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3162] [148.2 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [136.3 KB]
+Creating vector for yes... [dist=2, compact] [26.7 KB]
+Allocating iteration vectors... [3 x 106.9 KB]
+TOTAL: [631.8 KB]
+
+Starting iterations...
+
+Iterative method: 952 iterations in 0.20 seconds (average 0.000202, setup 0.00)
+
+Value in the initial state: 0.776493636323817
+
+Time for model checking: 0.281 seconds.
+
+Result: 0.776493636323817 (+/- 5.015976884424161E-6 estimated; rel err 6.459778483403276E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=22
+
+Building model...
+Model constants: N=22
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 142 iterations in 0.14 seconds (average 0.000951, setup 0.00)
+
+Time for model construction: 0.117 seconds.
+
+Warning: Deadlocks detected and fixed in 951 states
+
+Type:        MDP
+States:      14364 (1 initial)
+Transitions: 28659
+Choices:     16884
+
+Transition matrix: 3168 nodes (20 terminal), 28659 minterms, vars: 21r/21c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000385, setup 0.00)
+
+Prob1E: 642 iterations in 0.39 seconds (average 0.000609, setup 0.00)
+
+yes = 2835, no = 14, maybe = 11515
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3284] [153.9 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [143.1 KB]
+Creating vector for yes... [dist=2, compact] [28.1 KB]
+Allocating iteration vectors... [3 x 112.2 KB]
+TOTAL: [661.7 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.02 seconds (average 0.000231, setup 0.01)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.413 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=22
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1A: 131 iterations in 0.07 seconds (average 0.000557, setup 0.00)
+
+yes = 2835, no = 14, maybe = 11515
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3284] [153.9 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [143.1 KB]
+Creating vector for yes... [dist=2, compact] [28.1 KB]
+Allocating iteration vectors... [3 x 112.2 KB]
+TOTAL: [661.7 KB]
+
+Starting iterations...
+
+Iterative method: 992 iterations in 0.21 seconds (average 0.000206, setup 0.00)
+
+Value in the initial state: 0.7915769826626855
+
+Time for model checking: 0.29 seconds.
+
+Result: 0.7915769826626855 (+/- 4.521389332812481E-6 estimated; rel err 5.711875701089176E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=23
+
+Building model...
+Model constants: N=23
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 147 iterations in 0.10 seconds (average 0.000694, setup 0.00)
+
+Time for model construction: 0.12 seconds.
+
+Warning: Deadlocks detected and fixed in 996 states
+
+Type:        MDP
+States:      15048 (1 initial)
+Transitions: 30024
+Choices:     17688
+
+Transition matrix: 3137 nodes (20 terminal), 30024 minterms, vars: 21r/21c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.001154, setup 0.00)
+
+Prob1E: 670 iterations in 0.38 seconds (average 0.000564, setup 0.00)
+
+yes = 2970, no = 14, maybe = 12064
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3257] [152.7 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [149.9 KB]
+Creating vector for yes... [dist=2, compact] [29.4 KB]
+Allocating iteration vectors... [3 x 117.6 KB]
+TOTAL: [684.6 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.02 seconds (average 0.000231, setup 0.01)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.412 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=23
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1A: 136 iterations in 0.09 seconds (average 0.000676, setup 0.00)
+
+yes = 2970, no = 14, maybe = 12064
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3257] [152.7 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [149.9 KB]
+Creating vector for yes... [dist=2, compact] [29.4 KB]
+Allocating iteration vectors... [3 x 117.6 KB]
+TOTAL: [684.6 KB]
+
+Starting iterations...
+
+Iterative method: 1031 iterations in 0.23 seconds (average 0.000217, setup 0.01)
+
+Value in the initial state: 0.8056424278744126
+
+Time for model checking: 0.334 seconds.
+
+Result: 0.8056424278744126 (+/- 7.984467868890454E-6 estimated; rel err 9.91068443348556E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=24
+
+Building model...
+Model constants: N=24
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 152 iterations in 0.09 seconds (average 0.000572, setup 0.00)
+
+Time for model construction: 0.103 seconds.
+
+Warning: Deadlocks detected and fixed in 1041 states
+
+Type:        MDP
+States:      15732 (1 initial)
+Transitions: 31389
+Choices:     18492
+
+Transition matrix: 3096 nodes (20 terminal), 31389 minterms, vars: 21r/21c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000385, setup 0.00)
+
+Prob1E: 698 iterations in 0.44 seconds (average 0.000635, setup 0.00)
+
+yes = 3105, no = 14, maybe = 12613
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3251] [152.4 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [156.7 KB]
+Creating vector for yes... [dist=2, compact] [30.7 KB]
+Allocating iteration vectors... [3 x 122.9 KB]
+TOTAL: [708.5 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.02 seconds (average 0.000250, setup 0.01)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.469 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=24
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1A: 141 iterations in 0.09 seconds (average 0.000631, setup 0.00)
+
+yes = 3105, no = 14, maybe = 12613
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3251] [152.4 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [156.7 KB]
+Creating vector for yes... [dist=2, compact] [30.7 KB]
+Allocating iteration vectors... [3 x 122.9 KB]
+TOTAL: [708.5 KB]
+
+Starting iterations...
+
+Iterative method: 1067 iterations in 0.26 seconds (average 0.000239, setup 0.01)
+
+Value in the initial state: 0.8187585357966138
+
+Time for model checking: 0.355 seconds.
+
+Result: 0.8187585357966138 (+/- 7.591411202231899E-6 estimated; rel err 9.271855950601858E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=25
+
+Building model...
+Model constants: N=25
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 157 iterations in 0.13 seconds (average 0.000847, setup 0.00)
+
+Time for model construction: 0.149 seconds.
+
+Warning: Deadlocks detected and fixed in 1086 states
+
+Type:        MDP
+States:      16416 (1 initial)
+Transitions: 32754
+Choices:     19296
+
+Transition matrix: 3005 nodes (20 terminal), 32754 minterms, vars: 21r/21c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000385, setup 0.00)
+
+Prob1E: 726 iterations in 0.43 seconds (average 0.000590, setup 0.00)
+
+yes = 3240, no = 14, maybe = 13162
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3102] [145.4 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [163.5 KB]
+Creating vector for yes... [dist=2, compact] [32.1 KB]
+Allocating iteration vectors... [3 x 128.2 KB]
+TOTAL: [725.7 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.02 seconds (average 0.000269, setup 0.01)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.453 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=25
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1A: 146 iterations in 0.11 seconds (average 0.000726, setup 0.00)
+
+yes = 3240, no = 14, maybe = 13162
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3102] [145.4 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [163.5 KB]
+Creating vector for yes... [dist=2, compact] [32.1 KB]
+Allocating iteration vectors... [3 x 128.2 KB]
+TOTAL: [725.7 KB]
+
+Starting iterations...
+
+Iterative method: 1107 iterations in 0.29 seconds (average 0.000255, setup 0.01)
+
+Value in the initial state: 0.8309896386204774
+
+Time for model checking: 0.406 seconds.
+
+Result: 0.8309896386204774 (+/- 6.655209561045554E-6 estimated; rel err 8.008775623356557E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=26
+
+Building model...
+Model constants: N=26
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 162 iterations in 0.12 seconds (average 0.000735, setup 0.00)
+
+Time for model construction: 0.125 seconds.
+
+Warning: Deadlocks detected and fixed in 1131 states
+
+Type:        MDP
+States:      17100 (1 initial)
+Transitions: 34119
+Choices:     20100
+
+Transition matrix: 3168 nodes (20 terminal), 34119 minterms, vars: 21r/21c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000538, setup 0.00)
+
+Prob1E: 754 iterations in 0.46 seconds (average 0.000606, setup 0.00)
+
+yes = 3375, no = 14, maybe = 13711
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3284] [153.9 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [170.3 KB]
+Creating vector for yes... [dist=2, compact] [33.4 KB]
+Allocating iteration vectors... [3 x 133.6 KB]
+TOTAL: [758.4 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.02 seconds (average 0.000269, setup 0.01)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.484 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=26
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1A: 151 iterations in 0.08 seconds (average 0.000556, setup 0.00)
+
+yes = 3375, no = 14, maybe = 13711
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3284] [153.9 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [170.3 KB]
+Creating vector for yes... [dist=2, compact] [33.4 KB]
+Allocating iteration vectors... [3 x 133.6 KB]
+TOTAL: [758.4 KB]
+
+Starting iterations...
+
+Iterative method: 1147 iterations in 0.32 seconds (average 0.000275, setup 0.00)
+
+Value in the initial state: 0.8423953239350421
+
+Time for model checking: 0.407 seconds.
+
+Result: 0.8423953239350421 (+/- 5.8547235332901915E-6 estimated; rel err 6.950090256841994E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=27
+
+Building model...
+Model constants: N=27
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 167 iterations in 0.12 seconds (average 0.000713, setup 0.00)
+
+Time for model construction: 0.138 seconds.
+
+Warning: Deadlocks detected and fixed in 1176 states
+
+Type:        MDP
+States:      17784 (1 initial)
+Transitions: 35484
+Choices:     20904
+
+Transition matrix: 3137 nodes (20 terminal), 35484 minterms, vars: 21r/21c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000538, setup 0.00)
+
+Prob1E: 782 iterations in 0.50 seconds (average 0.000642, setup 0.00)
+
+yes = 3510, no = 14, maybe = 14260
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3257] [152.7 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [177.1 KB]
+Creating vector for yes... [dist=2, compact] [34.8 KB]
+Allocating iteration vectors... [3 x 138.9 KB]
+TOTAL: [781.3 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.02 seconds (average 0.000269, setup 0.01)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.531 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=27
+
+Prob0E: 13 iterations in 0.01 seconds (average 0.000385, setup 0.00)
+
+Prob1A: 156 iterations in 0.10 seconds (average 0.000673, setup 0.00)
+
+yes = 3510, no = 14, maybe = 14260
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3257] [152.7 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [177.1 KB]
+Creating vector for yes... [dist=2, compact] [34.8 KB]
+Allocating iteration vectors... [3 x 138.9 KB]
+TOTAL: [781.3 KB]
+
+Starting iterations...
+
+Iterative method: 1187 iterations in 0.33 seconds (average 0.000274, setup 0.01)
+
+Value in the initial state: 0.8530312951452486
+
+Time for model checking: 0.443 seconds.
+
+Result: 0.8530312951452486 (+/- 5.248654457037374E-6 estimated; rel err 6.152944782809719E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=28
+
+Building model...
+Model constants: N=28
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 172 iterations in 0.14 seconds (average 0.000837, setup 0.00)
+
+Time for model construction: 0.168 seconds.
+
+Warning: Deadlocks detected and fixed in 1221 states
+
+Type:        MDP
+States:      18468 (1 initial)
+Transitions: 36849
+Choices:     21708
+
+Transition matrix: 3132 nodes (20 terminal), 36849 minterms, vars: 21r/21c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000385, setup 0.00)
+
+Prob1E: 810 iterations in 0.55 seconds (average 0.000684, setup 0.00)
+
+yes = 3645, no = 14, maybe = 14809
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3285] [154.0 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [183.9 KB]
+Creating vector for yes... [dist=2, compact] [36.1 KB]
+Allocating iteration vectors... [3 x 144.3 KB]
+TOTAL: [806.8 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.02 seconds (average 0.000288, setup 0.01)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.581 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=28
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1A: 161 iterations in 0.09 seconds (average 0.000571, setup 0.00)
+
+yes = 3645, no = 14, maybe = 14809
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3285] [154.0 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [183.9 KB]
+Creating vector for yes... [dist=2, compact] [36.1 KB]
+Allocating iteration vectors... [3 x 144.3 KB]
+TOTAL: [806.8 KB]
+
+Starting iterations...
+
+Iterative method: 1227 iterations in 0.35 seconds (average 0.000282, setup 0.01)
+
+Value in the initial state: 0.8629494924616564
+
+Time for model checking: 0.449 seconds.
+
+Result: 0.8629494924616564 (+/- 4.716602082863364E-6 estimated; rel err 5.465675713428776E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=29
+
+Building model...
+Model constants: N=29
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 177 iterations in 0.19 seconds (average 0.001062, setup 0.00)
+
+Time for model construction: 0.166 seconds.
+
+Warning: Deadlocks detected and fixed in 1266 states
+
+Type:        MDP
+States:      19152 (1 initial)
+Transitions: 38214
+Choices:     22512
+
+Transition matrix: 3071 nodes (20 terminal), 38214 minterms, vars: 21r/21c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000538, setup 0.00)
+
+Prob1E: 838 iterations in 0.48 seconds (average 0.000578, setup 0.00)
+
+yes = 3780, no = 14, maybe = 15358
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3197] [149.9 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [190.7 KB]
+Creating vector for yes... [dist=2, compact] [37.4 KB]
+Allocating iteration vectors... [3 x 149.6 KB]
+TOTAL: [826.9 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.02 seconds (average 0.000288, setup 0.01)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.512 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=29
+
+Prob0E: 13 iterations in 0.01 seconds (average 0.000385, setup 0.00)
+
+Prob1A: 166 iterations in 0.12 seconds (average 0.000717, setup 0.00)
+
+yes = 3780, no = 14, maybe = 15358
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3197] [149.9 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [190.7 KB]
+Creating vector for yes... [dist=2, compact] [37.4 KB]
+Allocating iteration vectors... [3 x 149.6 KB]
+TOTAL: [826.9 KB]
+
+Starting iterations...
+
+Iterative method: 1267 iterations in 0.36 seconds (average 0.000283, setup 0.00)
+
+Value in the initial state: 0.8721983579237808
+
+Time for model checking: 0.493 seconds.
+
+Result: 0.8721983579237808 (+/- 4.239037274534837E-6 estimated; rel err 4.860175711205909E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmax=? [ F crash=1 ]
+Model constants: N=30
+
+Building model...
+Model constants: N=30
+
+Warning: Update 2 of command 1 of module "taxinet" doesn't do anything (line 46, column 37)
+
+Warning: Update 4 of command 1 of module "taxinet" doesn't do anything (line 48, column 37)
+
+Warning: Update 5 of command 1 of module "taxinet" doesn't do anything (line 49, column 37)
+
+Warning: Update 3 of command 2 of module "taxinet" doesn't do anything (line 52, column 37)
+
+Warning: Update 5 of command 2 of module "taxinet" doesn't do anything (line 54, column 37)
+
+Warning: Update 2 of command 3 of module "taxinet" doesn't do anything (line 56, column 37)
+
+Warning: Update 4 of command 3 of module "taxinet" doesn't do anything (line 58, column 37)
+
+Warning: Update 5 of command 3 of module "taxinet" doesn't do anything (line 59, column 37)
+
+Warning: Update 1 of command 4 of module "taxinet" doesn't do anything (line 60, column 37)
+
+Warning: Update 3 of command 4 of module "taxinet" doesn't do anything (line 62, column 37)
+
+Warning: Update 5 of command 4 of module "taxinet" doesn't do anything (line 64, column 37)
+
+Warning: Update 1 of command 5 of module "taxinet" doesn't do anything (line 65, column 37)
+
+Warning: Update 2 of command 5 of module "taxinet" doesn't do anything (line 66, column 37)
+
+Warning: Update 4 of command 5 of module "taxinet" doesn't do anything (line 68, column 37)
+
+Warning: Update 1 of command 7 of module "taxinet" doesn't do anything (line 73, column 32)
+
+Warning: Update 3 of command 7 of module "taxinet" doesn't do anything (line 73, column 90)
+
+Warning: Update 2 of command 8 of module "taxinet" doesn't do anything (line 74, column 77)
+
+Computing reachable states...
+
+Reachability (BFS): 182 iterations in 0.13 seconds (average 0.000692, setup 0.00)
+
+Time for model construction: 0.159 seconds.
+
+Warning: Deadlocks detected and fixed in 1311 states
+
+Type:        MDP
+States:      19836 (1 initial)
+Transitions: 39579
+Choices:     23316
+
+Transition matrix: 3168 nodes (20 terminal), 39579 minterms, vars: 21r/21c/3nd
+
+Prob0A: 13 iterations in 0.01 seconds (average 0.000615, setup 0.00)
+
+Prob1E: 866 iterations in 0.53 seconds (average 0.000617, setup 0.00)
+
+yes = 3915, no = 14, maybe = 15907
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3319] [155.6 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [197.5 KB]
+Creating vector for yes... [dist=2, compact] [38.8 KB]
+Allocating iteration vectors... [3 x 155.0 KB]
+TOTAL: [856.8 KB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.02 seconds (average 0.000288, setup 0.01)
+
+Value in the initial state: 0.9999998821516604
+
+Time for model checking: 0.569 seconds.
+
+Result: 0.9999998821516604 (+/- 3.5650526424023617E-6 estimated; rel err 3.5650530625379457E-6)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F crash=1 ]
+Model constants: N=30
+
+Prob0E: 13 iterations in 0.00 seconds (average 0.000308, setup 0.00)
+
+Prob1A: 171 iterations in 0.11 seconds (average 0.000626, setup 0.00)
+
+yes = 3915, no = 14, maybe = 15907
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=21, nodes=3319] [155.6 KB]
+Adding sparse bits... [levels=21-21, num=3, compact=3/3] [197.5 KB]
+Creating vector for yes... [dist=2, compact] [38.8 KB]
+Allocating iteration vectors... [3 x 155.0 KB]
+TOTAL: [856.8 KB]
+
+Starting iterations...
+
+Iterative method: 1306 iterations in 0.39 seconds (average 0.000296, setup 0.01)
+
+Value in the initial state: 0.8808230628624265
+
+Time for model checking: 0.512 seconds.
+
+Result: 0.8808230628624265 (+/- 8.45636614349288E-6 estimated; rel err 9.60052762016934E-6)
+
+Exporting results to file "prism_output/baseline_results.txt"...
+
+---------------------------------------------------------------------
+
+Note: There were 522 warnings during computation.
+

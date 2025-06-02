@@ -1,12 +1,10 @@
 MODEL_PATH=cp_shielded_models
 PROPS_FILE=properties/crash_stuck.pctl
 PROPS_DC_FILE=properties/crash_stuck_default_controller.pctl
-N_START=5
-N_STEP=5
+N_START=0
+N_STEP=1
 UPPER_N=30
 OUTPUT_PATH=prism_output
-
-rm prism_output/*
 
 for file in $MODEL_PATH/*; do
 	filename=$(basename $file)

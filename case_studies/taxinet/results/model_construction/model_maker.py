@@ -1,8 +1,9 @@
 import numpy as np
 import os
+import sys
 
 shield_vals=np.loadtxt('shield_vals.txt')
-shield_thresh=0.7
+shield_thresh=float(sys.argv[1])
 
 compiler_gen_model_dir='../models_from_compiler'
 updated_models_dir='../cp_shielded_models'
@@ -115,7 +116,9 @@ for file in files:
             start=lines.index('// Controller')+1
             end=lines.index('// Default Controller')
 
-        out_filename=f'{file[:-3]}_new.pm'
+        shield_val_str=str(shield_thresh).split('.')[1]
+
+        out_filename=f'{file[:-4]}{shield_val_str}_new.pm'
         out_file=f'{updated_models_dir}/{out_filename}'
         with open(out_file, 'w') as new_file:
             for line in lines_orig[:start]:
