@@ -1,1 +1,1 @@
-Pmin=? [ F (pc>-1) U (k=N) ]
+Pmin=? [ (pc>-1) U (k=N) ]
