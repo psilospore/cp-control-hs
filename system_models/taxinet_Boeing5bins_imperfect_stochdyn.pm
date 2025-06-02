@@ -77,11 +77,13 @@ module taxinet
 	[] cte_est=0 & he_est=0 & pc=3 -> (a'=1)&(pc'=4);	
 	[] cte_est=0 & he_est=0 & pc=3 -> (a'=2)&(pc'=4);	
 	
-	[] cte_est=0 & he_est=1 & pc=3 -> (a'=0)&(pc'=4);		
+	[] cte_est=0 & he_est=1 & pc=3 -> (a'=0)&(pc'=4);	
+	[] cte_est=0 & he_est=1 & pc=3 -> (a'=1)&(pc'=4);	
 	[] cte_est=0 & he_est=1 & pc=3 -> (a'=2)&(pc'=4);	
 
 	[] cte_est=0 & he_est=2 & pc=3 -> (a'=0)&(pc'=4);	
 	[] cte_est=0 & he_est=2 & pc=3 -> (a'=1)&(pc'=4);	
+	[] cte_est=0 & he_est=2 & pc=3 -> (a'=2)&(pc'=4);	
 	
 	/// CTE=1 ///
 	[] cte_est=1 & he_est=0 & pc=3 -> (a'=0)&(pc'=4);	
@@ -89,10 +91,12 @@ module taxinet
 	[] cte_est=1 & he_est=0 & pc=3 -> (a'=2)&(pc'=4);	
 	
 	[] cte_est=1 & he_est=1 & pc=3 -> (a'=0)&(pc'=4);	
+	[] cte_est=1 & he_est=1 & pc=3 -> (a'=1)&(pc'=4);	
 	[] cte_est=1 & he_est=1 & pc=3 -> (a'=2)&(pc'=4);	
 
 	[] cte_est=1 & he_est=2 & pc=3 -> (a'=0)&(pc'=4);	
-	[] cte_est=1 & he_est=2 & pc=3 -> (a'=1)&(pc'=4);		
+	[] cte_est=1 & he_est=2 & pc=3 -> (a'=1)&(pc'=4);	
+	[] cte_est=1 & he_est=2 & pc=3 -> (a'=2)&(pc'=4);	
 	
 	/// CTE=2 ///
 	[] cte_est=2 & he_est=0 & pc=3 -> (a'=0)&(pc'=4);	
@@ -100,28 +104,38 @@ module taxinet
 	[] cte_est=2 & he_est=0 & pc=3 -> (a'=2)&(pc'=4);	
 	
 	[] cte_est=2 & he_est=1 & pc=3 -> (a'=0)&(pc'=4);	
+	[] cte_est=2 & he_est=1 & pc=3 -> (a'=1)&(pc'=4);	
 	[] cte_est=2 & he_est=1 & pc=3 -> (a'=2)&(pc'=4);	
 
 	[] cte_est=2 & he_est=2 & pc=3 -> (a'=0)&(pc'=4);	
 	[] cte_est=2 & he_est=2 & pc=3 -> (a'=1)&(pc'=4);	
+	[] cte_est=2 & he_est=2 & pc=3 -> (a'=2)&(pc'=4);	
 	
 	/// CTE=3 ///
 	[] cte_est=3 & he_est=0 & pc=3 -> (a'=0)&(pc'=4);	
+	[] cte_est=3 & he_est=0 & pc=3 -> (a'=1)&(pc'=4);	
 	[] cte_est=3 & he_est=0 & pc=3 -> (a'=2)&(pc'=4);	
-		
+	
+	[] cte_est=3 & he_est=1 & pc=3 -> (a'=0)&(pc'=4);	
+	[] cte_est=3 & he_est=1 & pc=3 -> (a'=1)&(pc'=4);	
 	[] cte_est=3 & he_est=1 & pc=3 -> (a'=2)&(pc'=4);	
 
 	[] cte_est=3 & he_est=2 & pc=3 -> (a'=0)&(pc'=4);	
-	[] cte_est=3 & he_est=2 & pc=3 -> (a'=1)&(pc'=4);		
+	[] cte_est=3 & he_est=2 & pc=3 -> (a'=1)&(pc'=4);	
+	[] cte_est=3 & he_est=2 & pc=3 -> (a'=2)&(pc'=4);	
 	
 	/// CTE=4 ///
 	[] cte_est=4 & he_est=0 & pc=3 -> (a'=0)&(pc'=4);	
 	[] cte_est=4 & he_est=0 & pc=3 -> (a'=1)&(pc'=4);	
+	[] cte_est=4 & he_est=0 & pc=3 -> (a'=2)&(pc'=4);	
 	
-	[] cte_est=4 & he_est=1 & pc=3 -> (a'=0)&(pc'=4);		
+	[] cte_est=4 & he_est=1 & pc=3 -> (a'=0)&(pc'=4);	
+	[] cte_est=4 & he_est=1 & pc=3 -> (a'=1)&(pc'=4);	
 	[] cte_est=4 & he_est=1 & pc=3 -> (a'=2)&(pc'=4);	
 
+	[] cte_est=4 & he_est=2 & pc=3 -> (a'=0)&(pc'=4);	
 	[] cte_est=4 & he_est=2 & pc=3 -> (a'=1)&(pc'=4);	
+	[] cte_est=4 & he_est=2 & pc=3 -> (a'=2)&(pc'=4);
 
 	// action selection stochasticity
 	[] a=0 & pc=4 -> dyn_suc: (a'=0) & (pc'=5) + dyn_fail: (a'=1) & (pc'=5) + dyn_fail: (a'=2) & (pc'=5);
