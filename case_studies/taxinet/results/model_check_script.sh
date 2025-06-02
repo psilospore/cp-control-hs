@@ -15,8 +15,8 @@ for file in $MODEL_PATH/*; do
 	if [[ $filename == *$defActStr* ]]; then
     	outFileName=${filename:39:-3}_def_act_prop_no_violation
     	prism $file $PROPS_DC_FILE -const N=$N_START:$N_STEP:$UPPER_N -exportresults $OUTPUT_PATH/${outFileName}_results.txt > $OUTPUT_PATH/${outFileName}_out.txt 
-	else
-		outFileName=${filename:32:-3}_prop_no_violation
-    	prism $file $PROPS_FILE -const N=$N_START:$N_STEP:$UPPER_N -exportresults $OUTPUT_PATH/${outFileName}_results.txt > $OUTPUT_PATH/${outFileName}_out.txt 
+	# else
+	# 	outFileName=${filename:32:-3}_prop_no_violation
+    # 	prism $file $PROPS_FILE -const N=$N_START:$N_STEP:$UPPER_N -exportresults $OUTPUT_PATH/${outFileName}_results.txt > $OUTPUT_PATH/${outFileName}_out.txt 
 	fi
 done
