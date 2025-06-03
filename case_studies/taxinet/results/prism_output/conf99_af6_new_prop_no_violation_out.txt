@@ -1,0 +1,2004 @@
+PRISM
+=====
+
+Version: 4.7
+Date: Mon Jun 02 17:15:11 BST 2025
+Hostname: AAIP
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism cp_shielded_models/ShieldedConfPred_StochDyn_acc90_conf99_af6_new.pm properties/not_stuck_or_crash.pctl -const 'N=0:1:30' -exportresults prism_output/conf99_af6_new_prop_no_violation_results.txt
+
+Parsing model file "cp_shielded_models/ShieldedConfPred_StochDyn_acc90_conf99_af6_new.pm"...
+
+Type:        MDP
+Modules:     ShieldedConfPred 
+Variables:   cte he a default cte_est0 cte_est1 cte_est2 cte_est3 cte_est4 he_est0 he_est1 he_est2 pc k 
+
+Parsing properties file "properties/not_stuck_or_crash.pctl"...
+
+1 property:
+(1) Pmin=? [ F (pc>-1) U (k=N) ]
+
+Error: Invalid range (0-0) for variable "k" ("[0..N]", line 42, column 7).
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=1
+
+Building model...
+Model constants: N=1
+
+Computing reachable states...
+
+Reachability (BFS): 8 iterations in 0.00 seconds (average 0.000250, setup 0.00)
+
+Time for model construction: 0.076 seconds.
+
+Warning: Deadlocks detected and fixed in 66 states
+
+Type:        MDP
+States:      242 (1 initial)
+Transitions: 352
+Choices:     257
+
+Transition matrix: 711 nodes (13 terminal), 352 minterms, vars: 22r/22c/3nd
+
+Building deterministic automaton (for !(F "L0" U true))...
+DFA has 1 states, 0 goal states.
+Time for deterministic automaton translation: 0.016 seconds.
+
+Constructing MDP-DFA product...
+
+Reachability (BFS): 8 iterations in 0.00 seconds (average 0.000125, setup 0.00)
+Time for product construction: 0.002 seconds.
+
+States:      242 (1 initial)
+Transitions: 352
+Choices:     257
+
+Transition matrix: 719 nodes (13 terminal), 352 minterms, vars: 23r/23c/3nd
+
+Skipping accepting MEC computation since acceptance is defined via goal states...
+
+Computing reachability probabilities...
+
+yes = 0, no = 242, maybe = 0
+
+Value in the initial state: 1.0
+
+Time for model checking: 0.022 seconds.
+
+Result: 1.0
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=2
+
+Building model...
+Model constants: N=2
+
+Computing reachable states...
+
+Reachability (BFS): 15 iterations in 0.01 seconds (average 0.000333, setup 0.00)
+
+Time for model construction: 0.101 seconds.
+
+Warning: Deadlocks detected and fixed in 324 states
+
+Type:        MDP
+States:      1464 (1 initial)
+Transitions: 2608
+Choices:     1535
+
+Transition matrix: 2900 nodes (35 terminal), 2608 minterms, vars: 23r/23c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.002 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 15 iterations in 0.00 seconds (average 0.000200, setup 0.00)
+Time for product construction: 0.008 seconds.
+
+States:      1464 (1 initial)
+Transitions: 2608
+Choices:     1535
+
+Transition matrix: 3387 nodes (35 terminal), 2608 minterms, vars: 26r/26c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+yes = 0, no = 1464, maybe = 0
+
+Value in the initial state: 1.0
+
+Time for model checking: 0.013 seconds.
+
+Result: 1.0
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=3
+
+Building model...
+Model constants: N=3
+
+Computing reachable states...
+
+Reachability (BFS): 22 iterations in 0.02 seconds (average 0.000955, setup 0.00)
+
+Time for model construction: 0.085 seconds.
+
+Warning: Deadlocks detected and fixed in 689 states
+
+Type:        MDP
+States:      3943 (1 initial)
+Transitions: 7936
+Choices:     4102
+
+Transition matrix: 6120 nodes (48 terminal), 7936 minterms, vars: 23r/23c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 22 iterations in 0.01 seconds (average 0.000545, setup 0.00)
+Time for product construction: 0.028 seconds.
+
+States:      3943 (1 initial)
+Transitions: 7936
+Choices:     4102
+
+Transition matrix: 8016 nodes (48 terminal), 7936 minterms, vars: 26r/26c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 14 iterations in 0.00 seconds (average 0.000286, setup 0.00)
+
+Prob1E: 6 iterations in 0.00 seconds (average 0.000333, setup 0.00)
+
+yes = 172, no = 3141, maybe = 630
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=26, nodes=4390] [205.8 KB]
+Adding sparse bits... [levels=26-26, num=4, compact=4/4] [21.3 KB]
+Creating vector for yes... [dist=2, compact] [7.7 KB]
+Allocating iteration vectors... [3 x 30.8 KB]
+TOTAL: [327.2 KB]
+
+Starting iterations...
+
+Iterative method: 15 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 0.7098283068791426
+
+Time for model checking: 0.066 seconds.
+
+Result: 0.7098283068791426
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=4
+
+Building model...
+Model constants: N=4
+
+Computing reachable states...
+
+Reachability (BFS): 29 iterations in 0.03 seconds (average 0.000862, setup 0.00)
+
+Time for model construction: 0.104 seconds.
+
+Warning: Deadlocks detected and fixed in 1325 states
+
+Type:        MDP
+States:      8318 (1 initial)
+Transitions: 17094
+Choices:     8638
+
+Transition matrix: 10413 nodes (48 terminal), 17094 minterms, vars: 24r/24c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 29 iterations in 0.03 seconds (average 0.000897, setup 0.00)
+Time for product construction: 0.051 seconds.
+
+States:      8318 (1 initial)
+Transitions: 17094
+Choices:     8638
+
+Transition matrix: 13699 nodes (48 terminal), 17094 minterms, vars: 27r/27c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.01 seconds (average 0.000562, setup 0.00)
+
+Prob1E: 6 iterations in 0.01 seconds (average 0.000833, setup 0.00)
+
+yes = 604, no = 5813, maybe = 1901
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=27, nodes=8221] [385.4 KB]
+Adding sparse bits... [levels=27-27, num=4, compact=4/4] [50.7 KB]
+Creating vector for yes... [dist=2, compact] [16.3 KB]
+Allocating iteration vectors... [3 x 65.0 KB]
+TOTAL: [647.3 KB]
+
+Starting iterations...
+
+Iterative method: 23 iterations in 0.01 seconds (average 0.000087, setup 0.01)
+
+Value in the initial state: 0.38963637795647343
+
+Time for model checking: 0.155 seconds.
+
+Result: 0.38963637795647343
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=5
+
+Building model...
+Model constants: N=5
+
+Computing reachable states...
+
+Reachability (BFS): 36 iterations in 0.04 seconds (average 0.001222, setup 0.00)
+
+Time for model construction: 0.125 seconds.
+
+Warning: Deadlocks detected and fixed in 1843 states
+
+Type:        MDP
+States:      14025 (1 initial)
+Transitions: 30883
+Choices:     14599
+
+Transition matrix: 14165 nodes (48 terminal), 30883 minterms, vars: 24r/24c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 36 iterations in 0.05 seconds (average 0.001472, setup 0.00)
+Time for product construction: 0.099 seconds.
+
+States:      14025 (1 initial)
+Transitions: 30883
+Choices:     14599
+
+Transition matrix: 19619 nodes (48 terminal), 30883 minterms, vars: 27r/27c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.02 seconds (average 0.001063, setup 0.00)
+
+Prob1E: 21 iterations in 0.02 seconds (average 0.000810, setup 0.00)
+
+yes = 1316, no = 7851, maybe = 4858
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=27, nodes=17959] [841.8 KB]
+Adding sparse bits... [levels=27-27, num=4, compact=4/4] [102.1 KB]
+Creating vector for yes... [dist=2, compact] [27.4 KB]
+Allocating iteration vectors... [3 x 109.6 KB]
+TOTAL: [1.3 MB]
+
+Starting iterations...
+
+Iterative method: 30 iterations in 0.04 seconds (average 0.000167, setup 0.04)
+
+Value in the initial state: 0.25950950102128667
+
+Time for model checking: 0.362 seconds.
+
+Result: 0.25950950102128667
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=6
+
+Building model...
+Model constants: N=6
+
+Computing reachable states...
+
+Reachability (BFS): 43 iterations in 0.08 seconds (average 0.001837, setup 0.00)
+
+Time for model construction: 0.157 seconds.
+
+Warning: Deadlocks detected and fixed in 2253 states
+
+Type:        MDP
+States:      20256 (1 initial)
+Transitions: 46826
+Choices:     21144
+
+Transition matrix: 16125 nodes (48 terminal), 46826 minterms, vars: 24r/24c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 43 iterations in 0.09 seconds (average 0.002023, setup 0.00)
+Time for product construction: 0.161 seconds.
+
+States:      20256 (1 initial)
+Transitions: 46826
+Choices:     21144
+
+Transition matrix: 24165 nodes (48 terminal), 46826 minterms, vars: 27r/27c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.02 seconds (average 0.001125, setup 0.00)
+
+Prob1E: 38 iterations in 0.04 seconds (average 0.001184, setup 0.00)
+
+yes = 2136, no = 9087, maybe = 9033
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=27, nodes=26471] [1.2 MB]
+Adding sparse bits... [levels=27-27, num=4, compact=4/4] [169.4 KB]
+Creating vector for yes... [dist=2, compact] [39.6 KB]
+Allocating iteration vectors... [3 x 158.2 KB]
+TOTAL: [1.9 MB]
+
+Starting iterations...
+
+Iterative method: 37 iterations in 0.11 seconds (average 0.000216, setup 0.10)
+
+Value in the initial state: 0.19823264059336454
+
+Time for model checking: 0.566 seconds.
+
+Result: 0.19823264059336454
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=7
+
+Building model...
+Model constants: N=7
+
+Computing reachable states...
+
+Reachability (BFS): 50 iterations in 0.10 seconds (average 0.001960, setup 0.00)
+
+Time for model construction: 0.197 seconds.
+
+Warning: Deadlocks detected and fixed in 2663 states
+
+Type:        MDP
+States:      26487 (1 initial)
+Transitions: 62769
+Choices:     27689
+
+Transition matrix: 16010 nodes (48 terminal), 62769 minterms, vars: 24r/24c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 50 iterations in 0.10 seconds (average 0.001900, setup 0.00)
+Time for product construction: 0.143 seconds.
+
+States:      26487 (1 initial)
+Transitions: 62769
+Choices:     27689
+
+Transition matrix: 26094 nodes (48 terminal), 62769 minterms, vars: 27r/27c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.06 seconds (average 0.003563, setup 0.00)
+
+Prob1E: 55 iterations in 0.19 seconds (average 0.003382, setup 0.00)
+
+yes = 2956, no = 9337, maybe = 14194
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=27, nodes=31374] [1.4 MB]
+Adding sparse bits... [levels=27-27, num=4, compact=4/4] [250.1 KB]
+Creating vector for yes... [dist=2, compact] [51.7 KB]
+Allocating iteration vectors... [3 x 206.9 KB]
+TOTAL: [2.3 MB]
+
+Starting iterations...
+
+Iterative method: 44 iterations in 0.34 seconds (average 0.000682, setup 0.31)
+
+Value in the initial state: 0.15761097580006733
+
+Time for model checking: 0.853 seconds.
+
+Result: 0.15761097580006733
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=8
+
+Building model...
+Model constants: N=8
+
+Computing reachable states...
+
+Reachability (BFS): 57 iterations in 0.25 seconds (average 0.004456, setup 0.00)
+
+Time for model construction: 0.22 seconds.
+
+Warning: Deadlocks detected and fixed in 3073 states
+
+Type:        MDP
+States:      32718 (1 initial)
+Transitions: 78712
+Choices:     34234
+
+Transition matrix: 16731 nodes (48 terminal), 78712 minterms, vars: 25r/25c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 57 iterations in 0.32 seconds (average 0.005596, setup 0.00)
+Time for product construction: 0.239 seconds.
+
+States:      32718 (1 initial)
+Transitions: 78712
+Choices:     34234
+
+Transition matrix: 26636 nodes (48 terminal), 78712 minterms, vars: 28r/28c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.03 seconds (average 0.001813, setup 0.00)
+
+Prob1E: 57 iterations in 0.08 seconds (average 0.001439, setup 0.00)
+
+yes = 3776, no = 9337, maybe = 19605
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=28, nodes=33312] [1.5 MB]
+Adding sparse bits... [levels=28-28, num=4, compact=4/4] [333.5 KB]
+Creating vector for yes... [dist=2, compact] [63.9 KB]
+Allocating iteration vectors... [3 x 255.6 KB]
+TOTAL: [2.7 MB]
+
+Starting iterations...
+
+Iterative method: 52 iterations in 0.18 seconds (average 0.000385, setup 0.16)
+
+Value in the initial state: 0.11897027229799972
+
+Time for model checking: 1.051 seconds.
+
+Result: 0.11897027229799972
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=9
+
+Building model...
+Model constants: N=9
+
+Computing reachable states...
+
+Reachability (BFS): 64 iterations in 0.17 seconds (average 0.002609, setup 0.00)
+
+Time for model construction: 0.268 seconds.
+
+Warning: Deadlocks detected and fixed in 3483 states
+
+Type:        MDP
+States:      38949 (1 initial)
+Transitions: 94655
+Choices:     40779
+
+Transition matrix: 16646 nodes (48 terminal), 94655 minterms, vars: 25r/25c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 64 iterations in 0.16 seconds (average 0.002469, setup 0.00)
+Time for product construction: 0.207 seconds.
+
+States:      38949 (1 initial)
+Transitions: 94655
+Choices:     40779
+
+Transition matrix: 26801 nodes (48 terminal), 94655 minterms, vars: 28r/28c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.02 seconds (average 0.001375, setup 0.00)
+
+Prob1E: 72 iterations in 0.11 seconds (average 0.001583, setup 0.00)
+
+yes = 4596, no = 9337, maybe = 25016
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=28, nodes=33578] [1.5 MB]
+Adding sparse bits... [levels=28-28, num=4, compact=4/4] [416.9 KB]
+Creating vector for yes... [dist=2, compact] [76.1 KB]
+Allocating iteration vectors... [3 x 304.3 KB]
+TOTAL: [2.9 MB]
+
+Starting iterations...
+
+Iterative method: 59 iterations in 0.19 seconds (average 0.000458, setup 0.17)
+
+Value in the initial state: 0.0881723011856399
+
+Time for model checking: 1.248 seconds.
+
+Result: 0.0881723011856399
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=10
+
+Building model...
+Model constants: N=10
+
+Computing reachable states...
+
+Reachability (BFS): 71 iterations in 0.22 seconds (average 0.003042, setup 0.00)
+
+Time for model construction: 0.335 seconds.
+
+Warning: Deadlocks detected and fixed in 3893 states
+
+Type:        MDP
+States:      45180 (1 initial)
+Transitions: 110598
+Choices:     47324
+
+Transition matrix: 16739 nodes (48 terminal), 110598 minterms, vars: 25r/25c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 71 iterations in 0.17 seconds (average 0.002380, setup 0.00)
+Time for product construction: 0.217 seconds.
+
+States:      45180 (1 initial)
+Transitions: 110598
+Choices:     47324
+
+Transition matrix: 26832 nodes (48 terminal), 110598 minterms, vars: 28r/28c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.02 seconds (average 0.001313, setup 0.00)
+
+Prob1E: 89 iterations in 0.14 seconds (average 0.001596, setup 0.00)
+
+yes = 5416, no = 9337, maybe = 30427
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=28, nodes=33683] [1.5 MB]
+Adding sparse bits... [levels=28-28, num=4, compact=4/4] [500.4 KB]
+Creating vector for yes... [dist=2, compact] [88.3 KB]
+Allocating iteration vectors... [3 x 353.0 KB]
+TOTAL: [3.2 MB]
+
+Starting iterations...
+
+Iterative method: 66 iterations in 0.20 seconds (average 0.000530, setup 0.17)
+
+Value in the initial state: 0.06560912381785577
+
+Time for model checking: 1.406 seconds.
+
+Result: 0.06560912381785577
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=11
+
+Building model...
+Model constants: N=11
+
+Computing reachable states...
+
+Reachability (BFS): 78 iterations in 0.24 seconds (average 0.003051, setup 0.00)
+
+Time for model construction: 0.366 seconds.
+
+Warning: Deadlocks detected and fixed in 4303 states
+
+Type:        MDP
+States:      51411 (1 initial)
+Transitions: 126541
+Choices:     53869
+
+Transition matrix: 16595 nodes (48 terminal), 126541 minterms, vars: 25r/25c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 78 iterations in 0.20 seconds (average 0.002500, setup 0.00)
+Time for product construction: 0.246 seconds.
+
+States:      51411 (1 initial)
+Transitions: 126541
+Choices:     53869
+
+Transition matrix: 26757 nodes (48 terminal), 126541 minterms, vars: 28r/28c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.02 seconds (average 0.001313, setup 0.00)
+
+Prob1E: 91 iterations in 0.16 seconds (average 0.001725, setup 0.00)
+
+yes = 6236, no = 9337, maybe = 35838
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=28, nodes=33797] [1.5 MB]
+Adding sparse bits... [levels=28-28, num=4, compact=4/4] [583.8 KB]
+Creating vector for yes... [dist=2, compact] [100.4 KB]
+Allocating iteration vectors... [3 x 401.6 KB]
+TOTAL: [3.4 MB]
+
+Starting iterations...
+
+Iterative method: 73 iterations in 0.21 seconds (average 0.000603, setup 0.17)
+
+Value in the initial state: 0.049508913416216105
+
+Time for model checking: 1.569 seconds.
+
+Result: 0.049508913416216105
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=12
+
+Building model...
+Model constants: N=12
+
+Computing reachable states...
+
+Reachability (BFS): 85 iterations in 0.24 seconds (average 0.002882, setup 0.00)
+
+Time for model construction: 0.336 seconds.
+
+Warning: Deadlocks detected and fixed in 4713 states
+
+Type:        MDP
+States:      57642 (1 initial)
+Transitions: 142484
+Choices:     60414
+
+Transition matrix: 16783 nodes (48 terminal), 142484 minterms, vars: 25r/25c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 85 iterations in 0.27 seconds (average 0.003118, setup 0.00)
+Time for product construction: 0.318 seconds.
+
+States:      57642 (1 initial)
+Transitions: 142484
+Choices:     60414
+
+Transition matrix: 26781 nodes (48 terminal), 142484 minterms, vars: 28r/28c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.02 seconds (average 0.001375, setup 0.00)
+
+Prob1E: 106 iterations in 0.19 seconds (average 0.001811, setup 0.00)
+
+yes = 7056, no = 9337, maybe = 41249
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=28, nodes=33595] [1.5 MB]
+Adding sparse bits... [levels=28-28, num=4, compact=4/4] [667.2 KB]
+Creating vector for yes... [dist=2, compact] [112.6 KB]
+Allocating iteration vectors... [3 x 450.3 KB]
+TOTAL: [3.6 MB]
+
+Starting iterations...
+
+Iterative method: 80 iterations in 0.22 seconds (average 0.000687, setup 0.17)
+
+Value in the initial state: 0.03735776170605076
+
+Time for model checking: 1.809 seconds.
+
+Result: 0.03735776170605076
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=13
+
+Building model...
+Model constants: N=13
+
+Computing reachable states...
+
+Reachability (BFS): 92 iterations in 0.29 seconds (average 0.003163, setup 0.00)
+
+Time for model construction: 0.386 seconds.
+
+Warning: Deadlocks detected and fixed in 5123 states
+
+Type:        MDP
+States:      63873 (1 initial)
+Transitions: 158427
+Choices:     66959
+
+Transition matrix: 16694 nodes (48 terminal), 158427 minterms, vars: 25r/25c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 92 iterations in 0.28 seconds (average 0.003033, setup 0.00)
+Time for product construction: 0.329 seconds.
+
+States:      63873 (1 initial)
+Transitions: 158427
+Choices:     66959
+
+Transition matrix: 26869 nodes (48 terminal), 158427 minterms, vars: 28r/28c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.02 seconds (average 0.001313, setup 0.00)
+
+Prob1E: 123 iterations in 0.22 seconds (average 0.001797, setup 0.00)
+
+yes = 7876, no = 9337, maybe = 46660
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=28, nodes=33737] [1.5 MB]
+Adding sparse bits... [levels=28-28, num=4, compact=4/4] [750.6 KB]
+Creating vector for yes... [dist=2, compact] [124.8 KB]
+Allocating iteration vectors... [3 x 499.0 KB]
+TOTAL: [3.9 MB]
+
+Starting iterations...
+
+Iterative method: 87 iterations in 0.23 seconds (average 0.000759, setup 0.17)
+
+Value in the initial state: 0.02806322531455896
+
+Time for model checking: 2.039 seconds.
+
+Result: 0.02806322531455896
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=14
+
+Building model...
+Model constants: N=14
+
+Computing reachable states...
+
+Reachability (BFS): 99 iterations in 0.29 seconds (average 0.002899, setup 0.00)
+
+Time for model construction: 0.378 seconds.
+
+Warning: Deadlocks detected and fixed in 5533 states
+
+Type:        MDP
+States:      70104 (1 initial)
+Transitions: 174370
+Choices:     73504
+
+Transition matrix: 16787 nodes (48 terminal), 174370 minterms, vars: 25r/25c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 99 iterations in 0.32 seconds (average 0.003222, setup 0.00)
+Time for product construction: 0.373 seconds.
+
+States:      70104 (1 initial)
+Transitions: 174370
+Choices:     73504
+
+Transition matrix: 26880 nodes (48 terminal), 174370 minterms, vars: 28r/28c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.02 seconds (average 0.001437, setup 0.00)
+
+Prob1E: 140 iterations in 0.26 seconds (average 0.001843, setup 0.00)
+
+yes = 8696, no = 9337, maybe = 52071
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=28, nodes=33746] [1.5 MB]
+Adding sparse bits... [levels=28-28, num=4, compact=4/4] [834.0 KB]
+Creating vector for yes... [dist=2, compact] [136.9 KB]
+Allocating iteration vectors... [3 x 547.7 KB]
+TOTAL: [4.1 MB]
+
+Starting iterations...
+
+Iterative method: 94 iterations in 0.25 seconds (average 0.000830, setup 0.17)
+
+Value in the initial state: 0.021024411013958688
+
+Time for model checking: 2.181 seconds.
+
+Result: 0.021024411013958688
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=15
+
+Building model...
+Model constants: N=15
+
+Computing reachable states...
+
+Reachability (BFS): 106 iterations in 0.28 seconds (average 0.002679, setup 0.00)
+
+Time for model construction: 0.392 seconds.
+
+Warning: Deadlocks detected and fixed in 5943 states
+
+Type:        MDP
+States:      76335 (1 initial)
+Transitions: 190313
+Choices:     80049
+
+Transition matrix: 16596 nodes (48 terminal), 190313 minterms, vars: 25r/25c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 106 iterations in 0.37 seconds (average 0.003481, setup 0.00)
+Time for product construction: 0.424 seconds.
+
+States:      76335 (1 initial)
+Transitions: 190313
+Choices:     80049
+
+Transition matrix: 26845 nodes (48 terminal), 190313 minterms, vars: 28r/28c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.02 seconds (average 0.001500, setup 0.00)
+
+Prob1E: 142 iterations in 0.28 seconds (average 0.002000, setup 0.00)
+
+yes = 9516, no = 9337, maybe = 57482
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=28, nodes=33848] [1.5 MB]
+Adding sparse bits... [levels=28-28, num=4, compact=4/4] [917.4 KB]
+Creating vector for yes... [dist=2, compact] [149.1 KB]
+Allocating iteration vectors... [3 x 596.4 KB]
+TOTAL: [4.3 MB]
+
+Starting iterations...
+
+Iterative method: 101 iterations in 0.26 seconds (average 0.000901, setup 0.17)
+
+Value in the initial state: 0.015772698541624774
+
+Time for model checking: 2.418 seconds.
+
+Result: 0.015772698541624774
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=16
+
+Building model...
+Model constants: N=16
+
+Computing reachable states...
+
+Reachability (BFS): 113 iterations in 0.43 seconds (average 0.003779, setup 0.00)
+
+Time for model construction: 0.59 seconds.
+
+Warning: Deadlocks detected and fixed in 6353 states
+
+Type:        MDP
+States:      82566 (1 initial)
+Transitions: 206256
+Choices:     86594
+
+Transition matrix: 17409 nodes (48 terminal), 206256 minterms, vars: 26r/26c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 113 iterations in 0.38 seconds (average 0.003381, setup 0.00)
+Time for product construction: 0.438 seconds.
+
+States:      82566 (1 initial)
+Transitions: 206256
+Choices:     86594
+
+Transition matrix: 27314 nodes (48 terminal), 206256 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.02 seconds (average 0.001500, setup 0.00)
+
+Prob1E: 157 iterations in 0.30 seconds (average 0.001930, setup 0.00)
+
+yes = 10336, no = 9337, maybe = 62893
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=29, nodes=34230] [1.6 MB]
+Adding sparse bits... [levels=29-29, num=4, compact=4/4] [1000.8 KB]
+Creating vector for yes... [dist=2, compact] [161.3 KB]
+Allocating iteration vectors... [3 x 645.0 KB]
+TOTAL: [4.6 MB]
+
+Starting iterations...
+
+Iterative method: 108 iterations in 0.27 seconds (average 0.000944, setup 0.17)
+
+Value in the initial state: 0.01184890665065097
+
+Time for model checking: 2.627 seconds.
+
+Result: 0.01184890665065097
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=17
+
+Building model...
+Model constants: N=17
+
+Computing reachable states...
+
+Reachability (BFS): 120 iterations in 0.43 seconds (average 0.003600, setup 0.00)
+
+Time for model construction: 0.523 seconds.
+
+Warning: Deadlocks detected and fixed in 6763 states
+
+Type:        MDP
+States:      88797 (1 initial)
+Transitions: 222199
+Choices:     93139
+
+Transition matrix: 17328 nodes (48 terminal), 222199 minterms, vars: 26r/26c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 120 iterations in 0.41 seconds (average 0.003425, setup 0.00)
+Time for product construction: 0.468 seconds.
+
+States:      88797 (1 initial)
+Transitions: 222199
+Choices:     93139
+
+Transition matrix: 27557 nodes (48 terminal), 222199 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.02 seconds (average 0.001500, setup 0.00)
+
+Prob1E: 174 iterations in 0.34 seconds (average 0.001925, setup 0.00)
+
+yes = 11156, no = 9337, maybe = 68304
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=29, nodes=34587] [1.6 MB]
+Adding sparse bits... [levels=14-29, num=753, compact=4/4] [1.2 MB]
+Creating vector for yes... [dist=2, compact] [173.4 KB]
+Allocating iteration vectors... [3 x 693.7 KB]
+TOTAL: [5.0 MB]
+
+Starting iterations...
+
+Iterative method: 115 iterations in 0.34 seconds (average 0.001487, setup 0.17)
+
+Value in the initial state: 0.008902106135471932
+
+Time for model checking: 2.902 seconds.
+
+Result: 0.008902106135471932
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=18
+
+Building model...
+Model constants: N=18
+
+Computing reachable states...
+
+Reachability (BFS): 127 iterations in 0.44 seconds (average 0.003488, setup 0.00)
+
+Time for model construction: 0.538 seconds.
+
+Warning: Deadlocks detected and fixed in 7173 states
+
+Type:        MDP
+States:      95028 (1 initial)
+Transitions: 238142
+Choices:     99684
+
+Transition matrix: 17421 nodes (48 terminal), 238142 minterms, vars: 26r/26c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 127 iterations in 0.45 seconds (average 0.003504, setup 0.00)
+Time for product construction: 0.506 seconds.
+
+States:      95028 (1 initial)
+Transitions: 238142
+Choices:     99684
+
+Transition matrix: 27608 nodes (48 terminal), 238142 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.02 seconds (average 0.001437, setup 0.00)
+
+Prob1E: 176 iterations in 0.36 seconds (average 0.002040, setup 0.00)
+
+yes = 11976, no = 9337, maybe = 73715
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=29, nodes=34750] [1.6 MB]
+Adding sparse bits... [levels=13-29, num=925, compact=4/4] [1.1 MB]
+Creating vector for yes... [dist=2, compact] [185.6 KB]
+Allocating iteration vectors... [3 x 742.4 KB]
+TOTAL: [5.0 MB]
+
+Starting iterations...
+
+Iterative method: 122 iterations in 0.38 seconds (average 0.001689, setup 0.17)
+
+Value in the initial state: 0.006683961573158093
+
+Time for model checking: 3.085 seconds.
+
+Result: 0.006683961573158093
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=19
+
+Building model...
+Model constants: N=19
+
+Computing reachable states...
+
+Reachability (BFS): 134 iterations in 0.45 seconds (average 0.003388, setup 0.00)
+
+Time for model construction: 0.562 seconds.
+
+Warning: Deadlocks detected and fixed in 7583 states
+
+Type:        MDP
+States:      101259 (1 initial)
+Transitions: 254085
+Choices:     106229
+
+Transition matrix: 17230 nodes (48 terminal), 254085 minterms, vars: 26r/26c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 134 iterations in 0.48 seconds (average 0.003619, setup 0.00)
+Time for product construction: 0.552 seconds.
+
+States:      101259 (1 initial)
+Transitions: 254085
+Choices:     106229
+
+Transition matrix: 27533 nodes (48 terminal), 254085 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.02 seconds (average 0.001437, setup 0.00)
+
+Prob1E: 191 iterations in 0.39 seconds (average 0.002016, setup 0.00)
+
+yes = 12796, no = 9337, maybe = 79126
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=29, nodes=34868] [1.6 MB]
+Adding sparse bits... [levels=13-29, num=925, compact=4/4] [1.2 MB]
+Creating vector for yes... [dist=2, compact] [197.8 KB]
+Allocating iteration vectors... [3 x 791.1 KB]
+TOTAL: [5.3 MB]
+
+Starting iterations...
+
+Iterative method: 129 iterations in 0.41 seconds (average 0.001806, setup 0.17)
+
+Value in the initial state: 0.0050173633355019565
+
+Time for model checking: 3.376 seconds.
+
+Result: 0.0050173633355019565
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=20
+
+Building model...
+Model constants: N=20
+
+Computing reachable states...
+
+Reachability (BFS): 141 iterations in 0.50 seconds (average 0.003532, setup 0.00)
+
+Time for model construction: 0.599 seconds.
+
+Warning: Deadlocks detected and fixed in 7993 states
+
+Type:        MDP
+States:      107490 (1 initial)
+Transitions: 270028
+Choices:     112774
+
+Transition matrix: 17417 nodes (48 terminal), 270028 minterms, vars: 26r/26c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 141 iterations in 0.51 seconds (average 0.003624, setup 0.00)
+Time for product construction: 0.573 seconds.
+
+States:      107490 (1 initial)
+Transitions: 270028
+Choices:     112774
+
+Transition matrix: 27510 nodes (48 terminal), 270028 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.03 seconds (average 0.001563, setup 0.00)
+
+Prob1E: 208 iterations in 0.42 seconds (average 0.002043, setup 0.00)
+
+yes = 13616, no = 9337, maybe = 84537
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=29, nodes=34666] [1.6 MB]
+Adding sparse bits... [levels=13-29, num=925, compact=4/4] [1.3 MB]
+Creating vector for yes... [dist=2, compact] [210.0 KB]
+Allocating iteration vectors... [3 x 839.8 KB]
+TOTAL: [5.5 MB]
+
+Starting iterations...
+
+Iterative method: 136 iterations in 0.43 seconds (average 0.001912, setup 0.17)
+
+Value in the initial state: 0.0037668702526437725
+
+Time for model checking: 3.553 seconds.
+
+Result: 0.0037668702526437725
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=21
+
+Building model...
+Model constants: N=21
+
+Computing reachable states...
+
+Reachability (BFS): 148 iterations in 0.52 seconds (average 0.003507, setup 0.00)
+
+Time for model construction: 0.617 seconds.
+
+Warning: Deadlocks detected and fixed in 8403 states
+
+Type:        MDP
+States:      113721 (1 initial)
+Transitions: 285971
+Choices:     119319
+
+Transition matrix: 17328 nodes (48 terminal), 285971 minterms, vars: 26r/26c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 148 iterations in 0.54 seconds (average 0.003649, setup 0.00)
+Time for product construction: 0.602 seconds.
+
+States:      113721 (1 initial)
+Transitions: 285971
+Choices:     119319
+
+Transition matrix: 27597 nodes (48 terminal), 285971 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.03 seconds (average 0.001875, setup 0.00)
+
+Prob1E: 225 iterations in 0.46 seconds (average 0.002027, setup 0.00)
+
+yes = 14436, no = 9337, maybe = 89948
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=29, nodes=34808] [1.6 MB]
+Adding sparse bits... [levels=13-29, num=925, compact=4/4] [1.3 MB]
+Creating vector for yes... [dist=2, compact] [222.1 KB]
+Allocating iteration vectors... [3 x 888.4 KB]
+TOTAL: [5.7 MB]
+
+Starting iterations...
+
+Iterative method: 143 iterations in 0.46 seconds (average 0.002021, setup 0.17)
+
+Value in the initial state: 0.0028285092831719094
+
+Time for model checking: 3.843 seconds.
+
+Result: 0.0028285092831719094
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=22
+
+Building model...
+Model constants: N=22
+
+Computing reachable states...
+
+Reachability (BFS): 155 iterations in 0.55 seconds (average 0.003535, setup 0.00)
+
+Time for model construction: 0.637 seconds.
+
+Warning: Deadlocks detected and fixed in 8813 states
+
+Type:        MDP
+States:      119952 (1 initial)
+Transitions: 301914
+Choices:     125864
+
+Transition matrix: 17421 nodes (48 terminal), 301914 minterms, vars: 26r/26c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 155 iterations in 0.58 seconds (average 0.003761, setup 0.00)
+Time for product construction: 0.64 seconds.
+
+States:      119952 (1 initial)
+Transitions: 301914
+Choices:     125864
+
+Transition matrix: 27608 nodes (48 terminal), 301914 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.02 seconds (average 0.001500, setup 0.00)
+
+Prob1E: 227 iterations in 0.47 seconds (average 0.002066, setup 0.00)
+
+yes = 15256, no = 9337, maybe = 95359
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=29, nodes=34817] [1.6 MB]
+Adding sparse bits... [levels=12-29, num=1126, compact=4/4] [1.2 MB]
+Creating vector for yes... [dist=2, compact] [234.3 KB]
+Allocating iteration vectors... [3 x 937.1 KB]
+TOTAL: [5.8 MB]
+
+Starting iterations...
+
+Iterative method: 150 iterations in 0.53 seconds (average 0.002347, setup 0.17)
+
+Value in the initial state: 0.002123883233100976
+
+Time for model checking: 4.014 seconds.
+
+Result: 0.002123883233100976
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=23
+
+Building model...
+Model constants: N=23
+
+Computing reachable states...
+
+Reachability (BFS): 162 iterations in 0.54 seconds (average 0.003333, setup 0.00)
+
+Time for model construction: 0.633 seconds.
+
+Warning: Deadlocks detected and fixed in 9223 states
+
+Type:        MDP
+States:      126183 (1 initial)
+Transitions: 317857
+Choices:     132409
+
+Transition matrix: 17182 nodes (48 terminal), 317857 minterms, vars: 26r/26c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 162 iterations in 0.63 seconds (average 0.003883, setup 0.00)
+Time for product construction: 0.694 seconds.
+
+States:      126183 (1 initial)
+Transitions: 317857
+Choices:     132409
+
+Transition matrix: 27573 nodes (48 terminal), 317857 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.03 seconds (average 0.001563, setup 0.00)
+
+Prob1E: 242 iterations in 0.51 seconds (average 0.002095, setup 0.00)
+
+yes = 16076, no = 9337, maybe = 100770
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=29, nodes=34919] [1.6 MB]
+Adding sparse bits... [levels=12-29, num=1126, compact=4/4] [1.3 MB]
+Creating vector for yes... [dist=2, compact] [246.5 KB]
+Allocating iteration vectors... [3 x 985.8 KB]
+TOTAL: [6.0 MB]
+
+Starting iterations...
+
+Iterative method: 157 iterations in 0.56 seconds (average 0.002459, setup 0.18)
+
+Value in the initial state: 0.0015946834162933188
+
+Time for model checking: 4.291 seconds.
+
+Result: 0.0015946834162933188
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=24
+
+Building model...
+Model constants: N=24
+
+Computing reachable states...
+
+Reachability (BFS): 169 iterations in 0.58 seconds (average 0.003450, setup 0.00)
+
+Time for model construction: 0.684 seconds.
+
+Warning: Deadlocks detected and fixed in 9633 states
+
+Type:        MDP
+States:      132414 (1 initial)
+Transitions: 333800
+Choices:     138954
+
+Transition matrix: 17461 nodes (48 terminal), 333800 minterms, vars: 26r/26c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 169 iterations in 0.64 seconds (average 0.003799, setup 0.00)
+Time for product construction: 0.7 seconds.
+
+States:      132414 (1 initial)
+Transitions: 333800
+Choices:     138954
+
+Transition matrix: 27460 nodes (48 terminal), 333800 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.03 seconds (average 0.001625, setup 0.00)
+
+Prob1E: 259 iterations in 0.54 seconds (average 0.002093, setup 0.00)
+
+yes = 16896, no = 9337, maybe = 106181
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=29, nodes=34563] [1.6 MB]
+Adding sparse bits... [levels=12-29, num=1126, compact=4/4] [1.3 MB]
+Creating vector for yes... [dist=2, compact] [258.6 KB]
+Allocating iteration vectors... [3 x 1.0 MB]
+TOTAL: [6.2 MB]
+
+Starting iterations...
+
+Iterative method: 164 iterations in 0.61 seconds (average 0.002598, setup 0.18)
+
+Value in the initial state: 0.0011973152436539625
+
+Time for model checking: 4.463 seconds.
+
+Result: 0.0011973152436539625
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=25
+
+Building model...
+Model constants: N=25
+
+Computing reachable states...
+
+Reachability (BFS): 176 iterations in 0.65 seconds (average 0.003699, setup 0.00)
+
+Time for model construction: 0.767 seconds.
+
+Warning: Deadlocks detected and fixed in 10043 states
+
+Type:        MDP
+States:      138645 (1 initial)
+Transitions: 349743
+Choices:     145499
+
+Transition matrix: 17376 nodes (48 terminal), 349743 minterms, vars: 26r/26c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 176 iterations in 0.70 seconds (average 0.003955, setup 0.00)
+Time for product construction: 0.752 seconds.
+
+States:      138645 (1 initial)
+Transitions: 349743
+Choices:     145499
+
+Transition matrix: 27625 nodes (48 terminal), 349743 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.03 seconds (average 0.001625, setup 0.00)
+
+Prob1E: 261 iterations in 0.56 seconds (average 0.002149, setup 0.00)
+
+yes = 17716, no = 9337, maybe = 111592
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=29, nodes=34749] [1.6 MB]
+Adding sparse bits... [levels=12-29, num=1126, compact=4/4] [1.4 MB]
+Creating vector for yes... [dist=2, compact] [270.8 KB]
+Allocating iteration vectors... [3 x 1.1 MB]
+TOTAL: [6.4 MB]
+
+Starting iterations...
+
+Iterative method: 171 iterations in 0.65 seconds (average 0.002713, setup 0.18)
+
+Value in the initial state: 8.989859051619087E-4
+
+Time for model checking: 4.752 seconds.
+
+Result: 8.989859051619087E-4
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=26
+
+Building model...
+Model constants: N=26
+
+Computing reachable states...
+
+Reachability (BFS): 183 iterations in 0.75 seconds (average 0.004077, setup 0.00)
+
+Time for model construction: 0.842 seconds.
+
+Warning: Deadlocks detected and fixed in 10453 states
+
+Type:        MDP
+States:      144876 (1 initial)
+Transitions: 365686
+Choices:     152044
+
+Transition matrix: 17469 nodes (48 terminal), 365686 minterms, vars: 26r/26c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 183 iterations in 0.68 seconds (average 0.003705, setup 0.00)
+Time for product construction: 0.74 seconds.
+
+States:      144876 (1 initial)
+Transitions: 365686
+Choices:     152044
+
+Transition matrix: 27656 nodes (48 terminal), 365686 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.03 seconds (average 0.001625, setup 0.00)
+
+Prob1E: 276 iterations in 0.61 seconds (average 0.002210, setup 0.00)
+
+yes = 18536, no = 9337, maybe = 117003
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=29, nodes=34814] [1.6 MB]
+Adding sparse bits... [levels=12-29, num=1126, compact=4/4] [1.5 MB]
+Creating vector for yes... [dist=2, compact] [283.0 KB]
+Allocating iteration vectors... [3 x 1.1 MB]
+TOTAL: [6.6 MB]
+
+Starting iterations...
+
+Iterative method: 178 iterations in 0.69 seconds (average 0.002826, setup 0.18)
+
+Value in the initial state: 6.750038640959133E-4
+
+Time for model checking: 4.998 seconds.
+
+Result: 6.750038640959133E-4
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=27
+
+Building model...
+Model constants: N=27
+
+Computing reachable states...
+
+Reachability (BFS): 190 iterations in 0.72 seconds (average 0.003811, setup 0.00)
+
+Time for model construction: 0.813 seconds.
+
+Warning: Deadlocks detected and fixed in 10863 states
+
+Type:        MDP
+States:      151107 (1 initial)
+Transitions: 381629
+Choices:     158589
+
+Transition matrix: 17278 nodes (48 terminal), 381629 minterms, vars: 26r/26c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 190 iterations in 0.74 seconds (average 0.003879, setup 0.00)
+Time for product construction: 0.799 seconds.
+
+States:      151107 (1 initial)
+Transitions: 381629
+Choices:     158589
+
+Transition matrix: 27581 nodes (48 terminal), 381629 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.03 seconds (average 0.001563, setup 0.00)
+
+Prob1E: 293 iterations in 0.64 seconds (average 0.002191, setup 0.00)
+
+yes = 19356, no = 9337, maybe = 122414
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=29, nodes=34920] [1.6 MB]
+Adding sparse bits... [levels=11-29, num=1637, compact=4/4] [1.4 MB]
+Creating vector for yes... [dist=2, compact] [295.1 KB]
+Allocating iteration vectors... [3 x 1.2 MB]
+TOTAL: [6.8 MB]
+
+Starting iterations...
+
+Iterative method: 185 iterations in 0.74 seconds (average 0.002995, setup 0.18)
+
+Value in the initial state: 5.068279756501592E-4
+
+Time for model checking: 5.225 seconds.
+
+Result: 5.068279756501592E-4
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=28
+
+Building model...
+Model constants: N=28
+
+Computing reachable states...
+
+Reachability (BFS): 197 iterations in 0.59 seconds (average 0.002980, setup 0.00)
+
+Time for model construction: 0.766 seconds.
+
+Warning: Deadlocks detected and fixed in 11273 states
+
+Type:        MDP
+States:      157338 (1 initial)
+Transitions: 397572
+Choices:     165134
+
+Transition matrix: 17465 nodes (48 terminal), 397572 minterms, vars: 26r/26c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 197 iterations in 0.83 seconds (average 0.004239, setup 0.00)
+Time for product construction: 0.9 seconds.
+
+States:      157338 (1 initial)
+Transitions: 397572
+Choices:     165134
+
+Transition matrix: 27558 nodes (48 terminal), 397572 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.03 seconds (average 0.001813, setup 0.00)
+
+Prob1E: 310 iterations in 0.69 seconds (average 0.002213, setup 0.00)
+
+yes = 20176, no = 9337, maybe = 127825
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=29, nodes=34718] [1.6 MB]
+Adding sparse bits... [levels=11-29, num=1637, compact=4/4] [1.5 MB]
+Creating vector for yes... [dist=2, compact] [307.3 KB]
+Allocating iteration vectors... [3 x 1.2 MB]
+TOTAL: [7.0 MB]
+
+Starting iterations...
+
+Iterative method: 192 iterations in 0.78 seconds (average 0.003109, setup 0.19)
+
+Value in the initial state: 3.8055144207449487E-4
+
+Time for model checking: 5.587 seconds.
+
+Result: 3.8055144207449487E-4
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=29
+
+Building model...
+Model constants: N=29
+
+Computing reachable states...
+
+Reachability (BFS): 204 iterations in 0.63 seconds (average 0.003093, setup 0.00)
+
+Time for model construction: 0.803 seconds.
+
+Warning: Deadlocks detected and fixed in 11683 states
+
+Type:        MDP
+States:      163569 (1 initial)
+Transitions: 413515
+Choices:     171679
+
+Transition matrix: 17376 nodes (48 terminal), 413515 minterms, vars: 26r/26c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.0 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 204 iterations in 0.87 seconds (average 0.004260, setup 0.00)
+Time for product construction: 0.935 seconds.
+
+States:      163569 (1 initial)
+Transitions: 413515
+Choices:     171679
+
+Transition matrix: 27645 nodes (48 terminal), 413515 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.03 seconds (average 0.001750, setup 0.00)
+
+Prob1E: 312 iterations in 0.77 seconds (average 0.002462, setup 0.00)
+
+yes = 20996, no = 9337, maybe = 133236
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=29, nodes=34860] [1.6 MB]
+Adding sparse bits... [levels=10-29, num=2172, compact=4/4] [1.3 MB]
+Creating vector for yes... [dist=2, compact] [319.5 KB]
+Allocating iteration vectors... [3 x 1.2 MB]
+TOTAL: [6.9 MB]
+
+Starting iterations...
+
+Iterative method: 199 iterations in 0.85 seconds (average 0.003372, setup 0.18)
+
+Value in the initial state: 2.8573773633133737E-4
+
+Time for model checking: 5.831 seconds.
+
+Result: 2.8573773633133737E-4
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ F (pc>-1) U (k=N) ]
+Model constants: N=30
+
+Building model...
+Model constants: N=30
+
+Computing reachable states...
+
+Reachability (BFS): 211 iterations in 0.71 seconds (average 0.003389, setup 0.00)
+
+Time for model construction: 0.8 seconds.
+
+Warning: Deadlocks detected and fixed in 12093 states
+
+Type:        MDP
+States:      169800 (1 initial)
+Transitions: 429458
+Choices:     178224
+
+Transition matrix: 17469 nodes (48 terminal), 429458 minterms, vars: 26r/26c/3nd
+
+Building deterministic automaton (for !(F "L0" U "L1"))...
+DRA has 5 states, 1 Rabin pairs.
+Time for deterministic automaton translation: 0.001 seconds.
+
+Constructing MDP-DRA product...
+
+Reachability (BFS): 211 iterations in 1.04 seconds (average 0.004934, setup 0.00)
+Time for product construction: 1.096 seconds.
+
+States:      169800 (1 initial)
+Transitions: 429458
+Choices:     178224
+
+Transition matrix: 27656 nodes (48 terminal), 429458 minterms, vars: 29r/29c/3nd
+
+Finding accepting end components...
+
+Computing reachability probabilities...
+
+Prob0A: 16 iterations in 0.04 seconds (average 0.002437, setup 0.00)
+
+Prob1E: 327 iterations in 0.95 seconds (average 0.002914, setup 0.00)
+
+yes = 21816, no = 9337, maybe = 138647
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=4, levels=29, nodes=34869] [1.6 MB]
+Adding sparse bits... [levels=10-29, num=2172, compact=4/4] [1.3 MB]
+Creating vector for yes... [dist=2, compact] [331.7 KB]
+Allocating iteration vectors... [3 x 1.3 MB]
+TOTAL: [7.1 MB]
+
+Starting iterations...
+
+Iterative method: 206 iterations in 0.90 seconds (average 0.003481, setup 0.18)
+
+Value in the initial state: 2.1454856738900574E-4
+
+Time for model checking: 6.476 seconds.
+
+Result: 2.1454856738900574E-4
+
+Exporting results to file "prism_output/conf99_af6_new_prop_no_violation_results.txt"...
+
+---------------------------------------------------------------------
+
+Note: There were 30 warnings during computation.
+
