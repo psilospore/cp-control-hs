@@ -1,1 +1,5 @@
 multi(Pmax=? [ F pc=-1 ], R{"defaultControllerUsed"}max=? [C])
+Pmax=? [ (F pc=-1) & (G pc!=-2)]
+Pmin=? [ F k=N ]
+Pmin=? [ G pc!=-2 ] / Pmin=? [ F k=N ]
+Pmin=? [ (F k=N) & (G pc>0) ]

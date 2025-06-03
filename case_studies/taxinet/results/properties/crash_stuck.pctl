@@ -1,1 +1,4 @@
 multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Pmax=? [ (F pc=-1) & (G pc!=-2)]
+Pmax=? [ F pc=-2 ]
+Pmin=? [ (F k=N) & (G pc>0) ]

@@ -36,7 +36,7 @@ module taxinet
 	pc:[1..6]; 
 	// 6 is now "sink state"
 
-	k: [1..N];
+	k: [0..N];
 
 	// actions issued by controller
 	a:[-1..2];
