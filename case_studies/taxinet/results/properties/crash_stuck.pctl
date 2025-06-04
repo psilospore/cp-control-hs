@@ -1,4 +1,45 @@
+// ALL WORST CASE STRATEGIES //
+// Maximise crasing vs maximising getting stuck
 multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+
+
+// CRASHING //
+// Probability that at some point taxinet crashes and never getting stuck
 Pmax=? [ (F pc=-1) & (G pc!=-2)]
+
+// Probability at some point crashing given that taxinet never got stuck
+Pmax=? [ (F pc=-1) ] / Pmax=? [ (G pc!=-2) ]
+
+// Probability at some point crashing and never getting stuck given that taxinet never got stuck
+Pmax=? [ (F pc=-1) & (G pc!=-2) ] / Pmax=? [ (G pc!=-2) ]
+
+// Probability that we crash (should be same as that in pareto front)
+Pmax=? [  (F pc=-1) ]
+
+
+// GETTING STUCK //
+// Probability of getting stuck (should be same as in pareto front)
 Pmax=? [ F pc=-2 ]
+
+// Probability of getting stuck given taxinet didn't crash
+Pmax=? [ F pc=-2 ] / Pmax=? [ G pc!=-1 ]
+
+// Probability of getting stuck and not crashing given taxinet didn't crash
+Pmax=? [ (F pc=-2) & (G pc!=-1) ] / Pmax=? [ G pc!=-1 ]
+
+
+// SUCCEEDING //
+// Lower bound of succeeding mission
+Pmin=? [ F k=N ] 
+
+// At some point we will reach end and never getting stuck (should be same as above)
 Pmin=? [ (F k=N) & (G pc>0) ]
+
+// Probability of success and never getting stuck given success (should be 1?)
+Pmin=? [ (F k=N) & (G pc!=-2) ] / Pmin=? [ (F k=N) ]
+
+// We do not get stuck until 'false' for time bound of N (should be same as above) 
+Pmax=? [ pc!=-2 U<=N false ]
+
+// Never crash or get stuck till end of mission (should be same as above)
+Pmin=? [ pc>0 U k=N ] 

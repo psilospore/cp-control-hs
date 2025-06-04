@@ -8,7 +8,7 @@ const double dyn_fail=(1-dyn_suc)/2;
 
 const int N;
 
-init  cte=0 & he=0 & cte_est=0 & he_est=0 & pc=1 & a=-1 & crash=0 & k=1 endinit
+init  cte=0 & he=0 & cte_est=0 & he_est=0 & pc=1 & a=-1 & crash=0 & k=0 endinit
 
 module taxinet
 
@@ -50,27 +50,27 @@ module taxinet
 				 0: (cte_est'=1) & (pc'=2) + 
 				 0.0055248618784530384: (cte_est'=2) & (pc'=2) + 
 				 0: (cte_est'=3) & (pc'=2) + 
-				 0: (cte_est'=4) & (pc'=2)&(k'=k+1);
+				 0: (cte_est'=4) & (pc'=2);
 	[] cte=1 & k<N & pc=1 -> 0.20915032679738563: (cte_est'=0) & (pc'=2) + 
 				 0.6862745098039216: (cte_est'=1) & (pc'=2) + 
 				 0: (cte_est'=2) & (pc'=2) + 
 				 0.10457516339869281: (cte_est'=3) & (pc'=2) + 
-				 0: (cte_est'=4) & (pc'=2)&(k'=k+1);
+				 0: (cte_est'=4) & (pc'=2);
 	[] cte=2 & k<N & pc=1 -> 0.06666666666666667: (cte_est'=0) & (pc'=2) + 
 				 0: (cte_est'=1) & (pc'=2) + 
 				 0.9333333333333333: (cte_est'=2) & (pc'=2) + 
 				 0: (cte_est'=3) & (pc'=2) + 
-				 0: (cte_est'=4) & (pc'=2)&(k'=k+1);
+				 0: (cte_est'=4) & (pc'=2);
 	[] cte=3 & k<N & pc=1 -> 0: (cte_est'=0) & (pc'=2) + 
 				 0.03896103896103896: (cte_est'=1) & (pc'=2) + 
 				 0: (cte_est'=2) & (pc'=2) + 
 				 0.961038961038961: (cte_est'=3) & (pc'=2) + 
-				 0: (cte_est'=4) & (pc'=2)&(k'=k+1);
+				 0: (cte_est'=4) & (pc'=2);
 	[] cte=4 & k<N & pc=1 -> 0: (cte_est'=0) & (pc'=2) + 
 				 0: (cte_est'=1) & (pc'=2) + 
 				 0.19186046511627908: (cte_est'=2) & (pc'=2) + 
 				 0: (cte_est'=3) & (pc'=2) + 
-				 0.8081395348837209: (cte_est'=4) & (pc'=2)&(k'=k+1);
+				 0.8081395348837209: (cte_est'=4) & (pc'=2);
 
 
 	[] he=0 & pc=2 -> 0.6838709677419355: (he_est'=0) & (pc'=3) + 0.21935483870967742: (he_est'=1) & (pc'=3) + 0.0967741935483871: (he_est'=2) & (pc'=3); 	
