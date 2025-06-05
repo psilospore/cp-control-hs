@@ -3,8 +3,8 @@ PROPS_FILE=properties/crash_stuck.pctl
 # PROPS_FILE=properties/not_stuck_or_crash.pctl
 PROPS_DC_FILE=properties/crash_stuck_default_controller.pctl
 # PROPS_DC_FILE=properties/not_stuck_or_crash.pctl
-N_START=1
-N_STEP=1
+N_START=5
+N_STEP=5
 UPPER_N=30
 OUTPUT_PATH=prism_output
 

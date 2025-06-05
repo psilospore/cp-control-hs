@@ -7,12 +7,18 @@ from utils import loadPropResultsData
 
 markers=['3', 'v', '.', 'X']
 marker_sizes=[130*1.5, 90*1.1, 80*1.5, 120*1.1]
+colours=distinctipy.get_colors(25)
+
+conf_dict={'0.95': 0, '0.99': 1, '0.995':2}
+shield_thresh_dict={'af6': [0, 0.65], 'af7': [1, 0.9], 'af8': [2, 0.8], 'af9': [3, 1.0]}
+linestyle_dict={'af6': '-', 'af7': '--', 'af8': ':', 'af9': '-.'}
 
 baseline_min_safety=np.loadtxt('../prism_output/baseline_res_processed.txt')
 baseline_min_safety[:,1]=1-baseline_min_safety[:,1]
 
 baseline_with_shield_min_safety=np.loadtxt('../prism_output/baseline_with_shielding_res_processed.txt')
 baseline_with_shield_min_safety[:,1]=1-baseline_with_shield_min_safety[:,1]
+
 
 def forward(val):
     # return np.sqrt(val)
@@ -51,7 +57,7 @@ def plotSafe(results, ax_safe, colour, N_vals, style='-'):
 	unsafe_prob_plot=ax_safe.plot(N_vals, vals_unsafe, color=colour, linestyle=style)
 	return unsafe_prob_plot
 
-def plotParetoDC():
+def plotPareto(type, out_filename):
     plt.rcParams.update({"text.usetex": True})
     plt.rcParams['font.size']=15
     fig=plt.figure()
@@ -61,7 +67,6 @@ def plotParetoDC():
     ax_front_20=fig.add_subplot(gs[0,1])
     ax_front_30=fig.add_subplot(gs[0,2])
 
-    colours=distinctipy.get_colors(25)
     marker_size=80
 
     ## Old generated
@@ -77,18 +82,21 @@ def plotParetoDC():
     files.sort()
     ind=0
 
-    conf_dict={'conf95': 0, 'conf99': 1, 'conf995':2}
-    shield_thresh_dict={'af6': [0, 0.65], 'af7': [1, 0.9], 'af8': [2, 0.8], 'af9': [3, 1.0]}
-    linestyle_dict={'af6': '-', 'af7': '--', 'af8': ':', 'af9': '-.'}
-
-    prop=f"multi(Pmax=? [ F pc=-1 ], R{{\"defaultControllerUsed\"}}max=? [ C ]):"
+    if type=='NDC':
+        prop=f"multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ]):"
+        query_str='new_prop_no_violation_results.txt' 
+    else:
+        prop=f"multi(Pmax=? [ F pc=-1 ], R{{\"defaultControllerUsed\"}}max=? [ C ]):"
+        query_str='def_act_results.txt'
+    if type!='DC' and type!='NDC':
+        print(f"Entered type ({type}) is unknown, using default of DC.")
 
     for file in files:
-        if 'def_act_results.txt' in file:
+        if query_str in file:
             filename=f'{prism_new_output_dir}/{file}'
             results=loadPropResultsData(filename, N, prop)
             file_components=file.split('_')
-            conf_str=file_components[0]
+            conf_str=f"0.{file_components[0][4:]}"
             colour=colours[conf_dict[conf_str]]
 
             shield_thresh_str=file_components[1]
@@ -103,9 +111,9 @@ def plotParetoDC():
     legend_list=[]
 
     for plot in sorted(plots):
-      conf_number=plot.split('_')[0][4:]
-      label=f'0.{conf_number}'
-      plots[plot].set_label(label)
+      # conf_number=plot.split('_')[0][4:]
+      # label=f'0.{conf_number}'
+      plots[plot].set_label(plot)
       legend_list.append(plots[plot])
 
     ax_front_legend_conf=ax_front_10.legend(handles=legend_list, bbox_to_anchor=(0., 0.6), loc='lower left')
@@ -123,10 +131,69 @@ def plotParetoDC():
     ax_front_10.set_xlabel(r'Probabilty of crashing')
     ax_front_20.set_xlabel(r'Probabilty of crashing')
     ax_front_30.set_xlabel(r'Probabilty of crashing')
-    ax_front_10.set_ylabel(r'Average count of using the default controller')
+    if type=='NDC':
+        ax_front_10.set_ylabel(r'Probability of getting stuck')
+    else:
+        ax_front_10.set_ylabel(r'Average count of using the default controller')
+        ax_front_10.set_xscale('function', functions=(forward, backward))
+        ax_front_20.set_xscale('function', functions=(forward, backward))
+        ax_front_30.set_xscale('function', functions=(forward, backward))
 
-    ax_front_10.set_xscale('function', functions=(forward, backward))
-    ax_front_20.set_xscale('function', functions=(forward, backward))
-    ax_front_30.set_xscale('function', functions=(forward, backward))
     fig.tight_layout()
-    fig.savefig('../plots/pareto_front_DC.pdf', bbox_inches='tight')
+    fig.savefig(out_filename, bbox_inches='tight')
+    plt.close(fig)
+
+def plotLine(type, prop, xlabel, ylabel, out_filename):
+    plt.rcParams.update({"text.usetex": True})
+    plt.rcParams['font.size']=15
+    fig=plt.figure()
+    fig.set_size_inches(18.5, 10.5)
+    gs=fig.add_gridspec(1,1)
+    ax=fig.add_subplot(gs[0,0])
+   
+    ## New generated
+    prism_new_output_dir='../prism_output'
+    files=os.listdir(prism_new_output_dir)
+    files.sort()
+    ind=0
+
+    N=30
+    query_str='new_prop_no_violation_results.txt' if type=='NDC' else 'def_act_results.txt'
+    if type!='DC' and type!='NDC':
+        print(f"Entered type ({type}) is unknown, using default of DC.")
+
+    lw=3
+    plots={}
+    for file in files:
+        if query_str in file:
+            filename=f'{prism_new_output_dir}/{file}'
+            results=np.array(loadPropResultsData(filename, N, prop))
+            file_components=file.split('_')
+            conf_str=f"0.{file_components[0][4:]}"
+            shield_thresh_str=file_components[1]
+            colour=colours[conf_dict[conf_str]]
+            ax.plot(results[:,0],results[:,1], color=colour, linewidth=lw, linestyle=linestyle_dict[shield_thresh_str])
+            if conf_str not in plots:
+                plots[conf_str]=ax.plot([],[],color=colour,linewidth=lw)[0]
+
+    legend_list=[]
+    for plot in sorted(plots):
+        plots[plot].set_label(plot)
+        legend_list.append(plots[plot])
+
+    ax_legend_conf=ax.legend(handles=legend_list, bbox_to_anchor=(1.0, 0.5), loc='lower left')
+
+    dummy_handles=[]
+    for key in sorted(linestyle_dict):
+        dummy_handles.append(ax.plot([],[], color=[0,0,0],linewidth=lw, linestyle=linestyle_dict[key], label=f'0.{key[-1]}')[0])
+
+    ax_legend_data=ax.legend(handles=dummy_handles, bbox_to_anchor=(1.0, 0.5), loc='upper left')
+    ax.add_artist(ax_legend_conf)
+
+
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+
+    fig.tight_layout()
+    fig.savefig(out_filename, bbox_inches='tight')
+    plt.close(fig)

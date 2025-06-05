@@ -33,7 +33,7 @@ Pmax=? [ (F pc=-2) & (G pc!=-1) ] / Pmax=? [ G pc!=-1 ]
 Pmin=? [ F k=N ] 
 
 // At some point we will reach end and never use DC 
-Pmin=? [ (F k=N) & (G pc>0) ]
+Pmin=? [ (F k=N) & (G pc>-1) ]
 
 // Probability of success and never using DC given success
 Pmin=? [ (F k=N) & (G pc!=-2) ] / Pmin=? [ (F k=N) ]
@@ -42,4 +42,4 @@ Pmin=? [ (F k=N) & (G pc!=-2) ] / Pmin=? [ (F k=N) ]
 Pmax=? [ pc!=-2 U<=N false ]
 
 // Never crash or using DC till end of mission (i.e. success)
-Pmin=? [ pc>0 U k=N ] 
+Pmin=? [ pc>-1 U k=N ] 
