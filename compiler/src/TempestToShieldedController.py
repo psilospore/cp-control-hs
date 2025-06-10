@@ -25,9 +25,11 @@ def tempest_model_to_dict(tempest_model):
 
 # (TempestModelDict,(Action,Prob) -> Bool) -> Shield 
 def tempest_model_to_shield(tempest_model_dict,filter_func):
-    
+
+    # filter for only shielded actions using probability via filter_func
+    # strip probability and only return action set
     def shield(cte_est,he_est):
-        return set(filter(filter_func,tempest_model_dict[(cte_est,he_est)]))
+        return set(map(lambda x: x[0],filter(filter_func,tempest_model_dict[(cte_est,he_est)])))
 
     return shield
 
@@ -41,7 +43,7 @@ def shield_to_control_func(shield):
         cte_ests=[i for i in range(5) if var_assign[i][1]==1 ]
         he_ests=[i for i in range(3) if var_assign[i+5][1]==1 ]
         all_pairs = [(cte_est,he_est) for cte_est in cte_ests for he_est in he_ests]
-        # print(all_pairs)
+        # print("all pairs",all_pairs)
         
         # no estimated states
         # this occurs if *either* he or cte are estimated empty
@@ -55,12 +57,12 @@ def shield_to_control_func(shield):
                                     [shield(*state) for state in all_pairs])
         
         
-        # print(safe_actions)
+        # print("safe actions", safe_actions)
         if not safe_actions:
             # no safe actions
             return ["(default'=1)"] # triggers default control
         else:
-            return [PAST.PrismAssign("a",a,lhs=False) for a,p in safe_actions]
+            return [PAST.PrismAssign("a",a,lhs=False) for a in safe_actions]
         
     return controller
     
