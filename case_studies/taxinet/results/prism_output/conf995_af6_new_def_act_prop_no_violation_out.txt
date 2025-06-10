@@ -1,0 +1,1455 @@
+PRISM
+=====
+
+Version: 4.7
+Date: Mon Jun 02 17:20:23 BST 2025
+Hostname: AAIP
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism cp_shielded_models/ShieldedConfPred_StochDyn_DefAct_acc90_conf995_af6_new.pm properties/not_stuck_or_crash.pctl -const 'N=0:1:30' -exportresults prism_output/conf995_af6_new_def_act_prop_no_violation_results.txt
+
+Parsing model file "cp_shielded_models/ShieldedConfPred_StochDyn_DefAct_acc90_conf995_af6_new.pm"...
+
+Type:        MDP
+Modules:     ShieldedConfPred 
+Variables:   cte he a default beta cte_est0 cte_est1 cte_est2 cte_est3 cte_est4 he_est0 he_est1 he_est2 pc k 
+
+Parsing properties file "properties/not_stuck_or_crash.pctl"...
+
+1 property:
+(1) Pmin=? [ (pc>-1) U (k=N) ]
+
+Error: Invalid range (0-0) for variable "beta" ("[0..N]", line 33, column 10).
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=1
+
+Building model...
+Model constants: N=1
+
+Computing reachable states...
+
+Reachability (BFS): 8 iterations in 0.00 seconds (average 0.000500, setup 0.00)
+
+Time for model construction: 0.081 seconds.
+
+Warning: Deadlocks detected and fixed in 108 states
+
+Type:        MDP
+States:      366 (1 initial)
+Transitions: 500
+Choices:     375
+
+Transition matrix: 874 nodes (15 terminal), 500 minterms, vars: 23r/23c/3nd
+
+Prob0E: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1A: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 366, no = 0, maybe = 0
+
+Value in the initial state: 1.0
+
+Time for model checking: 0.002 seconds.
+
+Result: 1.0 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=2
+
+Building model...
+Model constants: N=2
+
+Computing reachable states...
+
+Reachability (BFS): 15 iterations in 0.01 seconds (average 0.000467, setup 0.00)
+
+Time for model construction: 0.109 seconds.
+
+Warning: Deadlocks detected and fixed in 279 states
+
+Type:        MDP
+States:      1491 (1 initial)
+Transitions: 2866
+Choices:     1529
+
+Transition matrix: 3239 nodes (33 terminal), 2866 minterms, vars: 25r/25c/3nd
+
+Prob0E: 8 iterations in 0.00 seconds (average 0.000375, setup 0.00)
+
+Prob1A: 3 iterations in 0.00 seconds (average 0.000333, setup 0.00)
+
+yes = 1440, no = 42, maybe = 9
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=1, levels=25, nodes=310] [14.5 KB]
+Adding sparse bits... [levels=25-25, num=1, compact=1/1] [1.7 KB]
+Creating vector for yes... [dist=2, compact] [2.9 KB]
+Allocating iteration vectors... [3 x 11.6 KB]
+TOTAL: [54.1 KB]
+
+Starting iterations...
+
+Iterative method: 3 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 0.9894430722651583
+
+Time for model checking: 0.005 seconds.
+
+Result: 0.9894430722651583 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=3
+
+Building model...
+Model constants: N=3
+
+Computing reachable states...
+
+Reachability (BFS): 22 iterations in 0.02 seconds (average 0.000955, setup 0.00)
+
+Time for model construction: 0.125 seconds.
+
+Warning: Deadlocks detected and fixed in 684 states
+
+Type:        MDP
+States:      3997 (1 initial)
+Transitions: 8097
+Choices:     4090
+
+Transition matrix: 6844 nodes (46 terminal), 8097 minterms, vars: 25r/25c/3nd
+
+Prob0E: 15 iterations in 0.01 seconds (average 0.000667, setup 0.00)
+
+Prob1A: 9 iterations in 0.00 seconds (average 0.000444, setup 0.00)
+
+yes = 3052, no = 258, maybe = 687
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=25, nodes=4980] [233.4 KB]
+Adding sparse bits... [levels=25-25, num=3, compact=3/3] [19.6 KB]
+Creating vector for yes... [dist=2, compact] [7.8 KB]
+Allocating iteration vectors... [3 x 31.2 KB]
+TOTAL: [354.5 KB]
+
+Starting iterations...
+
+Iterative method: 13 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 0.6801639991680113
+
+Time for model checking: 0.02 seconds.
+
+Result: 0.6801639991680113 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=4
+
+Building model...
+Model constants: N=4
+
+Computing reachable states...
+
+Reachability (BFS): 29 iterations in 0.04 seconds (average 0.001207, setup 0.00)
+
+Time for model construction: 0.135 seconds.
+
+Warning: Deadlocks detected and fixed in 1277 states
+
+Type:        MDP
+States:      8578 (1 initial)
+Transitions: 18178
+Choices:     8771
+
+Transition matrix: 12076 nodes (46 terminal), 18178 minterms, vars: 27r/27c/3nd
+
+Prob0E: 22 iterations in 0.03 seconds (average 0.001318, setup 0.00)
+
+Prob1A: 9 iterations in 0.01 seconds (average 0.001000, setup 0.00)
+
+yes = 5755, no = 880, maybe = 1943
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=27, nodes=10428] [488.8 KB]
+Adding sparse bits... [levels=27-27, num=3, compact=3/3] [47.8 KB]
+Creating vector for yes... [dist=2, compact] [16.8 KB]
+Allocating iteration vectors... [3 x 67.0 KB]
+TOTAL: [754.4 KB]
+
+Starting iterations...
+
+Iterative method: 20 iterations in 0.02 seconds (average 0.000050, setup 0.02)
+
+Value in the initial state: 0.4223189551988103
+
+Time for model checking: 0.059 seconds.
+
+Result: 0.4223189551988103 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=5
+
+Building model...
+Model constants: N=5
+
+Computing reachable states...
+
+Reachability (BFS): 36 iterations in 0.05 seconds (average 0.001500, setup 0.00)
+
+Time for model construction: 0.172 seconds.
+
+Warning: Deadlocks detected and fixed in 1739 states
+
+Type:        MDP
+States:      14599 (1 initial)
+Transitions: 32612
+Choices:     14946
+
+Transition matrix: 16384 nodes (46 terminal), 32612 minterms, vars: 27r/27c/3nd
+
+Prob0E: 29 iterations in 0.06 seconds (average 0.001966, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.001778, setup 0.00)
+
+yes = 7807, no = 2149, maybe = 4643
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=27, nodes=20906] [980.0 KB]
+Adding sparse bits... [levels=27-27, num=3, compact=3/3] [97.1 KB]
+Creating vector for yes... [dist=2, compact] [28.5 KB]
+Allocating iteration vectors... [3 x 114.1 KB]
+TOTAL: [1.4 MB]
+
+Starting iterations...
+
+Iterative method: 27 iterations in 0.08 seconds (average 0.000148, setup 0.08)
+
+Value in the initial state: 0.2767621978027901
+
+Time for model checking: 0.159 seconds.
+
+Result: 0.2767621978027901 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=6
+
+Building model...
+Model constants: N=6
+
+Computing reachable states...
+
+Reachability (BFS): 43 iterations in 0.08 seconds (average 0.001814, setup 0.00)
+
+Time for model construction: 0.205 seconds.
+
+Warning: Deadlocks detected and fixed in 2107 states
+
+Type:        MDP
+States:      21107 (1 initial)
+Transitions: 48697
+Choices:     21645
+
+Transition matrix: 18558 nodes (46 terminal), 48697 minterms, vars: 27r/27c/3nd
+
+Prob0E: 36 iterations in 0.09 seconds (average 0.002444, setup 0.00)
+
+Prob1A: 9 iterations in 0.03 seconds (average 0.003000, setup 0.00)
+
+yes = 8562, no = 3833, maybe = 8712
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=27, nodes=29634] [1.4 MB]
+Adding sparse bits... [levels=27-27, num=3, compact=3/3] [164.5 KB]
+Creating vector for yes... [dist=2, compact] [41.2 KB]
+Allocating iteration vectors... [3 x 164.9 KB]
+TOTAL: [2.0 MB]
+
+Starting iterations...
+
+Iterative method: 34 iterations in 0.18 seconds (average 0.000235, setup 0.17)
+
+Value in the initial state: 0.18750662880841412
+
+Time for model checking: 0.294 seconds.
+
+Result: 0.18750662880841412 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=7
+
+Building model...
+Model constants: N=7
+
+Computing reachable states...
+
+Reachability (BFS): 50 iterations in 0.11 seconds (average 0.002280, setup 0.00)
+
+Time for model construction: 0.227 seconds.
+
+Warning: Deadlocks detected and fixed in 2475 states
+
+Type:        MDP
+States:      27615 (1 initial)
+Transitions: 64782
+Choices:     28344
+
+Transition matrix: 18449 nodes (46 terminal), 64782 minterms, vars: 27r/27c/3nd
+
+Prob0E: 43 iterations in 0.14 seconds (average 0.003186, setup 0.00)
+
+Prob1A: 9 iterations in 0.03 seconds (average 0.002889, setup 0.00)
+
+yes = 8628, no = 5667, maybe = 13320
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=27, nodes=33863] [1.6 MB]
+Adding sparse bits... [levels=27-27, num=3, compact=3/3] [238.6 KB]
+Creating vector for yes... [dist=2, compact] [54.0 KB]
+Allocating iteration vectors... [3 x 215.7 KB]
+TOTAL: [2.5 MB]
+
+Starting iterations...
+
+Iterative method: 41 iterations in 0.23 seconds (average 0.000293, setup 0.22)
+
+Value in the initial state: 0.13101332402243523
+
+Time for model checking: 0.402 seconds.
+
+Result: 0.13101332402243523 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=8
+
+Building model...
+Model constants: N=8
+
+Computing reachable states...
+
+Reachability (BFS): 57 iterations in 0.19 seconds (average 0.003281, setup 0.00)
+
+Time for model construction: 0.315 seconds.
+
+Warning: Deadlocks detected and fixed in 2843 states
+
+Type:        MDP
+States:      34123 (1 initial)
+Transitions: 80867
+Choices:     35043
+
+Transition matrix: 19664 nodes (46 terminal), 80867 minterms, vars: 29r/29c/3nd
+
+Prob0E: 50 iterations in 0.17 seconds (average 0.003440, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002333, setup 0.00)
+
+yes = 8628, no = 7501, maybe = 17994
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=29, nodes=35317] [1.6 MB]
+Adding sparse bits... [levels=29-29, num=3, compact=3/3] [313.4 KB]
+Creating vector for yes... [dist=2, compact] [66.7 KB]
+Allocating iteration vectors... [3 x 266.6 KB]
+TOTAL: [2.8 MB]
+
+Starting iterations...
+
+Iterative method: 48 iterations in 0.24 seconds (average 0.000375, setup 0.23)
+
+Value in the initial state: 0.09360919984673599
+
+Time for model checking: 0.441 seconds.
+
+Result: 0.09360919984673599 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=9
+
+Building model...
+Model constants: N=9
+
+Computing reachable states...
+
+Reachability (BFS): 64 iterations in 0.23 seconds (average 0.003531, setup 0.00)
+
+Time for model construction: 0.341 seconds.
+
+Warning: Deadlocks detected and fixed in 3211 states
+
+Type:        MDP
+States:      40631 (1 initial)
+Transitions: 96952
+Choices:     41742
+
+Transition matrix: 19583 nodes (46 terminal), 96952 minterms, vars: 29r/29c/3nd
+
+Prob0E: 57 iterations in 0.17 seconds (average 0.002912, setup 0.00)
+
+Prob1A: 9 iterations in 0.03 seconds (average 0.003000, setup 0.00)
+
+yes = 8628, no = 9335, maybe = 22668
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=29, nodes=35614] [1.6 MB]
+Adding sparse bits... [levels=29-29, num=3, compact=3/3] [388.1 KB]
+Creating vector for yes... [dist=2, compact] [79.4 KB]
+Allocating iteration vectors... [3 x 317.4 KB]
+TOTAL: [3.0 MB]
+
+Starting iterations...
+
+Iterative method: 55 iterations in 0.26 seconds (average 0.000436, setup 0.23)
+
+Value in the initial state: 0.06779330643434056
+
+Time for model checking: 0.454 seconds.
+
+Result: 0.06779330643434056 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=10
+
+Building model...
+Model constants: N=10
+
+Computing reachable states...
+
+Reachability (BFS): 71 iterations in 0.23 seconds (average 0.003282, setup 0.00)
+
+Time for model construction: 0.389 seconds.
+
+Warning: Deadlocks detected and fixed in 3579 states
+
+Type:        MDP
+States:      47139 (1 initial)
+Transitions: 113037
+Choices:     48441
+
+Transition matrix: 19672 nodes (46 terminal), 113037 minterms, vars: 29r/29c/3nd
+
+Prob0E: 64 iterations in 0.26 seconds (average 0.004047, setup 0.00)
+
+Prob1A: 9 iterations in 0.05 seconds (average 0.005667, setup 0.00)
+
+yes = 8628, no = 11169, maybe = 27342
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=29, nodes=35654] [1.6 MB]
+Adding sparse bits... [levels=29-29, num=3, compact=3/3] [462.8 KB]
+Creating vector for yes... [dist=2, compact] [92.1 KB]
+Allocating iteration vectors... [3 x 368.3 KB]
+TOTAL: [3.3 MB]
+
+Starting iterations...
+
+Iterative method: 62 iterations in 0.26 seconds (average 0.000500, setup 0.23)
+
+Value in the initial state: 0.049504083077475086
+
+Time for model checking: 0.573 seconds.
+
+Result: 0.049504083077475086 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=11
+
+Building model...
+Model constants: N=11
+
+Computing reachable states...
+
+Reachability (BFS): 78 iterations in 0.31 seconds (average 0.004026, setup 0.00)
+
+Time for model construction: 0.447 seconds.
+
+Warning: Deadlocks detected and fixed in 3947 states
+
+Type:        MDP
+States:      53647 (1 initial)
+Transitions: 129122
+Choices:     55140
+
+Transition matrix: 19534 nodes (46 terminal), 129122 minterms, vars: 29r/29c/3nd
+
+Prob0E: 71 iterations in 0.18 seconds (average 0.002549, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002667, setup 0.00)
+
+yes = 8628, no = 13003, maybe = 32016
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=29, nodes=35680] [1.6 MB]
+Adding sparse bits... [levels=29-29, num=3, compact=3/3] [537.6 KB]
+Creating vector for yes... [dist=2, compact] [104.8 KB]
+Allocating iteration vectors... [3 x 419.1 KB]
+TOTAL: [3.5 MB]
+
+Starting iterations...
+
+Iterative method: 69 iterations in 0.27 seconds (average 0.000565, setup 0.23)
+
+Value in the initial state: 0.03626121988728412
+
+Time for model checking: 0.481 seconds.
+
+Result: 0.03626121988728412 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=12
+
+Building model...
+Model constants: N=12
+
+Computing reachable states...
+
+Reachability (BFS): 85 iterations in 0.33 seconds (average 0.003835, setup 0.00)
+
+Time for model construction: 0.466 seconds.
+
+Warning: Deadlocks detected and fixed in 4315 states
+
+Type:        MDP
+States:      60155 (1 initial)
+Transitions: 145207
+Choices:     61839
+
+Transition matrix: 19714 nodes (46 terminal), 145207 minterms, vars: 29r/29c/3nd
+
+Prob0E: 78 iterations in 0.28 seconds (average 0.003526, setup 0.00)
+
+Prob1A: 9 iterations in 0.04 seconds (average 0.003889, setup 0.00)
+
+yes = 8628, no = 14837, maybe = 36690
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=29, nodes=35556] [1.6 MB]
+Adding sparse bits... [levels=29-29, num=3, compact=3/3] [612.3 KB]
+Creating vector for yes... [dist=2, compact] [117.5 KB]
+Allocating iteration vectors... [3 x 470.0 KB]
+TOTAL: [3.7 MB]
+
+Starting iterations...
+
+Iterative method: 76 iterations in 0.28 seconds (average 0.000645, setup 0.23)
+
+Value in the initial state: 0.02658022714886226
+
+Time for model checking: 0.618 seconds.
+
+Result: 0.02658022714886226 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=13
+
+Building model...
+Model constants: N=13
+
+Computing reachable states...
+
+Reachability (BFS): 92 iterations in 0.41 seconds (average 0.004413, setup 0.00)
+
+Time for model construction: 0.517 seconds.
+
+Warning: Deadlocks detected and fixed in 4683 states
+
+Type:        MDP
+States:      66663 (1 initial)
+Transitions: 161292
+Choices:     68538
+
+Transition matrix: 19629 nodes (46 terminal), 161292 minterms, vars: 29r/29c/3nd
+
+Prob0E: 85 iterations in 0.35 seconds (average 0.004141, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002222, setup 0.00)
+
+yes = 8628, no = 16671, maybe = 41364
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=29, nodes=35710] [1.6 MB]
+Adding sparse bits... [levels=29-29, num=3, compact=3/3] [687.0 KB]
+Creating vector for yes... [dist=2, compact] [130.2 KB]
+Allocating iteration vectors... [3 x 520.8 KB]
+TOTAL: [4.0 MB]
+
+Starting iterations...
+
+Iterative method: 83 iterations in 0.29 seconds (average 0.000699, setup 0.23)
+
+Value in the initial state: 0.01948507889436325
+
+Time for model checking: 0.666 seconds.
+
+Result: 0.01948507889436325 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=14
+
+Building model...
+Model constants: N=14
+
+Computing reachable states...
+
+Reachability (BFS): 99 iterations in 0.45 seconds (average 0.004495, setup 0.00)
+
+Time for model construction: 0.553 seconds.
+
+Warning: Deadlocks detected and fixed in 5051 states
+
+Type:        MDP
+States:      73171 (1 initial)
+Transitions: 177377
+Choices:     75237
+
+Transition matrix: 19718 nodes (46 terminal), 177377 minterms, vars: 29r/29c/3nd
+
+Prob0E: 92 iterations in 0.27 seconds (average 0.002924, setup 0.00)
+
+Prob1A: 9 iterations in 0.03 seconds (average 0.003000, setup 0.00)
+
+yes = 8628, no = 18505, maybe = 46038
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=29, nodes=35702] [1.6 MB]
+Adding sparse bits... [levels=29-29, num=3, compact=3/3] [761.8 KB]
+Creating vector for yes... [dist=2, compact] [142.9 KB]
+Allocating iteration vectors... [3 x 571.6 KB]
+TOTAL: [4.2 MB]
+
+Starting iterations...
+
+Iterative method: 90 iterations in 0.30 seconds (average 0.000778, setup 0.23)
+
+Value in the initial state: 0.014284482255693409
+
+Time for model checking: 0.604 seconds.
+
+Result: 0.014284482255693409 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=15
+
+Building model...
+Model constants: N=15
+
+Computing reachable states...
+
+Reachability (BFS): 106 iterations in 0.38 seconds (average 0.003585, setup 0.00)
+
+Time for model construction: 0.511 seconds.
+
+Warning: Deadlocks detected and fixed in 5419 states
+
+Type:        MDP
+States:      79679 (1 initial)
+Transitions: 193462
+Choices:     81936
+
+Transition matrix: 19535 nodes (46 terminal), 193462 minterms, vars: 29r/29c/3nd
+
+Prob0E: 99 iterations in 0.35 seconds (average 0.003505, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002333, setup 0.00)
+
+yes = 8628, no = 20339, maybe = 50712
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=29, nodes=35728] [1.6 MB]
+Adding sparse bits... [levels=29-29, num=3, compact=3/3] [836.5 KB]
+Creating vector for yes... [dist=2, compact] [155.6 KB]
+Allocating iteration vectors... [3 x 622.5 KB]
+TOTAL: [4.4 MB]
+
+Starting iterations...
+
+Iterative method: 97 iterations in 0.31 seconds (average 0.000835, setup 0.23)
+
+Value in the initial state: 0.010473643614793193
+
+Time for model checking: 0.683 seconds.
+
+Result: 0.010473643614793193 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=16
+
+Building model...
+Model constants: N=16
+
+Computing reachable states...
+
+Reachability (BFS): 113 iterations in 0.52 seconds (average 0.004566, setup 0.00)
+
+Time for model construction: 0.639 seconds.
+
+Warning: Deadlocks detected and fixed in 5787 states
+
+Type:        MDP
+States:      86187 (1 initial)
+Transitions: 209547
+Choices:     88635
+
+Transition matrix: 20838 nodes (46 terminal), 209547 minterms, vars: 31r/31c/3nd
+
+Prob0E: 106 iterations in 0.39 seconds (average 0.003632, setup 0.00)
+
+Prob1A: 9 iterations in 0.03 seconds (average 0.003667, setup 0.00)
+
+yes = 8628, no = 22173, maybe = 55386
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=31, nodes=36532] [1.7 MB]
+Adding sparse bits... [levels=31-31, num=3, compact=3/3] [911.2 KB]
+Creating vector for yes... [dist=2, compact] [168.3 KB]
+Allocating iteration vectors... [3 x 673.3 KB]
+TOTAL: [4.7 MB]
+
+Starting iterations...
+
+Iterative method: 104 iterations in 0.33 seconds (average 0.000894, setup 0.24)
+
+Value in the initial state: 0.007681584212680143
+
+Time for model checking: 0.76 seconds.
+
+Result: 0.007681584212680143 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=17
+
+Building model...
+Model constants: N=17
+
+Computing reachable states...
+
+Reachability (BFS): 120 iterations in 0.53 seconds (average 0.004375, setup 0.00)
+
+Time for model construction: 0.672 seconds.
+
+Warning: Deadlocks detected and fixed in 6155 states
+
+Type:        MDP
+States:      92695 (1 initial)
+Transitions: 225632
+Choices:     95334
+
+Transition matrix: 20761 nodes (46 terminal), 225632 minterms, vars: 31r/31c/3nd
+
+Prob0E: 113 iterations in 0.39 seconds (average 0.003407, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002667, setup 0.00)
+
+yes = 8628, no = 24007, maybe = 60060
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=31, nodes=36933] [1.7 MB]
+Adding sparse bits... [levels=14-31, num=665, compact=3/3] [1.2 MB]
+Creating vector for yes... [dist=2, compact] [181.1 KB]
+Allocating iteration vectors... [3 x 724.2 KB]
+TOTAL: [5.2 MB]
+
+Starting iterations...
+
+Iterative method: 111 iterations in 0.40 seconds (average 0.001414, setup 0.24)
+
+Value in the initial state: 0.005635709119127566
+
+Time for model checking: 0.808 seconds.
+
+Result: 0.005635709119127566 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=18
+
+Building model...
+Model constants: N=18
+
+Computing reachable states...
+
+Reachability (BFS): 127 iterations in 0.53 seconds (average 0.004165, setup 0.00)
+
+Time for model construction: 0.667 seconds.
+
+Warning: Deadlocks detected and fixed in 6523 states
+
+Type:        MDP
+States:      99203 (1 initial)
+Transitions: 241717
+Choices:     102033
+
+Transition matrix: 20850 nodes (46 terminal), 241717 minterms, vars: 31r/31c/3nd
+
+Prob0E: 120 iterations in 0.46 seconds (average 0.003850, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002444, setup 0.00)
+
+yes = 8628, no = 25841, maybe = 64734
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=31, nodes=36993] [1.7 MB]
+Adding sparse bits... [levels=13-31, num=910, compact=3/3] [1.1 MB]
+Creating vector for yes... [dist=2, compact] [193.8 KB]
+Allocating iteration vectors... [3 x 775.0 KB]
+TOTAL: [5.3 MB]
+
+Starting iterations...
+
+Iterative method: 118 iterations in 0.43 seconds (average 0.001636, setup 0.24)
+
+Value in the initial state: 0.004136162807594604
+
+Time for model checking: 0.917 seconds.
+
+Result: 0.004136162807594604 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=19
+
+Building model...
+Model constants: N=19
+
+Computing reachable states...
+
+Reachability (BFS): 134 iterations in 0.57 seconds (average 0.004269, setup 0.00)
+
+Time for model construction: 0.678 seconds.
+
+Warning: Deadlocks detected and fixed in 6891 states
+
+Type:        MDP
+States:      105711 (1 initial)
+Transitions: 257802
+Choices:     108732
+
+Transition matrix: 20667 nodes (46 terminal), 257802 minterms, vars: 31r/31c/3nd
+
+Prob0E: 127 iterations in 0.50 seconds (average 0.003913, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002333, setup 0.00)
+
+yes = 8628, no = 27675, maybe = 69408
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=31, nodes=37019] [1.7 MB]
+Adding sparse bits... [levels=13-31, num=910, compact=3/3] [1.2 MB]
+Creating vector for yes... [dist=2, compact] [206.5 KB]
+Allocating iteration vectors... [3 x 825.9 KB]
+TOTAL: [5.5 MB]
+
+Starting iterations...
+
+Iterative method: 125 iterations in 0.45 seconds (average 0.001744, setup 0.24)
+
+Value in the initial state: 0.0030366492057668924
+
+Time for model checking: 0.975 seconds.
+
+Result: 0.0030366492057668924 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=20
+
+Building model...
+Model constants: N=20
+
+Computing reachable states...
+
+Reachability (BFS): 141 iterations in 0.57 seconds (average 0.004078, setup 0.00)
+
+Time for model construction: 0.685 seconds.
+
+Warning: Deadlocks detected and fixed in 7259 states
+
+Type:        MDP
+States:      112219 (1 initial)
+Transitions: 273887
+Choices:     115431
+
+Transition matrix: 20846 nodes (46 terminal), 273887 minterms, vars: 31r/31c/3nd
+
+Prob0E: 134 iterations in 0.52 seconds (average 0.003866, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002333, setup 0.00)
+
+yes = 8628, no = 29509, maybe = 74082
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=31, nodes=36895] [1.7 MB]
+Adding sparse bits... [levels=12-31, num=1035, compact=3/3] [1.0 MB]
+Creating vector for yes... [dist=2, compact] [219.2 KB]
+Allocating iteration vectors... [3 x 876.7 KB]
+TOTAL: [5.5 MB]
+
+Starting iterations...
+
+Iterative method: 132 iterations in 0.51 seconds (average 0.002053, setup 0.24)
+
+Value in the initial state: 0.0022301434477382635
+
+Time for model checking: 1.049 seconds.
+
+Result: 0.0022301434477382635 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=21
+
+Building model...
+Model constants: N=21
+
+Computing reachable states...
+
+Reachability (BFS): 148 iterations in 0.66 seconds (average 0.004439, setup 0.00)
+
+Time for model construction: 0.764 seconds.
+
+Warning: Deadlocks detected and fixed in 7627 states
+
+Type:        MDP
+States:      118727 (1 initial)
+Transitions: 289972
+Choices:     122130
+
+Transition matrix: 20761 nodes (46 terminal), 289972 minterms, vars: 31r/31c/3nd
+
+Prob0E: 141 iterations in 0.54 seconds (average 0.003794, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002333, setup 0.00)
+
+yes = 8628, no = 31343, maybe = 78756
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=31, nodes=37049] [1.7 MB]
+Adding sparse bits... [levels=12-31, num=1035, compact=3/3] [1.1 MB]
+Creating vector for yes... [dist=2, compact] [231.9 KB]
+Allocating iteration vectors... [3 x 927.6 KB]
+TOTAL: [5.7 MB]
+
+Starting iterations...
+
+Iterative method: 139 iterations in 0.54 seconds (average 0.002165, setup 0.24)
+
+Value in the initial state: 0.0016383434531864875
+
+Time for model checking: 1.1 seconds.
+
+Result: 0.0016383434531864875 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=22
+
+Building model...
+Model constants: N=22
+
+Computing reachable states...
+
+Reachability (BFS): 155 iterations in 0.69 seconds (average 0.004439, setup 0.00)
+
+Time for model construction: 0.803 seconds.
+
+Warning: Deadlocks detected and fixed in 7995 states
+
+Type:        MDP
+States:      125235 (1 initial)
+Transitions: 306057
+Choices:     128829
+
+Transition matrix: 20850 nodes (46 terminal), 306057 minterms, vars: 31r/31c/3nd
+
+Prob0E: 148 iterations in 0.56 seconds (average 0.003797, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002444, setup 0.00)
+
+yes = 8628, no = 33177, maybe = 83430
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=31, nodes=37041] [1.7 MB]
+Adding sparse bits... [levels=12-31, num=1035, compact=3/3] [1.2 MB]
+Creating vector for yes... [dist=2, compact] [244.6 KB]
+Allocating iteration vectors... [3 x 978.4 KB]
+TOTAL: [6.0 MB]
+
+Starting iterations...
+
+Iterative method: 146 iterations in 0.57 seconds (average 0.002267, setup 0.24)
+
+Value in the initial state: 0.00120393904425721
+
+Time for model checking: 1.156 seconds.
+
+Result: 0.00120393904425721 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=23
+
+Building model...
+Model constants: N=23
+
+Computing reachable states...
+
+Reachability (BFS): 162 iterations in 0.71 seconds (average 0.004407, setup 0.00)
+
+Time for model construction: 0.819 seconds.
+
+Warning: Deadlocks detected and fixed in 8363 states
+
+Type:        MDP
+States:      131743 (1 initial)
+Transitions: 322142
+Choices:     135528
+
+Transition matrix: 20621 nodes (46 terminal), 322142 minterms, vars: 31r/31c/3nd
+
+Prob0E: 155 iterations in 0.58 seconds (average 0.003729, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002222, setup 0.00)
+
+yes = 8628, no = 35011, maybe = 88104
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=31, nodes=37018] [1.7 MB]
+Adding sparse bits... [levels=12-31, num=1035, compact=3/3] [1.2 MB]
+Creating vector for yes... [dist=2, compact] [257.3 KB]
+Allocating iteration vectors... [3 x 1.0 MB]
+TOTAL: [6.2 MB]
+
+Starting iterations...
+
+Iterative method: 153 iterations in 0.60 seconds (average 0.002379, setup 0.24)
+
+Value in the initial state: 8.84963910881499E-4
+
+Time for model checking: 1.204 seconds.
+
+Result: 8.84963910881499E-4 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=24
+
+Building model...
+Model constants: N=24
+
+Computing reachable states...
+
+Reachability (BFS): 169 iterations in 0.76 seconds (average 0.004473, setup 0.00)
+
+Time for model construction: 0.882 seconds.
+
+Warning: Deadlocks detected and fixed in 8731 states
+
+Type:        MDP
+States:      138251 (1 initial)
+Transitions: 338227
+Choices:     142227
+
+Transition matrix: 20888 nodes (46 terminal), 338227 minterms, vars: 31r/31c/3nd
+
+Prob0E: 162 iterations in 0.58 seconds (average 0.003556, setup 0.00)
+
+Prob1A: 9 iterations in 0.03 seconds (average 0.002778, setup 0.00)
+
+yes = 8628, no = 36845, maybe = 92778
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=31, nodes=36798] [1.7 MB]
+Adding sparse bits... [levels=12-31, num=1035, compact=3/3] [1.3 MB]
+Creating vector for yes... [dist=2, compact] [270.0 KB]
+Allocating iteration vectors... [3 x 1.1 MB]
+TOTAL: [6.4 MB]
+
+Starting iterations...
+
+Iterative method: 160 iterations in 0.64 seconds (average 0.002488, setup 0.24)
+
+Value in the initial state: 6.50672949313726E-4
+
+Time for model checking: 1.24 seconds.
+
+Result: 6.50672949313726E-4 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=25
+
+Building model...
+Model constants: N=25
+
+Computing reachable states...
+
+Reachability (BFS): 176 iterations in 0.75 seconds (average 0.004256, setup 0.00)
+
+Time for model construction: 0.887 seconds.
+
+Warning: Deadlocks detected and fixed in 9099 states
+
+Type:        MDP
+States:      144759 (1 initial)
+Transitions: 354312
+Choices:     148926
+
+Transition matrix: 20807 nodes (46 terminal), 354312 minterms, vars: 31r/31c/3nd
+
+Prob0E: 169 iterations in 0.63 seconds (average 0.003740, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002444, setup 0.00)
+
+yes = 8628, no = 38679, maybe = 97452
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=31, nodes=37030] [1.7 MB]
+Adding sparse bits... [levels=11-31, num=1468, compact=3/3] [1.2 MB]
+Creating vector for yes... [dist=2, compact] [282.7 KB]
+Allocating iteration vectors... [3 x 1.1 MB]
+TOTAL: [6.5 MB]
+
+Starting iterations...
+
+Iterative method: 167 iterations in 0.68 seconds (average 0.002641, setup 0.24)
+
+Value in the initial state: 4.7853202348602773E-4
+
+Time for model checking: 1.336 seconds.
+
+Result: 4.7853202348602773E-4 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=26
+
+Building model...
+Model constants: N=26
+
+Computing reachable states...
+
+Reachability (BFS): 183 iterations in 0.82 seconds (average 0.004464, setup 0.00)
+
+Time for model construction: 0.935 seconds.
+
+Warning: Deadlocks detected and fixed in 9467 states
+
+Type:        MDP
+States:      151267 (1 initial)
+Transitions: 370397
+Choices:     155625
+
+Transition matrix: 20896 nodes (46 terminal), 370397 minterms, vars: 31r/31c/3nd
+
+Prob0E: 176 iterations in 0.64 seconds (average 0.003631, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002667, setup 0.00)
+
+yes = 8628, no = 40513, maybe = 102126
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=31, nodes=37042] [1.7 MB]
+Adding sparse bits... [levels=11-31, num=1468, compact=3/3] [1.3 MB]
+Creating vector for yes... [dist=2, compact] [295.5 KB]
+Allocating iteration vectors... [3 x 1.2 MB]
+TOTAL: [6.8 MB]
+
+Starting iterations...
+
+Iterative method: 174 iterations in 0.71 seconds (average 0.002736, setup 0.23)
+
+Value in the initial state: 3.5201847744409614E-4
+
+Time for model checking: 1.383 seconds.
+
+Result: 3.5201847744409614E-4 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=27
+
+Building model...
+Model constants: N=27
+
+Computing reachable states...
+
+Reachability (BFS): 190 iterations in 0.83 seconds (average 0.004395, setup 0.00)
+
+Time for model construction: 0.968 seconds.
+
+Warning: Deadlocks detected and fixed in 9835 states
+
+Type:        MDP
+States:      157775 (1 initial)
+Transitions: 386482
+Choices:     162324
+
+Transition matrix: 20713 nodes (46 terminal), 386482 minterms, vars: 31r/31c/3nd
+
+Prob0E: 183 iterations in 0.68 seconds (average 0.003699, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002444, setup 0.00)
+
+yes = 8628, no = 42347, maybe = 106800
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=31, nodes=37068] [1.7 MB]
+Adding sparse bits... [levels=10-31, num=2171, compact=3/3] [1.2 MB]
+Creating vector for yes... [dist=2, compact] [308.2 KB]
+Allocating iteration vectors... [3 x 1.2 MB]
+TOTAL: [6.8 MB]
+
+Starting iterations...
+
+Iterative method: 181 iterations in 0.78 seconds (average 0.002983, setup 0.24)
+
+Value in the initial state: 2.5901290995415443E-4
+
+Time for model checking: 1.481 seconds.
+
+Result: 2.5901290995415443E-4 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=28
+
+Building model...
+Model constants: N=28
+
+Computing reachable states...
+
+Reachability (BFS): 197 iterations in 0.90 seconds (average 0.004548, setup 0.00)
+
+Time for model construction: 1.019 seconds.
+
+Warning: Deadlocks detected and fixed in 10203 states
+
+Type:        MDP
+States:      164283 (1 initial)
+Transitions: 402567
+Choices:     169023
+
+Transition matrix: 20892 nodes (46 terminal), 402567 minterms, vars: 31r/31c/3nd
+
+Prob0E: 190 iterations in 0.70 seconds (average 0.003679, setup 0.00)
+
+Prob1A: 9 iterations in 0.03 seconds (average 0.003222, setup 0.00)
+
+yes = 8628, no = 44181, maybe = 111474
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=31, nodes=36944] [1.7 MB]
+Adding sparse bits... [levels=10-31, num=2171, compact=3/3] [1.3 MB]
+Creating vector for yes... [dist=2, compact] [320.9 KB]
+Allocating iteration vectors... [3 x 1.3 MB]
+TOTAL: [7.0 MB]
+
+Starting iterations...
+
+Iterative method: 188 iterations in 0.82 seconds (average 0.003096, setup 0.24)
+
+Value in the initial state: 1.9062256356994214E-4
+
+Time for model checking: 1.555 seconds.
+
+Result: 1.9062256356994214E-4 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=29
+
+Building model...
+Model constants: N=29
+
+Computing reachable states...
+
+Reachability (BFS): 204 iterations in 0.90 seconds (average 0.004397, setup 0.00)
+
+Time for model construction: 1.045 seconds.
+
+Warning: Deadlocks detected and fixed in 10571 states
+
+Type:        MDP
+States:      170791 (1 initial)
+Transitions: 418652
+Choices:     175722
+
+Transition matrix: 20807 nodes (46 terminal), 418652 minterms, vars: 31r/31c/3nd
+
+Prob0E: 197 iterations in 0.71 seconds (average 0.003624, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002667, setup 0.00)
+
+yes = 8628, no = 46015, maybe = 116148
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=31, nodes=37098] [1.7 MB]
+Adding sparse bits... [levels=10-31, num=2171, compact=3/3] [1.3 MB]
+Creating vector for yes... [dist=2, compact] [333.6 KB]
+Allocating iteration vectors... [3 x 1.3 MB]
+TOTAL: [7.3 MB]
+
+Starting iterations...
+
+Iterative method: 195 iterations in 0.87 seconds (average 0.003210, setup 0.24)
+
+Value in the initial state: 1.4032005410010814E-4
+
+Time for model checking: 1.608 seconds.
+
+Result: 1.4032005410010814E-4 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: Pmin=? [ (pc>-1) U (k=N) ]
+Model constants: N=30
+
+Building model...
+Model constants: N=30
+
+Computing reachable states...
+
+Reachability (BFS): 211 iterations in 0.95 seconds (average 0.004507, setup 0.00)
+
+Time for model construction: 1.088 seconds.
+
+Warning: Deadlocks detected and fixed in 10939 states
+
+Type:        MDP
+States:      177299 (1 initial)
+Transitions: 434737
+Choices:     182421
+
+Transition matrix: 20896 nodes (46 terminal), 434737 minterms, vars: 31r/31c/3nd
+
+Prob0E: 204 iterations in 0.74 seconds (average 0.003613, setup 0.00)
+
+Prob1A: 9 iterations in 0.02 seconds (average 0.002444, setup 0.00)
+
+yes = 8628, no = 47849, maybe = 120822
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrices... [nm=3, levels=31, nodes=37090] [1.7 MB]
+Adding sparse bits... [levels=9-31, num=2222, compact=3/3] [1016.1 KB]
+Creating vector for yes... [dist=2, compact] [346.3 KB]
+Allocating iteration vectors... [3 x 1.4 MB]
+TOTAL: [7.1 MB]
+
+Starting iterations...
+
+Iterative method: 202 iterations in 0.95 seconds (average 0.003554, setup 0.24)
+
+Value in the initial state: 1.0331264481001546E-4
+
+Time for model checking: 1.717 seconds.
+
+Result: 1.0331264481001546E-4 (exact floating point)
+
+Exporting results to file "prism_output/conf995_af6_new_def_act_prop_no_violation_results.txt"...
+
+---------------------------------------------------------------------
+
+Note: There were 30 warnings during computation.
+

@@ -1,0 +1,12 @@
+PRISM
+=====
+
+Version: 4.7
+Date: Fri May 30 13:03:34 BST 2025
+Hostname: itsusbeth6
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism shielded_models/old properties/crash_stuck.pctl -const 'N=5:5:30' -exportresults prism_output/_results.txt
+
+Parsing model file "shielded_models/old"...
+
+Error: File "shielded_models/old" not found.

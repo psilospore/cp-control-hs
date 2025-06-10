@@ -1,0 +1,6 @@
+multi(Pmax=? [ F pc=-1 ], Pmax=? [ F pc=-2 ])
+Pmax=? [ F (pc=-1) ]
+Pmax=? [ F (pc=-2) ]
+Pmax=? [ F (pc<0) ]
+Pmax=? [ F pc!=-2 U pc=-1]
+Pmax=? [ G pc!=-2 U pc=-1]
