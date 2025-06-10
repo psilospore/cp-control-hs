@@ -2,7 +2,7 @@
 
 ### Usage
 
-Models used for experimental results are found in `bin/` using action filter value of `0.7`. To generate models for a different action filter value `AF` run:
+Models used for experimental results are found in `bin/` using action filter value (i.e., shield value $\lambda'$) of `0.7`. To generate models for a different action filter value `AF` run:
 ```
 ./bin/gen_script.sh <AF>
 ```
