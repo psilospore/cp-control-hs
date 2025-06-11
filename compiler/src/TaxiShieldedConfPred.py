@@ -56,8 +56,8 @@ def dynamics_stoch(dyn_succ):
         def dynamics_lines(pc):
             lines=f'''
 [] a=0 & pc={pc} -> {dyn_succ} : (a'=0) & (pc'={pc+1}) + {dyn_fail} : (a'=1) & (pc'={pc+1}) + {dyn_fail} : (a'=2) & (pc'={pc+1});
-[] a=0 & pc={pc} -> {dyn_succ} : (a'=0) & (pc'={pc+1}) + {dyn_fail} : (a'=1) & (pc'={pc+1}) + {dyn_fail} : (a'=2) & (pc'={pc+1});
-[] a=0 & pc={pc} -> {dyn_succ} : (a'=0) & (pc'={pc+1}) + {dyn_fail} : (a'=1) & (pc'={pc+1}) + {dyn_fail} : (a'=2) & (pc'={pc+1});
+[] a=1 & pc={pc} -> {dyn_succ} : (a'=1) & (pc'={pc+1}) + {dyn_fail} : (a'=0) & (pc'={pc+1}) + {dyn_fail} : (a'=2) & (pc'={pc+1});
+[] a=2 & pc={pc} -> {dyn_succ} : (a'=2) & (pc'={pc+1}) + {dyn_fail} : (a'=0) & (pc'={pc+1}) + {dyn_fail} : (a'=1) & (pc'={pc+1});
 '''
             return [PAST.PrismVerbatim(lines.split("\n"))]
         return dynamics_lines
@@ -116,12 +116,12 @@ def taxi_shielded_confpred_model(conf_pred_cte,conf_pred_he,tempest_pred,action_
     cte=PAST.PrismVar("cte",-1,4,0,enum_low=0)
     he=PAST.PrismVar("he",-1,2,0,enum_low=0)
     default=PAST.PrismVar("default",0,2,0,desc="Enum to trigger default control")
-    beta1=PAST.PrismVar("beta1",0,"N",0,desc="Counts number of times controller found no safe actions")
+    beta=PAST.PrismVar("beta",0,"N",0,desc="Counts number of times controller found no safe actions")
     beta2=PAST.PrismVar("beta2",0,"N",0,desc="Counts number of times empty state was estimated")
     cte_est_vars=[PAST.PrismVar(f"cte_est{i}",0,1,0) for i in range(cte_high+1)]
     he_est_vars=[PAST.PrismVar(f"he_est{i}",0,1,0) for i in range(he_high+1)]
     a=PAST.PrismVar("a",0,2,0)
-    variables=[cte,he,a,default]+cte_est_vars+he_est_vars
+    variables=[cte,he,a,default,beta]+cte_est_vars+he_est_vars
     
     state=["cte","he"]
     cte_ests=[f"cte_est{i}" for i in range(cte_high+1)]
