@@ -7,7 +7,7 @@ The daataset is available at [this](https://drive.google.com/drive/u/2/folders/1
 To train a perception DNN on this data, use the `train.sh` scrip in the `train` folder. To conformalize the model and generate confusion matrices use the `test.sh` script in the same folder.
 
 ### Generating Perfect Perception Shield
-To generate a shield for the perfect-perception MDP of the autonomous taxiing system, use the `build_shield.py` script in the `shielding` folder. Before running this script, you need to download the PRISM model check on your machine and modify `PRISM_PATH` in the script to point to the PRISM binary.
+To generate a shield for the perfect-perception MDP of the autonomous taxiing system, use the `build_shield.py` script in the `shielding` folder. Before running this script, you need to download the [PRISM](https://www.prismmodelchecker.org/) model checker on your machine and modify `PRISM_PATH` in the script to point to the PRISM binary.
 
 ### Constructing PRISM MDP Files
 
