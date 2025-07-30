@@ -21,7 +21,7 @@ data PrismVar a = PrismVar a
     } deriving (Show, Eq)
 
 data PrismAssign = PrismAssign
-    { name :: Stringg
+    { name :: String
     , val :: Int
     } deriving (Show, Eq)
 
