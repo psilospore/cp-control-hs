@@ -35,6 +35,13 @@ ghc-options:
 
 library:
   source-dirs: src
+  default-extensions:
+    - OverloadedStrings
+    - LambdaCase
+    - RecordWildCards
+    - NoFieldSelectors
+    - OverloadedRecordDot
+    - DuplicateRecordFields
 
 executables:
   cp-control-haskell-exe:
